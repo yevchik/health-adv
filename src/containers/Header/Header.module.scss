@@ -1,2 +1,41 @@
 @import "styles/variables";
 @import "styles/mixins";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2.2rem 0;
+  overflow: hidden;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.iconLogo {
+  width: 9.5rem;
+  fill: var(--color-font-main);
+}
+
+.search {
+  @include resetButton;
+
+  margin-left: auto;
+}
+
+.iconSearch {
+  width: 1.9rem;
+  fill: var(--color-font-main);
+}
+
+.burger {
+  @include resetButton;
+
+  margin-left: 2rem;
+}
+
+.iconBurger {
+  width: 2.2rem;
+  fill: var(--color-font-main);
+}
