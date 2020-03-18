@@ -18,7 +18,7 @@ class ElasticAdaptive extends React.Component {
  constructor (props) {
    super(props)
    this.state = {
-     type: this.getContentType(),
+     type: this.getDeviceType(),
      width: document.body.clientWidth || window.innerWidth || document.documentElement.clientWidth,
    }
  }
@@ -33,34 +33,29 @@ class ElasticAdaptive extends React.Component {
     window.removeEventListener('orientationchange', this.changeSize)
   }
 
-  getContentType = () => {
+  getDeviceType = () => {
     let width = document.body.clientWidth || window.innerWidth || document.documentElement.clientWidth
+
     if (width >= 1280) {
-      console.log('Switch to desktop')
-      this.setState({
-        type: 'desktop',
-        width
-      })
       return 'desktop'
     }
 
     if (width < 1280 && width >= 768) {
-      console.log('Switch to tablet')
-      this.setState({
-        type: 'tablet',
-        width
-      })
       return 'tablet'
     }
 
     if (width < 768) {
-      console.log('Switch to mobile')
-      this.setState({
-        type: 'mobile',
-        width
-      })
       return 'mobile'
     }
+  }
+
+  getContentType = () => {
+    let width = document.body.clientWidth || window.innerWidth || document.documentElement.clientWidth
+
+    this.setState({
+      type: this.getDeviceType(),
+      width: width
+    })
   }
 
   changeSize = () => {

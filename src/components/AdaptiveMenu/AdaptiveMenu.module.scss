@@ -1,0 +1,247 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  pointer-events: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(70, 75, 86, 0.3);
+    transition-duration: 0.6s;
+    opacity: 0;
+    transition-property: opacity;
+
+  }
+}
+
+.wrapperVisible {
+  pointer-events: all;
+
+  &::before {
+    opacity: 1;
+  }
+}
+
+.content {
+  position: relative;
+  margin-left: auto;
+  padding: 5.1rem 3rem 0 3rem;
+  width: 28rem;
+  height: 100vh;
+  background-color: $colorMainBg;
+  transition-duration: 0.3s;
+  transform: translateX(100%);
+  overflow-y: scroll;
+}
+
+.contentVisible {
+  transform: translateX(0);
+}
+
+.close {
+  @include resetButton;
+
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.iconClose {
+  width: 2rem;
+  stroke: var(--color-font-main);
+}
+
+.schedule {
+  display: flex;
+  align-items: center;
+}
+
+.iconClock {
+  width: 2rem;
+  fill: var(--color-font-main);
+}
+
+.scheduleLabel {
+  @include h9-regular(var(--color-font-main));
+
+  margin-left: 1.1rem;
+}
+
+.phoneList {
+  @include resetList;
+}
+
+.phoneItem {
+  margin-top: 0.6rem;
+}
+
+.phoneLink {
+  @include h1(var(--color-font-main));
+  font-weight: 400;
+}
+
+.btn {
+  margin-top: 2.1rem;
+}
+
+.switchColorsBtn {
+  @include resetButton;
+  @include h9-regular(var(--color-font-main));
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding: 1.6rem 0 1.7rem 0;
+  width: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -3rem;
+    width: calc(100% + 6rem);
+    height: 1px;
+    background-color: var(--color-highlight-darker);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -3rem;
+    width: calc(100% + 6rem);
+    height: 1px;
+    background-color: var(--color-highlight-darker);
+  }
+}
+
+.iconEye {
+  margin-right: 0.9rem;
+  width: 2.4rem;
+  stroke: var(--color-font-main);
+}
+
+.list {
+  @include resetList;
+
+  margin-top: 2.9rem;
+}
+
+.item {
+  &:not(:first-of-type) {
+    margin-top: 2.7rem;
+  }
+}
+
+.link {
+  @include capitals(var(--color-font-main));
+}
+
+.collapseBtn {
+  @include resetButton;
+  @include capitals(var(--color-font-main));
+
+  display: flex;
+  align-items: center;
+  transition-duration: 0.3s;
+  transition-property: color;
+}
+
+.collapseBtnOpened {
+  color: var(--color-highlight-buttons);
+}
+
+.iconArrow {
+  margin-left: 1rem;
+  width: 0.8rem;
+  fill: var(--color-font-main);
+  transform: rotate(180deg);
+  transition-duration: 0.3s;
+}
+
+.iconArrowOpened {
+  transform: rotate(0);
+  fill: var(--color-highlight-buttons);
+}
+
+.sublist {
+  @include resetList;
+  @include h9-regular(var(--color-font-main));
+
+  padding-top: 2.4rem;
+  padding-left: 1.4rem;
+}
+
+.subitem {
+  &:not(:first-of-type) {
+    margin-top: 2rem;
+  }
+}
+
+.sublink {
+  @include h9-regular(var(--color-font-main));
+}
+
+.auxList {
+  @include resetList;
+
+  position: relative;
+  margin-top: 3.3rem;
+  padding: 3.5rem 0 3.3rem 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -3rem;
+    width: calc(100% + 6rem);
+    height: 1px;
+    background-color: var(--color-highlight-darker);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -3rem;
+    width: calc(100% + 6rem);
+    height: 1px;
+    background-color: var(--color-highlight-darker);
+  }
+}
+
+.auxItem {
+  &:not(:first-of-type) {
+    margin-top: 2.9rem;
+  }
+}
+
+.auxLink {
+  @include capitals(var(--color-font-main));
+}
+
+.timeline {
+  @include capitals(var(--color-font-main));
+
+  display: block;
+  padding: 2.5rem 0;
+  text-align: center;
+  opacity: 0.5;
+}
