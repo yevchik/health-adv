@@ -1,0 +1,3 @@
+export {
+  setFontSize
+} from './elasticAdaptive'

@@ -1,0 +1,186 @@
+@import "variables";
+
+@mixin h0($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 5.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 6rem;
+  color: $color;
+}
+
+@mixin h1($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 5.4rem;
+  color: $color;
+
+  @media (max-width: $widthTabletMax) {
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+  }
+
+  @media (max-width: $widthMobileMax) {
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
+}
+
+@mixin h2($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 4.0rem;
+  color: $color;
+
+  @media (max-width: $widthTabletMax) {
+    font-size: 2.2rem;
+    line-height: 2.7rem;
+  }
+
+  @media (max-width: $widthMobileMax) {
+    font-size: 2rem;
+    line-height: 2.7rem;
+  }
+}
+
+@mixin h3($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 4.0rem;
+  color: $color;
+
+  @media (max-width: $widthTabletMax) {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  @media (max-width: $widthMobileMax) {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+  }
+}
+
+@mixin h4($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 4.0rem;
+  color: $color;
+}
+
+@mixin h5($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.0rem;
+  color: $color;
+}
+
+@mixin h5-italic($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 3.2rem;
+  color: $color;
+}
+
+@mixin h6($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.0rem;
+  color: $color;
+}
+
+@mixin h7($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.0rem;
+  color: $color;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+@mixin h8($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.7rem;
+  color: $color;
+}
+
+@mixin h9($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.7rem;
+  color: $color;
+}
+
+@mixin h9-regular($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.7rem;
+  color: $color;
+}
+
+@mixin capitals($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+  color: $color;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+
+  @media (max-width: $widthTabletMax) {
+    line-height: 1.7rem;
+  }
+}
+
+@mixin capitals-bold($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem;
+  color: $color;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+@mixin regular($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.8rem;
+  color: $color;
+}
+
+@mixin small($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.1rem;
+  color: $color;
+}

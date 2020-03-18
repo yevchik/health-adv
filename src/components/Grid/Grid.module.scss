@@ -1,0 +1,17 @@
+@import "styles/variables";
+
+.wrapper {
+  padding: 0 1.5rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: $widthDesktopMin) {
+  .wrapper {
+    padding: 0 2.5rem;
+  }
+}
