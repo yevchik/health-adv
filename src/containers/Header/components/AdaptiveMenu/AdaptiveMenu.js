@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import css from './AdaptiveMenu.module.scss'
+import css from 'containers/Header/components/AdaptiveMenu/AdaptiveMenu.module.scss'
 import classnames from 'classnames'
 import IconClose from 'containers/Header/_assets/IconClose'
 import IconClock from 'containers/Header/_assets/IconClock'

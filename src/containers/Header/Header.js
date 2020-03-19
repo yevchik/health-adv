@@ -7,9 +7,10 @@ import { HOME_PAGE } from 'Pages/Routes'
 import IconLogo from 'containers/Header/_assets/IconLogo'
 import IconSearch from 'containers/Header/_assets/IconSearch'
 import IconBurger from 'containers/Header/_assets/IconBurger'
-import AdaptiveMenu from 'components/AdaptiveMenu/AdaptiveMenu'
-import DesktopMenu from 'components/DesktopMenu/DesktopMenu'
+import AdaptiveMenu from './components/AdaptiveMenu/AdaptiveMenu'
+import DesktopMenu from './components/DesktopMenu/DesktopMenu'
 import Button from 'components/Button/Button'
+import Intro from 'containers/Header/components/Intro/Intro'
 
 class Header extends Component {
   constructor (props) {
@@ -101,13 +102,13 @@ class Header extends Component {
     }))
   }
 
-
   render () {
     const { isAdaptiveMenuVisible } = this.state
     const { withSearch } = this.headerData
 
     return (
       <header className={css.header}>
+        <Intro className={css.top} data={this.headerData} />
         <Container className={css.desktopWrapper}>
           <div className={css.wrapper}>
             <Link to={HOME_PAGE} className={css.logo}>

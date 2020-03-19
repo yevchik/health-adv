@@ -40,7 +40,8 @@
   fill: var(--color-font-main);
 }
 
-.btnRegister {
+.btnRegister,
+.top {
   display: none;
 }
 
@@ -81,6 +82,10 @@
     &::before {
       background-color: var(--color-font-main);
     }
+  }
+
+  .top {
+    display: block;
   }
 
   .desktopWrapper {

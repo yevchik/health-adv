@@ -1,5 +1,5 @@
 import React from 'react'
-import css from './DesktopMenu.module.scss'
+import css from 'containers/Header/components/DesktopMenu/DesktopMenu.module.scss'
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'
 import IconArrow from 'containers/Header/_assets/IconArrow'

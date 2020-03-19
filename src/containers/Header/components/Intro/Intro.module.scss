@@ -1,0 +1,110 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  background-color: var(--color-highlight-lightest);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+
+.phones {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  @include resetList;
+
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  margin-left: 0.9rem;
+}
+
+.iconPhone {
+  width: 2.4rem;
+  fill: var(--color-font-main);
+}
+
+.phone {
+  @include h9-regular(var(--color-font-main));
+  transition-duration: 0.3s;
+
+  &:hover {
+    color: var(--color-highlight-buttons);
+  }
+}
+
+.schedule {
+  display: flex;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.iconClock {
+  width: 2.4rem;
+  fill: var(--color-font-main);
+}
+
+.label {
+  @include h9-regular((var(--color-font-main)));
+
+  margin-left: 0.8rem;
+  transition-duration: 0.3s;
+}
+
+.search,
+.colorMode {
+  @include resetButton;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+
+  &:hover {
+    .label {
+      color: var(--color-highlight-buttons);
+    }
+  }
+}
+
+.search {
+  margin-left: auto;
+
+  &:hover {
+    .iconSearch {
+      fill: var(--color-highlight-buttons);
+    }
+  }
+}
+
+.iconSearch {
+  width: 1.9rem;
+  fill: var(--color-font-main);
+  opacity: 0.5;
+  transition-duration: 0.3s;
+}
+
+.colorMode {
+  margin-left: 3.1rem;
+
+  &:hover {
+    .iconEye {
+      stroke: var(--color-highlight-buttons);
+    }
+  }
+}
+
+.iconEye {
+  width: 2.2rem;
+  stroke: var(--color-font-main);
+  transition-duration: 0.3s;
+}
