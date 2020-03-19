@@ -5,7 +5,6 @@
 .button {
   @include resetButton;
 
-  display: block;
   width: 100%;
   transition-duration: 0.3s;
   cursor: pointer;
