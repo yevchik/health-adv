@@ -154,19 +154,24 @@
   text-transform: uppercase;
 
   @media (max-width: $widthTabletMax) {
+    font-weight: 500;
     line-height: 1.7rem;
   }
 }
 
 @mixin capitals-bold($color) {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-style: normal;
   font-weight: 600;
   line-height: 2rem;
   color: $color;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+
+  @media (max-width: $widthTabletMax) {
+    font-size: 1.2rem;
+  }
 }
 
 @mixin regular($color) {

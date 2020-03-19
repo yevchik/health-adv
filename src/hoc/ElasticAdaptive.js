@@ -23,7 +23,7 @@ class ElasticAdaptive extends React.Component {
    }
  }
 
-  componentWillMount () {
+  componentDidMount () {
     this.changeSize()
     window.addEventListener('resize', this.changeSize)
     window.addEventListener('orientationchange', this.changeSize)
@@ -65,12 +65,6 @@ class ElasticAdaptive extends React.Component {
     const { widthLimit, baseWidth } = this.props.state[type]
     let { baseSize } = this.props.state[type]
     let actualWidth = width
-    // Изменение размера шрифта для адаптации под малые разрешения экрана
-    if (width <= 1440 && type === 'desktop') {
-      baseSize = 8
-    } else {
-      baseSize = 10
-    }
 
     if (widthLimit) {
       actualWidth = Math.min(width, widthLimit)

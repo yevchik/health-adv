@@ -1,0 +1,106 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.list {
+  display: none
+}
+
+@media (min-width: $widthDesktopMin) {
+  .list {
+    @include resetList;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .item {
+    position: relative;
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 4.7rem
+  }
+
+  .item {
+    &:not(:first-of-type) {
+      margin-left: 3.5rem;
+    }
+  }
+
+  .link {
+    @include capitals(var(--color-font-main));
+
+    transition-duration: 0.3s;
+    transition-property: color;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-highlight-buttons);
+    }
+  }
+
+  .linkTrigger {
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      .iconTrigger {
+        transform: rotate(0);
+        fill: var(--color-highlight-buttons);
+      }
+
+      .wrapper {
+        pointer-events: all;
+      }
+
+      .sublist {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .iconTrigger {
+    margin-left: 0.7rem;
+    width: 0.5rem;
+    fill: var(--color-font-main);
+    transform: rotate(180deg);
+    transition-duration: 0.3s;
+  }
+
+  .wrapper {
+    pointer-events: none;
+  }
+
+  .frame {
+    overflow: hidden;
+  }
+
+  .sublist {
+    @include resetList;
+
+    padding: 2.5rem 3rem 3.1rem 3rem;
+    width: max-content;
+    transform: translateY(-100%);
+    transition-duration: 0.3s;
+  }
+
+  .subitem {
+    &:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+  }
+
+  .sublink {
+    @include capitals(var(--color-font-main));
+
+    transition-duration: 0.3s;
+    transition-property: color;
+
+    &:hover {
+      color: var(--color-highlight-buttons);
+    }
+  }
+}

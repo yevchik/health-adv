@@ -8,6 +8,8 @@ import IconLogo from 'containers/Header/_assets/IconLogo'
 import IconSearch from 'containers/Header/_assets/IconSearch'
 import IconBurger from 'containers/Header/_assets/IconBurger'
 import AdaptiveMenu from 'components/AdaptiveMenu/AdaptiveMenu'
+import DesktopMenu from 'components/DesktopMenu/DesktopMenu'
+import Button from 'components/Button/Button'
 
 class Header extends Component {
   constructor (props) {
@@ -20,7 +22,7 @@ class Header extends Component {
     this.headerData = {
       withSearch: true,
       schedule: 'Ежедневно&nbsp;10.00&nbsp;&mdash; 21.00',
-      phones: ['+7 495 453 95 93'],
+      phones: ['+7 495 453 95 93', '+7 495 453 95 93'],
       list: [
         {
           text: 'Услуги и цены',
@@ -40,7 +42,6 @@ class Header extends Component {
         },
         {
           text: 'О клинике',
-          url: '/',
           sublist: [
             {
               text: 'О нас',
@@ -107,7 +108,7 @@ class Header extends Component {
 
     return (
       <header className={css.header}>
-        <Container>
+        <Container className={css.desktopWrapper}>
           <div className={css.wrapper}>
             <Link to={HOME_PAGE} className={css.logo}>
               <IconLogo className={css.iconLogo} />
@@ -130,6 +131,15 @@ class Header extends Component {
             isOpened={isAdaptiveMenuVisible}
             data={this.headerData}
             handleClose={this.handleCloseMenu}
+          />
+          <DesktopMenu
+            data={this.headerData}
+          />
+          <Button
+            className={css.btnRegister}
+            label='Записаться'
+            btnStyle='decorated'
+            onClick={() => {}}
           />
         </Container>
       </header>

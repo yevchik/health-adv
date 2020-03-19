@@ -39,3 +39,78 @@
   width: 2.2rem;
   fill: var(--color-font-main);
 }
+
+@media (min-width: $widthTabletMin) {
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $colorMainBg;
+      opacity: 0.1;
+    }
+  }
+
+  .wrapper {
+    padding: 2.3rem 0 2.1rem 0;
+  }
+
+  .iconLogo,
+  .iconSearch,
+  .iconBurger {
+    fill: $colorMainBg;
+  }
+
+  button.btnRegister {
+    display: none;
+  }
+}
+
+@media (min-width: $widthDesktopMin) {
+  .header {
+    position: relative;
+
+    &::before {
+      background-color: var(--color-font-main);
+    }
+  }
+
+  .desktopWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.4rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .wrapper {
+    padding: 0;
+    width: auto;
+  }
+
+  .iconLogo {
+    fill: var(--color-font-main);
+  }
+
+  .iconSearch,
+  .iconBurger {
+    display: none;
+  }
+
+  .iconLogo {
+    width: 14.4rem;
+  }
+
+  button.btnRegister {
+    display: block;
+    width: 21.7rem;
+  }
+}
