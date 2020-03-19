@@ -35,16 +35,18 @@
 
     transition-duration: 0.3s;
     transition-property: color;
-    cursor: pointer;
 
     &:hover {
       color: var(--color-highlight-buttons);
     }
   }
 
-  .linkTrigger {
-    display: flex;
-    align-items: center;
+  .submenuTrigger {
+    span {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
 
     &:hover {
       .iconTrigger {

@@ -9,9 +9,11 @@ const DesktopMenu = ({ data }) => {
     if (item.sublist && item.sublist.length > 0) {
       return (
         <li className={css.item} key={index}>
-          <div className={classnames(css.link, css.linkTrigger)}>
-            { item.text }
-            <IconArrow className={css.iconTrigger} />
+          <div className={classnames(css.link, css.submenuTrigger)}>
+            <span>
+              { item.text }
+              <IconArrow className={css.iconTrigger} />
+            </span>
             <div className={css.wrapper}>
               <div className={css.frame}>
                 <ul className={css.sublist}>
@@ -40,9 +42,11 @@ const DesktopMenu = ({ data }) => {
   })
 
   return (
-    <ul className={css.list}>
-      { listContent }
-    </ul>
+    <nav>
+      <ul className={css.list}>
+        { listContent }
+      </ul>
+    </nav>
   )
 }
 

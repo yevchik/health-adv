@@ -113,9 +113,11 @@ class AdaptiveMenu extends Component {
               Для слабовидящих
             </button>
           </div>
-          <ul className={css.list}>
-            { mainList }
-          </ul>
+          <nav>
+            <ul className={css.list}>
+              { mainList }
+            </ul>
+          </nav>
           <div className={css.bottom}>
             <ul className={css.auxList}>
               {data.auxList.map((item, index) => (
