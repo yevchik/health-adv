@@ -1,2 +1,81 @@
 @import "styles/variables";
 @import "styles/mixins";
+
+.footer {
+  background-color: var(--color-font-main);
+}
+
+.top {
+  position: relative;
+  padding: 2.7rem 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -25vw;
+    width: 150vw;
+    height: 1px;
+    background-color: var(--color-highlight-darkest);
+    opacity: 0.1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -25vw;
+    width: 150vw;
+    height: 1px;
+    background-color: var(--color-highlight-darkest);
+    opacity: 0.1;
+  }
+}
+
+.socialList {
+  @include resetList;
+
+  display: flex;
+  align-items: center;
+}
+
+.socialItem {
+  &:not(:first-of-type) {
+    margin-left: 1.2rem;
+  }
+}
+
+.socialLink {
+  font-size: 0;
+}
+
+.iconSocial {
+  width: 3rem;
+  fill: var(--color-highlight-lightest);
+  opacity: 0.3;
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-start;
+  padding: 2.1rem 0 3rem 0;
+}
+
+.copyright,
+.counter {
+  width: 50%;
+}
+
+.label {
+  @include h9-regular($colorMainBg);
+
+  margin: 0;
+  opacity: 0.5;
+}
+
+.logo {
+  margin-top: 1rem;
+  width: 8.4rem;
+  fill: $colorMainBg;
+  opacity: 0.5;
+}
