@@ -4,10 +4,40 @@
 
 .button {
   @include resetButton;
-  @include capitals-bold($colorMainBg);
 
   display: block;
   width: 100%;
-  padding: 2.2rem 0 1.8rem 0;
-  background-color: var(--color-highlight-buttons);
+  transition-duration: 0.3s;
+  cursor: pointer;
+
+  &.buttonFilled {
+    @include capitals-bold($colorMainBg);
+
+    padding: 2.2rem 0 1.8rem 0;
+    background-color: var(--color-highlight-buttons);
+  }
+
+  &.buttonDecorated {
+    @include capitals-bold(var(--color-highlight-buttons));
+
+    padding: 2rem 0;
+    border: 0.1rem solid var(--color-highlight-buttons);
+    border-bottom-width: 0.5rem;
+
+    &:hover {
+      color: $colorMainBg;
+      background-color: var(--color-highlight-buttons);
+
+      .icon {
+        stroke: $colorMainBg;
+      }
+    }
+  }
+
+  .icon {
+    margin-left: 1rem;
+    width: 1.6rem;
+    stroke: var(--color-highlight-buttons);
+    transition-duration: 0.3s;
+  }
 }
