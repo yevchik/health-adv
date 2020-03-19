@@ -40,6 +40,10 @@
   fill: var(--color-font-main);
 }
 
+.btnRegister {
+  display: none;
+}
+
 @media (min-width: $widthTabletMin) {
   .header {
     position: absolute;
@@ -67,10 +71,6 @@
   .iconSearch,
   .iconBurger {
     fill: $colorMainBg;
-  }
-
-  button.btnRegister {
-    display: none;
   }
 }
 

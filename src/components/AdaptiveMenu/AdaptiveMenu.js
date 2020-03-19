@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom'
 import { Collapse } from 'react-collapse/lib/Collapse'
 import IconArrow from 'containers/Header/_assets/IconArrow'
 
+// TODO click on grey background closes menu
+
 class AdaptiveMenu extends Component {
   state = {
     isCollapseOpen: false
@@ -33,7 +35,7 @@ class AdaptiveMenu extends Component {
     ))
 
     const mainList = data.list.map((item, index) => {
-      if (item.sublist) {
+      if (item.sublist && item.sublist.length > 0) {
         return (
           <li className={css.item} key={index}>
             <button
@@ -86,13 +88,15 @@ class AdaptiveMenu extends Component {
             <IconClose className={css.iconClose} />
           </button>
           <div className={css.top}>
-            <p className={css.schedule}>
-              <IconClock className={css.iconClock} />
-              <span className={css.scheduleLabel} dangerouslySetInnerHTML={{__html: data.schedule}} />
-            </p>
-            <ul className={css.phoneList}>
-              { phones }
-            </ul>
+            <div className={css.info}>
+              <p className={css.schedule}>
+                <IconClock className={css.iconClock} />
+                <span className={css.scheduleLabel} dangerouslySetInnerHTML={{__html: data.schedule}} />
+              </p>
+              <ul className={css.phoneList}>
+                { phones }
+              </ul>
+            </div>
             <Button
               className={css.btn}
               label='Записаться'
@@ -115,7 +119,7 @@ class AdaptiveMenu extends Component {
           <div className={css.bottom}>
             <ul className={css.auxList}>
               {data.auxList.map((item, index) => (
-                <li className={css.auxItem}>
+                <li className={css.auxItem} key={index}>
                   <Link className={css.auxLink} to={item.url}>
                     { item.text }
                   </Link>
