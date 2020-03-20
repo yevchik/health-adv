@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import css from 'containers/Header/components/AdaptiveMenu/AdaptiveMenu.module.scss'
+import css from './AdaptiveMenu.module.scss'
 import classnames from 'classnames'
 import IconClose from 'containers/Header/_assets/IconClose'
 import IconClock from 'containers/Header/_assets/IconClock'
@@ -9,11 +9,23 @@ import { Link } from 'react-router-dom'
 import { Collapse } from 'react-collapse/lib/Collapse'
 import IconArrow from 'containers/Header/_assets/IconArrow'
 
-// TODO click on grey background closes menu
-
 class AdaptiveMenu extends Component {
+  constructor (props) {
+    super(props)
+    this.wrapperRef = null
+    this.menuRef = null
+  }
+
   state = {
     isCollapseOpen: false
+  }
+
+  componentDidMount = () => {
+    this.wrapperRef.addEventListener('click', evt => {
+      if (this.props.isOpened && !this.menuRef.contains(evt.target)) {
+        this.props.handleClose()
+      }
+    })
   }
 
   handleCollapseClick = () => {
@@ -21,6 +33,14 @@ class AdaptiveMenu extends Component {
       ...prevState,
       isCollapseOpen: !prevState.isCollapseOpen
     }))
+  }
+
+  setMenuRef = el => {
+    this.menuRef = el
+  }
+
+  setWrapperRef = el => {
+    this.wrapperRef = el
   }
 
   render () {
@@ -77,8 +97,8 @@ class AdaptiveMenu extends Component {
     const timeline = '&copy;2008-' + new Date().getFullYear()
 
     return (
-      <div className={classnames(css.wrapper, {[css.wrapperVisible]: isOpened})}>
-        <div className={classnames(css.content, {[css.contentVisible]: isOpened})}>
+      <div className={classnames(css.wrapper, {[css.wrapperVisible]: isOpened})} ref={this.setWrapperRef}>
+        <div className={classnames(css.content, {[css.contentVisible]: isOpened})} ref={this.setMenuRef}>
           <button
             className={css.close}
             type='button'
