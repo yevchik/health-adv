@@ -2,7 +2,19 @@
 @import "styles/mixins";
 
 .footer {
+  position: relative;
   background-color: var(--color-font-main);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-highlight-darkest);
+    opacity: 0.1;
+  }
 }
 
 .top {
@@ -10,17 +22,6 @@
   padding: 2.7rem 0;
 
   &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -25vw;
-    width: 150vw;
-    height: 1px;
-    background-color: var(--color-highlight-darkest);
-    opacity: 0.1;
-  }
-
-  &::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -47,12 +48,20 @@
 
 .socialLink {
   font-size: 0;
+
+  &:hover {
+    .iconSocial {
+      fill: var(--color-highlight-buttons);
+      opacity: 1;
+    }
+  }
 }
 
 .iconSocial {
   width: 3rem;
   fill: var(--color-highlight-lightest);
   opacity: 0.3;
+  transition-duration: 0.3s;
 }
 
 .bottom {
@@ -64,6 +73,15 @@
 .copyright,
 .counter {
   width: 50%;
+}
+
+.copyrightLink {
+  &:hover {
+    .logo {
+      fill: var(--color-highlight-buttons);
+      opacity: 1;
+    }
+  }
 }
 
 .label {
@@ -78,4 +96,220 @@
   width: 8.4rem;
   fill: $colorMainBg;
   opacity: 0.5;
+  transition-duration: 0.3s;
+}
+
+.metrics {
+  width: 10.5rem;
+}
+
+.auxList,
+.timeline,
+.nav,
+.workTime {
+  display: none;
+}
+
+@media (min-width: $widthTabletMin) and (max-width: $widthTabletMax) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .top {
+    padding: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .bottom {
+    align-items: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  .copyright,
+  .counter {
+    width: auto;
+  }
+
+  .copyright {
+    order: 2;
+    display: flex;
+    align-items: center;
+  }
+
+  .label {
+    @include small($colorMainBg);
+  }
+
+  .logo {
+    margin-left: 1.4rem;
+  }
+
+  .counter {
+    order: 1;
+    margin: 0 auto;
+  }
+
+  .metrics {
+    width: 9.3rem;
+  }
+}
+
+@media (min-width: $widthDesktopMin) {
+  .wrapper {
+    padding-top: 7.6rem;
+    padding-bottom: 0;
+  }
+
+  .top {
+    padding-top: 0;
+    padding-bottom: 3.4rem;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .nav {
+    display: flex;
+
+    .navList {
+      @include resetList;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .navItem {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .navLabel {
+      margin: 0;
+      width: 100%;
+    }
+
+    .navSublist {
+      @include resetList;
+
+      margin-top: 2.5rem;
+
+      &:not(:first-of-type) {
+        margin-left: 10rem;
+      }
+    }
+
+    .subItem {
+      &:not(:first-of-type) {
+        margin-top: 2rem;
+      }
+    }
+
+    .subLink {
+      @include regular(var(--color-highlight-lightest));
+      @include linkBehavior;
+    }
+
+    .navSingles {
+      @include resetList;
+    }
+
+    .navSingle {
+      &:not(:first-of-type) {
+        margin-top: 2.2rem;
+      }
+    }
+
+    .navSingleLink {
+      @include linkBehavior;
+    }
+  }
+
+  .info {
+    margin-left: auto;
+  }
+
+  .workTime {
+    display: block;
+  }
+
+  .highlight {
+    @include h8(var(--color-highlight-lightest));
+
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+  }
+
+  .time {
+    @include h9-regular(var(--color-highlight-lightest));
+
+    display: block;
+    margin-top: 1.3rem;
+  }
+
+  .socialList {
+    margin-top: 5.9rem;
+  }
+
+  .iconSocial {
+    opacity: 0.8;
+  }
+
+  .bottom {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright,
+  .counter {
+    width: auto;
+  }
+
+  .counter {
+    order: 1;
+  }
+
+  .timeline {
+    @include h9-regular(var(--color-highlight-lightest));
+
+    display: block;
+  }
+
+  .auxList {
+    @include resetList;
+
+    order: 2;
+    display: flex;
+    align-items: center;
+  }
+
+  .auxItem {
+    &:not(:first-of-type) {
+      margin-left: 12.2rem;
+    }
+  }
+
+  .auxLink {
+    @include h9-regular(var(--color-highlight-lightest));
+    @include linkBehavior;
+  }
+
+  .copyright {
+    order: 3;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    margin-left: 2.3rem;
+    width: 10.6rem;
+  }
 }

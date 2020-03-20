@@ -6,11 +6,13 @@ import css from './HomePage.module.scss'
 class HomePage extends Component {
   render () {
     return (
-      <div className={css.wrapper}>
-        <Container>
-          Home page content
-        </Container>
-      </div>
+      <main>
+        <div className={css.wrapper}>
+          <Container>
+            Home page content
+          </Container>
+        </div>
+      </main>
     )
   }
 }

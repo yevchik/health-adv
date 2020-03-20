@@ -7,11 +7,87 @@ import IconVK from 'assets/icons/IconVK'
 import IconTwitter from 'assets/icons/IconTwitter'
 import IconInstagram from 'assets/icons/IconInstagram'
 import IconLogoCreator from 'assets/icons/IconLogoCreator'
+import { YMInitializer } from 'react-yandex-metrika'
+import { Link } from 'react-router-dom'
 
 class Footer extends Component {
   constructor (props) {
     super(props)
     this.footerData = {
+      nav: [
+        {
+          label: 'Услуги и цены',
+          sublist: [
+            [
+              {
+                label: 'Стоматологическое лечение',
+                url: '/'
+              },
+              {
+                label: 'Косметическая стоматология',
+                url: '/'
+              },
+              {
+                label: 'Детская стоматология',
+                url: '/'
+              },
+            ]
+          ]
+        },
+        {
+          label: 'О клинике',
+          sublist: [
+            [
+              {
+                label: 'О нас',
+                url: '/'
+              },
+              {
+                label: 'Частые вопросы',
+                url: '/'
+              },
+              {
+                label: 'Лицензии и сертификаты',
+                url: '/'
+              },
+            ],
+            [
+              {
+                label: 'Правовые документы',
+                url: '/'
+              },
+              {
+                label: 'Вакансии',
+                url: '/'
+              },
+            ],
+          ]
+        },
+        {
+          list: [
+            {
+              label: 'Медиацентр',
+              url: '/'
+            },
+            {
+              label: 'Акции',
+              url: '/'
+            },
+            {
+              label: 'Врачи',
+              url: '/'
+            },
+            {
+              label: 'Контакты',
+              url: '/'
+            },
+            {
+              label: 'Отзывы',
+              url: '/'
+            },
+          ]
+        }
+      ],
       social: [
         {
           type: 'facebook',
@@ -29,12 +105,62 @@ class Footer extends Component {
           type: 'instagram',
           url: '/'
         },
-      ]
+      ],
+      companyInfo: {
+        startYear: '2008',
+        schedule: 'Ежедневно&nbsp;10.00&nbsp;&mdash; 21.00',
+      },
+      siteInfo: {
+        links: [
+          {
+            text: 'Карта сайта',
+            url: '/'
+          },
+          {
+            text: 'Политика конфиденциальности',
+            url: '/'
+          },
+        ]
+      }
     }
   }
 
   render () {
     const { className } = this.props
+
+    const mainNavContent = this.footerData.nav.map((item, index) => {
+      return (
+        <li className={css.navItem} key={index}>
+          {item.label &&
+          <p className={classnames(css.highlight, css.navLabel)}>
+            { item.label }
+          </p>
+          }
+          {item.sublist && item.sublist.map((arr, index) => (
+            <ul className={css.navSublist} key={index}>
+              {arr.map((item, index) => (
+                <li className={css.subItem} key={index}>
+                  <Link className={css.subLink} to={item.url}>
+                    { item.label }
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ))}
+          {item.list &&
+          <ul className={css.navSingles}>
+            {item.list.map((item, index) => (
+              <li className={css.navSingle} key={index}>
+                <Link className={classnames(css.highlight, css.navSingleLink)} to={item.url}>
+                  { item.label }
+                </Link>
+              </li>
+            ))}
+          </ul>
+          }
+        </li>
+      )
+    })
 
     const social = (
       <ul className={css.socialList}>
@@ -55,7 +181,7 @@ class Footer extends Component {
               icon = <IconInstagram className={css.iconSocial} />
               break
             default:
-              return
+              return null
           }
 
           return (
@@ -71,23 +197,61 @@ class Footer extends Component {
       </ul>
     )
 
+    const siteInfoLinks = this.footerData.siteInfo.links.map((item, index) => (
+      <li className={css.auxItem} key={index}>
+        <Link className={css.auxLink} to={item.url}>
+          { item.text }
+        </Link>
+      </li>
+    ))
+
     // TODO define which metrics do we use and apply it
     return (
       <footer className={classnames(css.footer, className)}>
-        <Container>
+        <Container className={css.wrapper}>
           <div className={css.top}>
-            { social }
+            <nav className={css.nav}>
+              <ul className={css.navList}>
+                { mainNavContent }
+              </ul>
+            </nav>
+            <div className={css.info}>
+              {this.footerData.companyInfo.schedule &&
+                <div className={css.workTime}>
+                  <p className={css.highlight}>
+                    Время работы
+                  </p>
+                  <span
+                    className={css.time}
+                    dangerouslySetInnerHTML={{ __html: this.footerData.companyInfo.schedule }}
+                  />
+                </div>
+              }
+              { social }
+            </div>
           </div>
           <div className={css.bottom}>
             <div className={css.copyright}>
               <p className={css.label}>
                 Разработано:
               </p>
-              <IconLogoCreator className={css.logo} />
+              <a href='/' className={css.copyrightLink}>
+                <IconLogoCreator className={css.logo} />
+              </a>
             </div>
+            <ul className={css.auxList}>
+              { siteInfoLinks }
+            </ul>
             <div className={css.counter}>
-              Space for counter
+              <div className={css.metrics}>
+                Some counter
+                <YMInitializer accounts={[31337]} options={{webvisor: true}} version='2' />
+              </div>
             </div>
+            <p
+              className={css.timeline}
+              dangerouslySetInnerHTML={{ __html: `&copy;${this.footerData.companyInfo.startYear} - ${new Date().getFullYear()}` }}
+            />
           </div>
         </Container>
       </footer>

@@ -21,7 +21,9 @@
     position: absolute;
     top: 100%;
     left: 0;
-    padding-top: 4.7rem
+    padding-top: 4.7rem;
+    width: 100%;
+    pointer-events: none;
   }
 
   .item {
@@ -72,11 +74,8 @@
     transition-duration: 0.3s;
   }
 
-  .wrapper {
-    pointer-events: none;
-  }
-
   .frame {
+    width: max-content;
     overflow: hidden;
   }
 
@@ -84,7 +83,6 @@
     @include resetList;
 
     padding: 2.5rem 3rem 3.1rem 3rem;
-    width: max-content;
     transform: translateY(-100%);
     transition-duration: 0.3s;
   }
