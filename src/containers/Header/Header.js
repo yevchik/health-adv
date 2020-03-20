@@ -136,12 +136,13 @@ class Header extends Component {
           <DesktopMenu
             data={this.headerData}
           />
-          <Button
-            className={css.btnRegister}
-            label='Записаться'
-            btnStyle='decorated'
-            onClick={() => {}}
-          />
+          <div className={css.btnRegister}>
+            <Button
+              label='Записаться'
+              btnStyle='decorated'
+              onClick={() => {}}
+            />
+          </div>
         </Container>
       </header>
     )

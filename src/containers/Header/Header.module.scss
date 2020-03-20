@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   background-color: $colorMainBg;
   z-index: 1;
 }
@@ -59,7 +59,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     background-color: transparent;
 
     &::before {
@@ -124,7 +124,7 @@
     width: 14.4rem;
   }
 
-  button.btnRegister {
+  .btnRegister {
     display: block;
     width: 21.7rem;
   }

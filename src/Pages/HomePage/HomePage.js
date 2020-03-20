@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import classnames from 'classnames'
-import Container from 'components/Grid/Container'
 import css from './HomePage.module.scss'
 import VideoBanner from 'Pages/HomePage/VideoBanner/VideoBanner'
 
@@ -10,9 +8,10 @@ class HomePage extends Component {
     this.homeData = {
       siteMainCaption: 'Стоматологическая клиника Patterson Dental',
       videoBanner: {
-        titleAdaptive: 'Стоматология для всех',
-        titleDesktop: 'Современная стоматология для всех',
-        background: '/assets/images/bg__video-banner.jpg'
+        sloganAdaptive: 'Стоматология<br/>для всех',
+        sloganDesktop: 'Современная стоматология для всех',
+        background: '/assets/images/bg__video-banner.jpg',
+        descriptor: 'Новейшее оборудование, опытные доктора, система внутреннего контроля качества услуг',
       },
     }
   }
