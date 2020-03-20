@@ -45,6 +45,11 @@ button.play {
   margin-top: 2.2rem;
 }
 
+.video {
+  width: 100%;
+  height: auto;
+}
+
 @media (min-width: $widthDesktopMin) {
   .sloganAdaptive {
     display: none;

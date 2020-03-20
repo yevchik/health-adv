@@ -2,7 +2,6 @@ import React from 'react'
 import classnames from 'classnames'
 import css from './Button.module.scss'
 import IconArrowRight from 'assets/icons/IconArrowRight'
-import IconPlay from 'assets/icons/IconPlay'
 
 const Button = ({ className, btnStyle = 'filled', label = '', handleClick }) => (
   <button

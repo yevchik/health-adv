@@ -1,0 +1,123 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+@keyframes contentDropDown {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes contentLiftUp {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes wrapperLiftUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+
+  90% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes wrapperDropDown {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(100vh);
+  }
+}
+
+.wrapper {
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  animation-name: wrapperLiftUp;
+  animation-fill-mode: forwards;
+  animation-duration: 0.6s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-font-main);
+    opacity: 0.5;
+  }
+}
+
+.container {
+  width: 100%;
+  animation-name: contentLiftUp;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.content {
+  position: relative;
+  font-size: 0;
+  box-shadow: 0 4rem 5rem rgba(0, 0, 0, 0.35);
+}
+
+.wrapperVisible {
+  animation-name: wrapperDropDown;
+  animation-fill-mode: both;
+  animation-duration: 0.6s;
+
+  .container {
+    animation-name: contentDropDown;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+  }
+}
+
+.btn {
+  @include resetButton;
+
+  position: absolute;
+  top: -4rem;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    stroke: var(--color-highlight-lightest);
+  }
+}

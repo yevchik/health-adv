@@ -12,6 +12,7 @@ class HomePage extends Component {
         sloganDesktop: 'Современная стоматология для всех',
         background: '/assets/images/bg__video-banner.jpg',
         descriptor: 'Новейшее оборудование, опытные доктора, система внутреннего контроля качества услуг',
+        modalVideo: '/assets/videos/demo_video_1920.mp4'
       },
     }
   }
