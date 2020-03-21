@@ -118,11 +118,9 @@ class VideoBanner extends Component {
           </div>
         </div>
         <Modal isVisible={isModalVisible} handleCloseModal={this.handleCloseModal}>
-          <div className={css.modal}>
-            <video className={css.video} controls autoPlay ref={this.setVideoRef}>
-              <source src={process.env.PUBLIC_URL + top.modalVideo} />
-            </video>
-          </div>
+          <video className={css.video} controls autoPlay ref={this.setVideoRef}>
+            <source src={process.env.PUBLIC_URL + top.modalVideo} />
+          </video>
         </Modal>
       </section>
     )
