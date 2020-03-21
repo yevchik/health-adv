@@ -36,20 +36,24 @@
   .label {
     margin-top: 0.9rem;
   }
+}
 
-  &:hover {
-    .icon {
-      :global {
-        .circle__outer {
-          stroke: var(--color-highlight-buttons)
-        }
+@media (min-width: $widthDesktopMin) {
+  .button {
+    &:hover {
+      .icon {
+        :global {
+          .circle__outer {
+            stroke: var(--color-highlight-buttons)
+          }
 
-        .circle__inner {
-          fill: var(--color-highlight-buttons);
-        }
+          .circle__inner {
+            fill: var(--color-highlight-buttons);
+          }
 
-        .icon__play {
-          fill: var(--color-highlight-lightest);
+          .icon__play {
+            fill: var(--color-highlight-lightest);
+          }
         }
       }
     }

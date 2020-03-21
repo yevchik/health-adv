@@ -1,6 +1,10 @@
-import { SET_CURRENT_FONT_SIZE } from 'store/actions/actionTypes'
+import {
+  SET_CURRENT_FONT_SIZE,
+  SET_USER_DEVICE_TYPE
+} from 'store/actions/actionTypes'
 
 const initialState = {
+  deviceType: 'desktop',
   config: {
     desktop: {
       baseSize: 10,
@@ -27,6 +31,11 @@ export default function ElasticAdaptive (state = initialState, action) {
       return {
         ...state,
         curFontSize: action.payload
+      }
+    case SET_USER_DEVICE_TYPE:
+      return {
+        ...state,
+        deviceType: action.payload
       }
     default:
       return state
