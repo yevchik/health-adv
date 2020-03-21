@@ -15,7 +15,7 @@ const mapStateToProps = state => {
 class VideoBanner extends Component {
   constructor (props) {
     super(props)
-
+    // For video time reset on modal open
     this.videoRef = null
   }
 
@@ -48,11 +48,29 @@ class VideoBanner extends Component {
 
   render () {
     const { isModalVisible } = this.state
-    const { sloganAdaptive, sloganDesktop, background, descriptor, modalVideo } = this.props
+    const {
+      sloganAdaptive,
+      sloganDesktop,
+      backgroundMobile,
+      backgroundTablet,
+      descriptor,
+      modalVideo,
+      type
+    } = this.props
+
+    // desktop has no bg image - only video, mobile and tablet have different image sources for
+    // proper data size management
+    let background = 'none'
+
+    if (type !== 'desktop') {
+      background = type === 'mobile'
+        ? `url("${ process.env.PUBLIC_URL + backgroundMobile }")`
+        : `url("${ process.env.PUBLIC_URL + backgroundTablet }")`
+    }
 
     return (
       <section>
-        <div className={css.bg} style={{ backgroundImage: `url("${ process.env.PUBLIC_URL + background }")` }}>
+        <div className={css.bg} style={{ backgroundImage: background }}>
           <ButtonPlay
             className={css.play}
             label='Видео о клинике'
