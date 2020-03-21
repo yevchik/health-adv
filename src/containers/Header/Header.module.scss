@@ -88,6 +88,7 @@
 @media (min-width: $widthDesktopMin) {
   .header {
     position: relative;
+    z-index: 2;
 
     &::before {
       background-color: var(--color-font-main);

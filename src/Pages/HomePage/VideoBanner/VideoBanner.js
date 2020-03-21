@@ -6,6 +6,7 @@ import Button from 'components/Button/Button'
 import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
 import Modal from 'components/Modal/Modal'
 import IconDots from 'assets/icons/IconDots'
+import classnames from 'classnames'
 
 const mapStateToProps = state => {
   return {
@@ -82,16 +83,14 @@ class VideoBanner extends Component {
                   { top.previewLabel }
                 </h2>
               }
-              <div
-                className={css.preview}
-                style={{ backgroundImage: type === 'desktop' ? `url("${ process.env.PUBLIC_URL + top.modalVideoPreview }")` : 'none' }}
-              >
-                <ButtonPlay
-                  className={css.play}
-                  label={type === 'desktop' ? '' : 'Видео о клинике'}
-                  handleClick={this.handleOpenModal}
-                />
-              </div>
+              <ButtonPlay
+                className={classnames(css.play, {
+                  [css.preview]: type === 'desktop'
+                })}
+                background={type === 'desktop' ? `url("${ process.env.PUBLIC_URL + top.modalVideoPreview }")` : 'none'}
+                label={type === 'desktop' ? '' : 'Видео о клинике'}
+                handleClick={this.handleOpenModal}
+              />
             </div>
           </Container>
           <div className={css.content}>
