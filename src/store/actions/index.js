@@ -1,3 +1,4 @@
 export {
-  setFontSize
+  setFontSize,
+  setDeviceType
 } from './elasticAdaptive'

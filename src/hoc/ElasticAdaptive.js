@@ -1,28 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { setFontSize } from 'store/actions'
+import { setDeviceType, setFontSize } from 'store/actions'
 
 function mapStateToProps (state) {
   return {
-    state: state.elastic.config
+    state: state.elastic.config,
+    type: state.elastic.deviceType
   }
 }
 function mapDispatchToProps (dispatch) {
   return {
-    setFontSize: (data) => dispatch(setFontSize(data))
+    setFontSize: data => dispatch(setFontSize(data)),
+    setDeviceType: type => dispatch(setDeviceType(type))
   }
 }
 
 class ElasticAdaptive extends React.Component {
- constructor (props) {
-   super(props)
-   this.state = {
-     type: this.getDeviceType(),
-     width: document.body.clientWidth || window.innerWidth || document.documentElement.clientWidth,
-   }
- }
-
   componentDidMount () {
     this.changeSize()
     window.addEventListener('resize', this.changeSize)
@@ -33,34 +27,32 @@ class ElasticAdaptive extends React.Component {
     window.removeEventListener('orientationchange', this.changeSize)
   }
 
+  componentDidUpdate (prevProps) {
+    if (prevProps.type !== this.props.type) {
+      this.changeSize()
+    }
+  }
+
   getDeviceType = () => {
     let width = document.body.clientWidth || window.innerWidth || document.documentElement.clientWidth
 
     if (width >= 1280) {
-      return 'desktop'
+      this.props.setDeviceType('desktop')
     }
 
     if (width < 1280 && width >= 768) {
-      return 'tablet'
+      this.props.setDeviceType('tablet')
     }
 
     if (width < 768) {
-      return 'mobile'
+      this.props.setDeviceType('mobile')
     }
   }
 
-  getContentType = () => {
-    let width = document.body.clientWidth || window.innerWidth || document.documentElement.clientWidth
-
-    this.setState({
-      type: this.getDeviceType(),
-      width: width
-    })
-  }
-
   changeSize = () => {
-    this.getContentType()
-    const { type, width } = this.state
+    this.getDeviceType()
+    let width = document.body.clientWidth || window.innerWidth || document.documentElement.clientWidth
+    const { type } = this.props
     const html = document.documentElement
     const { widthLimit, baseWidth } = this.props.state[type]
     let { baseSize } = this.props.state[type]
