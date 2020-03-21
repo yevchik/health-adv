@@ -13,8 +13,25 @@ const mapStateToProps = state => {
 }
 
 class VideoBanner extends Component {
+  constructor (props) {
+    super(props)
+
+    this.videoRef = null
+  }
+
   state = {
     isModalVisible: false
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    // reset video playtime in modal when it opens
+    if (prevState.isModalVisible !== this.state.isModalVisible && this.state.isModalVisible) {
+      this.videoRef.load()
+    }
+  }
+
+  setVideoRef = el => {
+    this.videoRef = el
   }
 
   handleOpenModal = () => {
@@ -63,7 +80,7 @@ class VideoBanner extends Component {
         </div>
         <Modal isVisible={isModalVisible} handleCloseModal={this.handleCloseModal}>
           <div className={css.modal}>
-            <video className={css.video} controls autoPlay>
+            <video className={css.video} controls autoPlay ref={this.setVideoRef}>
               <source src={process.env.PUBLIC_URL + modalVideo} />
             </video>
           </div>
