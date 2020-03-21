@@ -8,12 +8,20 @@ class HomePage extends Component {
     this.homeData = {
       siteMainCaption: 'Стоматологическая клиника Patterson Dental',
       videoBanner: {
-        sloganAdaptive: 'Стоматология для всех',
-        sloganDesktop: 'Современная стоматология для всех',
-        backgroundMobile: '/assets/images/bg__video-banner@mobile.jpg',
-        backgroundTablet: '/assets/images/bg__video-banner@tablet.jpg',
-        descriptor: 'Новейшее оборудование, опытные доктора, система внутреннего контроля качества услуг',
-        modalVideo: '/assets/videos/demo_video_1920.mp4'
+        top: {
+          slogan: 'Patterson Dental&nbsp;&mdash;<br>качественная стоматология<br>для Вас',
+          previewLabel: 'Посмотрите видео о клинике',
+          modalVideo: '/assets/videos/demo_video_1920.mp4',
+          modalVideoPreview: '/assets/images/video__preview.jpg',
+        },
+        bottom: {
+          sloganAdaptive: 'Стоматология для всех',
+          sloganDesktop: 'Современная<br>стоматология<br>для всех',
+          backgroundMobile: '/assets/images/bg__video-banner@mobile.jpg',
+          backgroundTablet: '/assets/images/bg__video-banner@tablet.jpg',
+          descriptor: 'Новейшее оборудование, опытные доктора,<br>система внутреннего контроля качества услуг',
+          videoBg: '/assets/videos/demo_video_1920_2.mp4'
+        }
       },
     }
   }

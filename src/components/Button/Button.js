@@ -8,12 +8,13 @@ const Button = ({ className, btnStyle = 'filled', label = '', handleClick }) => 
     className={classnames(css.button, className, {
       [css.buttonFilled]: btnStyle === 'filled',
       [css.buttonDecorated]: btnStyle === 'decorated',
+      [css.buttonGradient]: btnStyle === 'gradient',
     })}
     type='button'
     onClick={handleClick}
   >
     { label }
-    {btnStyle === 'decorated' &&
+    {btnStyle !== 'filled' &&
       <IconArrowRight className={css.icon} />
     }
   </button>

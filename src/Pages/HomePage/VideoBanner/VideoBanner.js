@@ -5,6 +5,7 @@ import Container from 'components/Grid/Container'
 import Button from 'components/Button/Button'
 import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
 import Modal from 'components/Modal/Modal'
+import IconDots from 'assets/icons/IconDots'
 
 const mapStateToProps = state => {
   return {
@@ -17,6 +18,7 @@ class VideoBanner extends Component {
     super(props)
     // For video time reset on modal open
     this.videoRef = null
+    this.videoBgRef = null
   }
 
   state = {
@@ -32,6 +34,9 @@ class VideoBanner extends Component {
 
   setVideoRef = el => {
     this.videoRef = el
+  }
+  setVideoBgRef = el => {
+    this.videoBgRef = el
   }
 
   handleOpenModal = () => {
@@ -49,12 +54,8 @@ class VideoBanner extends Component {
   render () {
     const { isModalVisible } = this.state
     const {
-      sloganAdaptive,
-      sloganDesktop,
-      backgroundMobile,
-      backgroundTablet,
-      descriptor,
-      modalVideo,
+      top,
+      bottom,
       type
     } = this.props
 
@@ -64,30 +65,51 @@ class VideoBanner extends Component {
 
     if (type !== 'desktop') {
       background = type === 'mobile'
-        ? `url("${ process.env.PUBLIC_URL + backgroundMobile }")`
-        : `url("${ process.env.PUBLIC_URL + backgroundTablet }")`
+        ? `url("${ process.env.PUBLIC_URL + bottom.backgroundMobile }")`
+        : `url("${ process.env.PUBLIC_URL + bottom.backgroundTablet }")`
     }
 
     return (
       <section>
         <div className={css.bg} style={{ backgroundImage: background }}>
-          <ButtonPlay
-            className={css.play}
-            label='Видео о клинике'
-            handleClick={this.handleOpenModal}
-          />
+          <Container className={css.top}>
+            {type === 'desktop' &&
+              <p className={css.mainSlogan} dangerouslySetInnerHTML={{ __html: top.slogan }} />
+            }
+            <div className={css.previewWrapper}>
+              {type === 'desktop' &&
+                <h2 className={css.previewLabel}>
+                  { top.previewLabel }
+                </h2>
+              }
+              <div
+                className={css.preview}
+                style={{ backgroundImage: type === 'desktop' ? `url("${ process.env.PUBLIC_URL + top.modalVideoPreview }")` : 'none' }}
+              >
+                <ButtonPlay
+                  className={css.play}
+                  label={type === 'desktop' ? '' : 'Видео о клинике'}
+                  handleClick={this.handleOpenModal}
+                />
+              </div>
+            </div>
+          </Container>
           <div className={css.content}>
+            {type === 'desktop' &&
+              <video className={css.videoBg} muted='muted' autoPlay='autoplay' loop='loop' ref={this.setVideoBgRef} preload='preload'>
+                <source src={process.env.PUBLIC_URL + bottom.videoBg} />
+              </video>
+            }
             <Container className={css.container}>
-              <p className={css.sloganAdaptive} dangerouslySetInnerHTML={{ __html: sloganAdaptive }} />
-              <p className={css.sloganDesktop}>
-                { sloganDesktop }
-              </p>
-              <p className={css.descriptor}>
-                { descriptor }
-              </p>
+              {type === 'desktop' && <IconDots className={css.dots} />}
+              <div className={css.textContent}>
+                <p className={css.sloganAdaptive} dangerouslySetInnerHTML={{ __html: bottom.sloganAdaptive }} />
+                <p className={css.sloganDesktop} dangerouslySetInnerHTML={{ __html: bottom.sloganDesktop }} />
+                <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: bottom.descriptor }} />
+              </div>
               <div className={css.btn}>
                 <Button
-                  btnStyle='decorated'
+                  btnStyle={type === 'desktop' ? 'gradient' : 'decorated'}
                   type='button'
                   onClick={() => {}}
                   label='Записаться'
@@ -99,7 +121,7 @@ class VideoBanner extends Component {
         <Modal isVisible={isModalVisible} handleCloseModal={this.handleCloseModal}>
           <div className={css.modal}>
             <video className={css.video} controls autoPlay ref={this.setVideoRef}>
-              <source src={process.env.PUBLIC_URL + modalVideo} />
+              <source src={process.env.PUBLIC_URL + top.modalVideo} />
             </video>
           </div>
         </Modal>
