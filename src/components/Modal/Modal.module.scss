@@ -94,7 +94,7 @@
 .wrapperVisible {
   animation-name: wrapperDropDown;
   animation-fill-mode: both;
-  animation-duration: 0.6s;
+  animation-duration: 0.3s;
 
   .container {
     animation-name: contentDropDown;
@@ -105,7 +105,7 @@
 
 .wrapperClosing {
   animation-name: wrapperLiftUp;
-  animation-fill-mode: forwards;
+  animation-fill-mode: both;
   animation-duration: 0.6s;
 }
 

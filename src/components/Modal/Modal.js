@@ -18,10 +18,12 @@ class Modal extends Component {
 
   componentDidMount () {
     this.wrapperRef.addEventListener('click', this.handleClickWrapper)
+    document.addEventListener('keydown', this.handleEscPress)
   }
 
   componentWillUnmount () {
     this.wrapperRef.removeEventListener('click', this.handleClickWrapper)
+    document.removeEventListener('keydown', this.handleEscPress)
   }
 
   UNSAFE_componentWillReceiveProps (nextProps, nextContext) {
@@ -42,9 +44,23 @@ class Modal extends Component {
 
   handleClickWrapper = evt => {
     if (!this.contentRef.contains(evt.target)) {
-      this.props.handleCloseModal()
+      this.closeModal()
     }
   }
+
+  handleEscPress = evt => {
+    if (evt.keyCode === 27 && this.props.isVisible) {
+      this.closeModal()
+    }
+  }
+
+  closeModal = () => {
+    this.setState({
+      isClosing: true
+    })
+    this.props.handleCloseModal()
+  }
+
 
   render () {
     const { isVisible, children, handleCloseModal } = this.props
@@ -53,7 +69,7 @@ class Modal extends Component {
     return (
       <div
         className={classnames(css.wrapper, {
-          [css.wrapperVisible]: isVisible,
+          [css.wrapperVisible]: isVisible && !isClosing,
           [css.wrapperClosing]: isClosing
         })}
         ref={this.setWrapperRef}
@@ -62,12 +78,7 @@ class Modal extends Component {
           <div className={css.content} ref={this.setContentRef}>
             <button
               className={css.btn}
-              onClick={() => {
-                this.setState({
-                  isClosing: true
-                })
-                handleCloseModal()
-              }}
+              onClick={() => this.closeModal()}
             >
               <IconClose className={css.icon} />
               Закрыть модальное окно

@@ -32,9 +32,7 @@ class HomePage extends Component {
         <h1 className='visuallyHidden'>
           { this.homeData.siteMainCaption }
         </h1>
-        <div className={css.wrapper}>
-          <VideoBanner {...this.homeData.videoBanner} />
-        </div>
+        <VideoBanner {...this.homeData.videoBanner} />
       </main>
     )
   }
