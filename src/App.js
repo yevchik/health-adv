@@ -6,6 +6,11 @@ import Routes from 'Pages/Routes'
 import Header from 'containers/Header/Header'
 import Footer from 'containers/Footer/Footer'
 
+// importing images folder from assets to avoid eject and additional setups
+export const images = require.context('assets/images', true)
+export const videos = require.context('assets/videos', true)
+
+
 function App() {
   return (
     <ElasticAdaptive>
