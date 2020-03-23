@@ -2,9 +2,11 @@
 @import "styles/variables";
 
 .container {
+  margin-top: 4.7rem;
+
   :global {
     .swiper-container-horizontal {
-      padding-bottom: 2.2rem;
+      padding-bottom: 2.3rem;
     }
 
     .swiper-slide {
@@ -34,5 +36,25 @@
         }
       }
     }
+  }
+}
+
+.ads {
+  margin-top: 2rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .container {
+    margin-top: 5rem;
+
+    :global {
+      .swiper-container-horizontal {
+        padding-bottom: 2.6rem;
+      }
+    }
+  }
+
+  .ads {
+    margin-top: 2.2rem;
   }
 }

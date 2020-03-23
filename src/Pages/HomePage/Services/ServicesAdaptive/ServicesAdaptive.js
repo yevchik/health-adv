@@ -5,6 +5,7 @@ import Container from 'components/Grid/Container'
 import 'swiper/css/swiper.min.css'
 import Swiper from 'react-id-swiper'
 import AdvCard from 'containers/Header/components/AdvCart/AdvCard'
+import Heading from 'components/Heading/Heading'
 
 class ServicesAdaptive extends Component {
   swiper = null
@@ -50,9 +51,7 @@ class ServicesAdaptive extends Component {
     return (
       <section>
         <Container className={css.container}>
-          <h2 className={css.title}>
-            { title }
-          </h2>
+          <Heading content={title} />
           <div className={css.ads}>
             <Swiper {...params} getSwiper={node => { this.swiper = node }}>
               {ads.map((item, index) => (

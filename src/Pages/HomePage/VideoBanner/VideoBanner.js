@@ -7,6 +7,7 @@ import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
 import Modal from 'components/Modal/Modal'
 import IconDots from 'assets/icons/IconDots'
 import classnames from 'classnames'
+import { images, videos } from 'App'
 
 const mapStateToProps = state => {
   return {
@@ -66,8 +67,8 @@ class VideoBanner extends Component {
 
     if (type !== 'desktop') {
       background = type === 'mobile'
-        ? `url("${ process.env.PUBLIC_URL + bottom.backgroundMobile }")`
-        : `url("${ process.env.PUBLIC_URL + bottom.backgroundTablet }")`
+        ? `url("${ images('./' + bottom.backgroundMobile) }")`
+        : `url("${ images('./' + bottom.backgroundTablet) }")`
     }
 
     return (
@@ -87,7 +88,7 @@ class VideoBanner extends Component {
                 className={classnames(css.play, {
                   [css.preview]: type === 'desktop'
                 })}
-                background={type === 'desktop' ? `url("${ process.env.PUBLIC_URL + top.modalVideoPreview }")` : 'none'}
+                background={type === 'desktop' ? `url("${ images('./' + top.modalVideoPreview) }")` : 'none'}
                 label={type === 'desktop' ? '' : 'Видео о клинике'}
                 handleClick={this.handleOpenModal}
               />
@@ -96,7 +97,7 @@ class VideoBanner extends Component {
           <div className={css.content}>
             {type === 'desktop' &&
               <video className={css.videoBg} muted='muted' autoPlay='autoplay' loop='loop' ref={this.setVideoBgRef} preload='preload'>
-                <source src={process.env.PUBLIC_URL + bottom.videoBg} />
+                <source src={videos('./' + bottom.videoBg)} />
               </video>
             }
             <Container className={css.container}>
@@ -119,7 +120,7 @@ class VideoBanner extends Component {
         </div>
         <Modal isVisible={isModalVisible} handleCloseModal={this.handleCloseModal}>
           <video className={css.video} controls autoPlay ref={this.setVideoRef}>
-            <source src={process.env.PUBLIC_URL + top.modalVideo} />
+            <source src={videos('./' + top.modalVideo)} />
           </video>
         </Modal>
       </section>
