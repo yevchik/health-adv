@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import css from './HomePage.module.scss'
+// import css from './HomePage.module.scss'
 import VideoBanner from 'Pages/HomePage/VideoBanner/VideoBanner'
+import Services from 'Pages/HomePage/Services/Services'
 
 class HomePage extends Component {
   constructor (props) {
@@ -19,10 +20,109 @@ class HomePage extends Component {
           sloganDesktop: 'Современная<br>стоматология<br>для всех',
           backgroundMobile: '/assets/images/bg__video-banner@mobile.jpg',
           backgroundTablet: '/assets/images/bg__video-banner@tablet.jpg',
-          descriptor: 'Новейшее оборудование, опытные доктора,<br>система внутреннего контроля качества услуг',
+          descriptor: 'Новейшее оборудование, опытные доктора, система внутреннего контроля качества услуг',
           videoBg: '/assets/videos/demo_video_1920_2.mp4'
         }
       },
+      services: {
+        title: 'Услуги',
+        list: [
+          {
+            category: 'Стоматологическое лечение',
+            sublist: [
+              {
+                text: 'Лечение кариеса'
+              },
+              {
+                text: 'Лечение каналов под микроскопом<br>(пульпит, периодонтит)'
+              },
+              {
+                text: 'Лечение кариеса'
+              },
+              {
+                text: 'Лечение каналов под микроскопом<br>(пульпит, периодонтит)'
+              },
+              {
+                text: 'Лечение кариеса'
+              },
+            ]
+          },
+          {
+            category: 'Косметическая стоматология',
+            sublist: [
+              {
+                text: 'Лечение кариеса'
+              },
+              {
+                text: 'Лечение каналов под микроскопом<br>(пульпит, периодонтит)'
+              },
+              {
+                text: 'Лечение кариеса'
+              },
+              {
+                text: 'Лечение каналов под микроскопом<br>(пульпит, периодонтит)'
+              },
+              {
+                text: 'Лечение кариеса'
+              },
+            ]
+          },
+          {
+            category: 'Детская стоматология',
+            sublist: [
+              {
+                text: 'Лечение кариеса'
+              },
+              {
+                text: 'Лечение каналов под микроскопом<br>(пульпит, периодонтит)'
+              },
+              {
+                text: 'Лечение кариеса'
+              },
+              {
+                text: 'Лечение каналов под микроскопом<br>(пульпит, периодонтит)'
+              },
+              {
+                text: 'Лечение кариеса'
+              },
+            ]
+          },
+        ],
+        ads: [
+          {
+            type: 'teeth',
+            url: '/',
+            color: '#f4785d',
+            duration: 'Акция до 24 января',
+            title: 'Керамические виниры',
+            price: 'от <span>20 000</span> рублей'
+          },
+          {
+            type: 'implant-single',
+            url: '/',
+            color: '#c58ddf',
+            duration: 'Акция до 24 января',
+            title: 'Имплант с&nbsp;установкой',
+            price: 'от <span>95 000</span> рублей'
+          },
+          {
+            type: 'implants-jaw',
+            url: '/',
+            color: '#c58ddf',
+            duration: 'Акция до 24 января',
+            title: 'Все зубы сразу «под ключ»',
+            price: 'от <span>120 000</span> рублей'
+          },
+          {
+            type: 'implant-single',
+            url: '/',
+            color: '#7486e6',
+            duration: 'Акция до 24 января',
+            title: 'Имплант с&nbsp;установкой',
+            price: 'от <span>95 000</span> рублей'
+          },
+        ]
+      }
     }
   }
 
@@ -33,6 +133,7 @@ class HomePage extends Component {
           { this.homeData.siteMainCaption }
         </h1>
         <VideoBanner {...this.homeData.videoBanner} />
+        <Services {...this.homeData.services} />
       </main>
     )
   }

@@ -198,6 +198,7 @@ button.play {
   .descriptor {
     @include h5($colorMainBg);
 
+    padding-right: 20%;
     opacity: 1;
   }
 
