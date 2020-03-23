@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1f48d9305657fc78ce34db4d90be729e",
+    "revision": "468269d61f539338a8a18386e59711d4",
     "url": "/health-adv/index.html"
   },
   {
-    "revision": "c37dc8500023f91cf551",
-    "url": "/health-adv/static/css/2.764ccc25.chunk.css"
+    "revision": "6ad4d9ff9852daf3b4f6",
+    "url": "/health-adv/static/css/2.2b3104b0.chunk.css"
   },
   {
-    "revision": "0922530ac8c4a8ec2ad6",
-    "url": "/health-adv/static/css/main.9f46ccf5.chunk.css"
+    "revision": "e144b3e7e2620e368ac9",
+    "url": "/health-adv/static/css/main.091a1c48.chunk.css"
   },
   {
-    "revision": "c37dc8500023f91cf551",
-    "url": "/health-adv/static/js/2.3d2ac79e.chunk.js"
+    "revision": "6ad4d9ff9852daf3b4f6",
+    "url": "/health-adv/static/js/2.33841edd.chunk.js"
   },
   {
     "revision": "eff3b4d7e4bb0087ce53139cd90bc880",
-    "url": "/health-adv/static/js/2.3d2ac79e.chunk.js.LICENSE.txt"
+    "url": "/health-adv/static/js/2.33841edd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0922530ac8c4a8ec2ad6",
-    "url": "/health-adv/static/js/main.01570772.chunk.js"
+    "revision": "e144b3e7e2620e368ac9",
+    "url": "/health-adv/static/js/main.3bd08f0e.chunk.js"
   },
   {
     "revision": "f0fa69cd6c19926e7858",
@@ -58,5 +58,29 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "23488bf2168305ed74a3b4510664894a",
     "url": "/health-adv/static/media/Montserrat-Regular.23488bf2.woff2"
+  },
+  {
+    "revision": "376d7d0c17ce86130461fd1a6d440385",
+    "url": "/health-adv/static/media/bg__video-banner@mobile.376d7d0c.jpg"
+  },
+  {
+    "revision": "f9e76d20e1b255225890ea4c179f6c95",
+    "url": "/health-adv/static/media/bg__video-banner@tablet.f9e76d20.jpg"
+  },
+  {
+    "revision": "51a9314d6fd496d48127045a5b7bec64",
+    "url": "/health-adv/static/media/demo_video_1920.51a9314d.mp4"
+  },
+  {
+    "revision": "0b24130c8a03f97de427d78620e3d40e",
+    "url": "/health-adv/static/media/demo_video_1920_2.0b24130c.mp4"
+  },
+  {
+    "revision": "c4e74843f4c74bb53b544321eabc5667",
+    "url": "/health-adv/static/media/implant.c4e74843.png"
+  },
+  {
+    "revision": "050bfae6a58ff6337af750f7b9eee925",
+    "url": "/health-adv/static/media/jaw.050bfae6.png"
   }
 ]);
