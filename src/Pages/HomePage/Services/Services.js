@@ -6,7 +6,6 @@ import ServicesDesktop from 'Pages/HomePage/Services/ServicesDesktop/ServicesDes
 const mapStateToProps = state => {
   return {
     type: state.elastic.deviceType,
-    fontSize: state.elastic.curFontSize
   }
 }
 

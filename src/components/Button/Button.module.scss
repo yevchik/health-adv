@@ -106,13 +106,13 @@
   }
 }
 
-@media (max-width: $widthMobileMax) {
+@media (max-width: $widthTabletMax) {
   .button{
     &.buttonDecorated {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2rem 2.3rem 2rem 3rem;
+        padding: 1.9rem 2.3rem 1.5rem 3rem;
         text-align: left;
 
       .icon {

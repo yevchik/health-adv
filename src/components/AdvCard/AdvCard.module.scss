@@ -1,5 +1,5 @@
-@import "styles/variables";
-@import "styles/mixins";
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 .link {
   position: relative;
@@ -18,7 +18,7 @@
       right: 0;
       width: 16rem;
       height: 9.9rem;
-      background-image: url("../../../../assets/images/teeth.png");
+      background-image: url("../../assets/images/teeth.png");
       background-size: cover;
       z-index: 1;
     }
@@ -32,7 +32,7 @@
       right: 0;
       width: 16rem;
       height: 9.9rem;
-      background-image: url("../../../../assets/images/implant.png");
+      background-image: url("../../assets/images/implant.png");
       background-size: cover;
       z-index: 1;
     }
@@ -46,7 +46,7 @@
       right: 0;
       width: 11rem;
       height: 12.3rem;
-      background-image: url("../../../../assets/images/jaw.png");
+      background-image: url("../../assets/images/jaw.png");
       background-size: cover;
       z-index: 1;
     }
