@@ -63,7 +63,7 @@ class Modal extends Component {
 
 
   render () {
-    const { isVisible, children, handleCloseModal } = this.props
+    const { isVisible, children } = this.props
     const { isClosing } = this.state
 
     return (

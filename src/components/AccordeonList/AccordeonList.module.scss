@@ -1,0 +1,135 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.list {
+  @include resetList;
+
+  padding-top: 1.7rem;
+}
+
+.item {
+  &:not(:first-of-type) {
+    margin-top: 0.5rem;
+  }
+
+  &:not(:last-of-type) {
+    .btn {
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+.trigger {
+  @include resetButton;
+  @include capitals-bold(var(--color-font-main));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2rem 1.6rem 2.4rem;
+  width: 100%;
+  min-height: 7.6rem;
+  background-color: var(--color-highlight-lightest);
+}
+
+.triggerOpened {
+  .icon {
+    :global {
+      .plus-vertical {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.label {
+  width: 19rem;
+  text-align: left;
+}
+
+.icon {
+  width: 1.6rem;
+  fill: var(--color-font-main);
+
+  :global {
+    .plus-vertical {
+      transition-duration: 0.3s;
+      transform-origin: center;
+      transform: rotate(0);
+    }
+  }
+}
+
+.sublist {
+  @include resetList;
+
+  padding: 2.3rem 0 2.1rem 0;
+}
+
+.subitem {
+  @include regular(var(--color-font-main));
+
+  position: relative;
+  padding-left: 1.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(2.8rem / 2 - 0.5rem / 2);
+    left: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--color-highlight-buttons);
+    border-radius: 50%;
+  }
+
+  &:not(:first-of-type) {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .list {
+    padding-top: 4rem;
+  }
+
+  .item {
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+    }
+
+    &:not(:last-of-type) {
+      .btn {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .trigger {
+    padding: 1.9rem 1.6rem 1.8rem 1.6rem;
+    min-height: 5.7rem;
+  }
+
+  .label {
+    width: 70%;
+    text-align: left;
+  }
+
+  .icon {
+    width: 1.3rem;
+  }
+
+  .sublist {
+    padding: 2rem 0 2.5rem 0;
+  }
+
+  .subitem {
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+    }
+  }
+
+  .btn {
+    width: 25.5rem;
+  }
+}

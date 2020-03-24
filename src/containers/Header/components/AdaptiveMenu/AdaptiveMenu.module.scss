@@ -2,14 +2,13 @@
 @import "styles/mixins";
 
 .wrapper {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   display: flex;
   width: 100vw;
   min-height: 100vh;
   pointer-events: none;
-  z-index: 2;
 
   &::before {
     content: "";

@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import css from './AdvCard.module.scss'
+import css from 'components/AdvCard/AdvCard.module.scss'
 import { Link } from 'react-router-dom'
 import IconArrowRight from 'assets/icons/IconArrowRight'
 import IconDotsBg from 'assets/icons/IconDotsBg'
