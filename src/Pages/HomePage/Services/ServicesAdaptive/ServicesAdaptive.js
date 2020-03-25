@@ -7,10 +7,10 @@ import AccordeonList from 'components/AccordeonList/AccordeonList'
 
 class ServicesAdaptive extends Component {
   render () {
-    const { title, list, ads } = this.props
+    const { className, title, list, ads } = this.props
 
     return (
-      <section>
+      <section className={className}>
         <Container className={css.container}>
           <Heading content={title} />
           <PromoList className={css.ads} data={ads} />

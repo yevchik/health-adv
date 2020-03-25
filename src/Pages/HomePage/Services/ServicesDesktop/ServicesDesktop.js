@@ -57,7 +57,7 @@ class ServicesDesktop extends Component {
   }
 
   render () {
-    const { title, list, ads } = this.props
+    const { className, title, list, ads } = this.props
 
     const tabs = list.map((item, index) => (
       <button
@@ -88,7 +88,7 @@ class ServicesDesktop extends Component {
     ))
 
     return (
-      <section>
+      <section className={className}>
         <Container className={css.container}>
           <Heading content={title} />
           <div className={css.tabs}>

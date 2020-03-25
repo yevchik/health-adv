@@ -33,25 +33,23 @@ class ElasticAdaptive extends React.Component {
     }
   }
 
-  getDeviceType = () => {
-    let width = document.body.clientWidth || window.innerWidth || document.documentElement.clientWidth
-
-    if (width >= 1280) {
+  getDeviceType = width => {
+    if (width >= 1280 && this.props.type !== 'desktop') {
       this.props.setDeviceType('desktop')
     }
 
-    if (width < 1280 && width >= 768) {
+    if (width < 1280 && width >= 768 && this.props.type !== 'tablet') {
       this.props.setDeviceType('tablet')
     }
 
-    if (width < 768) {
+    if (width < 768 && this.props.type !== 'mobile') {
       this.props.setDeviceType('mobile')
     }
   }
 
   changeSize = () => {
-    this.getDeviceType()
-    let width = document.body.clientWidth || window.innerWidth || document.documentElement.clientWidth
+    let width = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth
+    this.getDeviceType(width)
     const { type } = this.props
     const html = document.documentElement
     const { widthLimit, baseWidth } = this.props.state[type]

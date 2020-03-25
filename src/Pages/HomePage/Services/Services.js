@@ -1,22 +1,15 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import ServicesAdaptive from 'Pages/HomePage/Services/ServicesAdaptive/ServicesAdaptive'
 import ServicesDesktop from 'Pages/HomePage/Services/ServicesDesktop/ServicesDesktop'
+import css from './Services.module.scss'
 
-const mapStateToProps = state => {
-  return {
-    type: state.elastic.deviceType,
-  }
+const Services = props => {
+  return (
+    <>
+      <ServicesDesktop {...props} className={css.desktop} />
+      <ServicesAdaptive {...props} className={css.adaptive} />
+    </>
+  )
 }
 
-class Services extends Component {
-  render () {
-    const { type } = this.props
-
-    return type === 'desktop'
-      ? <ServicesDesktop {...this.props} />
-      : <ServicesAdaptive {...this.props} />
-  }
-}
-
-export default connect(mapStateToProps)(Services)
+export default Services

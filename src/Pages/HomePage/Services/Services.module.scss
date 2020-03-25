@@ -1,0 +1,19 @@
+@import "styles/variables";
+
+.adaptive {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: $widthDesktopMin) {
+  .adaptive {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+}
