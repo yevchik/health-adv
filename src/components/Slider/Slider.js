@@ -60,7 +60,6 @@ class Slider extends Component {
           this.swiper.slides.css('width', '')
         },
         slideChange: () => {
-          console.log(this.swiper.activeIndex)
           this.setState({
             activeIndex: this.swiper.activeIndex
           })
