@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ServicesAdaptive from 'Pages/HomePage/Services/ServicesAdaptive/ServicesAdaptive'
 import ServicesDesktop from 'Pages/HomePage/Services/ServicesDesktop/ServicesDesktop'
 import css from './Services.module.scss'

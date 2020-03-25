@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import css from './HomePage.module.scss'
 import VideoBanner from 'Pages/HomePage/VideoBanner/VideoBanner'
 import Services from 'Pages/HomePage/Services/Services'
+import ReviewBanner from 'Pages/HomePage/ReviewBanner/ReviewBanner'
 
 class HomePage extends Component {
   constructor (props) {
@@ -123,6 +124,16 @@ class HomePage extends Component {
             price: 'от <span>95 000</span> рублей'
           },
         ]
+      },
+      reviewBanner: {
+        bgImages: {
+          mobile: 'review-banner__bg@mobile.jpg',
+          tablet: 'review-banner__bg@tablet.jpg',
+          desktop: 'review-banner__bg@desktop.jpg'
+        },
+        quote: 'Если вы&nbsp;боитесь стоматолога, это то&nbsp;место, куда нужно идти, потому что' +
+          ' команда здесь делает все возможное, чтобы вы&nbsp;чувствовали себя комфортно и&nbsp;уютно',
+        author: 'Наталья Ткач, 11&nbsp;августа 2019'
       }
     }
   }
@@ -135,6 +146,7 @@ class HomePage extends Component {
         </h1>
         <VideoBanner {...this.homeData.videoBanner} />
         <Services {...this.homeData.services} />
+        <ReviewBanner {...this.homeData.reviewBanner} />
       </main>
     )
   }

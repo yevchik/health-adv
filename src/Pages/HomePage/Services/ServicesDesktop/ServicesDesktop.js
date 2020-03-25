@@ -9,7 +9,6 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
   fontSize: state.elastic.curFontSize,
-  type: state.elastic.deviceType
 })
 
 class ServicesDesktop extends Component {
@@ -31,10 +30,7 @@ class ServicesDesktop extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    if (
-      this.props.type === 'desktop' &&
-      (prevState.activeTab !== this.state.activeTab || prevProps.fontSize !== this.props.fontSize)
-    ) {
+    if (prevState.activeTab !== this.state.activeTab || prevProps.fontSize !== this.props.fontSize) {
       // setTimeout for correct ref height calculation
       setTimeout(() => {
         this.setState(prevState => ({

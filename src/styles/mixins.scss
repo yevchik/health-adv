@@ -76,6 +76,16 @@
   font-weight: 500;
   line-height: 4.0rem;
   color: $color;
+
+  @media (max-width: $widthTabletMax) {
+    font-size: 1.8rem;
+    line-height: 3.5rem;
+  }
+
+  @media (max-width: $widthMobileMax) {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
 }
 
 @mixin h5($color) {

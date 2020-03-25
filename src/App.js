@@ -11,7 +11,7 @@ export const images = require.context('assets/images', true)
 export const videos = require.context('assets/videos', true)
 
 
-function App() {
+const App = () => {
   return (
     <ElasticAdaptive>
       <div className={classnames(css.wrapper, 'color-pattern-1')}>
