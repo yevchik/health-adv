@@ -6,7 +6,9 @@ import Button from 'components/Button/Button'
 import IconPlus from 'assets/icons/IconPlus'
 
 class AccordeonList extends Component {
-  componentWillMount () {
+  state = {}
+
+  componentDidMount () {
     this.props.list.forEach((item, index) => {
       this.setState({
         [`collapse-${index}`]: false
