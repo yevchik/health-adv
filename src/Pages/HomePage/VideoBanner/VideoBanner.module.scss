@@ -3,12 +3,17 @@
 
 
 .bg {
-  padding-top: 11.5rem;
+  height: 42.4rem;
   position: relative;
-  background-size: 100% auto;
+  background-size: cover;
+}
+
+.top {
+  margin-top: -30.9rem;
 }
 
 .content {
+  position: relative;
   margin-top: 4.5rem;
   padding-top: 3rem;
   background-color: $colorMainBg;
@@ -55,8 +60,13 @@ button.play {
 }
 
 @media (min-width: $widthTabletMin) {
+
   .bg {
-    padding-top: 17.4rem;
+    height: 50rem;
+  }
+
+  .top {
+    margin-top: -32.5rem;
   }
 
   .content {
@@ -76,7 +86,7 @@ button.play {
 
 @media (min-width: $widthDesktopMin) {
   .bg {
-    padding-top: 0;
+   display: none;
   }
 
   div.top {

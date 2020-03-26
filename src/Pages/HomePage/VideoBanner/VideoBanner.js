@@ -73,50 +73,49 @@ class VideoBanner extends Component {
 
     return (
       <section>
-        <div className={css.bg} style={{ backgroundImage: background }}>
-          <Container className={css.top}>
+        <div className={css.bg} style={{ backgroundImage: background }} />
+        <Container className={css.top}>
+          {type === 'desktop' &&
+            <p className={css.mainSlogan} dangerouslySetInnerHTML={{ __html: top.slogan }} />
+          }
+          <div className={css.previewWrapper}>
             {type === 'desktop' &&
-              <p className={css.mainSlogan} dangerouslySetInnerHTML={{ __html: top.slogan }} />
+              <h2 className={css.previewLabel}>
+                { top.previewLabel }
+              </h2>
             }
-            <div className={css.previewWrapper}>
-              {type === 'desktop' &&
-                <h2 className={css.previewLabel}>
-                  { top.previewLabel }
-                </h2>
-              }
-              <ButtonPlay
-                className={classnames(css.play, {
-                  [css.preview]: type === 'desktop'
-                })}
-                background={type === 'desktop' ? `url("${ images('./' + top.modalVideoPreview) }")` : 'none'}
-                label={type === 'desktop' ? '' : 'Видео о клинике'}
-                handleClick={this.handleOpenModal}
+            <ButtonPlay
+              className={classnames(css.play, {
+                [css.preview]: type === 'desktop'
+              })}
+              background={type === 'desktop' ? `url("${ images('./' + top.modalVideoPreview) }")` : 'none'}
+              label={type === 'desktop' ? '' : 'Видео о клинике'}
+              handleClick={this.handleOpenModal}
+            />
+          </div>
+        </Container>
+        <div className={css.content}>
+          {type === 'desktop' &&
+            <video className={css.videoBg} muted='muted' autoPlay='autoplay' loop='loop' ref={this.setVideoBgRef} preload='preload'>
+              <source src={videos('./' + bottom.videoBg)} />
+            </video>
+          }
+          <Container className={css.container}>
+            {type === 'desktop' && <IconDots className={css.dots} />}
+            <div className={css.textContent}>
+              <p className={css.sloganAdaptive} dangerouslySetInnerHTML={{ __html: bottom.sloganAdaptive }} />
+              <p className={css.sloganDesktop} dangerouslySetInnerHTML={{ __html: bottom.sloganDesktop }} />
+              <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: bottom.descriptor }} />
+            </div>
+            <div className={css.btn}>
+              <Button
+                btnStyle={type === 'desktop' ? 'gradient' : 'decorated'}
+                type='button'
+                onClick={() => {}}
+                label='Записаться'
               />
             </div>
           </Container>
-          <div className={css.content}>
-            {type === 'desktop' &&
-              <video className={css.videoBg} muted='muted' autoPlay='autoplay' loop='loop' ref={this.setVideoBgRef} preload='preload'>
-                <source src={videos('./' + bottom.videoBg)} />
-              </video>
-            }
-            <Container className={css.container}>
-              {type === 'desktop' && <IconDots className={css.dots} />}
-              <div className={css.textContent}>
-                <p className={css.sloganAdaptive} dangerouslySetInnerHTML={{ __html: bottom.sloganAdaptive }} />
-                <p className={css.sloganDesktop} dangerouslySetInnerHTML={{ __html: bottom.sloganDesktop }} />
-                <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: bottom.descriptor }} />
-              </div>
-              <div className={css.btn}>
-                <Button
-                  btnStyle={type === 'desktop' ? 'gradient' : 'decorated'}
-                  type='button'
-                  onClick={() => {}}
-                  label='Записаться'
-                />
-              </div>
-            </Container>
-          </div>
         </div>
         <Modal isVisible={isModalVisible} handleCloseModal={this.handleCloseModal}>
           <video className={css.video} controls autoPlay ref={this.setVideoRef}>
