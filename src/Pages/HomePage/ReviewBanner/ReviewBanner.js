@@ -23,7 +23,8 @@ const ReviewBanner = ({ className, bgImages, quote, author }) => {
   }
 
   return (
-    <section className={css.section} style={{ backgroundImage: backgroundImage }}>
+    <section className={css.section}>
+      <div className={css.bg} style={{ backgroundImage: backgroundImage }} />
       <Container className={css.container}>
         <IconQuotes className={css.icon} />
         <blockquote className={css.quote} dangerouslySetInnerHTML={{ __html: quote }} />
