@@ -49,6 +49,26 @@
   }
 }
 
+@mixin h2-adaptiveSpecial($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 4.0rem;
+  color: $color;
+
+  @media (max-width: $widthTabletMax) {
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+
+  @media (max-width: $widthMobileMax) {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+  }
+}
+
 @mixin h3($color) {
   font-family: "Montserrat", sans-serif;
   font-size: 3.2rem;
@@ -104,6 +124,11 @@
   font-weight: 300;
   line-height: 3.2rem;
   color: $color;
+
+  @media (max-width: $widthTabletMax) {
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+  }
 }
 
 @mixin h6($color) {

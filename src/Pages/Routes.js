@@ -4,6 +4,7 @@ import HomePage from 'Pages/HomePage/HomePage'
 
 export const HOME_PAGE = '/'
 
+// TODO apply async import of page components to split the initial chunk
 
 class Routes extends Component {
   render () {
