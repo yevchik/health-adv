@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import VideoBanner from 'Pages/HomePage/VideoBanner/VideoBanner'
 import Services from 'Pages/HomePage/Services/Services'
 import ReviewBanner from 'Pages/HomePage/ReviewBanner/ReviewBanner'
+import SliderDoctors from 'Pages/HomePage/SliderDoctors/SliderDoctors'
 
 class HomePage extends Component {
   constructor (props) {
@@ -134,6 +135,49 @@ class HomePage extends Component {
         quote: 'Если вы&nbsp;боитесь стоматолога, это то&nbsp;место, куда нужно идти, потому что' +
           ' команда здесь делает все возможное, чтобы вы&nbsp;чувствовали себя комфортно и&nbsp;уютно',
         author: 'Наталья Ткач, 11&nbsp;августа 2019'
+      },
+      sliderDoctors: {
+        title: 'Врачи',
+        list: [
+          {
+            url: '/',
+            name: 'Смолов Виктор Николаевич 1',
+            expertise: 'Стоматолог-терапевт',
+            address: 'Москва, 1-й Бабьегородский пер., д.&nbsp;28',
+            photo: 'slider-doctors__photo.png',
+            quote: 'Для меня самое главное построить доверительные и&nbsp;долгосрочные отношения с&nbsp;нашими маленькими пациентами.'
+          },
+          {
+            name: 'Алабердыев Сулейман Пантелеймонович',
+            expertise: 'Стоматолог-терапевт',
+            address: 'Москва, 1-й Бабьегородский пер., д.&nbsp;28',
+            photo: 'slider-doctors__photo.png',
+            quote: 'Для меня самое главное построить доверительные и&nbsp;долгосрочные отношения' +
+              ' с&nbsp;нашими маленькими пациентами. Для меня самое главное построить доверительные и&nbsp;долгосрочные отношения с&nbsp;нашими маленькими пациентами.'
+          },
+          {
+            url: '/',
+            name: 'Смолов Виктор Николаевич 3',
+            expertise: 'Стоматолог-терапевт',
+            address: 'Москва, 1-й Бабьегородский пер., д.&nbsp;28',
+            photo: 'slider-doctors__photo.png',
+            quote: 'Для меня самое главное построить доверительные и&nbsp;долгосрочные отношения с&nbsp;нашими маленькими пациентами.'
+          },
+          {
+            name: 'Смолов Виктор Николаевич 4',
+            expertise: 'Стоматолог-терапевт',
+            address: 'Москва, 1-й Бабьегородский пер., д.&nbsp;28',
+            photo: 'slider-doctors__photo.png',
+            quote: 'Для меня самое главное построить доверительные и&nbsp;долгосрочные отношения с&nbsp;нашими маленькими пациентами.'
+          },
+          {
+            name: 'Смолов Виктор Николаевич 5',
+            expertise: 'Стоматолог-терапевт',
+            address: 'Москва, 1-й Бабьегородский пер., д.&nbsp;28',
+            photo: 'slider-doctors__photo.png',
+            quote: 'Для меня самое главное построить доверительные и&nbsp;долгосрочные отношения с&nbsp;нашими маленькими пациентами.'
+          },
+        ]
       }
     }
   }
@@ -147,6 +191,7 @@ class HomePage extends Component {
         <VideoBanner {...this.homeData.videoBanner} />
         <Services {...this.homeData.services} />
         <ReviewBanner {...this.homeData.reviewBanner} />
+        <SliderDoctors {...this.homeData.sliderDoctors} />
       </main>
     )
   }

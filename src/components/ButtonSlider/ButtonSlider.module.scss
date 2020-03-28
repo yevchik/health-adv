@@ -1,0 +1,35 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.button {
+  @include resetButton;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  height: 3rem;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2rem;
+    height: 100%;
+    background-color: var(--color-highlight-lightest);
+  }
+}
+
+.buttonPrev {
+  transform-origin: center;
+  transform: rotate(180deg);
+}
+
+.icon {
+  position: relative;
+  margin-left: 1.5rem;
+  width: 1.6rem;
+  stroke: var(--color-font-main);
+}
