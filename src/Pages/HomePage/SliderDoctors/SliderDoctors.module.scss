@@ -7,7 +7,10 @@
   :global {
     .swiper-slide {
       width: 100%;
-      margin-right: 2rem;
+
+      &:not(:last-of-type) {
+        margin-right: 2rem;
+      }
     }
   }
 }
@@ -15,10 +18,6 @@
 .slider {
   position: relative;
   margin-top: 3.3rem;
-}
-
-.card {
-  background-color: $colorMainBg;
 }
 
 .cardContent {
@@ -38,7 +37,12 @@
     width: 100%;
     height: 0.3rem;
     background-color: var(--color-highlight-mosaic);
+    z-index: 1;
   }
+}
+
+.iconDots {
+  display: none;
 }
 
 .photo {
@@ -93,6 +97,8 @@
 
 @media (min-width: $widthTabletMin) {
   .section {
+    padding: 5rem 0 4rem 0;
+
     :global {
       .swiper-container {
         margin-left: -2.5rem;
@@ -103,7 +109,14 @@
 
       .swiper-slide {
         width: 64.6rem;
-        margin-right: 5rem;
+
+        &:not(:last-of-type) {
+          margin-right: 5rem;
+        }
+
+        &:last-of-type {
+          margin-right: 5rem;
+        }
       }
     }
   }
@@ -165,5 +178,151 @@
 
   .controls {
     display: none;
+  }
+}
+
+@media (min-width: $widthDesktopMin) {
+  .section {
+    :global {
+      .swiper-container {
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+        overflow: visible;
+      }
+
+      .swiper-slide {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .slider {
+    margin-top: 5rem;
+  }
+
+  .slide {
+    display: flex;
+    justify-content: space-between;
+    background-color: $colorMainBg;
+  }
+
+  .tabContent {
+    width: 87.7rem;
+  }
+
+  .frame {
+    position: relative;
+    width: 47.6rem;
+    height: 47.6rem;
+    overflow: hidden;
+  }
+
+  .iconDots {
+    position: absolute;
+    top: 11.2rem;
+    left: 3.2rem;
+    display: block;
+    width: 47.6rem;
+    opacity: 0.3;
+    transform-origin: center;
+    transform: rotate(90deg);
+  }
+
+  .photo {
+    position: relative;
+  }
+
+  .info {
+    width: calc(100% - 47.6rem);
+  }
+
+  .expertise {
+    margin-top: 1.4rem;
+  }
+
+  .address {
+    margin: 1.4rem 0 0 0;
+  }
+
+  .quote {
+    padding: 0;
+  }
+
+  .iconQuote {
+    top: 0;
+    right: auto;
+    left: calc(-3.2rem - 2.1rem);
+  }
+
+  .tabs {
+    @include resetList
+  }
+
+  .tab {
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+    }
+  }
+
+  .tabSwitch {
+    @include resetButton;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.7rem 4.3rem 2.5rem 4.3rem;
+    width: 43.7rem;
+    border: 1px solid var(--color-highlight-darker);
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -0.3rem;
+      width: 0.3rem;
+      height: 100%;
+      background-color: var(--color-highlight-mosaic);
+      opacity: 0;
+      pointer-events: none;
+      transition-duration: 0.3s;
+    }
+
+    &:hover {
+     border-color: var(--color-highlight-buttons);
+    }
+  }
+
+  .tabSwitchSelected {
+    pointer-events: none;
+    box-shadow: 0px 0.8rem 2rem rgba(0, 0, 0, 0.08);
+    border-color: var(--color-highlight-darker);
+
+    &::before {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  .btnName {
+    @include h5(var(--color-font-main));
+
+    text-align: left;
+  }
+
+  .btnExpertise {
+    @include regular(var(--color-font-main));
+
+    opacity: 0.7;
+  }
+
+  .controls {
+    top: calc(-3rem - 6.3rem);
+    display: flex;
   }
 }

@@ -56,7 +56,9 @@
 .duration {
   @include capitals-bold($colorMainBg);
 
+  position: relative;
   display: block;
+  z-index: 1;
 }
 
 .title {
