@@ -1,0 +1,50 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.section {
+  margin-top: calc(6rem - 4.7rem);
+  padding-top: 15.1rem;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  padding: 7rem 3.8rem 5rem 3.8rem;
+  background-color: var(--color-font-main);
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15.1rem;
+    left: 1.5rem;
+    width: 30.5rem;
+    height: 25.9rem;
+    background-image: url("../../../assets/images/test-banner__img.png");
+    background-size: cover;
+  }
+}
+
+.icon {
+  position: absolute;
+  bottom: -15rem;
+  left: 10rem;
+  width: 40rem;
+  transform: rotate(90deg);
+}
+
+.title {
+  position: relative;
+  color: $colorMainBg;
+}
+
+.descriptor {
+  @include h8(var(--color-highlight-lightest));
+
+  margin: 2.4rem 0 0 0;
+}
+
+.btn {
+  margin-top: 3.3rem;
+}
