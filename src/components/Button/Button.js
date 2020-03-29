@@ -17,16 +17,17 @@ const Button = ({
     <ComponentName
       className={classnames(css.button, className, {
         [css.buttonFilled]: btnStyle === 'filled',
-        [css.buttonDecorated]: btnStyle === 'decorated',
+        [css.buttonDecorated]: btnStyle === 'decorated' || btnStyle === 'filledDecorated',
         [css.buttonGradient]: btnStyle === 'gradient',
+        [css.buttonFilledDecorated]: btnStyle === 'filledDecorated'
       })}
       type={url ? '' : 'button'}
       to={url}
       onClick={url ? () => {} : handleClick}
     >
-      {label}
+      { label }
       {btnStyle !== 'filled' &&
-      <IconArrowRight className={css.icon} />
+        <IconArrowRight className={css.icon} />
       }
     </ComponentName>
   )

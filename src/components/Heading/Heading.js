@@ -1,10 +1,9 @@
 import React from 'react'
 import css from './Heading.module.scss'
+import classNames from 'classnames'
 
-const Heading = ({ content }) => (
-  <h2 className={css.title}>
-    { content }
-  </h2>
+const Heading = ({ className, content }) => (
+  <h2 className={classNames(css.title, className)} dangerouslySetInnerHTML={{ __html: content }} />
 )
 
 export default Heading

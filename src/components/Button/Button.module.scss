@@ -63,6 +63,15 @@
     }
   }
 
+  &.buttonFilledDecorated {
+    color: $colorMainBg;
+    background-color: var(--color-highlight-buttons);
+
+    .icon {
+      stroke: $colorMainBg;
+    }
+  }
+
   &.buttonGradient {
     @include capitals-bold($colorMainBg);
 

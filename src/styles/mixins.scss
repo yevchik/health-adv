@@ -153,11 +153,16 @@
 
 @mixin h8($color) {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-style: normal;
-  font-weight: 600;
-  line-height: 1.7rem;
+  font-weight: normal;
+  line-height: 3rem;
   color: $color;
+
+  @media (max-width: $widthTabletMax) {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
 }
 
 @mixin h9($color) {

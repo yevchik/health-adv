@@ -4,6 +4,7 @@ import VideoBanner from 'Pages/HomePage/VideoBanner/VideoBanner'
 import Services from 'Pages/HomePage/Services/Services'
 import ReviewBanner from 'Pages/HomePage/ReviewBanner/ReviewBanner'
 import SliderDoctors from 'Pages/HomePage/SliderDoctors/SliderDoctors'
+import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
 
 class HomePage extends Component {
   constructor (props) {
@@ -181,6 +182,10 @@ class HomePage extends Component {
             quote: 'Для меня самое главное построить доверительные и&nbsp;долгосрочные отношения с&nbsp;нашими маленькими пациентами.'
           },
         ]
+      },
+      testBanner: {
+        title: 'Не&nbsp;знаете, какая услуга нужна?',
+        descriptor: 'Пройдите тест, ответив на&nbsp;несколько вопросов'
       }
     }
   }
@@ -195,6 +200,7 @@ class HomePage extends Component {
         <Services {...this.homeData.services} />
         <ReviewBanner {...this.homeData.reviewBanner} />
         <SliderDoctors {...this.homeData.sliderDoctors} />
+        <TestBanner {...this.homeData.testBanner} />
       </main>
     )
   }
