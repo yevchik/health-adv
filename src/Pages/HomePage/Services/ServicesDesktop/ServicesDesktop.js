@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
   fontSize: state.elastic.curFontSize,
+  type: state.elastic.deviceType
 })
 
 class ServicesDesktop extends Component {
@@ -33,10 +34,12 @@ class ServicesDesktop extends Component {
     if (prevState.activeTab !== this.state.activeTab || prevProps.fontSize !== this.props.fontSize) {
       // setTimeout for correct ref height calculation
       setTimeout(() => {
-        this.setState(prevState => ({
-          ...prevState,
-          tabContentHeight: this.activeTabRef.getBoundingClientRect().height
-        }))
+        if (this.props.type === 'desktop') {
+          this.setState(prevState => ({
+            ...prevState,
+            tabContentHeight: this.activeTabRef.getBoundingClientRect().height
+          }))
+        }
       }, 0)
     }
   }
@@ -61,7 +64,7 @@ class ServicesDesktop extends Component {
           [css.tabActive]: this.state.activeTab === index
         })}
         key={index}
-        onClick={evt => this.handleClickTab(index)}
+        onClick={() => this.handleClickTab(index)}
       >
         { item.category }
       </button>

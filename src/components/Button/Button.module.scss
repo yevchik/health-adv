@@ -5,7 +5,9 @@
 .button {
   @include resetButton;
 
+  display: block;
   width: 100%;
+  text-align: center;
   transition-duration: 0.3s;
   cursor: pointer;
 
@@ -20,7 +22,7 @@
     @include capitals-bold(var(--color-highlight-buttons));
 
     position: relative;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
     border: 0.1rem solid var(--color-highlight-buttons);
     border-bottom-width: 0.5rem;
     overflow: hidden;

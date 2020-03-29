@@ -27,6 +27,11 @@
   transform: rotate(180deg);
 }
 
+.buttonDisabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .icon {
   position: relative;
   margin-left: 1.5rem;
