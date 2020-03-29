@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import css from './SliderDoctors.module.scss'
 import { createSubArrays } from 'utils'
 import ButtonSlider from 'components/ButtonSlider/ButtonSlider'
@@ -6,7 +6,6 @@ import Heading from 'components/Heading/Heading'
 import Container from 'components/Grid/Container'
 import Swiper from 'react-id-swiper'
 import 'swiper/css/swiper.min.css'
-import { Link } from 'react-router-dom'
 import { images } from 'App'
 import Button from 'components/Button/Button'
 import { useSelector } from 'react-redux'
@@ -18,21 +17,62 @@ const SliderDoctors = ({ title, list }) => {
   const fontSize = useSelector(state => state.elastic.curFontSize)
   const type = useSelector(state => state.elastic.deviceType)
   const [ activeTab, setActiveTab ] = useState(0)
-  const [swiper, setSwiper] = useState(null);
+  const [swiperAdaptive, setSwiperAdaptive] = useState(null)
+  const [swiperDesktop, setSwiperDesktop] = useState(null)
+  const [isBeginning, setIsBeginning] = useState(true)
+  const [isEnd, setIsEnd] = useState(false)
+
+  useEffect(() => {
+    applySwiperListeners(swiperAdaptive)
+    applySwiperListeners(swiperDesktop)
+  }, [swiperAdaptive, swiperDesktop, type])
+
+  function applySwiperListeners (swiper) {
+    // we have two swipers, one for adaptive and one for desktop. When one is initiated, another
+    // one is destroyed so we have to check both cases
+    if (swiper !== null && !swiper.destroyed) {
+      swiper.on('beforeDestroy', () => {
+        setIsBeginning(true)
+        setIsEnd(false)
+      })
+      swiper.on('slideChange', () => {
+        if (swiper.isBeginning) {
+          setIsBeginning(true)
+        } else {
+          setIsBeginning(false)
+        }
+        if (swiper.isEnd) {
+          setIsEnd(true)
+        } else {
+          setIsEnd(false)
+        }
+      })
+    }
+  }
 
   const goNext = () => {
-    if (swiper) swiper.slideNext()
+    if (swiperAdaptive && !swiperAdaptive.destroyed) {
+      swiperAdaptive.slideNext()
+    }
+    if (swiperDesktop && !swiperDesktop.destroyed) {
+      swiperDesktop.slideNext()
+    }
   }
 
   const goPrev = () => {
-    if (swiper) swiper.slidePrev()
+    if (swiperAdaptive && !swiperAdaptive.destroyed) {
+      swiperAdaptive.slidePrev()
+    }
+    if (swiperDesktop && !swiperDesktop.destroyed) {
+      swiperDesktop.slidePrev()
+    }
   }
 
   const handleClickTab = index => {
     setActiveTab(index)
     // Timeout to update swiper height according to active tab content height after index switch
     setTimeout(() => {
-      swiper && swiper.update()
+      swiperDesktop && swiperDesktop.update()
     })
   }
 
@@ -47,7 +87,7 @@ const SliderDoctors = ({ title, list }) => {
         speed: 1500
       }
     },
-    getSwiper: setSwiper
+    getSwiper: setSwiperAdaptive
   }
 
   const paramsDesktop = {
@@ -58,77 +98,38 @@ const SliderDoctors = ({ title, list }) => {
     fadeEffect: {
       crossFade: true
     },
-    on: {
-      slideChange: () => {
-        setActiveTab(0)
-      }
-    },
-    getSwiper: setSwiper
+    getSwiper: setSwiperDesktop
   }
 
-  // TODO create button onClick handler to programmatically navigate to doctors' page
-
-  const slideContentArea = (item, index) => {
-    return item.url
-      ? (
-        <div className={css.card} key={index}>
-          <Link to={item.url} className={css.link}>
-            <figure className={css.cardContent}>
-              <div className={css.frame}>
-                <IconDotsBgDark className={css.iconDots} />
-                <img
-                  className={css.photo}
-                  src={images('./' + item.photo)}
-                  alt={item.name}
-                />
-              </div>
-              <figcaption className={css.info}>
-                <p className={css.name}>
-                  {item.name}
-                </p>
-                <p className={css.expertise}>
-                  {item.expertise}
-                </p>
-                <address className={css.address} dangerouslySetInnerHTML={{__html: item.address}} />
-                <blockquote className={css.quote}>
-                  <IconQuotes className={css.iconQuote} />
-                  <span dangerouslySetInnerHTML={{ __html: item.quote }} />
-                </blockquote>
-                <Button className={css.btnAll} btnStyle='decorated' label='Все врачи' />
-              </figcaption>
-            </figure>
-          </Link>
+  // Internal slide structure common for both desktop and adaptive
+  const slideContentArea = (item, index) => (
+    <div className={css.card} key={index}>
+      <figure className={css.cardContent}>
+        <div className={css.frame}>
+          <IconDotsBgDark className={css.iconDots} />
+          <img
+            className={css.photo}
+            src={images('./' + item.photo)}
+            alt={item.name}
+          />
         </div>
-      )
-      : (
-        <div className={css.card} key={index}>
-          <figure className={css.cardContent}>
-            <div className={css.frame}>
-              <IconDotsBgDark className={css.iconDots} />
-              <img
-                className={css.photo}
-                src={images('./' + item.photo)}
-                alt={item.name}
-              />
-            </div>
-            <figcaption className={css.info}>
-              <p className={css.name}>
-                {item.name}
-              </p>
-              <p className={css.expertise}>
-                {item.expertise}
-              </p>
-              <address className={css.address} dangerouslySetInnerHTML={{__html: item.address}} />
-              <blockquote className={css.quote}>
-                <IconQuotes className={css.iconQuote} />
-                <span dangerouslySetInnerHTML={{ __html: item.quote }} />
-              </blockquote>
-              <Button className={css.btnAll} btnStyle='decorated' label='Все врачи' />
-            </figcaption>
-          </figure>
-        </div>
-      )
-  }
+        <figcaption className={css.info}>
+          <p className={css.name}>
+            {item.name}
+          </p>
+          <p className={css.expertise}>
+            {item.expertise}
+          </p>
+          <address className={css.address} dangerouslySetInnerHTML={{__html: item.address}} />
+          <blockquote className={css.quote}>
+            <IconQuotes className={css.iconQuote} />
+            <span dangerouslySetInnerHTML={{ __html: item.quote }} />
+          </blockquote>
+          <Button className={css.btnAll} url={item.url} btnStyle='decorated' label='Подробнее о враче' />
+        </figcaption>
+      </figure>
+    </div>
+  )
 
   const sliderContentAdaptive = list.map((item, index) => {
     return slideContentArea(item, index)
@@ -188,8 +189,8 @@ const SliderDoctors = ({ title, list }) => {
               </Swiper>
             }
             <div className={css.controls}>
-              <ButtonSlider type='prev' handleClick={goPrev} />
-              <ButtonSlider className={css.btnNext} type='next' handleClick={goNext} />
+              <ButtonSlider type='prev' handleClick={goPrev} isDisabled={isBeginning} />
+              <ButtonSlider className={css.btnNext} type='next' handleClick={goNext} isDisabled={isEnd} />
             </div>
           </div>
       </Container>
