@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 const Button = ({
   className,
+  iconClassname,
   url,
   btnStyle = 'filled',
   label = '',
@@ -27,7 +28,7 @@ const Button = ({
     >
       { label }
       {btnStyle !== 'filled' &&
-        <IconArrowRight className={css.icon} />
+        <IconArrowRight className={classnames(css.icon, iconClassname)} />
       }
     </ComponentName>
   )
