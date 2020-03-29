@@ -130,6 +130,12 @@
         margin-left: auto;
       }
     }
+
+    &.buttonFilledDecorated {
+      .icon {
+        display: none;
+      }
+    }
   }
 }
 
