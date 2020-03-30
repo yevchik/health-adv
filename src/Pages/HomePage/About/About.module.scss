@@ -1,0 +1,66 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.section {
+  padding-top: 4.7rem;
+}
+
+.descriptor {
+  @include h5-italic(var(--color-font-main));
+
+  margin: 1.4rem 0 0 0;
+}
+
+.feature {
+  display: none;
+}
+
+.subtitle {
+  @include h2(var(--color-font-main));
+
+  margin: 3.3rem 0 0 0;
+}
+
+.list {
+  @include resetList;
+
+  margin-top: 1.9rem;
+  padding-left: 1.5rem;
+}
+
+.item {
+  @include regular(var(--color-font-main));
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(1.4rem - 0.5rem / 2);
+    left: -1.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--color-highlight-buttons);
+    border-radius: 50%;
+  }
+
+  &:not(:first-of-type) {
+    margin-top: 1.4rem;
+  }
+}
+
+.mapContainer {
+  margin-top: 4.1rem;
+  padding: 0;
+}
+
+.map {
+  width: 100%;
+  height: 46.2rem;
+
+  :global {
+    [class*="ymaps-2"][class*="-ground-pane"] {
+      filter: grayscale(1);
+    }
+  }
+}
