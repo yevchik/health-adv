@@ -49,10 +49,18 @@
   margin-top: 3.3rem;
 }
 
+@media (max-width: $widthTabletMax) {
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 @media (min-width: $widthTabletMin) {
   .section {
     margin-top: 0;
     padding-top: 5.3rem;
+    padding-bottom: 3rem;
   }
 
   .wrapper {
@@ -73,20 +81,87 @@
 
   .icon {
     position: absolute;
-    bottom: -60rem;
-    left: 2.5rem;
-    width: 77rem;
+    bottom: -35rem;
+    left: auto;
+    right: -5rem;
+    width: 50rem;
     transform: rotate(90deg);
   }
 
   .descriptor {
-    @include h8(var(--color-highlight-lightest));
-
     margin: 1.1rem 0 0 0;
   }
 
   .btn {
     margin-top: 2.3rem;
     width: 24.3rem;
+  }
+}
+
+@media (min-width: $widthDesktopMin) {
+  .section {
+    margin-top: 5rem;
+    padding-top: 2.9rem;
+    overflow: visible;
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0;
+      width: 27.5rem;
+      color: var(--color-highlight-buttons);
+      background-color: $colorMainBg;
+      border-top-color: var(--color-highlight-darker);
+      border-right-color: var(--color-highlight-darker);
+      border-left: none;
+
+      &::before {
+        transform: translateX(0) translateY(100%);
+      }
+
+      &:hover {
+        &::before {
+          transform: translateX(0) translateY(0);
+        }
+      }
+
+      .arrow {
+        stroke: var(--color-highlight-buttons);
+      }
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    padding: 0;
+
+    &::before {
+      top: -2.9rem;
+      left: -9.4rem;
+      width: 42rem;
+      height: 35.6rem;
+    }
+  }
+
+  .content {
+    padding: 5.4rem 7.7rem 7.6rem 36.3rem;
+  }
+
+  .title {
+    @include h1($colorMainBg);
+  }
+
+  .icon {
+    position: absolute;
+    bottom: -23rem;
+    left: auto;
+    right: 10rem;
+    width: 50rem;
+    transform: rotate(90deg);
+  }
+
+  .descriptor {
+    margin: 3.2rem 0 0 0;
   }
 }
