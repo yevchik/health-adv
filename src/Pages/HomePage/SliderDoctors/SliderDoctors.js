@@ -120,7 +120,7 @@ const SliderDoctors = ({ title, list }) => {
           <p className={css.expertise}>
             {item.expertise}
           </p>
-          <address className={css.address} dangerouslySetInnerHTML={{__html: item.address}} />
+          {item.address && <address className={css.address} dangerouslySetInnerHTML={{__html: item.address}} />}
           <blockquote className={css.quote}>
             <IconQuotes className={css.iconQuote} />
             <span dangerouslySetInnerHTML={{ __html: item.quote }} />
