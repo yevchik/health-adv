@@ -28,7 +28,7 @@ const About = ({ title, descriptor, feature, offices, map }) => {
 
   return (
     <section className={css.section}>
-      <Container>
+      <Container className={css.container}>
         <Heading className={css.title} content={title} />
         <p className={css.descriptor} dangerouslySetInnerHTML={{__html: descriptor}} />
         <div className={css.feature}>
