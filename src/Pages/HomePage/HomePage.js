@@ -5,6 +5,7 @@ import Services from 'Pages/HomePage/Services/Services'
 import ReviewBanner from 'Pages/HomePage/ReviewBanner/ReviewBanner'
 import SliderDoctors from 'Pages/HomePage/SliderDoctors/SliderDoctors'
 import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
+import About from 'Pages/HomePage/About/About'
 
 class HomePage extends Component {
   constructor (props) {
@@ -186,6 +187,32 @@ class HomePage extends Component {
       testBanner: {
         title: 'Не&nbsp;знаете, какая услуга нужна?',
         descriptor: 'Пройдите тест, ответив на&nbsp;несколько вопросов'
+      },
+      about: {
+        title: 'О клинике',
+        descriptor: 'Наших специалистов отличает большой опыт работы и&nbsp;хорошее образование.' +
+          ' Кроме того, они постоянно повышают свою квалификацию, проходя обучение и&nbsp;стажировки как в&nbsp;России, так и&nbsp;за&nbsp;рубежом.',
+        feature: {
+          subtitle: 'Безопасность',
+          descriptor: '<p>Важнейшими принципами нашей работы являются сохранение зубов, полная безболезненность, инфекционная безопасность и&nbsp;медицинская гарантия всех лечебно-диагностических манипуляций</p><p>Отдельный стерилизационный кабинет в&nbsp;автоклавами класса&nbsp;В (самый высокий класс стерилизации). Мы&nbsp;используем в&nbsp;работе изделия однократного применения. Все применяемые медикаменты сертифицированы и&nbsp;любой документ по&nbsp;сертификации может быть предоставлен по&nbsp;требованию.</p>'
+        },
+        offices: {
+          subtitle: 'Наши филиалы',
+          list: [
+            'Москва, 1-й Бабьегородский пер., д.&nbsp;28',
+            'Москва, ул. Беговая 3&nbsp;ст.1',
+            'Москва, ул. Вилиса Лациса 17&nbsp;к.&nbsp;1'
+          ]
+        },
+        map: {
+          markers: [
+            [55.822276, 37.638983],
+            [55.854733, 37.424750],
+            [55.885560, 37.644781]
+          ],
+          center: [55.854481, 37.563757],
+          zoom: 10
+        }
       }
     }
   }
@@ -201,6 +228,7 @@ class HomePage extends Component {
         <ReviewBanner {...this.homeData.reviewBanner} />
         <SliderDoctors {...this.homeData.sliderDoctors} />
         <TestBanner {...this.homeData.testBanner} />
+        <About {...this.homeData.about} />
       </main>
     )
   }
