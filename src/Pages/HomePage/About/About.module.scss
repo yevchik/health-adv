@@ -2,7 +2,11 @@
 @import "styles/mixins";
 
 .section {
-  padding-top: 4.7rem;
+  padding-top: 5rem;
+
+  .linkAll {
+    display: none;
+  }
 }
 
 .descriptor {
@@ -15,10 +19,14 @@
   display: none;
 }
 
+.offices {
+  margin-top: 3.3rem;
+}
+
 .subtitle {
   @include h2(var(--color-font-main));
 
-  margin: 3.3rem 0 0 0;
+  margin: 0;
 }
 
 .list {
@@ -62,5 +70,46 @@
     [class*="ymaps-2"][class*="-ground-pane"] {
       filter: grayscale(1);
     }
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .section {
+    .linkAll {
+      display: flex;
+    }
+  }
+
+  .descriptor {
+    margin: 1.7rem 0 0 0;
+  }
+
+  .offices {
+    display: grid;
+    grid-template-columns: 1fr 23.3rem;
+    grid-auto-rows: auto;
+    grid-row-gap: 2.5rem;
+    align-items: flex-start;
+  }
+
+  .subtitle {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .list {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-top: 0;
+    padding-left: 1.5rem;
+    padding-right: 20%;
+  }
+
+  .linkAll {
+    grid-row: 2 / 3;
+  }
+
+  .map {
+    height: 40.4rem;
   }
 }

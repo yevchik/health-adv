@@ -5,6 +5,7 @@ import Heading from 'components/Heading/Heading'
 import { Map, Placemark, YMaps } from 'react-yandex-maps'
 import mapPin from 'assets/images/map-pin.svg'
 import { useSelector } from 'react-redux'
+import Button from 'components/Button/Button'
 
 const About = ({ title, descriptor, feature, offices, map }) => {
   const fontSize = useSelector(state => state.elastic.curFontSize)
@@ -45,12 +46,16 @@ const About = ({ title, descriptor, feature, offices, map }) => {
               <li className={css.item} dangerouslySetInnerHTML={{__html: address}} key={index} />
             ))}
           </ul>
+          <Button className={css.linkAll}  url='/contacts' btnStyle='decorated' label='Контакты' />
         </div>
       </Container>
       <Container className={css.mapContainer}>
         <YMaps>
           <Map
-            defaultState={mapData}
+            defaultState={{
+              ...mapData,
+              behaviors: [ 'default', `disable('drag')`]
+            }}
             className={css.map}
           >
             {map.markers.map((marker, index) => (
