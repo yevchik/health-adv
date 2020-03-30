@@ -7,7 +7,13 @@ import mapPin from 'assets/images/map-pin.svg'
 import { useSelector } from 'react-redux'
 import Button from 'components/Button/Button'
 
-const About = ({ title, descriptor, feature, offices, map }) => {
+const About = ({
+  title,
+  descriptor,
+  feature,
+  offices,
+  map
+}) => {
   const fontSize = useSelector(state => state.elastic.curFontSize)
   const type = useSelector(state => state.elastic.deviceType)
 
