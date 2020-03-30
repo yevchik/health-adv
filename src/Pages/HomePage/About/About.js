@@ -9,6 +9,7 @@ import Button from 'components/Button/Button'
 
 const About = ({ title, descriptor, feature, offices, map }) => {
   const fontSize = useSelector(state => state.elastic.curFontSize)
+  const type = useSelector(state => state.elastic.deviceType)
 
   const mapData = {
     center: map.center,
@@ -52,11 +53,9 @@ const About = ({ title, descriptor, feature, offices, map }) => {
       <Container className={css.mapContainer}>
         <YMaps>
           <Map
-            defaultState={{
-              ...mapData,
-              behaviors: [ 'default', `disable('drag')`]
-            }}
+            defaultState={mapData}
             className={css.map}
+            instanceRef={ ref => { ref && type !== 'desktop' && ref.behaviors.disable('drag') }}
           >
             {map.markers.map((marker, index) => (
               <Placemark
