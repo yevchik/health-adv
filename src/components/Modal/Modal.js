@@ -17,12 +17,12 @@ class Modal extends Component {
   }
 
   componentDidMount () {
-    this.wrapperRef.addEventListener('click', this.handleClickWrapper)
+    this.wrapperRef && this.wrapperRef.addEventListener('click', this.handleClickWrapper)
     document.addEventListener('keydown', this.handleEscPress)
   }
 
   componentWillUnmount () {
-    this.wrapperRef.removeEventListener('click', this.handleClickWrapper)
+    this.wrapperRef && this.wrapperRef.removeEventListener('click', this.handleClickWrapper)
     document.removeEventListener('keydown', this.handleEscPress)
   }
 
@@ -63,7 +63,7 @@ class Modal extends Component {
 
 
   render () {
-    const { isVisible, children } = this.props
+    const { isVisible = false, content = null, children } = this.props
     const { isClosing } = this.state
 
     return (
@@ -83,7 +83,7 @@ class Modal extends Component {
               <IconClose className={css.icon} />
               Закрыть модальное окно
             </button>
-            {children}
+            {content || children}
           </div>
         </Container>
       </div>
