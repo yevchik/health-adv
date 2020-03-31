@@ -1,19 +1,11 @@
 import React, { Component } from 'react'
-import css from './Slider.module.scss'
+import css from './SliderCards.module.scss'
 import classnames from 'classnames'
 import Swiper from 'react-id-swiper'
-import { connect } from 'react-redux'
 import 'swiper/css/swiper.min.css'
 import IconArrow from 'assets/icons/IconArrow'
 
-const mapStateToProps = state => {
-  return {
-    type: state.elastic.deviceType,
-    fontSize: state.elastic.curFontSize
-  }
-}
-
-class Slider extends Component {
+class SliderCards extends Component {
   state = {
     activeIndex: 0
   }
@@ -30,15 +22,21 @@ class Slider extends Component {
     if (this.swiper) this.swiper.slidePrev()
   }
 
+  initSlider = node => {
+    this.swiper = node
+    // Somehow requires update inside setTimeout to rednder free mode slider correctly
+    setTimeout(() => {
+      this.swiper.update()
+    })
+  }
+
   render () {
-    const { className, fontSize, children, desktopSlidesPerView = 1, type } = this.props
+    const { className, children, desktopSlidesPerView = 1, type } = this.props
     const { activeIndex } = this.state
-    const fontSizeRatio = fontSize / 10
 
     // swiper settings
     const params = {
-      slidesPerView: 1,
-      spaceBetween: 20 * fontSizeRatio,
+      slidesPerView: 'auto',
       pagination: {
         el: '.swiper-pagination',
         type: 'progressbar',
@@ -52,7 +50,6 @@ class Slider extends Component {
         1280: {
           freeMode: false,
           slidesPerView: desktopSlidesPerView,
-          spaceBetween: 30 * fontSizeRatio,
         }
       },
       on: {
@@ -77,7 +74,7 @@ class Slider extends Component {
 
     return (
       <div className={classnames(css.wrapper, className, { [css.wrapperSingle]: type === 'single' })}>
-        <Swiper {...params} getSwiper={node => { this.swiper = node }}>
+        <Swiper {...params} getSwiper={this.initSlider}>
           { children }
         </Swiper>
         <div className={css.controls}>
@@ -107,4 +104,4 @@ class Slider extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Slider)
+export default SliderCards

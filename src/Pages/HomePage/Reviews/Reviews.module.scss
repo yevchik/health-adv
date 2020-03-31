@@ -1,0 +1,161 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.container {
+  padding-top: 4.7rem;
+}
+
+.slider {
+  margin-top: 2rem;
+
+  :global {
+    .swiper-container {
+      margin-left: -1.5rem;
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+      width: calc(100% + 3rem);
+    }
+
+    .swiper-slide {
+      width: 25.5rem;
+      height: auto;
+
+      &:not(:last-of-type) {
+        margin-right: 1rem;
+      }
+    }
+
+    .swiper-pagination {
+      margin-left: 1.5rem;
+      width: calc(100% - 3rem);
+    }
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.7rem 1.5rem 2rem 1.5rem;
+  height: 100%;
+  background-color: var(--color-highlight-mosaic);
+}
+
+.name,
+.date {
+  @include h6($colorMainBg);
+
+  margin: 0;
+}
+
+.text {
+  @include regular($colorMainBg);
+
+  margin: 0.7rem 0 1.4rem 0;
+}
+
+.btn {
+  @include resetButton;
+  @include capitals-bold($colorMainBg);
+
+  margin-top: auto;
+}
+
+.specialist {
+  @include capitals-bold-small($colorMainBg);
+
+  margin-top: 0.9rem;
+  opacity: 1.6;
+
+  & + .specialist {
+    margin-top: 0.8rem;
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .container {
+    padding-top: 6rem;
+  }
+
+  .slider {
+    margin-top: 3rem;
+
+    :global {
+      .swiper-container {
+        margin-left: -2.5rem;
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+        width: calc(100% + 5rem);
+      }
+
+      .swiper-slide {
+        width: 34.5rem;
+
+        &:not(:last-of-type) {
+          margin-right: 2rem;
+        }
+      }
+
+      .swiper-pagination {
+        margin-left: 2.5rem;
+        width: calc(100% - 5rem);
+      }
+    }
+  }
+
+  .slide {
+    padding: 2.6rem 2.6rem 2.8rem 1.6rem;
+  }
+
+  .text {
+    margin: 1.1rem 0 1.3rem 0;
+  }
+
+  .specialist {
+    @include capitals-bold-small($colorMainBg);
+
+    margin-top: 2.6rem;
+    opacity: 0.8;
+
+    & + .specialist {
+      margin-top: 0;
+    }
+
+    &.specialistAuto {
+      margin-top: auto;
+    }
+  }
+}
+
+@media (min-width: $widthDesktopMin) {
+  .container {
+    padding-top: 10.1rem;
+    padding-bottom: 1rem;
+
+    .slider {
+      margin-top: 6.2rem;
+
+      :global {
+        .swiper-container {
+          margin-left: 0;
+          padding-right: 0;
+          padding-left: 0;
+          width: 100%;
+        }
+
+        .swiper-slide {
+          width: 100%;
+
+          &:not(:last-of-type) {
+            margin-right: 2rem;
+          }
+        }
+
+        .swiper-pagination {
+          margin-left: 7.5rem;
+          width: 129.5rem;
+        }
+      }
+    }
+  }
+}

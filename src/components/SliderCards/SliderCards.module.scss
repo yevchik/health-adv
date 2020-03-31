@@ -9,6 +9,10 @@
 
     .swiper-slide {
       width: 29rem;
+
+      &:not(:last-of-type) {
+        margin-right: 2rem;
+      }
     }
 
     div.swiper-pagination {
@@ -62,6 +66,12 @@
     position: relative;
 
     :global {
+      .swiper-slide {
+        &:not(:last-of-type) {
+          margin-right: 3rem;
+        }
+      }
+
       .swiper-container-horizontal {
         padding-right: 0;
         padding-bottom: 3.5rem;

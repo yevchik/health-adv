@@ -136,8 +136,14 @@
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 2.0rem;
+  line-height: 2.5rem;
   color: $color;
+  letter-spacing: 0.01rem;
+
+  @media (max-width: $widthMobileMax) {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
 }
 
 @mixin h7($color) {
@@ -214,6 +220,22 @@
   }
 }
 
+@mixin capitals-bold-small($color) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem;
+  color: $color;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+
+  @media (max-width: $widthTabletMax) {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+}
+
 @mixin regular($color) {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
@@ -224,6 +246,7 @@
 
   @media (max-width: $widthTabletMax) {
     font-size: 1.4rem;
+    line-height: 2.2rem;
   }
 }
 

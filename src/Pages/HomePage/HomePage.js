@@ -6,6 +6,7 @@ import ReviewBanner from 'Pages/HomePage/ReviewBanner/ReviewBanner'
 import SliderDoctors from 'Pages/HomePage/SliderDoctors/SliderDoctors'
 import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
 import About from 'Pages/HomePage/About/About'
+import Reviews from 'Pages/HomePage/Reviews/Reviews'
 
 class HomePage extends Component {
   constructor (props) {
@@ -213,6 +214,35 @@ class HomePage extends Component {
           center: [55.854481, 37.563757],
           zoom: 10
         }
+      },
+      reviews: {
+        title: 'Отзывы',
+        list: [
+          {
+            name: 'Дмитрий Ткач',
+            date: '11 августа 2018',
+            text: 'Мне нужно было ставить брекет систему, я&nbsp;всячески противилась этому факту \n' +
+              'На&nbsp;меня не&nbsp;действовали никакие уговоры, ни&nbsp;о&nbsp;полезности' +
+              ' а&nbsp;дальше идет текст, который обрезается при публикации в&nbsp;карточке на&nbsp;главной в&nbsp;разделе &laquo;Отзывы&raquo;',
+            specialist: 'Кирова Ирина Михайловна',
+            services: 'Профилактика'
+          },
+          {
+            name: 'Дмитрий Ткач',
+            date: '12 августа 2018',
+            text: 'Очень короткий текст отзыва буквально на несколько строк',
+            services: 'Профилактика'
+          },
+          {
+            name: 'Дмитрий Ткач',
+            date: '12 августа 2018',
+            text: 'Мне нужно было ставить брекет систему, я&nbsp;всячески противилась этому факту \n' +
+              'На&nbsp;меня не&nbsp;действовали никакие уговоры, ни&nbsp;о&nbsp;полезности' +
+              ' а&nbsp;дальше идет текст, который обрезается при публикации в&nbsp;карточке на&nbsp;главной в&nbsp;разделе &laquo;Отзывы&raquo;',
+            specialist: 'Кирова Ирина Михайловна',
+            services: 'Профилактика'
+          },
+        ]
       }
     }
   }
@@ -229,6 +259,7 @@ class HomePage extends Component {
         <SliderDoctors {...this.homeData.sliderDoctors} />
         <TestBanner {...this.homeData.testBanner} />
         <About {...this.homeData.about} />
+        <Reviews {...this.homeData.reviews} />
       </main>
     )
   }

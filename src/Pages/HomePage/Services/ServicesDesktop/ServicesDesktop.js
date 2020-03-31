@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import css from './ServicesDesktop.module.scss'
 import Container from 'components/Grid/Container'
 import Heading from 'components/Heading/Heading'
-import Slider from 'components/Slider/Slider'
+import Slider from 'components/SliderCards/SliderCards'
 import AdvCard from 'components/AdvCard/AdvCard'
 import { connect } from 'react-redux'
 
