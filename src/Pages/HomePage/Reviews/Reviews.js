@@ -36,8 +36,6 @@ const Reviews = ({ title, list }) => {
         isButtonRequired = pureText.length > 130
         pureText = pureText.length > 130 ? pureText.slice(0, 130) + '&hellip;' : slide.text
       }
-
-      console.log(pureText)
       return (
         <div className={css.slide} key={index}>
           <p className={css.name}>
@@ -47,7 +45,7 @@ const Reviews = ({ title, list }) => {
             {slide.date}
           </span>
           <p className={css.text} dangerouslySetInnerHTML={{__html: modal ? slide.text : pureText}} />
-          {!modal && isButtonRequired &&
+          {isButtonRequired &&
             <button
               className={css.btn}
               type='button'
