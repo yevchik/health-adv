@@ -11,3 +11,9 @@ export const createSubArrays = (array, groupSize) => {
 
   return resultArray
 }
+
+export const decodeHTMLCharacters = string => {
+  const el = document.createElement('textarea')
+  el.innerHTML = string
+  return el.value
+}

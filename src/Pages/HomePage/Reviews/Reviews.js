@@ -5,6 +5,7 @@ import Heading from 'components/Heading/Heading'
 import SliderCards from 'components/SliderCards/SliderCards'
 import Modal from 'components/Modal/Modal'
 import classnames from 'classnames'
+import { decodeHTMLCharacters } from 'utils'
 
 const Reviews = ({ title, list }) => {
   const [modal, setModalStatus] = useState({
@@ -28,13 +29,15 @@ const Reviews = ({ title, list }) => {
 
   const getSlides = (modal = false) => {
     return list.map((slide, index) => {
-      let pureText = slide.text
-        .replace(/(&nbsp;|\n)/g, ' ')
-        .replace(/(&laquo;|&raquo;)/g, '"')
-        .replace(/(&ndash;|&mdash;)/g, '-')
-      if (pureText.length > 130) {
-        pureText = pureText.slice(0, 130) + '&hellip;'
+      let pureText = ''
+      let isButtonRequired = false
+      if (!modal) {
+        pureText = decodeHTMLCharacters(slide.text)
+        isButtonRequired = pureText.length > 130
+        pureText = pureText.length > 130 ? pureText.slice(0, 130) + '&hellip;' : slide.text
       }
+
+      console.log(pureText)
       return (
         <div className={css.slide} key={index}>
           <p className={css.name}>
@@ -44,19 +47,21 @@ const Reviews = ({ title, list }) => {
             {slide.date}
           </span>
           <p className={css.text} dangerouslySetInnerHTML={{__html: modal ? slide.text : pureText}} />
-          {!modal &&
-          <button
-            className={css.btn}
-            type='button'
-            onClick={() => handleOpenModal(index)}
-          >
-            Отзыв полностью
-          </button>
+          {!modal && isButtonRequired &&
+            <button
+              className={css.btn}
+              type='button'
+              onClick={() => handleOpenModal(index)}
+            >
+              Отзыв полностью
+            </button>
           }
-          <span className={css.specialist}>
+          <span className={classnames(css.specialist, {
+            [css.specialistAuto]: !modal && !isButtonRequired
+          })}>
             {`Специалист: ${slide.specialist}`}
           </span>
-          <span className={classnames(css.specialist, css.services)}>
+          <span className={css.specialist}>
             {`Услуги: ${slide.services}`}
           </span>
         </div>
