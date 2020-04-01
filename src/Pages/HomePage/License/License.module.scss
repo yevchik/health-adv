@@ -64,7 +64,19 @@
 
 @media (min-width: $widthTabletMin) {
   .container {
+    position: relative;
     padding-top: 5.6rem;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40rem;
+      background-color: var(--color-highlight-lightest);
+    }
 
     :global {
       .swiper-container {
