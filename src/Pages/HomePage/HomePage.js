@@ -8,6 +8,7 @@ import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
 import About from 'Pages/HomePage/About/About'
 import Reviews from 'Pages/HomePage/Reviews/Reviews'
 import Advantages from 'Pages/HomePage/Advantages/Advantages'
+import License from 'Pages/HomePage/License/License'
 
 class HomePage extends Component {
   constructor (props) {
@@ -280,6 +281,41 @@ class HomePage extends Component {
             descriptor: 'Лечение дёсен и&nbsp;зубов нельзя переносить, т.к. это может привести к&nbsp;осложнениям. Заботимся о&nbsp;вас, поэтому предлагаем возможность оплатить услуги в&nbsp;рассрочку. Лечитесь сейчас, оплачивайте потом.'
           },
         ]
+      },
+      license: {
+        title: 'Лицензии',
+        list: [
+          {
+            label: 'Приложение &#8470;&nbsp;1&nbsp;к лицензии &#8470; ФС-99-02-005179',
+            previewImage: 'license__preview.jpg',
+            fullImage: 'license__full.jpg'
+          },
+          {
+            label: 'Приложение &#8470;&nbsp;1&nbsp;к лицензии &#8470; ФС-99-02-005179',
+            previewImage: 'license__preview.jpg',
+            fullImage: 'license__full.jpg'
+          },
+          {
+            label: 'Приложение &#8470;&nbsp;1&nbsp;к лицензии &#8470; ФС-99-02-005179',
+            previewImage: 'license__preview.jpg',
+            fullImage: 'license__full.jpg'
+          },
+          {
+            label: 'Приложение &#8470;&nbsp;1&nbsp;к лицензии &#8470; ФС-99-02-005179',
+            previewImage: 'license__preview.jpg',
+            fullImage: 'license__full.jpg'
+          },
+          {
+            label: 'Приложение &#8470;&nbsp;1&nbsp;к лицензии &#8470; ФС-99-02-005179',
+            previewImage: 'license__preview.jpg',
+            fullImage: 'license__full.jpg'
+          },
+          {
+            label: 'Приложение &#8470;&nbsp;1&nbsp;к лицензии &#8470; ФС-99-02-005179',
+            previewImage: 'license__preview.jpg',
+            fullImage: 'license__full.jpg'
+          },
+        ]
       }
     }
   }
@@ -298,6 +334,7 @@ class HomePage extends Component {
         <About {...this.homeData.about} />
         <Reviews {...this.homeData.reviews} />
         <Advantages {...this.homeData.advantages} />
+        <License {...this.homeData.license} />
       </main>
     )
   }

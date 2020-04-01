@@ -1,0 +1,57 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.container {
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+
+  :global {
+    .swiper-container {
+      margin-left: -1.5rem;
+      padding-left: 1.5rem;
+      width: calc(100% + 3rem);
+    }
+
+    .swiper-slide {
+      width: 19rem;
+
+      &:not(:last-of-type) {
+        margin-right: 1.5rem;
+      }
+
+      &:last-of-type {
+        margin-right: 1.5rem;
+      }
+    }
+
+    .swiper-pagination {
+      margin-left: 1.5rem;
+      width: calc(100% - 3rem);
+    }
+  }
+}
+
+.trigger {
+  @include resetButton;
+}
+
+.previewImage {
+  width: 100%;
+  height: 27.7rem;
+  object-fit: cover;
+}
+
+.label {
+  @include regularTabletScaling(var(--color-font-main));
+
+  display: block;
+  text-align: left;
+}
+
+.fullImage {
+  max-width: 100%;
+}
+
+.slider {
+  margin-top: 2rem;
+}
