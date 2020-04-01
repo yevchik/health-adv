@@ -7,6 +7,7 @@ import SliderDoctors from 'Pages/HomePage/SliderDoctors/SliderDoctors'
 import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
 import About from 'Pages/HomePage/About/About'
 import Reviews from 'Pages/HomePage/Reviews/Reviews'
+import Advantages from 'Pages/HomePage/Advantages/Advantages'
 
 class HomePage extends Component {
   constructor (props) {
@@ -249,6 +250,36 @@ class HomePage extends Component {
             preview: 'review-slider__preview.jpg'
           },
         ]
+      },
+      advantages: {
+        title: 'Преймущества',
+        list: [
+          {
+            subtitle: 'Помогаем в&nbsp;сложных случаях',
+            descriptor: 'Решаем сложные проблемы комплексно, оптимальное решение и&nbsp;план лечения разрабатывают несколько специалистов'
+          },
+          {
+            subtitle: 'Врачи с&nbsp;опытом от&nbsp;8&nbsp;до&nbsp;30&nbsp;лет',
+            descriptor: 'У&nbsp;нас работают только профессионалы с&nbsp;большим клиническим опытом и&nbsp;безупречной репутацией, подтверждённой временем'
+          },
+          {
+            subtitle: 'Выступаем на&nbsp;конференциях',
+            descriptor: 'Часто выступаем спикерами на&nbsp;стоматологических форумах и&nbsp;обмениваемся знаниями с&nbsp;коллегами'
+          },
+          {
+            subtitle: 'Только необходимые услуги',
+            descriptor: 'Никогда не&nbsp;навязываем лишние услуги. Практикуем только честный подход \n' +
+              'и&nbsp;персонально составляем план лечения, который разработан с&nbsp;учётом особенностей конкретного случая.'
+          },
+          {
+            subtitle: 'Понятные цены',
+            descriptor: 'Детальный финансовый план лечения прописан в&nbsp;договоре, и&nbsp;после его подписания стоимость работ не&nbsp;может измениться. Никаких неожиданных нюансов в&nbsp;виде сносок, дополнительных условий скрытых платежей!'
+          },
+          {
+            subtitle: 'Лечение в&nbsp;рассрочку',
+            descriptor: 'Лечение дёсен и&nbsp;зубов нельзя переносить, т.к. это может привести к&nbsp;осложнениям. Заботимся о&nbsp;вас, поэтому предлагаем возможность оплатить услуги в&nbsp;рассрочку. Лечитесь сейчас, оплачивайте потом.'
+          },
+        ]
       }
     }
   }
@@ -266,6 +297,7 @@ class HomePage extends Component {
         <TestBanner {...this.homeData.testBanner} />
         <About {...this.homeData.about} />
         <Reviews {...this.homeData.reviews} />
+        <Advantages {...this.homeData.advantages} />
       </main>
     )
   }
