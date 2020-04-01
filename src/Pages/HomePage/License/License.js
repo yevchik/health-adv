@@ -29,7 +29,7 @@ const License = ({ title = 'Лицензии', list }) => {
   }
 
   const listIteems = list.map((item, index) => (
-    <li className={css.item} key={item.label + '-' + index}>
+    <div className={css.item} key={item.label + '-' + index}>
       <button
         className={css.trigger}
         onClick={() => handleClickModalTrigger(item.label, item.fullImage)}
@@ -42,14 +42,18 @@ const License = ({ title = 'Лицензии', list }) => {
         />
         <span className={css.label} dangerouslySetInnerHTML={{ __html: item.label }} />
       </button>
-    </li>
+    </div>
   ))
 
   return (
     <section>
       <Container className={css.container}>
         <Heading content={title} />
-        <SliderCards className={css.slider}>
+        <SliderCards
+          className={css.slider}
+          desktopControls='styled'
+          desktopFreeMode
+        >
           { listIteems }
         </SliderCards>
       </Container>

@@ -40,8 +40,18 @@ class SliderCards extends Component {
   }
 
   render () {
-    const { className, children, desktopSlidesPerView = 1, type, desktopControls = 'minimalist' } = this.props
-    const { activeIndex, totalSlides } = this.state
+    const {
+      className,
+      children,
+      type,
+      desktopControls = 'minimalist',
+      desktopFreeMode = false
+    } = this.props
+
+    const {
+      activeIndex,
+      totalSlides
+    } = this.state
 
     // swiper settings
     const params = {
@@ -57,8 +67,8 @@ class SliderCards extends Component {
           slidesPerView: 'auto'
         },
         1280: {
-          freeMode: false,
-          slidesPerView: desktopSlidesPerView
+          freeMode: desktopFreeMode,
+          freeModeSticky: desktopFreeMode,
         }
       },
       on: {
@@ -80,7 +90,7 @@ class SliderCards extends Component {
         </Swiper>
         <div className={css.controls}>
           {+totalSlides > 0 &&
-            <div className={css.fractions}>
+            <div className={classnames(css.fractions, 'slider-fractions')}>
               <span className={css.active}>
                 { activeIndex < 10 ? '0' + (activeIndex + 1) : activeIndex + 1 }
               </span>

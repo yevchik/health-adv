@@ -54,7 +54,8 @@
 }
 
 .fullImage {
-  max-height: 85vh;
+  max-width: 100%;
+  max-height: 80vh;
 }
 
 .slider {
@@ -101,5 +102,55 @@
 
   .slider {
     margin-top: 3rem
+  }
+}
+
+@media (min-width: $widthDesktopMin) {
+  .container {
+    padding-top: 9.2rem;
+    padding-bottom: 11rem;
+
+    :global {
+      .swiper-container {
+        margin-left: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+        width: 100%;
+      }
+
+     .swiper-slide {
+        width: 26.6rem;
+
+        &:not(:last-of-type) {
+          margin-right: 10.2rem;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      div.swiper-pagination {
+        display: none;
+      }
+    }
+  }
+
+  .slider {
+    margin-top: 6.2rem;
+
+    :global {
+      .slider-fractions {
+        display: none;
+      }
+    }
+  }
+
+  .trigger {
+    width: 26.6rem;
+  }
+
+  .fullImage {
+    height: 100%;
   }
 }
