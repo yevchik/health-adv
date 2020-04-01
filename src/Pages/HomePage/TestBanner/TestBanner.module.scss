@@ -94,7 +94,7 @@
 }
 
 @media (min-width: $widthTabletMin) {
-  .section {
+  .section:not(.sectionSimple) {
     margin-top: 0;
     padding-top: 5.3rem;
     padding-bottom: 3rem;
@@ -132,6 +132,40 @@
   .btn {
     margin-top: 2.3rem;
     width: 24.3rem;
+  }
+
+  .sectionSimple {
+    margin-top: 0;
+    padding-top: 0;
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 4.2rem 2.5rem 4.3rem 2.5rem;
+    }
+
+    .icon {
+      position: absolute;
+      bottom: -19rem;
+      left: auto;
+      right: -24%;
+      width: 40rem;
+      transform: rotate(90deg);
+    }
+
+    .title {
+      padding-right: 0;
+    }
+
+    .descriptor {
+      margin: 1.2rem 0 0 0;
+      padding-right: 0;
+    }
+
+    .btn {
+      margin-top: 0;
+    }
   }
 }
 
