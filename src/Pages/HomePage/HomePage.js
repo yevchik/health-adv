@@ -225,13 +225,17 @@ class HomePage extends Component {
               'На&nbsp;меня не&nbsp;действовали никакие уговоры, ни&nbsp;о&nbsp;полезности' +
               ' а&nbsp;дальше идет текст, который обрезается при публикации в&nbsp;карточке на&nbsp;главной в&nbsp;разделе &laquo;Отзывы&raquo;',
             specialist: 'Кирова Ирина Михайловна',
-            services: 'Профилактика'
+            services: 'Профилактика',
+            video: 'demo_video_1920.mp4',
+            preview: 'review-slider__preview.jpg'
           },
           {
             name: 'Дмитрий Ткач',
             date: '12 августа 2018',
             text: 'Очень короткий текст отзыва буквально на несколько строк',
-            services: 'Профилактика'
+            specialist: 'Кирова Ирина Михайловна',
+            services: 'Профилактика',
+            preview: 'review-slider__preview.jpg'
           },
           {
             name: 'Дмитрий Ткач',
@@ -240,7 +244,9 @@ class HomePage extends Component {
               'На&nbsp;меня не&nbsp;действовали никакие уговоры, ни&nbsp;о&nbsp;полезности' +
               ' а&nbsp;дальше идет текст, который обрезается при публикации в&nbsp;карточке на&nbsp;главной в&nbsp;разделе &laquo;Отзывы&raquo;',
             specialist: 'Кирова Ирина Михайловна',
-            services: 'Профилактика'
+            services: 'Профилактика',
+            video: 'demo_video_1920.mp4',
+            preview: 'review-slider__preview.jpg'
           },
         ]
       }

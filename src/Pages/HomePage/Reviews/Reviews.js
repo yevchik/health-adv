@@ -6,6 +6,8 @@ import SliderCards from 'components/SliderCards/SliderCards'
 import Modal from 'components/Modal/Modal'
 import classnames from 'classnames'
 import { decodeHTMLCharacters } from 'utils'
+import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
+import { images, videos } from 'App'
 
 const Reviews = ({ title, list }) => {
   const [modal, setModalStatus] = useState({
@@ -27,6 +29,17 @@ const Reviews = ({ title, list }) => {
     }))
   }
 
+  const handlePlayVideo = video => {
+    setModalStatus({
+      isVisible: true,
+      content: (
+        <video className={css.video} muted autoPlay>
+          <source src={videos('./' + video)} />
+        </video>
+      )
+    })
+  }
+
   const getSlides = (modal = false) => {
     return list.map((slide, index) => {
       let pureText = ''
@@ -37,31 +50,45 @@ const Reviews = ({ title, list }) => {
         pureText = pureText.length > 130 ? pureText.slice(0, 130) + '&hellip;' : slide.text
       }
       return (
-        <div className={css.slide} key={index}>
-          <p className={css.name}>
-            {slide.name + ','}
-          </p>
-          <span className={css.date}>
-            {slide.date}
-          </span>
-          <p className={css.text} dangerouslySetInnerHTML={{__html: modal ? slide.text : pureText}} />
-          {isButtonRequired &&
-            <button
-              className={css.btn}
-              type='button'
-              onClick={() => handleOpenModal(index)}
-            >
-              Отзыв полностью
-            </button>
+        <div className={classnames(css.slide, { [css.slideModal]: modal })} key={index}>
+          <div className={css.contentText}>
+            <div className={css.author}>
+              <p className={css.name}>
+                {slide.name + ','}
+              </p>
+              <span className={css.date}>
+                {slide.date}
+              </span>
+            </div>
+            <p className={css.text} dangerouslySetInnerHTML={{__html: modal ? slide.text : pureText}} />
+            {isButtonRequired &&
+              <button
+                className={css.btn}
+                type='button'
+                onClick={() => handleOpenModal(index)}
+              >
+                Отзыв полностью
+              </button>
+            }
+            <span className={classnames(css.specialist, {
+              [css.specialistAuto]: !modal && !isButtonRequired
+            })}>
+              {`Специалист: ${slide.specialist}`}
+            </span>
+            <span className={css.specialist}>
+              {`Услуги: ${slide.services}`}
+            </span>
+          </div>
+         {slide.video && !modal &&
+          <ButtonPlay
+            className={css.btnPlay}
+            background={`url("${images('./' + slide.preview)}")`}
+            handleClick={() => handlePlayVideo(slide.video)}
+          />
+         }
+          {!slide.video && !modal &&
+            <img src={images('./' + slide.preview)} className={css.img} alt='Фотография респондента' />
           }
-          <span className={classnames(css.specialist, {
-            [css.specialistAuto]: !modal && !isButtonRequired
-          })}>
-            {`Специалист: ${slide.specialist}`}
-          </span>
-          <span className={css.specialist}>
-            {`Услуги: ${slide.services}`}
-          </span>
         </div>
       )
     })
@@ -75,12 +102,14 @@ const Reviews = ({ title, list }) => {
       <article>
         <Container className={css.container}>
           <Heading className={css.tile} content={title} />
-          <SliderCards className={css.slider}>
+          <SliderCards className={css.slider} desktopControls='styled'>
             { slides }
           </SliderCards>
         </Container>
       </article>
-      <Modal isVisible={modal.isVisible} content={modal.content} handleCloseModal={handleCloseModal} />
+      <Modal isVisible={modal.isVisible} handleCloseModal={handleCloseModal}>
+        { modal.content }
+      </Modal>
     </>
   )
 }

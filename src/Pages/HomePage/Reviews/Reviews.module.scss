@@ -33,12 +33,22 @@
 }
 
 .slide {
+  display: block;
+}
+
+.contentText {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 1.7rem 1.5rem 2rem 1.5rem;
   height: 100%;
   background-color: var(--color-highlight-mosaic);
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .name,
@@ -59,6 +69,7 @@
   @include capitals-bold($colorMainBg);
 
   margin-top: auto;
+  cursor: pointer;
 }
 
 .specialist {
@@ -70,6 +81,19 @@
   & + .specialist {
     margin-top: 0.8rem;
   }
+}
+
+.btnPlay {
+  display: none
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  display: none;
 }
 
 @media (min-width: $widthTabletMin) {
@@ -96,14 +120,14 @@
         }
       }
 
-      .swiper-pagination {
+      div.swiper-pagination {
         margin-left: 2.5rem;
         width: calc(100% - 5rem);
       }
     }
   }
 
-  .slide {
+  .contentText {
     padding: 2.6rem 2.6rem 2.8rem 1.6rem;
   }
 
@@ -144,10 +168,10 @@
         }
 
         .swiper-slide {
-          width: 100%;
+            width: 100%;
 
           &:not(:last-of-type) {
-            margin-right: 2rem;
+            margin-right: 0;
           }
         }
 
@@ -157,5 +181,81 @@
         }
       }
     }
+  }
+
+  .slide {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+  }
+
+  .contentText {
+    padding: 4.4rem 6rem 4.5rem 5rem;
+    background-color: var(--color-highlight-lightest);
+  }
+
+  .author {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .name,
+  .date,
+  .text {
+    color: var(--color-font-main);
+  }
+
+  .name,
+  .date {
+    display: inline-block;
+  }
+
+  .date {
+    margin-left: 0.7rem;
+  }
+
+  .text {
+    margin: 1.6rem 0 1.4rem 0;
+  }
+
+  .btn {
+    @include colorButtonBehavior;
+  }
+
+  .specialist {
+    margin-top: 4.4rem;
+    color: var(--color-font-main);
+    opacity: 0.5;
+
+    & + .specialist {
+      margin-top: 0.9rem;
+    }
+
+    &.specialistAuto {
+      margin-top: auto;
+    }
+  }
+
+  .btnPlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video {
+    height: 67.2rem;
+    object-fit: cover;
+  }
+
+  .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .slideModal {
+    display: block;
   }
 }
