@@ -100,7 +100,7 @@ class ServicesDesktop extends Component {
             <div className={css.promo}>
               <Slider>
                 {ads.map((item, index) => (
-                  <div key={index}>
+                  <div className={css.slide} key={index}>
                     <AdvCard {...item} />
                   </div>
                 ))}

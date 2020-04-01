@@ -241,7 +241,7 @@
   }
 
   .highlight {
-    @include h8(var(--color-highlight-lightest));
+    @include capitals-bold(var(--color-highlight-lightest));
 
     margin: 0;
     text-transform: uppercase;

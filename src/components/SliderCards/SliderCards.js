@@ -69,6 +69,7 @@ class SliderCards extends Component {
         1280: {
           freeMode: desktopFreeMode,
           freeModeSticky: desktopFreeMode,
+          slidesPerView: desktopFreeMode ? 'auto' : 1
         }
       },
       on: {
