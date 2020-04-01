@@ -4,9 +4,12 @@ import Container from 'components/Grid/Container'
 import Heading from 'components/Heading/Heading'
 import { Collapse } from 'react-collapse'
 import IconArrow from 'assets/icons/IconArrow'
+import { useSelector } from 'react-redux'
+import classnames from 'classnames'
 
 const Advantages = ({ title = 'Преймущества', list }) => {
   const [isCollapseOpened, setCollapseOpened] = useState(false)
+  const type = useSelector(state => state.elastic.deviceType)
 
   const listItems = list.map((item, index) => (
     <li className={css.item} key={item.subtitle + '-' + index}>
@@ -15,10 +18,9 @@ const Advantages = ({ title = 'Преймущества', list }) => {
     </li>
   ))
 
-  return (
-    <section>
-      <Container className={css.container}>
-        <Heading content={title} />
+  const content = type === 'mobile'
+    ? (
+      <>
         <Collapse
           isOpened={isCollapseOpened}
           initialStyle={{ height: '50px', overflow: 'hidden'}}
@@ -28,16 +30,27 @@ const Advantages = ({ title = 'Преймущества', list }) => {
             { listItems }
           </ul>
         </Collapse>
-        {!isCollapseOpened &&
-          <button
-            className={css.btn}
-            onClick={() => setCollapseOpened(prevState => !prevState)}
-            type='button'
-          >
-            Ещё преимущества
-            <IconArrow className={css.icon} />
-          </button>
-        }
+        <button
+          className={classnames(css.btn, { [css.btnOpened]: isCollapseOpened })}
+          onClick={() => setCollapseOpened(prevState => !prevState)}
+          type='button'
+        >
+          Ещё преимущества
+          <IconArrow className={css.icon} />
+        </button>
+      </>
+    )
+    : (
+      <ul className={css.list}>
+        { listItems }
+      </ul>
+    )
+
+  return (
+    <section>
+      <Container className={css.container}>
+        <Heading content={title} />
+        { content }
       </Container>
     </section>
   )

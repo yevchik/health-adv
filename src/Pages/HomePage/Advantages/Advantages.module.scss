@@ -49,7 +49,7 @@
       counter-increment: advCards;
       content: counter(advCards, decimal-leading-zero);
       position: absolute;
-      top: -5rem;
+      top: -5.5rem;
       left: 0;
       @include h0(var(--color-highlight-lightest));
       z-index: -1;
@@ -81,10 +81,31 @@
     z-index: 1;
   }
 
+  .btnOpened {
+    display: none;
+  }
+
   .icon {
     margin-left: 0.7rem;
     width: 0.8rem;
     stroke: var(--color-highlight-buttons);
     transform: rotate(180deg);
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .container {
+    padding-top: 5rem;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 6.5rem 3rem;
+    margin-top: 0.5rem;
+  }
+
+  .item {
+    margin-top: 0;
   }
 }
