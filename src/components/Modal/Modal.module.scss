@@ -79,6 +79,9 @@
 }
 
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   animation-name: contentLiftUp;
   animation-duration: 0.3s;
