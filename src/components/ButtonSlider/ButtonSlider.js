@@ -12,7 +12,8 @@ const ButtonSlider = ({
   <button
     className={classnames(css.button, className, {
       [css.buttonDisabled]: isDisabled,
-      [css.buttonPrev]: type === 'prev'
+      [css.buttonPrev]: type === 'prev',
+      [css.buttonNext]: type === 'next'
     })}
     onClick={handleClick}
     type='button'
