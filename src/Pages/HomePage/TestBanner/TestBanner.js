@@ -4,9 +4,10 @@ import Heading from 'components/Heading/Heading'
 import Button from 'components/Button/Button'
 import IconDotsBg from 'assets/icons/IconDotsBg'
 import Container from 'components/Grid/Container'
+import classnames from 'classnames'
 
-const TestBanner = ({ title, descriptor }) => (
-  <section className={css.section}>
+const TestBanner = ({ title, descriptor, type }) => (
+  <section className={classnames(css.section, { [css.sectionSimple]: type === 'simple' })}>
     <Container className={css.container}>
       <div className={css.wrapper}>
         <div className={css.content}>

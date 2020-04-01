@@ -335,6 +335,7 @@ class HomePage extends Component {
         <Reviews {...this.homeData.reviews} />
         <Advantages {...this.homeData.advantages} />
         <License {...this.homeData.license} />
+        <TestBanner {...this.homeData.testBanner} type='simple' />
       </main>
     )
   }
