@@ -34,63 +34,63 @@
       pointer-events: none;
     }
   }
+}
 
-  .list {
-    @include resetList;
+.list {
+  @include resetList;
 
-    counter-reset: advCards;
-  }
+  counter-reset: advCards;
+}
 
-  .item {
-    position: relative;
-    margin-top: 6rem;
+.item {
+  position: relative;
+  margin-top: 6rem;
 
-    &::before {
-      counter-increment: advCards;
-      content: counter(advCards, decimal-leading-zero);
-      position: absolute;
-      top: -5.5rem;
-      left: 0;
-      @include h0(var(--color-highlight-lightest));
-      z-index: -1;
-    }
-  }
-
-  .subtitle {
-    @include capitals-bold(var(--color-font-main));
-
-    margin: 0;
-  }
-
-  .descriptor {
-    @include regular(var(--color-font-main));
-
-    margin: 0.7rem 0 0 0;
-  }
-
-  .btn {
-    @include resetButton;
-    @include capitals-bold(var(--color-highlight-buttons));
-    @include colorButtonBehavior;
-
+  &::before {
+    counter-increment: advCards;
+    content: counter(advCards, decimal-leading-zero);
     position: absolute;
-    bottom: 2rem;
-    left: 1.5rem;
-    display: flex;
-    align-items: center;
-    z-index: 1;
+    top: -5.5rem;
+    left: 0;
+    @include h0(var(--color-highlight-lightest));
+    z-index: -1;
   }
+}
 
-  .btnOpened {
-    display: none;
-  }
+.subtitle {
+  @include capitals-bold(var(--color-font-main));
 
-  .icon {
-    margin-left: 0.7rem;
-    width: 0.8rem;
-    stroke: var(--color-highlight-buttons);
-    transform: rotate(180deg);
-  }
+  margin: 0;
+}
+
+.descriptor {
+  @include regular(var(--color-font-main));
+
+  margin: 0.7rem 0 0 0;
+}
+
+.btn {
+  @include resetButton;
+  @include capitals-bold(var(--color-highlight-buttons));
+  @include colorButtonBehavior;
+
+  position: absolute;
+  bottom: 2rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.btnOpened {
+  display: none;
+}
+
+.icon {
+  margin-left: 0.7rem;
+  width: 0.8rem;
+  stroke: var(--color-highlight-buttons);
+  transform: rotate(180deg);
 }
 
 @media (min-width: $widthTabletMin) {
@@ -107,5 +107,18 @@
 
   .item {
     margin-top: 0;
+  }
+}
+
+@media (min-width: $widthDesktopMin) {
+  .container {
+    padding-top: 10rem;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12rem 3.5rem;
+    margin-top: 12rem;
   }
 }
