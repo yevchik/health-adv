@@ -41,7 +41,8 @@
   }
 }
 
-.controls {
+.controls,
+.buttonsStyled {
   display: none;
 }
 
@@ -92,6 +93,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: 3rem;
     z-index: 1;
   }
 
@@ -151,5 +153,13 @@
     transition-property: stroke;
     transition-duration: 0.3s;
     pointer-events: none;
+  }
+
+  .buttonsStyled {
+    position: absolute;
+    top: -10rem;
+    right: 0;
+    display: flex;
+    z-index: 1;
   }
 }

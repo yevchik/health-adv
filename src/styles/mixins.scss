@@ -300,3 +300,18 @@
     color: var(--color-highlight-buttons);
   }
 }
+
+@mixin colorButtonBehavior {
+  color: var(--color-highlight-buttons);
+  transition-duration: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-highlight-buttons-dark);
+  }
+
+  &:active {
+    color: var(--color-highlight-buttons);
+    opacity: 0.6;
+  }
+}
