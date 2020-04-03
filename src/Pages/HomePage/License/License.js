@@ -28,7 +28,7 @@ const License = ({ title = 'Лицензии', list }) => {
     }))
   }
 
-  const listIteems = list.map((item, index) => (
+  const listItems = list.map((item, index) => (
     <div className={css.item} key={item.label + '-' + index}>
       <button
         className={css.trigger}
@@ -51,10 +51,10 @@ const License = ({ title = 'Лицензии', list }) => {
         <Heading content={title} />
         <SliderCards
           className={css.slider}
-          desktopControls='styled'
+          desktopControls='styledNoFractions'
           desktopFreeMode
         >
-          { listIteems }
+          { listItems }
         </SliderCards>
       </Container>
       <Modal isVisible={modalStatus.isOpened} handleCloseModal={handleCloseModal} >

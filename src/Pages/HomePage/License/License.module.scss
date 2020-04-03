@@ -159,7 +159,21 @@
   }
 
   .trigger {
+    display: block;
     width: 26.6rem;
+    cursor: pointer;
+
+    &:hover {
+      .label {
+        color: var(--color-highlight-buttons);
+      }
+    }
+  }
+
+  .label {
+    display: block;
+    transition-duration: 0.3s;
+    transition-property: color;
   }
 
   .fullImage {

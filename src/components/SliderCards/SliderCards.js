@@ -90,31 +90,33 @@ class SliderCards extends Component {
         <Swiper {...params} getSwiper={this.initSlider}>
           { children }
         </Swiper>
-        <div className={css.controls}>
-          {+totalSlides > 0 &&
-            <div className={classnames(css.fractions, 'slider-fractions')}>
-              <span className={css.active}>
-                { activeIndex < 10 ? '0' + (activeIndex + 1) : activeIndex + 1 }
-              </span>
-              <span className={css.total}>
-                { totalSlides }
-              </span>
-            </div>
-          }
-          {desktopControls !== 'styled' &&
-            <div className={css.buttons}>
-              <button className={classnames(css.btn, css.btnBefore, { [css.btnDisabled]: activeIndex === 0 })} onClick={this.goPrev}>
-                Предыдущий слайд
-                <IconArrow className={css.icon} />
-              </button>
-              <button className={classnames(css.btn, css.btnNext, { [css.btnDisabled]: this.swiper && activeIndex === this.swiper.slides.length - 1 })} onClick={this.goNext}>
-                Следующий слайд
-                <IconArrow className={css.icon} />
-              </button>
-            </div>
-          }
-        </div>
-        {desktopControls === 'styled' &&
+        {desktopControls !== 'styledNoFractions' &&
+          <div className={css.controls}>
+            {+totalSlides > 0 &&
+              <div className={classnames(css.fractions, 'slider-fractions')}>
+                <span className={css.active}>
+                  { activeIndex < 10 ? '0' + (activeIndex + 1) : activeIndex + 1 }
+                </span>
+                <span className={css.total}>
+                  { totalSlides }
+                </span>
+              </div>
+            }
+            {desktopControls !== 'styled' && desktopControls !== 'styledNoFractions' &&
+              <div className={css.buttons}>
+                <button className={classnames(css.btn, css.btnBefore, { [css.btnDisabled]: activeIndex === 0 })} onClick={this.goPrev}>
+                  Предыдущий слайд
+                  <IconArrow className={css.icon} />
+                </button>
+                <button className={classnames(css.btn, css.btnNext, { [css.btnDisabled]: this.swiper && activeIndex === this.swiper.slides.length - 1 })} onClick={this.goNext}>
+                  Следующий слайд
+                  <IconArrow className={css.icon} />
+                </button>
+              </div>
+            }
+          </div>
+        }
+        {(desktopControls === 'styled' || desktopControls === 'styledNoFractions') &&
           <div className={css.buttonsStyled}>
             <ButtonSlider type='prev' className={css.btnStyled} handleClick={this.goPrev} isDisabled={this.swiper && this.swiper.isBeginning} />
             <ButtonSlider  className={css.btnStyled} handleClick={this.goNext} isDisabled={this.swiper && this.swiper.isEnd} />
