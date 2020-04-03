@@ -8,6 +8,7 @@ import IconEye from 'containers/Header/_assets/IconEye'
 import { Link } from 'react-router-dom'
 import { Collapse } from 'react-collapse/lib/Collapse'
 import IconArrow from 'containers/Header/_assets/IconArrow'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 class AdaptiveMenu extends Component {
   constructor (props) {
@@ -26,6 +27,15 @@ class AdaptiveMenu extends Component {
         this.props.handleClose()
       }
     })
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if (!prevProps.isOpened && this.props.isOpened) {
+      disableBodyScroll(this.wrapperRef)
+    }
+    if (prevProps.isOpened && !this.props.isOpened) {
+      enableBodyScroll(this.wrapperRef)
+    }
   }
 
   handleCollapseClick = () => {

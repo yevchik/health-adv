@@ -3,6 +3,7 @@ import classnames from 'classnames'
 import css from './Modal.module.scss'
 import Container from 'components/Grid/Container'
 import IconClose from 'containers/Header/_assets/IconClose'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 class Modal extends Component {
   constructor (props) {
@@ -17,8 +18,16 @@ class Modal extends Component {
   }
 
   componentDidMount () {
-    this.wrapperRef && this.wrapperRef.addEventListener('click', this.handleClickWrapper)
-    document.addEventListener('keydown', this.handleEscPress)
+    if (this.wrapperRef) {
+      this.wrapperRef.addEventListener('click', this.handleClickWrapper)
+      document.addEventListener('keydown', this.handleEscPress)
+    }
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if (!prevProps.isVisible && this.props.isVisible) {
+      disableBodyScroll(this.wrapperRef, { reserveScrollBarGap: true })
+    }
   }
 
   componentWillUnmount () {
@@ -54,11 +63,25 @@ class Modal extends Component {
     }
   }
 
+  handleModalClosing = () => {
+    if (this.state.isClosing) {
+      enableBodyScroll(this.wrapperRef)
+      this.setState({
+        isClosing: false
+      })
+      this.wrapperRef.removeEventListener('animationend', this.handleModalClosing)
+    }
+  }
+
   closeModal = () => {
     this.setState({
       isClosing: true
     })
     this.props.handleCloseModal()
+    // body-scroll-lock adds padding-right for scroll bar space imitation. To avoid content
+    // shift at the end of modal close, we postpone enablebodyscroll with padding removal until
+    // close animation ends
+    this.wrapperRef.addEventListener('animationend', this.handleModalClosing)
   }
 
 

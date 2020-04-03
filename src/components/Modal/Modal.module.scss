@@ -1,26 +1,6 @@
 @import "styles/variables";
 @import "styles/mixins";
 
-@keyframes contentDropDown {
-  0% {
-    opacity: 0
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes contentLiftUp {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
 @keyframes wrapperLiftUp {
   0% {
     transform: translateY(100vh);
@@ -83,9 +63,6 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  animation-name: contentLiftUp;
-  animation-duration: 0.3s;
-  animation-fill-mode: both;
 }
 
 .content {
@@ -98,18 +75,12 @@
   animation-name: wrapperDropDown;
   animation-fill-mode: both;
   animation-duration: 0.3s;
-
-  .container {
-    animation-name: contentDropDown;
-    animation-duration: 0.3s;
-    animation-fill-mode: both;
-  }
 }
 
 .wrapperClosing {
   animation-name: wrapperLiftUp;
   animation-fill-mode: both;
-  animation-duration: 0.6s;
+  animation-duration: 0.15s;
 }
 
 .btn {
