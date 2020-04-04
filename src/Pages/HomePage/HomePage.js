@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import VideoBanner from 'Pages/HomePage/VideoBanner/VideoBanner'
 import Services from 'Pages/HomePage/Services/Services'
-import ReviewBanner from 'Pages/HomePage/ReviewBanner/ReviewBanner'
-import SliderDoctors from 'Pages/HomePage/SliderDoctors/SliderDoctors'
-import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
-import About from 'Pages/HomePage/About/About'
-import Reviews from 'Pages/HomePage/Reviews/Reviews'
-import Advantages from 'Pages/HomePage/Advantages/Advantages'
-import License from 'Pages/HomePage/License/License'
-import { useSelector } from 'react-redux'
+// import ReviewBanner from 'Pages/HomePage/ReviewBanner/ReviewBanner'
+// import SliderDoctors from 'Pages/HomePage/SliderDoctors/SliderDoctors'
+// import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
+// import About from 'Pages/HomePage/About/About'
+// import Reviews from 'Pages/HomePage/Reviews/Reviews'
+// import Advantages from 'Pages/HomePage/Advantages/Advantages'
+// import License from 'Pages/HomePage/License/License'
+// import { useSelector } from 'react-redux'
 
 const HomePage = () => {
   const homeData = {
@@ -35,6 +35,22 @@ const HomePage = () => {
         {
           category: 'Стоматологическое лечение',
           sublist: [
+            {
+              text: 'Группа 1'
+            },
+            {
+              text: 'Лечение каналов под микроскопом (пульпит, периодонтит)'
+            },
+            {
+              text: 'Лечение кариеса'
+            },
+            {
+              text: 'Лечение каналов под микроскопом (пульпит, периодонтит)'
+            },
+            {
+              text: 'А это очень-очень длинная строка для тестирования компонента на' +
+                ' переполнение контентом'
+            },
             {
               text: 'Группа 1'
             },
@@ -321,7 +337,7 @@ const HomePage = () => {
         { homeData.siteMainCaption }
       </h1>
       <VideoBanner {...homeData.videoBanner} />
-      {/*<Services {...homeData.services} />*/}
+      <Services {...homeData.services} />
       {/*<ReviewBanner {...homeData.reviewBanner} />*/}
       {/*<SliderDoctors {...homeData.sliderDoctors} />*/}
       {/*<TestBanner {...homeData.testBanner} />*/}
