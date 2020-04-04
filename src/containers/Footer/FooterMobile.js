@@ -1,16 +1,15 @@
 import React from 'react'
 import classnames from 'classnames'
-import css from './Footer.module.scss'
-import Container from 'components/Grid/Container'
+import css from './FooterMobile.module.scss'
 import IconFacebook from 'assets/icons/IconFacebook'
 import IconVK from 'assets/icons/IconVK'
 import IconTwitter from 'assets/icons/IconTwitter'
 import IconInstagram from 'assets/icons/IconInstagram'
 import IconLogoCreator from 'assets/icons/IconLogoCreator'
 // import { YMInitializer } from 'react-yandex-metrika'
-import { Link } from 'react-router-dom'
+import ContainerMobile from 'components/Grid/ContainerMobile'
 
-const Footer = ({ className }) => {
+const FooterMobile = ({ className }) => {
   const footerData = {
     nav: [
       {
@@ -122,40 +121,6 @@ const Footer = ({ className }) => {
     }
   }
 
-  const mainNavContent = footerData.nav.map((item, index) => {
-    return (
-      <li className={css.navItem} key={index}>
-        {item.label &&
-        <p className={classnames(css.highlight, css.navLabel)}>
-          { item.label }
-        </p>
-        }
-        {item.sublist && item.sublist.map((arr, index) => (
-          <ul className={css.navSublist} key={index}>
-            {arr.map((item, index) => (
-              <li className={css.subItem} key={index}>
-                <Link className={css.subLink} to={item.url}>
-                  { item.label }
-                </Link>
-              </li>
-            ))}
-          </ul>
-        ))}
-        {item.list &&
-        <ul className={css.navSingles}>
-          {item.list.map((item, index) => (
-            <li className={css.navSingle} key={index}>
-              <Link className={classnames(css.highlight, css.navSingleLink)} to={item.url}>
-                { item.label }
-              </Link>
-            </li>
-          ))}
-        </ul>
-        }
-      </li>
-    )
-  })
-
   const social = (
     <ul className={css.socialList}>
       {footerData.social.map((item, index) => {
@@ -191,38 +156,12 @@ const Footer = ({ className }) => {
     </ul>
   )
 
-  const siteInfoLinks = footerData.siteInfo.links.map((item, index) => (
-    <li className={css.auxItem} key={index}>
-      <Link className={css.auxLink} to={item.url}>
-        { item.text }
-      </Link>
-    </li>
-  ))
-
   // TODO define which metrics do we use and apply it
   return (
     <footer className={classnames(css.footer, className)}>
-      <Container className={css.wrapper}>
+      <ContainerMobile className={css.wrapper}>
         <div className={css.top}>
-          <nav className={css.nav}>
-            <ul className={css.navList}>
-              { mainNavContent }
-            </ul>
-          </nav>
-          <div className={css.info}>
-            {footerData.companyInfo.schedule &&
-              <div className={css.workTime}>
-                <p className={css.highlight}>
-                  Время работы
-                </p>
-                <span
-                  className={css.time}
-                  dangerouslySetInnerHTML={{ __html: footerData.companyInfo.schedule }}
-                />
-              </div>
-            }
-            { social }
-          </div>
+          { social }
         </div>
         <div className={css.bottom}>
           <div className={css.copyright}>
@@ -233,9 +172,6 @@ const Footer = ({ className }) => {
               <IconLogoCreator className={css.logo} />
             </a>
           </div>
-          <ul className={css.auxList}>
-            { siteInfoLinks }
-          </ul>
           <div className={css.counter}>
             <div className={css.metrics}>
               Some counter
@@ -247,9 +183,9 @@ const Footer = ({ className }) => {
             dangerouslySetInnerHTML={{ __html: `&copy;${footerData.companyInfo.startYear} - ${new Date().getFullYear()}` }}
           />
         </div>
-      </Container>
+      </ContainerMobile>
     </footer>
   )
 }
 
-export default Footer
+export default React.memo(FooterMobile)
