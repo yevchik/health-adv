@@ -35,4 +35,4 @@ const AdvCard = ({
   </Link>
 )
 
-export default AdvCard
+export default React.memo(AdvCard)

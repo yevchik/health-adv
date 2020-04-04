@@ -6,4 +6,4 @@ const IconBurger = ({ className }) => (
   </svg>
 )
 
-export default IconBurger
+export default React.memo(IconBurger)

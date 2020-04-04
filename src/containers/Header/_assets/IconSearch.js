@@ -6,4 +6,4 @@ const IconSearch = ({ className }) => (
   </svg>
 )
 
-export default IconSearch
+export default React.memo(IconSearch)

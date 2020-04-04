@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import classnames from 'classnames'
 import css from './ServicesDesktop.module.scss'
 import Container from 'components/Grid/Container'
@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
   type: state.elastic.deviceType
 })
 
-class ServicesDesktop extends Component {
+class ServicesDesktop extends PureComponent {
   constructor (props) {
     super(props)
     this.activeTabRef = null

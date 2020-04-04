@@ -9,4 +9,4 @@ const IconEye = ({ className }) => (
   </svg>
 )
 
-export default IconEye
+export default React.memo(IconEye)

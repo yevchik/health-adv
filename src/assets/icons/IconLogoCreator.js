@@ -32,4 +32,4 @@ const IconLogoCreator = ({ className }) => (
   </svg>
 )
 
-export default IconLogoCreator
+export default React.memo(IconLogoCreator)

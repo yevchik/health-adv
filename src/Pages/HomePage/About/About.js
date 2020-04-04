@@ -57,26 +57,26 @@ const About = ({
         </div>
       </Container>
       <Container className={css.mapContainer}>
-        <YMaps>
-          <Map
-            defaultState={mapData}
-            className={css.map}
-            instanceRef={ ref => { ref && type !== 'desktop' && ref.behaviors.disable('drag') }}
-          >
-            {map.markers.map((marker, index) => (
-              <Placemark
-                geometry={marker}
-                options={{
-                  iconLayout: 'default#image',
-                  iconImageHref: mapPin,
-                  iconImageSize: [pinData.width, pinData.height],
-                  iconImageOffset: [pinData.offsetLeft, pinData.offsetTop]
-                }}
-                key={index}
-              />
-            ))}
-          </Map>
-        </YMaps>
+        {/*<YMaps>*/}
+        {/*  <Map*/}
+        {/*    defaultState={mapData}*/}
+        {/*    className={css.map}*/}
+        {/*    instanceRef={ ref => { ref && type !== 'desktop' && ref.behaviors.disable('drag') }}*/}
+        {/*  >*/}
+        {/*    {map.markers.map((marker, index) => (*/}
+        {/*      <Placemark*/}
+        {/*        geometry={marker}*/}
+        {/*        options={{*/}
+        {/*          iconLayout: 'default#image',*/}
+        {/*          iconImageHref: mapPin,*/}
+        {/*          iconImageSize: [pinData.width, pinData.height],*/}
+        {/*          iconImageOffset: [pinData.offsetLeft, pinData.offsetTop]*/}
+        {/*        }}*/}
+        {/*        key={index}*/}
+        {/*      />*/}
+        {/*    ))}*/}
+        {/*  </Map>*/}
+        {/*</YMaps>*/}
       </Container>
     </section>
   )

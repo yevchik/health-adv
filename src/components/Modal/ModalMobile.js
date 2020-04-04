@@ -1,11 +1,11 @@
-import React, { PureComponent, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import classnames from 'classnames'
-import css from './Modal.module.scss'
-import Container from 'components/Grid/Container'
+import css from 'components/Modal/ModalMobile.module.scss'
 import IconClose from 'containers/Header/_assets/IconClose'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import ContainerMobile from 'components/Grid/ContainerMobile'
 
-const Modal = ({
+const ModalMobile = ({
   isVisible = false,
   content = null,
   children,
@@ -78,7 +78,7 @@ const Modal = ({
         ref={wrapperRef}
       >
         {isVisible &&
-        <Container className={css.container}>
+        <ContainerMobile className={css.container}>
           <div className={css.content} ref={contentRef}>
             <button
               className={css.btn}
@@ -89,10 +89,10 @@ const Modal = ({
             </button>
             {content || children}
           </div>
-        </Container>}
+        </ContainerMobile>}
       </div>
     </>
   )
 }
 
-export default React.memo(Modal)
+export default React.memo(ModalMobile)

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import css from './SliderCards.module.scss'
 import classnames from 'classnames'
 import Swiper from 'react-id-swiper'
@@ -6,7 +6,7 @@ import 'swiper/css/swiper.min.css'
 import IconArrow from 'assets/icons/IconArrow'
 import ButtonSlider from 'components/ButtonSlider/ButtonSlider'
 
-class SliderCards extends Component {
+class SliderCards extends PureComponent {
   state = {
     activeIndex: 0,
     totalSlides: 0

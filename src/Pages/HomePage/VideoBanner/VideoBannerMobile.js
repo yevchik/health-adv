@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import css from './VideoBanner.module.scss'
+import css from './VideoBannerMobile.module.scss'
 import Container from 'components/Grid/Container'
 import Button from 'components/Button/Button'
 import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
@@ -7,14 +7,15 @@ import Modal from 'components/Modal/Modal'
 import IconDots from 'assets/icons/IconDots'
 import classnames from 'classnames'
 import { images, videos } from 'index'
+import ModalMobile from 'components/Modal/ModalMobile'
+import ContainerMobile from 'components/Grid/ContainerMobile'
 
-const VideoBanner = ({
+const VideoBannerMobile = ({
   top,
   bottom,
   type
 }) => {
   const videoRef = useRef(null)
-  const videoBgRef = useRef(null)
   const [isModalVisible, setModalVisibilityStatus] = useState(false)
 
   useEffect(() => {
@@ -32,50 +33,44 @@ const VideoBanner = ({
     setModalVisibilityStatus(false)
   }
 
+  const background = type === 'mobile'
+    ? `url("${ images('./' + bottom.backgroundMobile) }")`
+    : `url("${ images('./' + bottom.backgroundTablet) }")`
+
   return (
     <section>
-      <div className={css.bg} />
-      <Container className={css.top}>
-        <p className={css.mainSlogan} dangerouslySetInnerHTML={{ __html: top.slogan }} />
-        <div className={css.previewWrapper}>
-          <h2 className={css.previewLabel}>
-            { top.previewLabel }
-          </h2>
-          <ButtonPlay
-            className={classnames(css.play, css.preview)}
-            background={`url("${ images('./' + top.modalVideoPreview) }")`}
-            label={''}
-            handleClick={handleOpenModal}
-          />
-        </div>
-      </Container>
+      <div className={css.bg} style={{ backgroundImage: background }} />
+      <ContainerMobile className={css.top}>
+        <ButtonPlay
+          className={css.play}
+          background={'none'}
+          label='Видео о клинике'
+          handleClick={handleOpenModal}
+        />
+      </ContainerMobile>
       <div className={css.content}>
-        <video className={css.videoBg} muted='muted' autoPlay='autoplay' loop='loop' ref={videoBgRef} preload='preload'>
-          <source src={videos('./' + bottom.videoBg)} />
-        </video>
-        <Container className={css.container}>
-          <IconDots className={css.dots} />
+        <ContainerMobile className={css.container}>
           <div className={css.textContent}>
-            <p className={css.sloganDesktop} dangerouslySetInnerHTML={{ __html: bottom.sloganDesktop }} />
+            <p className={css.sloganAdaptive} dangerouslySetInnerHTML={{ __html: bottom.sloganAdaptive }} />
             <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: bottom.descriptor }} />
           </div>
           <div className={css.btn}>
             <Button
-              btnStyle='gradient'
+              btnStyle={type === 'desktop' ? 'gradient' : 'decorated'}
               type='button'
               onClick={() => {}}
               label='Записаться'
             />
           </div>
-        </Container>
+        </ContainerMobile>
       </div>
-      <Modal isVisible={isModalVisible} handleCloseModal={handleCloseModal}>
+      <ModalMobile isVisible={isModalVisible} handleCloseModal={handleCloseModal}>
         <video className={css.video} controls autoPlay ref={videoRef}>
           <source src={videos('./' + top.modalVideo)} />
         </video>
-      </Modal>
+      </ModalMobile>
     </section>
   )
 }
 
-export default React.memo(VideoBanner)
+export default React.memo(VideoBannerMobile)

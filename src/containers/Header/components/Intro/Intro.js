@@ -50,4 +50,4 @@ const Intro = ({ className, data }) => (
   </div>
 )
 
-export default Intro
+export default React.memo(Intro)

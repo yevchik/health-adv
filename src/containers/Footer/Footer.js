@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import classnames from 'classnames'
 import css from './Footer.module.scss'
 import Container from 'components/Grid/Container'
@@ -10,7 +10,7 @@ import IconLogoCreator from 'assets/icons/IconLogoCreator'
 import { YMInitializer } from 'react-yandex-metrika'
 import { Link } from 'react-router-dom'
 
-class Footer extends Component {
+class Footer extends PureComponent {
   constructor (props) {
     super(props)
     this.footerData = {
@@ -245,7 +245,7 @@ class Footer extends Component {
             <div className={css.counter}>
               <div className={css.metrics}>
                 Some counter
-                <YMInitializer accounts={[31337]} options={{webvisor: true}} version='2' />
+                {/*<YMInitializer accounts={[31337]} options={{webvisor: true}} version='2' />*/}
               </div>
             </div>
             <p

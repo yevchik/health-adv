@@ -6,4 +6,4 @@ const IconQuotes = ({ className }) => (
   </svg>
 )
 
-export default IconQuotes
+export default React.memo(IconQuotes)

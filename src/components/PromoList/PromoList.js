@@ -18,4 +18,4 @@ const PromoList = ({ className, data }) => {
   )
 }
 
-export default PromoList
+export default React.memo(PromoList)

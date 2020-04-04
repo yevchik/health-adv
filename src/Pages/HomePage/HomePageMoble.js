@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { PureComponent } from 'react'
 import VideoBanner from 'Pages/HomePage/VideoBanner/VideoBanner'
 import Services from 'Pages/HomePage/Services/Services'
 import ReviewBanner from 'Pages/HomePage/ReviewBanner/ReviewBanner'
@@ -8,9 +8,9 @@ import About from 'Pages/HomePage/About/About'
 import Reviews from 'Pages/HomePage/Reviews/Reviews'
 import Advantages from 'Pages/HomePage/Advantages/Advantages'
 import License from 'Pages/HomePage/License/License'
-import { useSelector } from 'react-redux'
+import VideoBannerMobile from 'Pages/HomePage/VideoBanner/VideoBannerMobile'
 
-const HomePage = () => {
+const HomePageMobile  = () => {
   const homeData = {
     siteMainCaption: 'Стоматологическая клиника Patterson Dental',
     videoBanner: {
@@ -320,18 +320,9 @@ const HomePage = () => {
       <h1 className='visuallyHidden'>
         { homeData.siteMainCaption }
       </h1>
-      <VideoBanner {...homeData.videoBanner} />
-      {/*<Services {...homeData.services} />*/}
-      {/*<ReviewBanner {...homeData.reviewBanner} />*/}
-      {/*<SliderDoctors {...homeData.sliderDoctors} />*/}
-      {/*<TestBanner {...homeData.testBanner} />*/}
-      {/*<About {...homeData.about} />*/}
-      {/*<Reviews {...homeData.reviews} />*/}
-      {/*<Advantages {...homeData.advantages} />*/}
-      {/*<License {...homeData.license} />*/}
-      {/*<TestBanner {...homeData.testBanner} type='simple' />*/}
+      <VideoBannerMobile {...homeData.videoBanner} />
     </main>
   )
 }
 
-export default React.memo(HomePage)
+export default React.memo(HomePageMobile)

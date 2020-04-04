@@ -1,14 +1,17 @@
-import React from 'react'
-import css from './Header.module.scss'
-import Container from 'components/Grid/Container'
+import React, { useState } from 'react'
+import classnames from 'classnames'
+import css from './HeaderMobile.module.scss'
 import { Link } from 'react-router-dom'
 import { HOME_PAGE } from 'Pages/Routes'
 import IconLogo from 'containers/Header/_assets/IconLogo'
-import DesktopMenu from './components/DesktopMenu/DesktopMenu'
-import Button from 'components/Button/Button'
-import Intro from 'containers/Header/components/Intro/Intro'
+import IconSearch from 'containers/Header/_assets/IconSearch'
+import IconBurger from 'containers/Header/_assets/IconBurger'
+import AdaptiveMenu from './components/AdaptiveMenu/AdaptiveMenu'
+import ContainerMobile from 'components/Grid/ContainerMobile'
 
-const Header = () => {
+const HeaderMobile = () => {
+  const [isAdaptiveMenuVisible, setAdaptiveMenuStatus] = useState(false)
+
   const headerData = {
     withSearch: true,
     schedule: 'Ежедневно&nbsp;10.00&nbsp;&mdash; 21.00',
@@ -76,26 +79,45 @@ const Header = () => {
     ]
   }
 
+  const handleBurgerClick = () => {
+    setAdaptiveMenuStatus(true)
+  }
+
+  const handleCloseMenu = () => {
+    setAdaptiveMenuStatus(false)
+  }
+
+  const { withSearch } = headerData
+
   return (
     <header className={css.header}>
-      <Intro className={css.top} data={headerData} />
-      <Container className={css.desktopWrapper}>
-        <Link to={HOME_PAGE} className={css.logo}>
-          <IconLogo className={css.iconLogo} />
-        </Link>
-        <DesktopMenu
-          data={headerData}
-        />
-        <div className={css.btnRegister}>
-          <Button
-            label='Записаться'
-            btnStyle='decorated'
-            onClick={() => {}}
-          />
+      <ContainerMobile>
+        <div className={css.wrapper}>
+          <Link to={HOME_PAGE} className={css.logo}>
+            <IconLogo className={css.iconLogo} />
+          </Link>
+          {withSearch &&
+            <button className={css.search} type='button'>
+              Поиск по сайту
+              <IconSearch className={css.iconSearch} />
+            </button>
+          }
+          <button
+            className={classnames(css.burger, { [css.burgerOpened]: isAdaptiveMenuVisible })}
+            onClick={handleBurgerClick}
+          >
+            Бургер управления адаптивным меню
+            <IconBurger className={css.iconBurger} />
+          </button>
         </div>
-      </Container>
+        <AdaptiveMenu
+          isOpened={isAdaptiveMenuVisible}
+          data={headerData}
+          handleClose={handleCloseMenu}
+        />
+      </ContainerMobile>
     </header>
   )
 }
 
-export default React.memo(Header)
+export default HeaderMobile

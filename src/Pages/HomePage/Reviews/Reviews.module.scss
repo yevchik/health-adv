@@ -81,6 +81,10 @@
   & + .specialist {
     margin-top: 0.8rem;
   }
+
+  &.specialistAuto {
+    margin-top: auto;
+  }
 }
 
 .btnPlay {
@@ -94,6 +98,36 @@
 
 .img {
   display: none;
+}
+
+@media (max-width: $widthMobileMax) {
+  .slideModal {
+    position: relative;
+
+    .text {
+      margin-left: -1.5rem;
+      padding: 0 1.5rem;
+      width: calc(100% + 3rem);
+      max-height: 50vh;
+      overflow-y: scroll;
+    }
+
+    .textCut {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 25%;
+        background-image: linear-gradient(to top, var(--color-highlight-mosaic) 0%, transparent 100%);
+        background-size: cover;
+        z-index: 1;
+      }
+    }
+  }
 }
 
 @media (min-width: $widthTabletMin) {
@@ -143,10 +177,6 @@
 
     & + .specialist {
       margin-top: 0;
-    }
-
-    &.specialistAuto {
-      margin-top: auto;
     }
   }
 }
@@ -257,5 +287,10 @@
 
   .slideModal {
     display: block;
+
+    .text {
+      max-height: 100%;
+      overflow: hidden;
+    }
   }
 }

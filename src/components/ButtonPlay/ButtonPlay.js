@@ -19,4 +19,4 @@ const ButtonPlay = ({ className, label = '', handleClick, background = 'none' })
   </button>
 )
 
-export default ButtonPlay
+export default React.memo(ButtonPlay)

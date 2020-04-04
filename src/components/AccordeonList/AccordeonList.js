@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import css from './AccordeonList.module.scss'
 import classnames from 'classnames'
 import { Collapse } from 'react-collapse/lib/Collapse'
 import Button from 'components/Button/Button'
 import IconPlus from 'assets/icons/IconPlus'
 
-class AccordeonList extends Component {
+class AccordeonList extends PureComponent {
   state = {}
 
   componentDidMount () {

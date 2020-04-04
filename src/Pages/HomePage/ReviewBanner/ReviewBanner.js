@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import css from './ReviewBanner.module.scss'
 import Container from 'components/Grid/Container'
 import { useSelector } from 'react-redux'
@@ -34,4 +34,4 @@ const ReviewBanner = ({ className, bgImages, quote, author }) => {
   )
 }
 
-export default ReviewBanner
+export default React.memo(ReviewBanner)

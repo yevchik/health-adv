@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import css from './ServicesAdaptive.module.scss'
 import Container from 'components/Grid/Container'
 import Heading from 'components/Heading/Heading'
 import PromoList from 'components/PromoList/PromoList'
 import AccordeonList from 'components/AccordeonList/AccordeonList'
 
-class ServicesAdaptive extends Component {
+class ServicesAdaptive extends PureComponent {
   render () {
     const { className, title, list, ads } = this.props
 

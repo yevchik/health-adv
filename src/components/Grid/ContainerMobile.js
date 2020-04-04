@@ -1,11 +1,11 @@
 import React from 'react'
 import classnames from 'classnames'
-import css from './Container.module.scss'
+import css from './ContainerMobile.module.scss'
 
-const Container = ({ className, children }) => (
+const ContainerMobile = ({ className, children }) => (
   <div className={classnames(css.wrapper, className)}>
     { children }
   </div>
 )
 
-export default React.memo(Container)
+export default React.memo(ContainerMobile)

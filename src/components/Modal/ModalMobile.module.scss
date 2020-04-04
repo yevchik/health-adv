@@ -87,22 +87,15 @@
   @include resetButton;
 
   position: absolute;
-  top: -5rem;
+  top: -4rem;
   right: 0;
   width: 3rem;
   height: 3rem;
   cursor: pointer;
 
-  &:hover {
-    .icon {
-      opacity: 0.5;
-    }
-  }
-
   .icon {
-    width: 100%;
-    height: 100%;
+    width: 2rem;
+    height: 2rem;
     stroke: var(--color-highlight-lightest);
-    transition-duration: 0.3s;
   }
 }

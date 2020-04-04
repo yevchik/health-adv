@@ -23,4 +23,4 @@ const ButtonSlider = ({
   </button>
 )
 
-export default ButtonSlider
+export default React.memo(ButtonSlider)

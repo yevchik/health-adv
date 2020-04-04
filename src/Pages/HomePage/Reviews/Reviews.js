@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import css from './Reviews.module.scss'
 import Container from 'components/Grid/Container'
 import Heading from 'components/Heading/Heading'
@@ -8,11 +8,41 @@ import classnames from 'classnames'
 import { decodeHTMLCharacters } from 'utils'
 import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
 import { images, videos } from 'App'
+import { useSelector } from 'react-redux'
 
 const Reviews = ({ title, list }) => {
   const [modal, setModalStatus] = useState({
     isVisible: false,
     content: null
+  })
+
+  const type = useSelector(state => state.elastic.deviceType)
+
+  const reviewTextRef = useRef(null)
+
+  const handleReviewScroll = element => {
+    if (element.target.scrollTop !== 0) {
+      element.target.classList.remove(`${[css.textCut]}`)
+    } else {
+      element.target.classList.add(`${[css.textCut]}`)
+    }
+  }
+
+  useEffect(() => {
+    if (modal.isVisible && reviewTextRef.current) {
+      const reviewElement = reviewTextRef.current
+      const reveiwBoundingHeight = reviewElement.getBoundingClientRect().height
+      const reviewTotalHeight = reviewElement.scrollHeight
+
+      if (reviewTotalHeight > reveiwBoundingHeight) {
+        reviewElement.classList.add(`${[css.textCut]}`)
+        reviewElement.addEventListener('scroll', handleReviewScroll)
+      }
+    }
+
+    if (!modal.isVisible && reviewTextRef.current) {
+      reviewTextRef.current.removeEventListener('scroll', handleReviewScroll)
+    }
   })
 
   const handleOpenModal = index => {
@@ -60,7 +90,7 @@ const Reviews = ({ title, list }) => {
                 {slide.date}
               </span>
             </div>
-            <p className={css.text} dangerouslySetInnerHTML={{__html: modal ? slide.text : pureText}} />
+            <p className={css.text} dangerouslySetInnerHTML={{__html: modal ? slide.text : pureText}} ref={reviewTextRef} />
             {isButtonRequired &&
               <button
                 className={css.btn}

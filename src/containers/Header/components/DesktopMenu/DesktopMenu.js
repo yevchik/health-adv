@@ -50,4 +50,4 @@ const DesktopMenu = ({ data }) => {
   )
 }
 
-export default DesktopMenu
+export default React.memo(DesktopMenu)
