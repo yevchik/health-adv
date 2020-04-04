@@ -1,4 +1,4 @@
-import React, { PureComponent, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import classnames from 'classnames'
 import css from './Modal.module.scss'
 import Container from 'components/Grid/Container'
@@ -15,14 +15,33 @@ const Modal = ({
   const contentRef = useRef(null)
   const [isClosing, setClosingStatus] = useState(false)
 
+  const closeModal = () => {
+    setClosingStatus(true)
+  }
+
   useEffect(() => {
+    let wrapper = null
+
+    const handleClickWrapper = evt => {
+      if (!contentRef.current.contains(evt.target)) {
+        closeModal()
+      }
+    }
+
+    const handleEscPress = evt => {
+      if (evt.keyCode === 27 && isVisible) {
+        closeModal()
+      }
+    }
+
     if (wrapperRef.current && isVisible) {
+      wrapper = wrapperRef.current
       wrapperRef.current.addEventListener('click', handleClickWrapper)
       document.addEventListener('keydown', handleEscPress)
     }
 
     return () => {
-      wrapperRef.current.removeEventListener('click', handleClickWrapper)
+      wrapper.removeEventListener('click', handleClickWrapper)
       document.removeEventListener('keydown', handleEscPress)
     }
   }, [isVisible])
@@ -34,6 +53,15 @@ const Modal = ({
   }, [isVisible])
 
   useEffect(() => {
+    const handleModalClosing = () => {
+      if (isClosing) {
+        enableBodyScroll(wrapperRef.current)
+        setClosingStatus(false)
+        handleCloseModal()
+        wrapperRef.current.removeEventListener('animationend', handleModalClosing)
+      }
+    }
+
     if (isClosing) {
       // body-scroll-lock adds padding-right for scroll bar space imitation. To avoid content
       // shift at the end of modal close, we postpone enablebodyscroll with padding removal until
@@ -41,32 +69,7 @@ const Modal = ({
       wrapperRef.current.addEventListener('animationend', handleModalClosing)
 
     }
-  }, [isClosing])
-
-  const handleClickWrapper = evt => {
-    if (!contentRef.current.contains(evt.target)) {
-      closeModal()
-    }
-  }
-
-  const handleEscPress = evt => {
-    if (evt.keyCode === 27 && isVisible) {
-      closeModal()
-    }
-  }
-
-  const handleModalClosing = () => {
-    if (isClosing) {
-      enableBodyScroll(wrapperRef.current)
-      setClosingStatus(false)
-      handleCloseModal()
-      wrapperRef.current.removeEventListener('animationend', handleModalClosing)
-    }
-  }
-
-  const closeModal = () => {
-    setClosingStatus(true)
-  }
+  }, [isClosing, handleCloseModal])
 
   return (
     <>

@@ -52,6 +52,7 @@
 .total {
   @include h9-regular(var(--color-font-main));
 
+  display: inline-block;
   width: 1.5rem;
 }
 
@@ -59,7 +60,7 @@
   &::before {
     content: '/';
     @include h9-regular(var(--color-font-main));
-    margin: 0 1rem;
+    margin: 0 0.8rem 0 1rem;
   }
 }
 

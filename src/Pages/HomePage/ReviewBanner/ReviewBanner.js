@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import css from './ReviewBanner.module.scss'
 import Container from 'components/Grid/Container'
 import { useSelector } from 'react-redux'

@@ -21,18 +21,19 @@ const SliderCards = ({
   const goNext = () => {
     if (swiper) {
       swiper.slideNext()
-      setActiveIndex(state => state + 1)
     }
   }
 
   const goPrev = () => {
     if (swiper) swiper.slidePrev()
-    setActiveIndex(state => state - 1)
   }
 
   useEffect(() => {
     if (swiper) {
-      swiper.update()
+      swiper.on('slideChange', () => {
+        setActiveIndex(state => swiper.activeIndex)
+      })
+
       setTotalSlides(swiper.slides.length < 10 ? '0' + swiper.slides.length : swiper.slides.length)
     }
   }, [swiper])
@@ -47,11 +48,12 @@ const SliderCards = ({
     freeModeSticky: freeMode,
     slidesPerView: freeMode ? 'auto' : slides,
     spaceBetween: freeMode ? 0 : 15,
+    getSwiper: setSwiper
   }
 
   return (
     <div className={classnames(css.wrapper, className, { [css.wrapperSingle]: type === 'single' })}>
-      <Swiper {...params} getSwiper={setSwiper}>
+      <Swiper {...params}>
         { children }
       </Swiper>
       {controlsType !== 'styledNoFractions' &&
@@ -72,7 +74,7 @@ const SliderCards = ({
                 Предыдущий слайд
                 <IconArrow className={css.icon} />
               </button>
-              <button className={classnames(css.btn, css.btnNext, { [css.btnDisabled]: swiper && activeIndex === swiper.slides.length - 1 })} onClick={goNext}>
+              <button className={classnames(css.btn, css.btnNext, { [css.btnDisabled]: swiper && swiper.isEnd })} onClick={goNext}>
                 Следующий слайд
                 <IconArrow className={css.icon} />
               </button>
