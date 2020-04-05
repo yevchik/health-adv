@@ -1,18 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react'
 import css from './VideoBannerMobile.module.scss'
-import Button from 'components/Button/Button'
-import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
 import { images, videos } from 'index'
 import ModalMobile from 'components/Modal/ModalMobile'
 import ContainerMobile from 'components/Grid/ContainerMobile'
+import { useSelector } from 'react-redux'
+import PropTypes from 'prop-types'
+import ButtonPlayMobile from 'components/ButtonPlay/ButtonPlayMobile'
+import ButtonMobile from 'components/Button/ButtonMobile'
 
 const VideoBannerMobile = ({
   top,
   bottom,
-  type
 }) => {
   const videoRef = useRef(null)
   const [isModalVisible, setModalVisibilityStatus] = useState(false)
+  const type = useSelector(state => state.elastic.deviceType)
 
   useEffect(() => {
     // reset video playtime in modal when it opens
@@ -37,7 +39,7 @@ const VideoBannerMobile = ({
     <section>
       <div className={css.bg} style={{ backgroundImage: background }} />
       <ContainerMobile className={css.top}>
-        <ButtonPlay
+        <ButtonPlayMobile
           className={css.play}
           background={'none'}
           label='Видео о клинике'
@@ -51,7 +53,7 @@ const VideoBannerMobile = ({
             <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: bottom.descriptor }} />
           </div>
           <div className={css.btn}>
-            <Button
+            <ButtonMobile
               btnStyle={type === 'desktop' ? 'gradient' : 'decorated'}
               type='button'
               onClick={() => {}}
@@ -67,6 +69,23 @@ const VideoBannerMobile = ({
       </ModalMobile>
     </section>
   )
+}
+
+VideoBannerMobile.propTypes = {
+  top: PropTypes.shape({
+    slogan: PropTypes.string,
+    previewLabel: PropTypes.string,
+    modalVideo: PropTypes.string,
+    modalVideoPreview: PropTypes.string,
+  }),
+  bottom: PropTypes.shape({
+    sloganAdaptive: PropTypes.string,
+    sloganDesktop: PropTypes.string,
+    backgroundMobile: PropTypes.string,
+    backgroundTablet: PropTypes.string,
+    descriptor: PropTypes.string,
+    videoBg: PropTypes.string,
+  })
 }
 
 export default React.memo(VideoBannerMobile)

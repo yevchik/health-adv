@@ -4,6 +4,7 @@ import css from 'components/Modal/ModalMobile.module.scss'
 import IconClose from 'containers/Header/_assets/IconClose'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import ContainerMobile from 'components/Grid/ContainerMobile'
+import PropTypes from 'prop-types'
 
 const ModalMobile = ({
   isVisible = false,
@@ -20,6 +21,8 @@ const ModalMobile = ({
   }
 
   useEffect(() => {
+    let wrapper = wrapperRef.current || null
+
     const handleClickWrapper = evt => {
       if (!contentRef.current.contains(evt.target)) {
         closeModal()
@@ -32,7 +35,6 @@ const ModalMobile = ({
       }
     }
 
-    let wrapper = null
     if (wrapperRef.current && isVisible) {
       wrapper = wrapperRef.current
       wrapperRef.current.addEventListener('click', handleClickWrapper)
@@ -95,6 +97,17 @@ const ModalMobile = ({
       </div>
     </>
   )
+}
+
+ModalMobile.propTypes = {
+  // visibility status of modal
+  isVisible: PropTypes.bool,
+  // content of modal as a props, ignored in children exist
+  content: PropTypes.element,
+  // content of modal as children
+  children: PropTypes.element,
+  // modal close handler
+  handleCloseModal: PropTypes.func
 }
 
 export default React.memo(ModalMobile)

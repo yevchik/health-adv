@@ -1,0 +1,43 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.trigger {
+  @include resetButton;
+  @include capitals-bold(var(--color-font-main));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2rem 1.6rem 2.4rem;
+  width: 100%;
+  min-height: 7.6rem;
+  background-color: var(--color-highlight-lightest);
+}
+
+.triggerOpened {
+  .icon {
+    :global {
+      .plus-vertical {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.label {
+  width: 19rem;
+  text-align: left;
+}
+
+.icon {
+  width: 1.6rem;
+  fill: var(--color-font-main);
+
+  :global {
+    .plus-vertical {
+      transition-duration: 0.3s;
+      transform-origin: center;
+      transform: rotate(0);
+    }
+  }
+}

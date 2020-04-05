@@ -1,5 +1,6 @@
 import React from 'react'
 import VideoBannerMobile from 'Pages/HomePage/VideoBanner/VideoBannerMobile'
+import ServicesMobile from 'Pages/HomePage/Services/ServicesMobile'
 
 const HomePageMobile  = () => {
   const homeData = {
@@ -312,6 +313,7 @@ const HomePageMobile  = () => {
         { homeData.siteMainCaption }
       </h1>
       <VideoBannerMobile {...homeData.videoBanner} />
+      <ServicesMobile {...homeData.services} />
     </main>
   )
 }

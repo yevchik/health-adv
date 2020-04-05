@@ -1,11 +1,11 @@
 import React from 'react'
 import classnames from 'classnames'
-import css from './Button.module.scss'
+import css from './ButtonMobile.module.scss'
 import IconArrowRight from 'assets/icons/IconArrowRight'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-const Button = ({
+const ButtonMobile = ({
   className,
   iconClassname,
   url,
@@ -35,7 +35,7 @@ const Button = ({
   )
 }
 
-Button.propTypes = {
+ButtonMobile.propTypes = {
   // external class
   className: PropTypes.string,
   // external class for arrow icon
@@ -50,4 +50,4 @@ Button.propTypes = {
   handleClick: PropTypes.func.isRequired
 }
 
-export default React.memo(Button)
+export default React.memo(ButtonMobile)

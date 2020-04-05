@@ -97,7 +97,7 @@ SliderCards.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
   // External class name for additioinal styles tuning
   className: PropTypes.string,
-  // Control style preset
+  // Controls style preset
   controlsType: PropTypes.oneOf(['minimalist', 'styled', 'stylesNoFractions']),
   // Flag to turn on / off the swiper free mode
   freeMode: PropTypes.bool,

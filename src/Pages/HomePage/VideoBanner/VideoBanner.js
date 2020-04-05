@@ -7,11 +7,11 @@ import Modal from 'components/Modal/Modal'
 import IconDots from 'assets/icons/IconDots'
 import classnames from 'classnames'
 import { images, videos } from 'index'
+import PropTypes from 'prop-types'
 
 const VideoBanner = ({
   top,
   bottom,
-  type
 }) => {
   const videoRef = useRef(null)
   const videoBgRef = useRef(null)
@@ -76,6 +76,23 @@ const VideoBanner = ({
       </Modal>
     </section>
   )
+}
+
+VideoBanner.propTypes = {
+  top: PropTypes.shape({
+    slogan: PropTypes.string,
+    previewLabel: PropTypes.string,
+    modalVideo: PropTypes.string,
+    modalVideoPreview: PropTypes.string,
+  }),
+  bottom: PropTypes.shape({
+    sloganAdaptive: PropTypes.string,
+    sloganDesktop: PropTypes.string,
+    backgroundMobile: PropTypes.string,
+    backgroundTablet: PropTypes.string,
+    descriptor: PropTypes.string,
+    videoBg: PropTypes.string,
+  })
 }
 
 export default React.memo(VideoBanner)

@@ -4,6 +4,7 @@ import css from './Modal.module.scss'
 import Container from 'components/Grid/Container'
 import IconClose from 'containers/Header/_assets/IconClose'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import PropTypes from 'prop-types'
 
 const Modal = ({
   isVisible = false,
@@ -20,7 +21,7 @@ const Modal = ({
   }
 
   useEffect(() => {
-    let wrapper = null
+    let wrapper = wrapperRef.current || null
 
     const handleClickWrapper = evt => {
       if (!contentRef.current.contains(evt.target)) {
@@ -96,6 +97,17 @@ const Modal = ({
       </div>
     </>
   )
+}
+
+Modal.propTypes = {
+  // visibility status of modal
+  isVisible: PropTypes.bool,
+  // content of modal as a props, ignored in children exist
+  content: PropTypes.element,
+  // content of modal as children
+  children: PropTypes.element,
+  // modal close handler
+  handleCloseModal: PropTypes.func
 }
 
 export default React.memo(Modal)

@@ -1,10 +1,10 @@
 import React from 'react'
 import classnames from 'classnames'
-import css from './ButtonPlay.module.scss'
+import css from './ButtonPlayMobile.module.scss'
 import IconPlay from 'assets/icons/IconPlay'
 import PropTypes from 'prop-types'
 
-const ButtonPlay = ({
+const ButtonPlayMobile = ({
   className,
   label = '',
   handleClick,
@@ -25,7 +25,7 @@ const ButtonPlay = ({
   </button>
 )
 
-ButtonPlay.propTypes = {
+ButtonPlayMobile.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   handleClick: PropTypes.func,
@@ -33,4 +33,4 @@ ButtonPlay.propTypes = {
   background: PropTypes.string,
 }
 
-export default React.memo(ButtonPlay)
+export default React.memo(ButtonPlayMobile)
