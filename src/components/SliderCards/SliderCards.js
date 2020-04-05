@@ -5,11 +5,11 @@ import Swiper from 'react-id-swiper'
 import 'swiper/css/swiper.min.css'
 import IconArrow from 'assets/icons/IconArrow'
 import ButtonSlider from 'components/ButtonSlider/ButtonSlider'
+import PropTypes from 'prop-types'
 
 const SliderCards = ({
   className,
   children,
-  type,
   slides = 1,
   controlsType = 'minimalist',
   freeMode = false
@@ -31,7 +31,7 @@ const SliderCards = ({
   useEffect(() => {
     if (swiper) {
       swiper.on('slideChange', () => {
-        setActiveIndex(state => swiper.activeIndex)
+        setActiveIndex(swiper.activeIndex)
       })
 
       setTotalSlides(swiper.slides.length < 10 ? '0' + swiper.slides.length : swiper.slides.length)
@@ -52,7 +52,7 @@ const SliderCards = ({
   }
 
   return (
-    <div className={classnames(css.wrapper, className, { [css.wrapperSingle]: type === 'single' })}>
+    <div className={classnames(css.wrapper, className)}>
       <Swiper {...params}>
         { children }
       </Swiper>
@@ -90,6 +90,19 @@ const SliderCards = ({
       }
     </div>
   )
+}
+
+SliderCards.propTypes = {
+  // Slider slides
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  // External class name for additioinal styles tuning
+  className: PropTypes.string,
+  // Control style preset
+  controlsType: PropTypes.oneOf(['minimalist', 'styled', 'stylesNoFractions']),
+  // Flag to turn on / off the swiper free mode
+  freeMode: PropTypes.bool,
+  // Adjustable slides per view quantity
+  slides: PropTypes.number,
 }
 
 export default React.memo(SliderCards)
