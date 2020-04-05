@@ -1,0 +1,169 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.section {
+  margin-top: calc(6rem - 4.7rem);
+  padding-top: 15.1rem;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  padding: 7rem 3.8rem 5rem 3.8rem;
+  background-color: var(--color-font-main);
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15.1rem;
+    left: 1.5rem;
+    width: 30.5rem;
+    height: 25.9rem;
+    background-image: url("../../../assets/images/test-banner__img.png");
+    background-size: cover;
+  }
+}
+
+.icon {
+  position: absolute;
+  bottom: -15rem;
+  left: 12rem;
+  width: 40rem;
+  transform: rotate(90deg);
+}
+
+.title {
+  position: relative;
+  color: $colorMainBg;
+}
+
+.descriptor {
+  @include h8(var(--color-highlight-lightest));
+
+  margin: 2.4rem 0 0 0;
+}
+
+.btn {
+  margin-top: 3.3rem;
+}
+
+.sectionSimple {
+  margin-top: 0;
+  padding-top: 0;
+
+  .wrapper {
+    position: relative;
+    padding: 3.5rem 1.5rem 4.8rem 1.5rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    bottom: -16.5rem;
+    left: 11rem;
+    width: 40rem;
+    transform: rotate(90deg);
+  }
+
+  .title {
+    padding-right: 30%;
+  }
+
+  .descriptor {
+    margin: 1.4rem 0 0 0;
+    padding-right: 30%;
+  }
+
+  .btn {
+    margin-top: 2.8rem;
+  }
+}
+
+@media (max-width: $widthTabletMax) {
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .section:not(.sectionSimple) {
+    margin-top: 0;
+    padding-top: 5.3rem;
+  }
+
+  .wrapper {
+    padding: 3.6rem 1.5rem 4.2rem 30.7rem;
+
+    &::before {
+      top: -5.3rem;
+      left: 1.4rem;
+      width: 27.7rem;
+      height: 23.5rem;
+    }
+  }
+
+  .title {
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
+
+  .icon {
+    position: absolute;
+    bottom: -35rem;
+    left: auto;
+    right: -5rem;
+    width: 50rem;
+    transform: rotate(90deg);
+  }
+
+  .descriptor {
+    margin: 1.1rem 0 0 0;
+  }
+
+  .btn {
+    margin-top: 2.3rem;
+    width: 24.3rem;
+  }
+
+  .sectionSimple {
+    margin-top: 0;
+    padding-top: 0;
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 4.2rem 2.5rem 4.3rem 2.5rem;
+    }
+
+    .icon {
+      position: absolute;
+      bottom: -19rem;
+      left: auto;
+      right: -24%;
+      width: 40rem;
+      transform: rotate(90deg);
+    }
+
+    .title {
+      padding-right: 0;
+    }
+
+    .descriptor {
+      margin: 1.2rem 0 0 0;
+      padding-right: 0;
+    }
+
+    .btn {
+      margin-top: 0;
+    }
+  }
+}

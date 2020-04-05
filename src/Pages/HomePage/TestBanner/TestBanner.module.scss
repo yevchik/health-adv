@@ -1,26 +1,60 @@
 @import "styles/variables";
 @import "styles/mixins";
 
-.section {
-  margin-top: calc(6rem - 4.7rem);
-  padding-top: 15.1rem;
-  overflow: hidden;
+.section:not(.sectionSimple) {
+  margin-top: 5rem;
+  padding-top: 2.9rem;
+  padding-bottom: 3rem;
+  overflow: visible;
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-left: auto;
+    width: 27.5rem;
+    color: var(--color-highlight-buttons);
+    background-color: $colorMainBg;
+    border-top-color: var(--color-highlight-darker);
+    border-right-color: var(--color-highlight-darker);
+    border-left: none;
+
+    &::before {
+      transform: translateX(0) translateY(100%);
+    }
+
+    &:hover {
+      color: $colorMainBg;
+
+      &::before {
+        transform: translateX(0) translateY(0);
+      }
+
+      .arrow {
+        stroke: $colorMainBg;
+      }
+    }
+
+    .arrow {
+      stroke: var(--color-highlight-buttons);
+    }
+  }
 }
 
 .wrapper {
   position: relative;
-  padding: 7rem 3.8rem 5rem 3.8rem;
+  display: flex;
+  padding: 0;
   background-color: var(--color-font-main);
-  border-top-right-radius: 4rem;
-  border-top-left-radius: 4rem;
 
   &::before {
     content: "";
     position: absolute;
-    top: -15.1rem;
-    left: 1.5rem;
-    width: 30.5rem;
-    height: 25.9rem;
+    top: -2.9rem;
+    left: -9.4rem;
+    width: 42rem;
+    height: 35.6rem;
     background-image: url("../../../assets/images/test-banner__img.png");
     background-size: cover;
   }
@@ -28,275 +62,102 @@
 
 .icon {
   position: absolute;
-  bottom: -15rem;
-  left: 12rem;
+  bottom: -16.5rem;
+  left: 11rem;
   width: 40rem;
   transform: rotate(90deg);
 }
 
+.content {
+  padding: 5.4rem 7.7rem 7.6rem 36.3rem;
+}
+
 .title {
+  @include h1($colorMainBg);
+
   position: relative;
-  color: $colorMainBg;
+}
+
+.icon {
+  position: absolute;
+  bottom: -23rem;
+  left: auto;
+  right: 10rem;
+  width: 50rem;
+  transform: rotate(90deg);
 }
 
 .descriptor {
   @include h8(var(--color-highlight-lightest));
 
-  margin: 2.4rem 0 0 0;
-}
-
-.btn {
-  margin-top: 3.3rem;
+  margin: 3.2rem 0 0 0;
 }
 
 .sectionSimple {
-  margin-top: 0;
-  padding-top: 0;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-font-main);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../assets/images/dots-bg-large.png");
+    background-size: cover;
+  }
 
   .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     position: relative;
-    padding: 3.5rem 1.5rem 4.8rem 1.5rem;
+    padding: 13rem 0 13.4rem 0;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 
     &::before {
       display: none;
     }
-  }
 
-  .icon {
-    position: absolute;
-    bottom: -16.5rem;
-    left: 11rem;
-    width: 40rem;
-    transform: rotate(90deg);
-  }
-
-  .title {
-    padding-right: 30%;
-  }
-
-  .descriptor {
-    margin: 1.4rem 0 0 0;
-    padding-right: 30%;
-  }
-
-  .btn {
-    margin-top: 2.8rem;
-  }
-}
-
-@media (max-width: $widthTabletMax) {
-  .container {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-@media (min-width: $widthTabletMin) {
-  .section:not(.sectionSimple) {
-    margin-top: 0;
-    padding-top: 5.3rem;
-    padding-bottom: 3rem;
-  }
-
-  .wrapper {
-    padding: 3.6rem 1.5rem 4.2rem 30.7rem;
-
-    &::before {
-      top: -5.3rem;
-      left: 1.4rem;
-      width: 27.7rem;
-      height: 23.5rem;
-    }
-  }
-
-  .title {
-    font-size: 2.4rem;
-    line-height: 3rem;
-  }
-
-  .icon {
-    position: absolute;
-    bottom: -35rem;
-    left: auto;
-    right: -5rem;
-    width: 50rem;
-    transform: rotate(90deg);
-  }
-
-  .descriptor {
-    margin: 1.1rem 0 0 0;
-  }
-
-  .btn {
-    margin-top: 2.3rem;
-    width: 24.3rem;
-  }
-
-  .sectionSimple {
-    margin-top: 0;
-    padding-top: 0;
-
-    .wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 4.2rem 2.5rem 4.3rem 2.5rem;
-    }
-
-    .icon {
-      position: absolute;
-      bottom: -19rem;
-      left: auto;
-      right: -24%;
-      width: 40rem;
-      transform: rotate(90deg);
-    }
-
-    .title {
-      padding-right: 0;
-    }
-
-    .descriptor {
-      margin: 1.2rem 0 0 0;
-      padding-right: 0;
-    }
-
-    .btn {
-      margin-top: 0;
-    }
-  }
-}
-
-@media (min-width: $widthDesktopMin) {
-  .section {
-    margin-top: 5rem;
-    padding-top: 2.9rem;
-    overflow: visible;
-
-    .btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 0;
-      width: 27.5rem;
-      color: var(--color-highlight-buttons);
-      background-color: $colorMainBg;
-      border-top-color: var(--color-highlight-darker);
-      border-right-color: var(--color-highlight-darker);
-      border-left: none;
-
-      &::before {
-        transform: translateX(0) translateY(100%);
-      }
-
-      &:hover {
-        &::before {
-          transform: translateX(0) translateY(0);
-        }
-      }
-
-      .arrow {
-        stroke: var(--color-highlight-buttons);
-      }
-    }
-  }
-
-  .wrapper {
-    display: flex;
-    padding: 0;
-
-    &::before {
-      top: -2.9rem;
-      left: -9.4rem;
-      width: 42rem;
-      height: 35.6rem;
-    }
   }
 
   .content {
-    padding: 5.4rem 7.7rem 7.6rem 36.3rem;
-  }
-
-  .title {
-    @include h1($colorMainBg);
-  }
-
-  .icon {
-    position: absolute;
-    bottom: -23rem;
-    left: auto;
-    right: 10rem;
-    width: 50rem;
-    transform: rotate(90deg);
+    padding: 0;
   }
 
   .descriptor {
-    margin: 3.2rem 0 0 0;
+    margin: 3.4rem 0 0 0;
   }
 
-  .sectionSimple {
-    position: relative;
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 0;
-    padding: 0;
-    background-color: var(--color-font-main);
+    padding-right: 4rem;
+    padding-left: 5rem;
+    width: 35.8rem;
+    height: 11rem;
+    color: $colorMainBg;
+    background-color: var(--color-highlight-buttons);
+    border: none;
+    transition-duration: 0.3s;
+    transition-property: background-color;
 
     &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("../../../assets/images/dots-bg-large.png");
-      background-size: cover;
-    }
-
-    .wrapper {
-      padding: 13rem 0 13.4rem 0;
-    }
-
-    .content {
-      padding: 0;
-    }
-
-    .icon {
       display: none;
     }
 
-    .title {
-      padding-right: 0;
+    &:hover {
+      background-color: var(--color-highlight-buttons-dark);
     }
 
-    .descriptor {
-      margin: 3.4rem 0 0 0;
-      padding-right: 0;
-    }
-
-    .btn {
-      justify-content: space-between;
-      padding-right: 4rem;
-      padding-left: 5rem;
-      width: 35.8rem;
-      height: 11rem;
-      color: $colorMainBg;
-      background-color: var(--color-highlight-buttons);
-      border: none;
-      transition-duration: 0.3s;
-      transition-property: background-color;
-
-      &::before {
-        display: none;
-      }
-
-      &:hover {
-        background-color: var(--color-highlight-buttons-dark);
-      }
-
-      .arrow {
-        stroke: $colorMainBg;
-      }
+    .arrow {
+      stroke: $colorMainBg;
     }
   }
 }
