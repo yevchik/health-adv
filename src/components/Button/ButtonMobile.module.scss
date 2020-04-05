@@ -23,23 +23,10 @@
 
     position: relative;
     padding: 2rem 1rem;
-    border: 0.1rem solid var(--color-highlight-buttons);
+    width: 100%;
+    border: 1px solid var(--color-highlight-buttons);
     border-bottom-width: 0.5rem;
     overflow: hidden;
-    z-index: 0;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: calc(100% + 0.4rem);
-      background-color: var(--color-highlight-buttons);
-      transition-duration: 0.3s;
-      transform: translateX(-100%);
-      z-index: -1;
-    }
 
     .icon {
       margin-left: 1rem;

@@ -2,6 +2,7 @@ import React from 'react'
 import VideoBannerMobile from 'Pages/HomePage/VideoBanner/VideoBannerMobile'
 import ServicesMobile from 'Pages/HomePage/Services/ServicesMobile'
 import ReviewBannerMobile from 'Pages/HomePage/ReviewBanner/ReviewBannerMobile'
+import SliderDoctorsMobile from 'Pages/HomePage/SliderDoctors/SliderDoctorsMobile'
 
 const HomePageMobile  = () => {
   const homeData = {
@@ -316,6 +317,7 @@ const HomePageMobile  = () => {
       <VideoBannerMobile {...homeData.videoBanner} />
       <ServicesMobile {...homeData.services} />
       <ReviewBannerMobile {...homeData.reviewBanner} />
+      <SliderDoctorsMobile {...homeData.sliderDoctors} />
     </main>
   )
 }

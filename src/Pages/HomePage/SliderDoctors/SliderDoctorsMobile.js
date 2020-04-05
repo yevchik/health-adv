@@ -1,29 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import css from './SliderDoctors.module.scss'
-import { createSubArrays } from 'utils'
-import ButtonSlider from 'components/ButtonSlider/ButtonSlider'
+import css from './SliderDoctorsMobile.module.scss'
 import Heading from 'components/Heading/Heading'
-import Container from 'components/Grid/Container'
 import Swiper from 'react-id-swiper'
 import 'swiper/css/swiper.min.css'
 import { images } from 'App'
-import Button from 'components/Button/Button'
 import IconQuotes from 'assets/icons/IconQuotes'
 import IconDotsBgDark from 'assets/icons/IconDotsBgDark'
-import classnames from 'classnames'
 import PropTypes from 'prop-types'
+import ContainerMobile from 'components/Grid/ContainerMobile'
+import ButtonMobile from 'components/Button/ButtonMobile'
+import ButtonSlider from 'components/ButtonSlider/ButtonSlider'
 
-const SliderDoctors = ({ title, list }) => {
-  const [ activeTab, setActiveTab ] = useState(0)
+const SliderDoctorsMobile = ({ title, list }) => {
   const [swiper, setSwiper] = useState(null)
   const [isBeginning, setSliderToBeginning] = useState(true)
   const [isEnd, setSliderToEnd] = useState(false)
 
-
   useEffect(() => {
     if (swiper) {
       swiper.on('slideChange', () => {
-        setActiveTab(0)
         if (swiper.isEnd) setSliderToEnd(true)
         if (!swiper.isEnd && isEnd) setSliderToEnd(false)
         if (swiper.isBeginning) setSliderToBeginning(true)
@@ -44,18 +39,22 @@ const SliderDoctors = ({ title, list }) => {
     }
   }
 
-  const handleClickTab = index => {
-    setActiveTab(index)
-  }
-
-  const params = {
+  const paramsAdaptive = {
     slidesPerView: 1,
-    speed: 1000,
-    effect: 'fade',
-    simulateTouch: false,
-    fadeEffect: {
-      crossFade: true
+    speed: 700,
+    effect: 'slide',
+    spaceBetween: 20,
+    breakpoints: {
+      768: {
+        spaceBetween: 0,
+        slidesPerView: 'auto',
+        freeMode: true,
+        freeModeSticky: true,
+        freeModeMomentum: false,
+        speed: 1500,
+      }
     },
+    getSwiper: setSwiper
   }
 
   const slideContentArea = (item, index) => (
@@ -81,7 +80,7 @@ const SliderDoctors = ({ title, list }) => {
             <IconQuotes className={css.iconQuote} />
             <span dangerouslySetInnerHTML={{ __html: item.quote }} />
           </blockquote>
-          <Button
+          <ButtonMobile
             className={css.btnAll}
             url={item.url}
             btnStyle='decorated'
@@ -92,64 +91,29 @@ const SliderDoctors = ({ title, list }) => {
     </div>
   )
 
-  const sliderContent = createSubArrays(list, 4).map((slide, index) => {
-    const tabs = []
-    return (
-      <div className={css.slide} key={index}>
-        {slide.map((item, index) => {
-          const tab = (
-            <li className={css.tab} key={index}>
-              <button
-                className={classnames(css.tabSwitch, {
-                  [css.tabSwitchSelected]: activeTab === index
-                })}
-                type='button'
-                onClick={() => handleClickTab(index)}
-                aria-label={`Показать информацию о враче ${item.name}`}
-              >
-                <span className={css.btnName}>
-                  {item.name}
-                </span>
-                <span className={css.btnExpertise}>
-                  {item.expertise}
-                </span>
-              </button>
-            </li>
-          )
-          tabs.push(tab)
-          return (
-            <div className={css.tabContent} key={index}
-                 style={{display: activeTab === index ? 'block' : 'none'}}>
-              {slideContentArea(item, index)}
-            </div>
-          )
-        })}
-        <ul className={css.tabs}>
-          {tabs.map((item) => item)}
-        </ul>
-      </div>
-    )
+  const sliderContentAdaptive = list.map((item, index) => {
+    return slideContentArea(item, index)
   })
 
   return (
     <section className={css.section}>
-      <Container>
+      <ContainerMobile>
           <Heading content={title} />
           <div className={css.slider}>
-            <Swiper {...params} getSwiper={setSwiper}>
-              { sliderContent }
+            <Swiper {...paramsAdaptive}>
+              { sliderContentAdaptive }
             </Swiper>
             <div className={css.controls}>
               <ButtonSlider type='prev' handleClick={goPrev} isDisabled={isBeginning} />
               <ButtonSlider className={css.btnNext} type='next' handleClick={goNext} isDisabled={isEnd} />
             </div>
           </div>
-      </Container>
+      </ContainerMobile>
     </section>
   )
 }
 
-SliderDoctors.propTypes = {
+SliderDoctorsMobile.propTypes = {
   // section heading
   title: PropTypes.string,
   // data from API
@@ -171,4 +135,4 @@ SliderDoctors.propTypes = {
   )
 }
 
-export default React.memo(SliderDoctors)
+export default SliderDoctorsMobile

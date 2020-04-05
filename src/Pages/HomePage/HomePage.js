@@ -2,7 +2,7 @@ import React from 'react'
 import VideoBanner from 'Pages/HomePage/VideoBanner/VideoBanner'
 import Services from 'Pages/HomePage/Services/Services'
 import ReviewBanner from 'Pages/HomePage/ReviewBanner/ReviewBanner'
-// import SliderDoctors from 'Pages/HomePage/SliderDoctors/SliderDoctors'
+import SliderDoctors from 'Pages/HomePage/SliderDoctors/SliderDoctors'
 // import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
 // import About from 'Pages/HomePage/About/About'
 // import Reviews from 'Pages/HomePage/Reviews/Reviews'
@@ -339,7 +339,7 @@ const HomePage = () => {
       <VideoBanner {...homeData.videoBanner} />
       <Services {...homeData.services} />
       <ReviewBanner {...homeData.reviewBanner} />
-      {/*<SliderDoctors {...homeData.sliderDoctors} />*/}
+      <SliderDoctors {...homeData.sliderDoctors} />
       {/*<TestBanner {...homeData.testBanner} />*/}
       {/*<About {...homeData.about} />*/}
       {/*<Reviews {...homeData.reviews} />*/}
