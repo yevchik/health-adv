@@ -18,25 +18,6 @@
   }
 
   :global {
-    .swiper-container {
-      margin-left: 0;
-      padding-left: 0;
-      padding-bottom: 0;
-      width: 100%;
-    }
-
-    .swiper-slide {
-      width: 26.6rem;
-
-      &:not(:last-of-type) {
-        margin-right: 10.2rem;
-      }
-
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
-
     div.swiper-pagination {
       display: none;
     }
@@ -50,6 +31,18 @@
     .slider-fractions {
       display: none;
     }
+  }
+}
+
+.slideWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.item {
+  &:not(:last-of-type) {
+    margin-right: 10.2rem;
   }
 }
 

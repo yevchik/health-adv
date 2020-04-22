@@ -5,6 +5,7 @@ import Heading from 'components/Heading/Heading'
 import { images } from 'index'
 import Modal from 'components/Modal/Modal'
 import SliderCards from 'components/SliderCards/SliderCards'
+import { createSubArrays } from 'utils'
 
 const License = ({ title = 'Лицензии', list }) => {
   const [modalStatus, setModalStatus] = useState({
@@ -28,22 +29,32 @@ const License = ({ title = 'Лицензии', list }) => {
     }))
   }
 
-  const listItems = list.map((item, index) => (
-    <div className={css.item} key={item.label + '-' + index}>
-      <button
-        className={css.trigger}
-        onClick={() => handleClickModalTrigger(item.label, item.fullImage)}
-        type='button'
-      >
-        <img
-          className={css.previewImage}
-          src={images('./' + item.previewImage)}
-          alt={`Фото ${item.label}`}
-        />
-        <span className={css.label} dangerouslySetInnerHTML={{ __html: item.label }} />
-      </button>
-    </div>
-  ))
+  const structuredList = createSubArrays(list, 4)
+
+  const listItems = structuredList.map((sublist, index) => {
+    const innerList = sublist.map((item, indexInner) => (
+      <div className={css.item} key={item.label + '-' + indexInner}>
+        <button
+          className={css.trigger}
+          onClick={() => handleClickModalTrigger(item.label, item.fullImage)}
+          type='button'
+        >
+          <img
+            className={css.previewImage}
+            src={images('./' + item.previewImage)}
+            alt={`Фото ${item.label}`}
+          />
+          <span className={css.label} dangerouslySetInnerHTML={{__html: item.label}} />
+        </button>
+      </div>
+    ))
+
+    return (
+      <div className={css.slideWrapper} key={`Sublist #${index}`}>
+        {innerList}
+      </div>
+    )
+  })
 
   return (
     <section>
@@ -52,7 +63,7 @@ const License = ({ title = 'Лицензии', list }) => {
         <SliderCards
           className={css.slider}
           controlsType='styledNoFractions'
-          freeMode
+          slides={1}
         >
           { listItems }
         </SliderCards>
@@ -64,4 +75,4 @@ const License = ({ title = 'Лицензии', list }) => {
   )
 }
 
-export default License
+export default React.memo(License)

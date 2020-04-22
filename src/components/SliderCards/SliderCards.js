@@ -11,8 +11,10 @@ const SliderCards = ({
   className,
   children,
   slides = 1,
+  spaceBetween = 15,
   controlsType = 'minimalist',
-  freeMode = false
+  freeMode = false,
+  sliderEffect = 'fade'
 }) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [totalSlides, setTotalSlides] = useState(0)
@@ -49,7 +51,11 @@ const SliderCards = ({
     freeMode: freeMode,
     freeModeSticky: freeMode,
     slidesPerView: freeMode ? 'auto' : slides,
-    spaceBetween: freeMode ? 0 : 15,
+    spaceBetween: freeMode ? 0 : spaceBetween,
+    effect: sliderEffect,
+    fadeEffect: {
+      crossFade: true
+    },
     getSwiper: setSwiper
   }
 
