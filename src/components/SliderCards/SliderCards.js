@@ -100,7 +100,7 @@ SliderCards.propTypes = {
   // External class name for additioinal styles tuning
   className: PropTypes.string,
   // Controls style preset
-  controlsType: PropTypes.oneOf(['minimalist', 'styled', 'stylesNoFractions']),
+  controlsType: PropTypes.oneOf(['minimalist', 'styled', 'styledNoFractions']),
   // Flag to turn on / off the swiper free mode
   freeMode: PropTypes.bool,
   // Adjustable slides per view quantity

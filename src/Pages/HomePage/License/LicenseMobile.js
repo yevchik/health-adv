@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import css from './License.module.scss'
-import Container from 'components/Grid/Container'
+import css from './LicenseMobile.module.scss'
 import Heading from 'components/Heading/Heading'
 import { images } from 'index'
-import Modal from 'components/Modal/Modal'
-import SliderCards from 'components/SliderCards/SliderCards'
+import SliderCardsMobile from 'components/SliderCards/SliderCardsMobile'
+import ModalMobile from 'components/Modal/ModalMobile'
+import ContainerMobile from 'components/Grid/ContainerMobile'
 
-const License = ({ title = 'Лицензии', list }) => {
+const LicenseMobile = ({ title = 'Лицензии', list }) => {
   const [modalStatus, setModalStatus] = useState({
     isOpened: false,
     content: null
@@ -47,21 +47,21 @@ const License = ({ title = 'Лицензии', list }) => {
 
   return (
     <section>
-      <Container className={css.container}>
+      <ContainerMobile className={css.container}>
         <Heading content={title} />
-        <SliderCards
+        <SliderCardsMobile
           className={css.slider}
           controlsType='styledNoFractions'
           freeMode
         >
           { listItems }
-        </SliderCards>
-      </Container>
-      <Modal isVisible={modalStatus.isOpened} handleCloseModal={handleCloseModal} >
+        </SliderCardsMobile>
+      </ContainerMobile>
+      <ModalMobile isVisible={modalStatus.isOpened} handleCloseModal={handleCloseModal} >
         { modalStatus.content }
-      </Modal>
+      </ModalMobile>
     </section>
   )
 }
 
-export default License
+export default LicenseMobile
