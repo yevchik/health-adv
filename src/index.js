@@ -8,9 +8,11 @@ import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
 import elasticAdaptive from 'store/reducers/elasticAdaptive'
 import ViewSwitcher from 'ViewSwitcher/ViewSwitcher'
+import videoBannerReducer from 'store/reducers/videoBanner'
 
 const rootReducer = combineReducers({
-  elastic: elasticAdaptive
+  elastic: elasticAdaptive,
+  videoBanner: videoBannerReducer
 })
 
 const store = createStore(rootReducer)
