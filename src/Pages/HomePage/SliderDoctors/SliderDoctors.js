@@ -6,7 +6,7 @@ import Heading from 'components/Heading/Heading'
 import Container from 'components/Grid/Container'
 import Swiper from 'react-id-swiper'
 import 'swiper/css/swiper.min.css'
-import { images } from 'App'
+import { images } from 'index'
 import Button from 'components/Button/Button'
 import IconQuotes from 'assets/icons/IconQuotes'
 import IconDotsBgDark from 'assets/icons/IconDotsBgDark'
@@ -86,6 +86,7 @@ const SliderDoctors = ({ title, list }) => {
             url={item.url}
             btnStyle='decorated'
             label='Подробнее о враче'
+            handleClick={() => {}}
           />
         </figcaption>
       </figure>

@@ -8,7 +8,6 @@ import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
 import elasticAdaptive from 'store/reducers/elasticAdaptive'
 import ViewSwitcher from 'ViewSwitcher/ViewSwitcher'
-import ElasticAdaptive from 'hoc/ElasticAdaptive'
 
 const rootReducer = combineReducers({
   elastic: elasticAdaptive
@@ -24,9 +23,7 @@ export const icons = require.context('assets/icons', true)
 const Content = (
   <Provider store={store}>
     <HashRouter basename='/'>
-      <ElasticAdaptive>
-        <ViewSwitcher />
-      </ElasticAdaptive>
+      <ViewSwitcher />
     </HashRouter>
   </Provider>
 )

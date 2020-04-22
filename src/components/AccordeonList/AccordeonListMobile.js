@@ -36,6 +36,7 @@ const AccordeonListMobile = ({
           onClick={() => {}}
           label='Записаться'
           className={css.btn}
+          handleClick={() => {}}
         />
       </Collapse>
     </li>

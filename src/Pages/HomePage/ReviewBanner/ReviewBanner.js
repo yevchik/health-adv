@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './ReviewBanner.module.scss'
 import Container from 'components/Grid/Container'
-import { images } from 'App'
+import { images } from 'index'
 import IconQuotes from 'assets/icons/IconQuotes'
 import PropTypes from 'prop-types'
 

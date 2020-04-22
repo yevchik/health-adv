@@ -3,7 +3,7 @@ import css from './SliderDoctorsMobile.module.scss'
 import Heading from 'components/Heading/Heading'
 import Swiper from 'react-id-swiper'
 import 'swiper/css/swiper.min.css'
-import { images } from 'App'
+import { images } from 'index'
 import IconQuotes from 'assets/icons/IconQuotes'
 import IconDotsBgDark from 'assets/icons/IconDotsBgDark'
 import PropTypes from 'prop-types'
@@ -85,6 +85,7 @@ const SliderDoctorsMobile = ({ title, list }) => {
             url={item.url}
             btnStyle='decorated'
             label='Подробнее о враче'
+            handleClick={() => {}}
           />
         </figcaption>
       </figure>

@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './ReviewBannerMobile.module.scss'
 import { useSelector } from 'react-redux'
-import { images } from 'App'
+import { images } from 'index'
 import IconQuotes from 'assets/icons/IconQuotes'
 import ContainerMobile from 'components/Grid/ContainerMobile'
 import PropTypes from 'prop-types'

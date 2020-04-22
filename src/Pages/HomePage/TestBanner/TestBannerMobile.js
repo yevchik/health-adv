@@ -22,6 +22,7 @@ const TestBannerMobile = ({ title, descriptor, type }) => (
           iconClassname={css.arrow}
           label='Пройти тест'
           btnStyle='filledDecorated'
+          handleClick={() => {}}
         />
       </div>
     </ContainerMobile>

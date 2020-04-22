@@ -90,7 +90,7 @@ const Header = () => {
           <Button
             label='Записаться'
             btnStyle='decorated'
-            onClick={() => {}}
+            handleClick={() => {}}
           />
         </div>
       </Container>

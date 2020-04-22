@@ -63,7 +63,7 @@ const VideoBanner = ({
             <Button
               btnStyle='gradient'
               type='button'
-              onClick={() => {}}
+              handleClick={() => {}}
               label='Записаться'
             />
           </div>

@@ -58,6 +58,7 @@ const VideoBannerMobile = ({
               type='button'
               onClick={() => {}}
               label='Записаться'
+              handleClick={() => {}}
             />
           </div>
         </ContainerMobile>
