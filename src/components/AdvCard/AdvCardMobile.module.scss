@@ -1,0 +1,102 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem 2rem;
+  min-height: 25.3rem;
+  overflow: hidden;
+
+  &.linkTeeth {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 2.2rem;
+      right: 0;
+      width: 16rem;
+      height: 9.9rem;
+      background-image: url("../../assets/images/teeth.png");
+      background-size: cover;
+      z-index: 1;
+    }
+  }
+
+  &.linkImplant {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 3.1rem;
+      right: 0;
+      width: 16rem;
+      height: 9.9rem;
+      background-image: url("../../assets/images/implant.png");
+      background-size: cover;
+      z-index: 1;
+    }
+  }
+
+  &.linkJaw {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 1.5rem;
+      right: 0;
+      width: 11rem;
+      height: 12.3rem;
+      background-image: url("../../assets/images/jaw.png");
+      background-size: cover;
+      z-index: 1;
+    }
+  }
+}
+
+.duration {
+  @include capitals-bold($colorMainBg);
+
+  position: relative;
+  display: block;
+  z-index: 1;
+}
+
+.title {
+  @include h2($colorMainBg);
+
+  margin: 2.8rem 0 0 0;
+  padding-right: 20%;
+  width: 100%;
+}
+
+.price {
+  @include regular($colorMainBg);
+
+  display: block;
+  margin-top: 1.9rem;
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.label {
+  @include capitals-bold($colorMainBg);
+
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.icon {
+  margin-left: 1.6rem;
+  width: 1.6rem;
+  stroke: $colorMainBg;
+}
+
+.bg {
+  position: absolute;
+  top: 1rem;
+  left: 0.4rem;
+  width: 30.3rem;
+}

@@ -1,7 +1,8 @@
-import React from 'react'
+import { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { setDeviceType, setFontSize } from 'store/actions'
+import { isMobileOnly, isBrowser, isTablet } from 'react-device-detect'
 
 function mapStateToProps (state) {
   return {
@@ -16,7 +17,7 @@ function mapDispatchToProps (dispatch) {
   }
 }
 
-class ElasticAdaptive extends React.Component {
+class ElasticAdaptive extends PureComponent {
   componentDidMount () {
     this.changeSize()
     window.addEventListener('resize', this.changeSize)
@@ -33,23 +34,23 @@ class ElasticAdaptive extends React.Component {
     }
   }
 
-  getDeviceType = width => {
-    if (width >= 1280 && this.props.type !== 'desktop') {
+  getDeviceType = () => {
+    if (isBrowser) {
       this.props.setDeviceType('desktop')
     }
 
-    if (width < 1280 && width >= 768 && this.props.type !== 'tablet') {
+    if (isTablet) {
       this.props.setDeviceType('tablet')
     }
 
-    if (width < 768 && this.props.type !== 'mobile') {
+    if (isMobileOnly) {
       this.props.setDeviceType('mobile')
     }
   }
 
   changeSize = () => {
     let width = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth
-    this.getDeviceType(width)
+    this.getDeviceType()
     const { type } = this.props
     const html = document.documentElement
     const { widthLimit, baseWidth } = this.props.state[type]
@@ -63,6 +64,23 @@ class ElasticAdaptive extends React.Component {
     const currentSize = actualWidth / baseWidth * baseSize
     this.props.setFontSize(currentSize)
     html.style.fontSize = currentSize + 'px'
+  }
+
+  debounce = func => {
+    let lastTimeout = null
+
+    return function () {
+      const context = this
+      const args = arguments
+
+      if (lastTimeout) {
+        clearTimeout(lastTimeout)
+      }
+
+      lastTimeout = setTimeout(function () {
+        func.apply(context, args)
+      }, 250)
+    }
   }
 
   render () {

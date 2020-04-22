@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import css from 'components/Grid/Container.module.scss'
+import css from './Container.module.scss'
 
 const Container = ({ className, children }) => (
   <div className={classnames(css.wrapper, className)}>
@@ -8,4 +8,4 @@ const Container = ({ className, children }) => (
   </div>
 )
 
-export default Container
+export default React.memo(Container)

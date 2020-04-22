@@ -1,0 +1,178 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.section {
+  padding: 4.7rem 0;
+
+  :global {
+    .swiper-slide {
+      width: 100%;
+    }
+  }
+
+  .slider {
+    position: relative;
+    margin-top: 3.3rem;
+  }
+
+  .cardContent {
+    margin: 0;
+    padding: 0;
+  }
+
+  .frame {
+    position: relative;
+    height: 27.7rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.3rem;
+      background-color: var(--color-highlight-mosaic);
+      z-index: 1;
+    }
+  }
+
+  .iconDots {
+    display: none;
+  }
+
+  .photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info {
+    margin-top: 2.3rem;
+  }
+
+  .name {
+    @include h2-adaptiveSpecial(var(--color-font-main));
+
+    margin: 0;
+  }
+
+  .expertise {
+    @include regular(var(--color-font-main));
+
+    margin: 0;
+    opacity: 0.7;
+  }
+
+  .address {
+    @include regularTabletScaling(var(--color-font-main));
+
+    margin: 0.8rem 0 0 0;
+  }
+
+  .quote {
+    display: none;
+  }
+
+  .btnAll {
+    margin-top: 1.4rem;
+    // 1px shorter to avoid rem to px recalculation on 375px devices
+    width: calc(100% - 1px);
+  }
+
+  .controls {
+    position: absolute;
+    top: -5.5rem;
+    right: 0;
+    display: flex;
+    align-items: flex-start;
+
+    .btnNext {
+      margin-left: 3rem;
+    }
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .section {
+    padding: 5rem 0 4rem 0;
+
+    :global {
+      .swiper-container {
+        margin-left: -2.5rem;
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+        width: calc(100% + 5rem);
+      }
+
+      .swiper-slide {
+        width: 64.6rem;
+        margin-right: 5rem;
+
+        // for correct position of last slide
+        &:last-of-type {
+          margin-right: calc(5rem + 2.5rem);
+        }
+      }
+    }
+
+    .slider {
+      margin-top: 2.5rem;
+    }
+
+    .cardContent {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .frame {
+      order: 2;
+      width: 29.2rem;
+      height: 36.1rem;
+    }
+
+    .info {
+      order: 1;
+      margin-top: 0;
+      padding-right: 3.2rem;
+      width: calc(100% - 29.2rem);
+    }
+
+    .address {
+      margin: 0.9rem 0 0 0;
+    }
+
+    .quote {
+      @include h5-italic(var(--color-font-main));
+
+      position: relative;
+      display: block;
+      margin: 3rem 0 0 0;
+      padding-right: 2rem;
+
+      span {
+        opacity: 0.7;
+      }
+    }
+
+    .iconQuote {
+      position: absolute;
+      top: -0.3rem;
+      right: -3.2rem;
+      width: 3.2rem;
+      fill: var(--color-font-main);
+      opacity: 0.5;
+    }
+
+    .btnAll {
+      margin-top: 4.4rem;
+      width: 25.5rem;
+    }
+
+    .controls {
+      display: none;
+    }
+  }
+}

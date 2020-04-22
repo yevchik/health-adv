@@ -1,98 +1,113 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import classnames from 'classnames'
 import css from './Modal.module.scss'
 import Container from 'components/Grid/Container'
 import IconClose from 'containers/Header/_assets/IconClose'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import PropTypes from 'prop-types'
 
-class Modal extends Component {
-  constructor (props) {
-    super(props)
+const Modal = ({
+  isVisible = false,
+  content = null,
+  children,
+  handleCloseModal
+}) => {
+  const wrapperRef = useRef(null)
+  const contentRef = useRef(null)
+  const [isClosing, setClosingStatus] = useState(false)
 
-    this.wrapperRef = null
-    this.contentRef = null
+  const closeModal = () => {
+    setClosingStatus(true)
   }
 
-  state = {
-    isClosing: false
-  }
+  useEffect(() => {
+    let wrapper = wrapperRef.current || null
 
-  componentDidMount () {
-    this.wrapperRef && this.wrapperRef.addEventListener('click', this.handleClickWrapper)
-    document.addEventListener('keydown', this.handleEscPress)
-  }
-
-  componentWillUnmount () {
-    this.wrapperRef && this.wrapperRef.removeEventListener('click', this.handleClickWrapper)
-    document.removeEventListener('keydown', this.handleEscPress)
-  }
-
-  UNSAFE_componentWillReceiveProps (nextProps, nextContext) {
-    if (nextProps.isVisible && this.state.isClosing) {
-      this.setState({
-        isClosing: false
-      })
+    const handleClickWrapper = evt => {
+      if (!contentRef.current.contains(evt.target)) {
+        closeModal()
+      }
     }
-  }
 
-  setWrapperRef = el => {
-    this.wrapperRef = el
-  }
-
-  setContentRef = el => {
-    this.contentRef = el
-  }
-
-  handleClickWrapper = evt => {
-    if (!this.contentRef.contains(evt.target)) {
-      this.closeModal()
+    const handleEscPress = evt => {
+      if (evt.keyCode === 27 && isVisible) {
+        closeModal()
+      }
     }
-  }
 
-  handleEscPress = evt => {
-    if (evt.keyCode === 27 && this.props.isVisible) {
-      this.closeModal()
+    if (wrapperRef.current && isVisible) {
+      wrapper = wrapperRef.current
+      wrapperRef.current.addEventListener('click', handleClickWrapper)
+      document.addEventListener('keydown', handleEscPress)
     }
-  }
 
-  closeModal = () => {
-    this.setState({
-      isClosing: true
-    })
-    this.props.handleCloseModal()
-  }
+    return () => {
+      wrapper.removeEventListener('click', handleClickWrapper)
+      document.removeEventListener('keydown', handleEscPress)
+    }
+  }, [isVisible])
 
+  useEffect(() => {
+    if (isVisible) {
+      disableBodyScroll(wrapperRef.current, { reserveScrollBarGap: true })
+    }
+  }, [isVisible])
 
-  render () {
-    const {
-      isVisible = false,
-      content = null,
-      children
-    } = this.props
-    const { isClosing } = this.state
+  useEffect(() => {
+    const handleModalClosing = () => {
+      if (isClosing) {
+        enableBodyScroll(wrapperRef.current)
+        setClosingStatus(false)
+        handleCloseModal()
+        wrapperRef.current.removeEventListener('animationend', handleModalClosing)
+      }
+    }
 
-    return (
+    if (isClosing) {
+      // body-scroll-lock adds padding-right for scroll bar space imitation. To avoid content
+      // shift at the end of modal close, we postpone enablebodyscroll with padding removal until
+      // close animation ends
+      wrapperRef.current.addEventListener('animationend', handleModalClosing)
+
+    }
+  }, [isClosing, handleCloseModal])
+
+  return (
+    <>
       <div
         className={classnames(css.wrapper, {
           [css.wrapperVisible]: isVisible && !isClosing,
           [css.wrapperClosing]: isClosing
         })}
-        ref={this.setWrapperRef}
+        ref={wrapperRef}
       >
+        {isVisible &&
         <Container className={css.container}>
-          <div className={css.content} ref={this.setContentRef}>
+          <div className={css.content} ref={contentRef}>
             <button
               className={css.btn}
-              onClick={() => this.closeModal()}
+              onClick={() => closeModal()}
             >
               <IconClose className={css.icon} />
               Закрыть модальное окно
             </button>
             {content || children}
           </div>
-        </Container>
+        </Container>}
       </div>
-    )
-  }
+    </>
+  )
 }
 
-export default Modal
+Modal.propTypes = {
+  // visibility status of modal
+  isVisible: PropTypes.bool,
+  // content of modal as a props, ignored in children exist
+  content: PropTypes.element,
+  // content of modal as children
+  children: PropTypes.element,
+  // modal close handler
+  handleCloseModal: PropTypes.func
+}
+
+export default React.memo(Modal)

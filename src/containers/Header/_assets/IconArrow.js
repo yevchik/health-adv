@@ -6,4 +6,4 @@ const IconArrow = ({ className }) => (
   </svg>
 )
 
-export default IconArrow
+export default React.memo(IconArrow)

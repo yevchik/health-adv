@@ -4,7 +4,7 @@ import {
 } from 'store/actions/actionTypes'
 
 const initialState = {
-  deviceType: 'desktop',
+  deviceType: null,
   config: {
     desktop: {
       baseSize: 10,

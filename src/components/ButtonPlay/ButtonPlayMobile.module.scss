@@ -1,0 +1,39 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.button {
+  @include resetButton;
+  @include h9-regular(var(--color-highlight-lightest));
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition-duration: 0.3s;
+  cursor: pointer;
+
+  .icon {
+    width: 5.7rem;
+
+    :global {
+      .circle__outer {
+        stroke: var(--color-highlight-lightest);
+        transition-duration: 0.3s;
+      }
+
+      .circle__inner {
+        fill: var(--color-highlight-lightest);
+        transition-duration: 0.3s;
+      }
+
+      .icon__play {
+        fill: var(--color-highlight-buttons);
+        transition-duration: 0.3s;
+      }
+    }
+  }
+
+  .label {
+    margin-top: 0.9rem;
+  }
+}

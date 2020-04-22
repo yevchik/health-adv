@@ -2,8 +2,14 @@ import React from 'react'
 import classnames from 'classnames'
 import css from './ButtonPlay.module.scss'
 import IconPlay from 'assets/icons/IconPlay'
+import PropTypes from 'prop-types'
 
-const ButtonPlay = ({ className, label = '', handleClick, background = 'none' }) => (
+const ButtonPlay = ({
+  className,
+  label = '',
+  handleClick,
+  background = 'none'
+}) => (
   <button
     className={classnames(css.button, className)}
     type='button'
@@ -19,4 +25,12 @@ const ButtonPlay = ({ className, label = '', handleClick, background = 'none' })
   </button>
 )
 
-export default ButtonPlay
+ButtonPlay.propTypes = {
+  className: PropTypes.string,
+  label: PropTypes.string,
+  handleClick: PropTypes.func,
+  // props for passing background image received from API
+  background: PropTypes.string,
+}
+
+export default React.memo(ButtonPlay)

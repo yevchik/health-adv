@@ -107,40 +107,18 @@
       opacity: 0.5;
     }
 
+    &:hover {
+      &::before {
+        transform: translateX(0);
+      }
+    }
+
     .icon {
       margin-left: 1rem;
       width: 1.6rem;
       stroke: $colorMainBg;
       transition-duration: 0.3s;
       transform: translateX(0);
-    }
-  }
-}
-
-@media (max-width: $widthTabletMax) {
-  .button{
-    &.buttonDecorated {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.9rem 2.3rem 1.5rem 3rem;
-        text-align: left;
-
-      .icon {
-        margin-left: auto;
-      }
-    }
-  }
-}
-
-@media (min-width: $widthDesktopMin) {
-  .button {
-    &.buttonGradient {
-      &:hover {
-        &::before {
-          transform: translateX(0);
-        }
-      }
     }
   }
 }

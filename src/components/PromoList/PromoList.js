@@ -1,12 +1,10 @@
 import React from 'react'
-import css from './PromoList.module.scss'
 import AdvCard from 'components/AdvCard/AdvCard'
-import classnames from 'classnames'
 import SliderCards from 'components/SliderCards/SliderCards'
 
 const PromoList = ({ className, data }) => {
   return (
-    <div className={classnames(css.wrapper, className)}>
+    <div className={className}>
       <SliderCards>
         {data.map((item, index) => (
           <div key={'card' + index}>
@@ -18,4 +16,4 @@ const PromoList = ({ className, data }) => {
   )
 }
 
-export default PromoList
+export default React.memo(PromoList)

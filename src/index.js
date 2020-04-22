@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import 'normalize.css'
 import 'styles/common.scss'
 import { HashRouter } from 'react-router-dom';
@@ -8,6 +7,7 @@ import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
 import elasticAdaptive from 'store/reducers/elasticAdaptive'
+import ViewSwitcher from 'ViewSwitcher/ViewSwitcher'
 
 const rootReducer = combineReducers({
   elastic: elasticAdaptive
@@ -15,10 +15,15 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer)
 
+// importing images folder from assets to avoid eject and additional setups
+export const images = require.context('assets/images', true)
+export const videos = require.context('assets/videos', true)
+export const icons = require.context('assets/icons', true)
+
 const Content = (
   <Provider store={store}>
     <HashRouter basename='/'>
-      <App />
+      <ViewSwitcher />
     </HashRouter>
   </Provider>
 )

@@ -5,6 +5,7 @@ import Button from 'components/Button/Button'
 import IconDotsBg from 'assets/icons/IconDotsBg'
 import Container from 'components/Grid/Container'
 import classnames from 'classnames'
+import PropTypes from 'prop-types'
 
 const TestBanner = ({ title, descriptor, type }) => (
   <section className={classnames(css.section, { [css.sectionSimple]: type === 'simple' })}>
@@ -21,10 +22,20 @@ const TestBanner = ({ title, descriptor, type }) => (
           iconClassname={css.arrow}
           label='Пройти тест'
           btnStyle='filledDecorated'
+          handleClick={() => {}}
         />
       </div>
     </Container>
   </section>
 )
 
-export default TestBanner
+TestBanner.propTypes = {
+  // section heading
+  title: PropTypes.string,
+  // descriptor layout
+  descriptor: PropTypes.string,
+  // component style preset
+  type: PropTypes.oneOf(['simple', undefined])
+}
+
+export default React.memo(TestBanner)

@@ -1,0 +1,58 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.bg {
+  height: 32rem;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  margin-top: -4rem;
+  padding: 2.4rem 5.5rem 2.7rem 3rem;
+  background-color: var(--color-highlight-mosaic);
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+}
+
+.quote {
+  @include h4($colorMainBg);
+
+  margin: 0;
+  padding: 0;
+}
+
+.author {
+  @include regularTabletScaling($colorMainBg);
+
+  display: block;
+  margin: 1rem 0 0 0;
+}
+
+.icon {
+  position: absolute;
+  top: 2.3rem;
+  right: 2.9rem;
+  width: 2.4rem;
+  fill: $colorMainBg;
+}
+
+@media (min-width: $widthTabletMin) {
+  .bg {
+    height: 36.3rem;
+  }
+
+  .container {
+    padding: 3.9rem 8.6rem 4.8rem 2.5rem;
+  }
+
+  .author {
+    margin: 2rem 0 0 0;
+  }
+
+  .icon {
+    top: 3.9rem;
+    right: 2.5rem;
+    width: 3.2rem;
+  }
+}

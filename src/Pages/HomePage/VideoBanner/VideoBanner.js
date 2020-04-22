@@ -1,130 +1,98 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import css from './VideoBanner.module.scss'
-import { connect } from 'react-redux'
 import Container from 'components/Grid/Container'
 import Button from 'components/Button/Button'
 import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
 import Modal from 'components/Modal/Modal'
 import IconDots from 'assets/icons/IconDots'
 import classnames from 'classnames'
-import { images, videos } from 'App'
+import { images, videos } from 'index'
+import PropTypes from 'prop-types'
 
-const mapStateToProps = state => {
-  return {
-    type: state.elastic.deviceType
-  }
-}
+const VideoBanner = ({
+  top,
+  bottom,
+}) => {
+  const videoRef = useRef(null)
+  const videoBgRef = useRef(null)
+  const [isModalVisible, setModalVisibilityStatus] = useState(false)
 
-class VideoBanner extends Component {
-  constructor (props) {
-    super(props)
-    // For video time reset on modal open
-    this.videoRef = null
-    this.videoBgRef = null
-  }
-
-  state = {
-    isModalVisible: false
-  }
-
-  componentDidUpdate (prevProps, prevState) {
+  useEffect(() => {
     // reset video playtime in modal when it opens
-    if (prevState.isModalVisible !== this.state.isModalVisible && this.state.isModalVisible) {
-      this.videoRef.load()
+    if (isModalVisible) {
+      videoRef.current.load()
     }
+  }, [isModalVisible])
+
+  const handleOpenModal = () => {
+    setModalVisibilityStatus(true)
   }
 
-  setVideoRef = el => {
-    this.videoRef = el
-  }
-  setVideoBgRef = el => {
-    this.videoBgRef = el
+  const handleCloseModal = () => {
+    setModalVisibilityStatus(false)
   }
 
-  handleOpenModal = () => {
-    this.setState({
-      isModalVisible: true
-    })
-  }
-
-  handleCloseModal = () => {
-    this.setState({
-      isModalVisible: false
-    })
-  }
-
-  render () {
-    const { isModalVisible } = this.state
-    const {
-      top,
-      bottom,
-      type
-    } = this.props
-
-    // desktop has no bg image - only video, mobile and tablet have different image sources for
-    // proper data size management
-    let background = 'none'
-
-    if (type !== 'desktop') {
-      background = type === 'mobile'
-        ? `url("${ images('./' + bottom.backgroundMobile) }")`
-        : `url("${ images('./' + bottom.backgroundTablet) }")`
-    }
-
-    return (
-      <section>
-        <div className={css.bg} style={{ backgroundImage: background }} />
-        <Container className={css.top}>
-          {type === 'desktop' &&
-            <p className={css.mainSlogan} dangerouslySetInnerHTML={{ __html: top.slogan }} />
-          }
-          <div className={css.previewWrapper}>
-            {type === 'desktop' &&
-              <h2 className={css.previewLabel}>
-                { top.previewLabel }
-              </h2>
-            }
-            <ButtonPlay
-              className={classnames(css.play, {
-                [css.preview]: type === 'desktop'
-              })}
-              background={type === 'desktop' ? `url("${ images('./' + top.modalVideoPreview) }")` : 'none'}
-              label={type === 'desktop' ? '' : 'Видео о клинике'}
-              handleClick={this.handleOpenModal}
+  return (
+    <section>
+      <div className={css.bg} />
+      <Container className={css.top}>
+        <p className={css.mainSlogan} dangerouslySetInnerHTML={{ __html: top.slogan }} />
+        <div className={css.previewWrapper}>
+          <h2 className={css.previewLabel}>
+            { top.previewLabel }
+          </h2>
+          <ButtonPlay
+            className={classnames(css.play, css.preview)}
+            background={`url("${ images('./' + top.modalVideoPreview) }")`}
+            label={''}
+            handleClick={handleOpenModal}
+          />
+        </div>
+      </Container>
+      <div className={css.content}>
+        <video className={css.videoBg} muted='muted' autoPlay='autoplay' loop='loop' ref={videoBgRef} preload='preload'>
+          <source src={videos('./' + bottom.videoBg)} />
+        </video>
+        <Container className={css.container}>
+          <IconDots className={css.dots} />
+          <div className={css.textContent}>
+            <p className={css.sloganDesktop} dangerouslySetInnerHTML={{ __html: bottom.sloganDesktop }} />
+            <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: bottom.descriptor }} />
+          </div>
+          <div className={css.btn}>
+            <Button
+              btnStyle='gradient'
+              type='button'
+              handleClick={() => {}}
+              label='Записаться'
             />
           </div>
         </Container>
-        <div className={css.content}>
-          {type === 'desktop' &&
-            <video className={css.videoBg} muted='muted' autoPlay='autoplay' loop='loop' ref={this.setVideoBgRef} preload='preload'>
-              <source src={videos('./' + bottom.videoBg)} />
-            </video>
-          }
-          <Container className={css.container}>
-            {type === 'desktop' && <IconDots className={css.dots} />}
-            <div className={css.textContent}>
-              <p className={css.sloganAdaptive} dangerouslySetInnerHTML={{ __html: bottom.sloganAdaptive }} />
-              <p className={css.sloganDesktop} dangerouslySetInnerHTML={{ __html: bottom.sloganDesktop }} />
-              <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: bottom.descriptor }} />
-            </div>
-            <div className={css.btn}>
-              <Button
-                btnStyle={type === 'desktop' ? 'gradient' : 'decorated'}
-                type='button'
-                onClick={() => {}}
-                label='Записаться'
-              />
-            </div>
-          </Container>
-        </div>
-        <Modal isVisible={isModalVisible} handleCloseModal={this.handleCloseModal}>
-          <video className={css.video} controls autoPlay ref={this.setVideoRef}>
-            <source src={videos('./' + top.modalVideo)} />
-          </video>
-        </Modal>
-      </section>
-    )
-  }
+      </div>
+      <Modal isVisible={isModalVisible} handleCloseModal={handleCloseModal}>
+        <video className={css.video} controls autoPlay ref={videoRef}>
+          <source src={videos('./' + top.modalVideo)} />
+        </video>
+      </Modal>
+    </section>
+  )
 }
 
-export default connect(mapStateToProps)(VideoBanner)
+VideoBanner.propTypes = {
+  top: PropTypes.shape({
+    slogan: PropTypes.string,
+    previewLabel: PropTypes.string,
+    modalVideo: PropTypes.string,
+    modalVideoPreview: PropTypes.string,
+  }),
+  bottom: PropTypes.shape({
+    sloganAdaptive: PropTypes.string,
+    sloganDesktop: PropTypes.string,
+    backgroundMobile: PropTypes.string,
+    backgroundTablet: PropTypes.string,
+    descriptor: PropTypes.string,
+    videoBg: PropTypes.string,
+  })
+}
+
+export default React.memo(VideoBanner)

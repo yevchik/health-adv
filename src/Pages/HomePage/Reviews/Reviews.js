@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import css from './Reviews.module.scss'
 import Container from 'components/Grid/Container'
 import Heading from 'components/Heading/Heading'
@@ -7,12 +7,39 @@ import Modal from 'components/Modal/Modal'
 import classnames from 'classnames'
 import { decodeHTMLCharacters } from 'utils'
 import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
-import { images, videos } from 'App'
+import { images, videos } from 'index'
 
 const Reviews = ({ title, list }) => {
   const [modal, setModalStatus] = useState({
     isVisible: false,
     content: null
+  })
+
+  const reviewTextRef = useRef(null)
+
+  const handleReviewScroll = element => {
+    if (element.target.scrollTop !== 0) {
+      element.target.classList.remove(`${[css.textCut]}`)
+    } else {
+      element.target.classList.add(`${[css.textCut]}`)
+    }
+  }
+
+  useEffect(() => {
+    if (modal.isVisible && reviewTextRef.current) {
+      const reviewElement = reviewTextRef.current
+      const reviewBoundingHeight = reviewElement.getBoundingClientRect().height
+      const reviewTotalHeight = reviewElement.scrollHeight
+
+      if (reviewTotalHeight > reviewBoundingHeight) {
+        reviewElement.classList.add(`${[css.textCut]}`)
+        reviewElement.addEventListener('scroll', handleReviewScroll)
+      }
+    }
+
+    if (!modal.isVisible && reviewTextRef.current) {
+      reviewTextRef.current.removeEventListener('scroll', handleReviewScroll)
+    }
   })
 
   const handleOpenModal = index => {
@@ -60,7 +87,7 @@ const Reviews = ({ title, list }) => {
                 {slide.date}
               </span>
             </div>
-            <p className={css.text} dangerouslySetInnerHTML={{__html: modal ? slide.text : pureText}} />
+            <p className={css.text} dangerouslySetInnerHTML={{__html: modal ? slide.text : pureText}} ref={reviewTextRef} />
             {isButtonRequired &&
               <button
                 className={css.btn}
@@ -102,7 +129,7 @@ const Reviews = ({ title, list }) => {
       <article>
         <Container className={css.container}>
           <Heading className={css.tile} content={title} />
-          <SliderCards className={css.slider} desktopControls='styled'>
+          <SliderCards className={css.slider} controlsType='styled'>
             { slides }
           </SliderCards>
         </Container>

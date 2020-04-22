@@ -1,0 +1,118 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.container {
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+
+  :global {
+    .swiper-container {
+      margin-left: -1.5rem;
+      padding-left: 1.5rem;
+      width: calc(100% + 3rem);
+    }
+
+    .swiper-slide {
+      width: 19rem;
+
+      &:not(:last-of-type) {
+        margin-right: 1.5rem;
+      }
+
+      &:last-of-type {
+        margin-right: 1.5rem;
+      }
+    }
+
+    .swiper-pagination {
+      margin-left: 1.5rem;
+      width: calc(100% - 3rem);
+    }
+  }
+}
+
+.trigger {
+  @include resetButton;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.previewImage {
+  width: 100%;
+  height: 27.7rem;
+  object-fit: cover;
+}
+
+.label {
+  @include regularTabletScaling(var(--color-font-main));
+
+  display: block;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.fullImage {
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+.slider {
+  margin-top: 2rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .container {
+    position: relative;
+    padding-top: 5.6rem;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40rem;
+      background-color: var(--color-highlight-lightest);
+    }
+
+    :global {
+      .swiper-container {
+        margin-left: -2.5rem;
+        padding-left: 2.5rem;
+        width: calc(100% + 5rem);
+      }
+
+      .swiper-slide {
+        width: 26.6rem;
+
+        &:not(:last-of-type) {
+          margin-right: 2.5rem;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      div.swiper-pagination {
+        margin-left: 2.5rem;
+        width: calc(100% - 5rem);
+      }
+    }
+  }
+
+  .previewImage {
+    height: 38.9rem;
+  }
+
+  .label {
+    margin-top: 2rem;
+  }
+
+  .slider {
+    margin-top: 3rem
+  }
+}

@@ -1,94 +1,70 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import css from './SliderCards.module.scss'
 import classnames from 'classnames'
 import Swiper from 'react-id-swiper'
 import 'swiper/css/swiper.min.css'
 import IconArrow from 'assets/icons/IconArrow'
 import ButtonSlider from 'components/ButtonSlider/ButtonSlider'
+import PropTypes from 'prop-types'
 
-class SliderCards extends Component {
-  state = {
-    activeIndex: 0,
-    totalSlides: 0
-  }
+const SliderCards = ({
+  className,
+  children,
+  slides = 1,
+  spaceBetween = 15,
+  controlsType = 'minimalist',
+  freeMode = false,
+  sliderEffect = 'fade'
+}) => {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [totalSlides, setTotalSlides] = useState(0)
+  const [swiper, setSwiper] = useState(null)
 
-  swiper = null
-
-  goNext = () => {
-    if (this.swiper) {
-      this.swiper.slideNext()
+  const goNext = () => {
+    if (swiper) {
+      swiper.slideNext()
     }
   }
 
-  goPrev = () => {
-    if (this.swiper) this.swiper.slidePrev()
-  }
-
-  initSlider = node => {
-    this.swiper = node
-    // Somehow requires update inside setTimeout to rednder free mode slider correctly
-      setTimeout(() => {
-      if (!this.swiper.destroyed) {
-        this.swiper.update()
-
-        this.setState(prevState => ({
-          ...prevState,
-          totalSlides: this.swiper.slides.length < 10 ? '0' + this.swiper.slides.length : this.swiper.slides.length
-        }))
-      }
-    })
-  }
-
-  render () {
-    const {
-      className,
-      children,
-      type,
-      desktopControls = 'minimalist',
-      desktopFreeMode = false
-    } = this.props
-
-    const {
-      activeIndex,
-      totalSlides
-    } = this.state
-
-    // swiper settings
-    const params = {
-      slidesPerView: 'auto',
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'progressbar',
-      },
-      breakpoints: {
-        768: {
-          freeMode: true,
-          freeModeSticky: true,
-          slidesPerView: 'auto'
-        },
-        1280: {
-          freeMode: desktopFreeMode,
-          freeModeSticky: desktopFreeMode,
-          slidesPerView: desktopFreeMode ? 'auto' : 1
-        }
-      },
-      on: {
-        beforeResize: () => {
-          this.swiper.slides.css('width', '')
-        },
-        slideChange: () => {
-          this.setState({
-            activeIndex: this.swiper.activeIndex
-          })
-        }
-      }
+  const goPrev = () => {
+    if (swiper) {
+      if (swiper) swiper.slidePrev()
     }
+  }
 
-    return (
-      <div className={classnames(css.wrapper, className, { [css.wrapperSingle]: type === 'single' })}>
-        <Swiper {...params} getSwiper={this.initSlider}>
-          { children }
-        </Swiper>
+  useEffect(() => {
+    if (swiper) {
+      swiper.on('slideChange', () => {
+        setActiveIndex(swiper.activeIndex)
+      })
+
+      setTotalSlides(swiper.slides.length < 10 ? '0' + swiper.slides.length : swiper.slides.length)
+    }
+  }, [swiper])
+
+  // swiper settings
+  const params = {
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+    },
+    freeMode: freeMode,
+    freeModeSticky: freeMode,
+    slidesPerView: freeMode ? 'auto' : slides,
+    spaceBetween: freeMode ? 0 : spaceBetween,
+    effect: sliderEffect,
+    fadeEffect: {
+      crossFade: true
+    },
+    getSwiper: setSwiper
+  }
+
+  return (
+    <div className={classnames(css.wrapper, className)}>
+      <Swiper {...params}>
+        { children }
+      </Swiper>
+      {controlsType !== 'styledNoFractions' &&
         <div className={css.controls}>
           {+totalSlides > 0 &&
             <div className={classnames(css.fractions, 'slider-fractions')}>
@@ -100,28 +76,41 @@ class SliderCards extends Component {
               </span>
             </div>
           }
-          {desktopControls !== 'styled' &&
+          {controlsType !== 'styled' && controlsType !== 'styledNoFractions' &&
             <div className={css.buttons}>
-              <button className={classnames(css.btn, css.btnBefore, { [css.btnDisabled]: activeIndex === 0 })} onClick={this.goPrev}>
+              <button className={classnames(css.btn, css.btnBefore, { [css.btnDisabled]: activeIndex === 0 })} onClick={goPrev}>
                 Предыдущий слайд
                 <IconArrow className={css.icon} />
               </button>
-              <button className={classnames(css.btn, css.btnNext, { [css.btnDisabled]: this.swiper && activeIndex === this.swiper.slides.length - 1 })} onClick={this.goNext}>
+              <button className={classnames(css.btn, css.btnNext, { [css.btnDisabled]: swiper && swiper.isEnd })} onClick={goNext}>
                 Следующий слайд
                 <IconArrow className={css.icon} />
               </button>
             </div>
           }
         </div>
-        {desktopControls === 'styled' &&
-          <div className={css.buttonsStyled}>
-            <ButtonSlider type='prev' className={css.btnStyled} handleClick={this.goPrev} isDisabled={this.swiper && this.swiper.isBeginning} />
-            <ButtonSlider  className={css.btnStyled} handleClick={this.goNext} isDisabled={this.swiper && this.swiper.isEnd} />
-          </div>
-        }
-      </div>
-    )
-  }
+      }
+      {(controlsType === 'styled' || controlsType === 'styledNoFractions') &&
+        <div className={css.buttonsStyled}>
+          <ButtonSlider type='prev' className={css.btnStyled} handleClick={goPrev} isDisabled={swiper && swiper.isBeginning} />
+          <ButtonSlider  className={css.btnStyled} handleClick={goNext} isDisabled={swiper && swiper.isEnd} />
+        </div>
+      }
+    </div>
+  )
 }
 
-export default SliderCards
+SliderCards.propTypes = {
+  // Slider slides
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  // External class name for additioinal styles tuning
+  className: PropTypes.string,
+  // Controls style preset
+  controlsType: PropTypes.oneOf(['minimalist', 'styled', 'styledNoFractions']),
+  // Flag to turn on / off the swiper free mode
+  freeMode: PropTypes.bool,
+  // Adjustable slides per view quantity
+  slides: PropTypes.number,
+}
+
+export default React.memo(SliderCards)

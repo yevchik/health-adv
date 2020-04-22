@@ -7,4 +7,4 @@ const IconClose = ({ className }) => (
   </svg>
 )
 
-export default IconClose
+export default React.memo(IconClose)

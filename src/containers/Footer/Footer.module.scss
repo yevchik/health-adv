@@ -17,9 +17,16 @@
   }
 }
 
+.wrapper {
+  padding-top: 7.6rem;
+  padding-bottom: 0;
+}
+
 .top {
   position: relative;
-  padding: 2.7rem 0;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 3.4rem;
 
   &::before {
     content: "";
@@ -33,11 +40,93 @@
   }
 }
 
+.nav {
+  display: flex;
+
+  .navList {
+    @include resetList;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .navItem {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .navLabel {
+    margin: 0;
+    width: 100%;
+  }
+
+  .navSublist {
+    @include resetList;
+
+    margin-top: 2.5rem;
+
+    &:not(:first-of-type) {
+      margin-left: 10rem;
+    }
+  }
+
+  .subItem {
+    &:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+  }
+
+  .subLink {
+    @include regular(var(--color-highlight-lightest));
+    @include linkBehavior;
+  }
+
+  .navSingles {
+    @include resetList;
+  }
+
+  .navSingle {
+    &:not(:first-of-type) {
+      margin-top: 2.2rem;
+    }
+  }
+
+  .navSingleLink {
+    @include linkBehavior;
+  }
+}
+
+.info {
+  margin-left: auto;
+}
+
+.workTime {
+  display: block;
+}
+
+.highlight {
+  @include capitals-bold(var(--color-highlight-lightest));
+
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.time {
+  @include h9-regular(var(--color-highlight-lightest));
+
+  display: block;
+  margin-top: 1.3rem;
+}
+
 .socialList {
   @include resetList;
 
   display: flex;
   align-items: center;
+  margin-top: 5.9rem;
 }
 
 .socialItem {
@@ -60,19 +149,48 @@
 .iconSocial {
   width: 3rem;
   fill: var(--color-highlight-lightest);
-  opacity: 0.3;
   transition-duration: 0.3s;
+  opacity: 0.8;
 }
 
 .bottom {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
   padding: 2.1rem 0 3rem 0;
 }
 
-.copyright,
 .counter {
-  width: 50%;
+  order: 1;
+}
+
+.metrics {
+  width: 10.5rem;
+}
+
+.timeline {
+  @include h9-regular(var(--color-highlight-lightest));
+
+  display: block;
+}
+
+.auxList {
+  @include resetList;
+
+  order: 2;
+  display: flex;
+  align-items: center;
+}
+
+.auxItem {
+  &:not(:first-of-type) {
+    margin-left: 12.2rem;
+  }
+}
+
+.auxLink {
+  @include h9-regular(var(--color-highlight-lightest));
+  @include linkBehavior;
 }
 
 .copyrightLink {
@@ -84,6 +202,12 @@
   }
 }
 
+.copyright {
+  order: 3;
+  display: flex;
+  align-items: center;
+}
+
 .label {
   @include h9-regular($colorMainBg);
 
@@ -93,223 +217,9 @@
 
 .logo {
   margin-top: 1rem;
-  width: 8.4rem;
+  margin-left: 2.3rem;
+  width: 10.6rem;
   fill: $colorMainBg;
   opacity: 0.5;
   transition-duration: 0.3s;
-}
-
-.metrics {
-  width: 10.5rem;
-}
-
-.auxList,
-.timeline,
-.nav,
-.workTime {
-  display: none;
-}
-
-@media (min-width: $widthTabletMin) and (max-width: $widthTabletMax) {
-  .wrapper {
-    display: flex;
-    align-items: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
-  .top {
-    padding: 0;
-
-    &::before {
-      display: none;
-    }
-  }
-
-  .bottom {
-    align-items: center;
-    padding: 0;
-    width: 100%;
-  }
-
-  .copyright,
-  .counter {
-    width: auto;
-  }
-
-  .copyright {
-    order: 2;
-    display: flex;
-    align-items: center;
-  }
-
-  .label {
-    @include small($colorMainBg);
-  }
-
-  .logo {
-    margin-left: 1.4rem;
-  }
-
-  .counter {
-    order: 1;
-    margin: 0 auto;
-  }
-
-  .metrics {
-    width: 9.3rem;
-  }
-}
-
-@media (min-width: $widthDesktopMin) {
-  .wrapper {
-    padding-top: 7.6rem;
-    padding-bottom: 0;
-  }
-
-  .top {
-    padding-top: 0;
-    padding-bottom: 3.4rem;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .nav {
-    display: flex;
-
-    .navList {
-      @include resetList;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .navItem {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-    }
-
-    .navLabel {
-      margin: 0;
-      width: 100%;
-    }
-
-    .navSublist {
-      @include resetList;
-
-      margin-top: 2.5rem;
-
-      &:not(:first-of-type) {
-        margin-left: 10rem;
-      }
-    }
-
-    .subItem {
-      &:not(:first-of-type) {
-        margin-top: 2rem;
-      }
-    }
-
-    .subLink {
-      @include regular(var(--color-highlight-lightest));
-      @include linkBehavior;
-    }
-
-    .navSingles {
-      @include resetList;
-    }
-
-    .navSingle {
-      &:not(:first-of-type) {
-        margin-top: 2.2rem;
-      }
-    }
-
-    .navSingleLink {
-      @include linkBehavior;
-    }
-  }
-
-  .info {
-    margin-left: auto;
-  }
-
-  .workTime {
-    display: block;
-  }
-
-  .highlight {
-    @include capitals-bold(var(--color-highlight-lightest));
-
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-  }
-
-  .time {
-    @include h9-regular(var(--color-highlight-lightest));
-
-    display: block;
-    margin-top: 1.3rem;
-  }
-
-  .socialList {
-    margin-top: 5.9rem;
-  }
-
-  .iconSocial {
-    opacity: 0.8;
-  }
-
-  .bottom {
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .copyright,
-  .counter {
-    width: auto;
-  }
-
-  .counter {
-    order: 1;
-  }
-
-  .timeline {
-    @include h9-regular(var(--color-highlight-lightest));
-
-    display: block;
-  }
-
-  .auxList {
-    @include resetList;
-
-    order: 2;
-    display: flex;
-    align-items: center;
-  }
-
-  .auxItem {
-    &:not(:first-of-type) {
-      margin-left: 12.2rem;
-    }
-  }
-
-  .auxLink {
-    @include h9-regular(var(--color-highlight-lightest));
-    @include linkBehavior;
-  }
-
-  .copyright {
-    order: 3;
-    display: flex;
-    align-items: center;
-  }
-
-  .logo {
-    margin-left: 2.3rem;
-    width: 10.6rem;
-  }
 }

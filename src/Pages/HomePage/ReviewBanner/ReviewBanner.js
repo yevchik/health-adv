@@ -1,30 +1,18 @@
 import React from 'react'
 import css from './ReviewBanner.module.scss'
 import Container from 'components/Grid/Container'
-import { useSelector } from 'react-redux'
-import { images } from 'App'
+import { images } from 'index'
 import IconQuotes from 'assets/icons/IconQuotes'
+import PropTypes from 'prop-types'
 
-const ReviewBanner = ({ className, bgImages, quote, author }) => {
-  // TODO Refactor all redux access / request operations to React hooks
-  const type = useSelector(state => state.elastic.deviceType)
-  let backgroundImage
-
-  switch (type) {
-    case 'mobile':
-      backgroundImage = `url("${ images('./' + bgImages.mobile) }")`
-      break
-    case 'tablet':
-      backgroundImage = `url("${ images('./' + bgImages.tablet) }")`
-      break
-    default:
-      backgroundImage = `url("${ images('./' + bgImages.desktop) }")`
-      break
-  }
-
+const ReviewBanner = ({
+  bgImages,
+  quote,
+  author
+}) => {
   return (
     <section className={css.section}>
-      <div className={css.bg} style={{ backgroundImage: backgroundImage }} />
+      <div className={css.bg} style={{ backgroundImage: `url("${ images('./' + bgImages.desktop) }")` }} />
       <Container className={css.container}>
         <IconQuotes className={css.icon} />
         <blockquote className={css.quote} dangerouslySetInnerHTML={{ __html: quote }} />
@@ -34,4 +22,12 @@ const ReviewBanner = ({ className, bgImages, quote, author }) => {
   )
 }
 
-export default ReviewBanner
+ReviewBanner.propTypes = {
+  bgImages: PropTypes.shape({
+    desktop: PropTypes.string
+  }),
+  quote: PropTypes.string,
+  author: PropTypes.string
+}
+
+export default React.memo(ReviewBanner)

@@ -12,6 +12,24 @@
   transition-duration: 0.3s;
   cursor: pointer;
 
+  &:hover {
+    .icon {
+      :global {
+        .circle__outer {
+          stroke: var(--color-highlight-buttons)
+        }
+
+        .circle__inner {
+          fill: var(--color-highlight-buttons);
+        }
+
+        .icon__play {
+          fill: var(--color-highlight-lightest);
+        }
+      }
+    }
+  }
+
   .icon {
     width: 5.7rem;
 
@@ -35,27 +53,5 @@
 
   .label {
     margin-top: 0.9rem;
-  }
-}
-
-@media (min-width: $widthDesktopMin) {
-  .button {
-    &:hover {
-      .icon {
-        :global {
-          .circle__outer {
-            stroke: var(--color-highlight-buttons)
-          }
-
-          .circle__inner {
-            fill: var(--color-highlight-buttons);
-          }
-
-          .icon__play {
-            fill: var(--color-highlight-lightest);
-          }
-        }
-      }
-    }
   }
 }

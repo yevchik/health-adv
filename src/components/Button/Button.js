@@ -3,6 +3,7 @@ import classnames from 'classnames'
 import css from './Button.module.scss'
 import IconArrowRight from 'assets/icons/IconArrowRight'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const Button = ({
   className,
@@ -34,4 +35,19 @@ const Button = ({
   )
 }
 
-export default Button
+Button.propTypes = {
+  // external class
+  className: PropTypes.string,
+  // external class for arrow icon
+  iconClassname: PropTypes.string,
+  // url for Link render instead of button
+  url: PropTypes.string,
+  // style preset
+  btnStyle: PropTypes.oneOf(['filled', 'decorated', 'filledDecorated', 'gradient']),
+  // text label
+  label: PropTypes.string.isRequired,
+  // click handler
+  handleClick: PropTypes.func.isRequired
+}
+
+export default React.memo(Button)

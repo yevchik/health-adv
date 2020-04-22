@@ -6,4 +6,4 @@ const Heading = ({ className, content }) => (
   <h2 className={classNames(css.title, className)} dangerouslySetInnerHTML={{ __html: content }} />
 )
 
-export default Heading
+export default React.memo(Heading)

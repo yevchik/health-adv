@@ -6,6 +6,7 @@ import { Map, Placemark, YMaps } from 'react-yandex-maps'
 import mapPin from 'assets/images/map-pin.svg'
 import { useSelector } from 'react-redux'
 import Button from 'components/Button/Button'
+import PropTypes from 'prop-types'
 
 const About = ({
   title,
@@ -15,7 +16,6 @@ const About = ({
   map
 }) => {
   const fontSize = useSelector(state => state.elastic.curFontSize)
-  const type = useSelector(state => state.elastic.deviceType)
 
   const mapData = {
     center: map.center,
@@ -53,7 +53,13 @@ const About = ({
               <li className={css.item} dangerouslySetInnerHTML={{__html: address}} key={index} />
             ))}
           </ul>
-          <Button className={css.linkAll}  url='/contacts' btnStyle='decorated' label='Контакты' />
+          <Button
+            className={css.linkAll}
+            url='/contacts'
+            btnStyle='decorated'
+            label='Контакты'
+            handleClick={() => {}}
+          />
         </div>
       </Container>
       <Container className={css.mapContainer}>
@@ -61,7 +67,6 @@ const About = ({
           <Map
             defaultState={mapData}
             className={css.map}
-            instanceRef={ ref => { ref && type !== 'desktop' && ref.behaviors.disable('drag') }}
           >
             {map.markers.map((marker, index) => (
               <Placemark
@@ -82,4 +87,22 @@ const About = ({
   )
 }
 
-export default About
+About.propTypes = {
+  title: PropTypes.string,
+  descriptor: PropTypes.string,
+  feature: PropTypes.shape({
+    subtitle: PropTypes.string,
+    descriptor: PropTypes.string,
+  }),
+  offices: PropTypes.shape({
+    subtitle: PropTypes.string,
+    list: PropTypes.arrayOf(PropTypes.string)
+  }),
+  map: PropTypes.shape({
+    markers: PropTypes.arrayOf(PropTypes.array),
+    center: PropTypes.array,
+    zoom: PropTypes.number
+  })
+}
+
+export default React.memo(About)
