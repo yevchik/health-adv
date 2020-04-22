@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
-import css from './Reviews.module.scss'
-import Container from 'components/Grid/Container'
+import css from './ReviewsMobile.module.scss'
 import Heading from 'components/Heading/Heading'
-import SliderCards from 'components/SliderCards/SliderCards'
-import Modal from 'components/Modal/Modal'
 import classnames from 'classnames'
 import { decodeHTMLCharacters } from 'utils'
-import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
 import { images, videos } from 'index'
+import ButtonPlayMobile from 'components/ButtonPlay/ButtonPlayMobile'
+import ContainerMobile from 'components/Grid/ContainerMobile'
+import SliderCardsMobile from 'components/SliderCards/SliderCardsMobile'
+import ModalMobile from 'components/Modal/ModalMobile'
 
-const Reviews = ({ title, list }) => {
+const ReviewsMobile = ({ title, list }) => {
   const [modal, setModalStatus] = useState({
     isVisible: false,
     content: null
@@ -107,7 +107,7 @@ const Reviews = ({ title, list }) => {
             </span>
           </div>
          {slide.video && !modal &&
-          <ButtonPlay
+          <ButtonPlayMobile
             className={css.btnPlay}
             background={`url("${images('./' + slide.preview)}")`}
             handleClick={() => handlePlayVideo(slide.video)}
@@ -127,18 +127,18 @@ const Reviews = ({ title, list }) => {
   return (
     <>
       <article>
-        <Container className={css.container}>
+        <ContainerMobile className={css.container}>
           <Heading className={css.tile} content={title} />
-          <SliderCards className={css.slider} controlsType='styled'>
+          <SliderCardsMobile className={css.slider} controlsType='styled'>
             { slides }
-          </SliderCards>
-        </Container>
+          </SliderCardsMobile>
+        </ContainerMobile>
       </article>
-      <Modal isVisible={modal.isVisible} handleCloseModal={handleCloseModal}>
+      <ModalMobile isVisible={modal.isVisible} handleCloseModal={handleCloseModal}>
         { modal.content }
-      </Modal>
+      </ModalMobile>
     </>
   )
 }
 
-export default Reviews
+export default ReviewsMobile

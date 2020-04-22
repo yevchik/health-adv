@@ -25,7 +25,9 @@ const SliderCards = ({
   }
 
   const goPrev = () => {
-    if (swiper) swiper.slidePrev()
+    if (swiper) {
+      if (swiper) swiper.slidePrev()
+    }
   }
 
   useEffect(() => {
@@ -84,8 +86,8 @@ const SliderCards = ({
       }
       {(controlsType === 'styled' || controlsType === 'styledNoFractions') &&
         <div className={css.buttonsStyled}>
-          <ButtonSlider type='prev' className={css.btnStyled} handleClick={this.goPrev} isDisabled={swiper && swiper.isBeginning} />
-          <ButtonSlider  className={css.btnStyled} handleClick={this.goNext} isDisabled={swiper && swiper.isEnd} />
+          <ButtonSlider type='prev' className={css.btnStyled} handleClick={goPrev} isDisabled={swiper && swiper.isBeginning} />
+          <ButtonSlider  className={css.btnStyled} handleClick={goNext} isDisabled={swiper && swiper.isEnd} />
         </div>
       }
     </div>
