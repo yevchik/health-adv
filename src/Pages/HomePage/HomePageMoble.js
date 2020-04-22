@@ -6,6 +6,7 @@ import SliderDoctorsMobile from 'Pages/HomePage/SliderDoctors/SliderDoctorsMobil
 import TestBannerMobile from 'Pages/HomePage/TestBanner/TestBannerMobile'
 import AboutMobile from 'Pages/HomePage/About/AboutMobile'
 import ReviewsMobile from 'Pages/HomePage/Reviews/ReviewsMobile'
+import AdvantagesMobile from 'Pages/HomePage/Advantages/AdvantagesMobile'
 
 const HomePageMobile  = () => {
   const homeData = {
@@ -324,6 +325,7 @@ const HomePageMobile  = () => {
       <TestBannerMobile {...homeData.testBanner} />
       <AboutMobile {...homeData.about} />
       <ReviewsMobile {...homeData.reviews} />
+      <AdvantagesMobile {...homeData.advantages} />
       <TestBannerMobile {...homeData.testBanner} type='simple' />
     </main>
   )

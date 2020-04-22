@@ -6,7 +6,7 @@ import SliderDoctors from 'Pages/HomePage/SliderDoctors/SliderDoctors'
 import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
 import About from 'Pages/HomePage/About/About'
 import Reviews from 'Pages/HomePage/Reviews/Reviews'
-// import Advantages from 'Pages/HomePage/Advantages/Advantages'
+import Advantages from 'Pages/HomePage/Advantages/Advantages'
 // import License from 'Pages/HomePage/License/License'
 // import { useSelector } from 'react-redux'
 
@@ -343,7 +343,7 @@ const HomePage = () => {
       <TestBanner {...homeData.testBanner} />
       <About {...homeData.about} />
       <Reviews {...homeData.reviews} />
-      {/*<Advantages {...homeData.advantages} />*/}
+      <Advantages {...homeData.advantages} />
       {/*<License {...homeData.license} />*/}
       <TestBanner {...homeData.testBanner} type='simple' />
     </main>
