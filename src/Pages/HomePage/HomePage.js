@@ -8,6 +8,7 @@ import About from 'Pages/HomePage/About/About'
 import Reviews from 'Pages/HomePage/Reviews/Reviews'
 import Advantages from 'Pages/HomePage/Advantages/Advantages'
 import License from 'Pages/HomePage/License/License'
+import VideoBannerSwitcher from 'Pages/HomePage/VideoBanner/VideoBannerSwitcher/VideoBannerSwitcher'
 
 const HomePage = () => {
   const homeData = {
@@ -335,6 +336,7 @@ const HomePage = () => {
       <h1 className='visuallyHidden'>
         { homeData.siteMainCaption }
       </h1>
+      <VideoBannerSwitcher />
       <VideoBanner {...homeData.videoBanner} />
       <Services {...homeData.services} />
       <ReviewBanner {...homeData.reviewBanner} />
