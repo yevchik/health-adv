@@ -28,7 +28,7 @@ const Header = () => {
       },
       {
         text: 'Медиацентр',
-        url: '/'
+        url: '/media'
       },
       {
         text: 'О клинике',
