@@ -115,6 +115,11 @@
   font-weight: 400;
   line-height: 3.0rem;
   color: $color;
+
+  @media (max-width: $widthTabletMax) {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
 }
 
 @mixin h5-italic($color) {

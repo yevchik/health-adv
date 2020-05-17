@@ -12,3 +12,10 @@
 
   margin: 0;
 }
+
+@media (min-width: $widthTabletMin) and (max-width: $widthDesktopMin) {
+  .titleStandard {
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+  }
+}

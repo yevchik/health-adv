@@ -1,11 +1,11 @@
 import React from 'react'
-import css from './InfoCard.module.scss'
+import css from './InfoCardMobile.module.scss'
 import { Link } from 'react-router-dom'
 import DecorationArrow from 'components/DecorationArrow/DecorationArrow'
 import Descriptor from 'components/Descriptor/Descriptor'
 import Date from 'components/Date/Date'
 
-const InfoCard = ({
+const InfoCardMobile = ({
   className,
   tag = 'li',
   label,
@@ -15,7 +15,7 @@ const InfoCard = ({
   const TagName = tag
 
   return (
-    <TagName classNaem={className}>
+    <TagName className={className}>
       <Link className={css.link} to={url}>
         <Descriptor className={css.descriptor} label={label} />
         <Date className={css.date} label={date} />
@@ -25,4 +25,4 @@ const InfoCard = ({
   )
 }
 
-export default InfoCard
+export default InfoCardMobile

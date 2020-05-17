@@ -1,0 +1,70 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  margin-top: -4rem;
+  padding-top: 2.5rem;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+  background-color: $colorMainBg;
+}
+
+.tabsWrapper {
+  padding-left: 1.5rem;
+  width: calc(100% + 1.5rem);
+  overflow: scroll;
+}
+
+.list {
+  @include resetList;
+
+  display: flex;
+  margin-top: 1.9rem;
+  margin-bottom: 2rem;
+  padding-right: 1.5rem;
+  width: max-content;
+}
+
+.item {
+  &:not(:first-child) {
+    margin-left: 1rem;
+  }
+
+  &:last-child {
+    margin-right: 1.5rem;
+  }
+}
+
+.tab {
+  @include resetButton;
+  @include regular(var(--color-font-main));
+
+  padding: 1.4rem 3rem 0.8rem 3rem;
+  border: 1px solid var(--color-highlight-darker);
+  transition-duration: $transitionDuration;
+}
+
+.tabActive {
+  color: $colorMainBg;
+  background-color: var(--color-highlight-mosaic);
+  border-color: var(--color-highlight-mosaic);
+}
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    padding-top: 2.9rem;
+  }
+
+  .tabsWrapper {
+    padding-left: 2.5rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .list {
+    margin-top: 2.5rem;
+    margin-bottom: 3.2rem;
+    padding-right: 2.5rem;
+    width: 100%;
+  }
+}

@@ -8,8 +8,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   transition-duration: 0.3s;
+  background-size: cover;
   cursor: pointer;
 
   .icon {
