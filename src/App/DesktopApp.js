@@ -9,7 +9,9 @@ const DesktopApp = () => {
   return (
     <div className={classnames(css.wrapper, 'color-pattern-1')}>
       <Header />
-      <Routes />
+      <main>
+        <Routes />
+      </main>
       <Footer className={css.footer} />
     </div>
   )

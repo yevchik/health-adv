@@ -8,15 +8,16 @@ const ButtonPlay = ({
   className,
   label = '',
   handleClick,
-  background = 'none'
+  background = 'none',
+  iconType = 'circle'
 }) => (
   <button
-    className={classnames(css.button, className)}
+    className={classnames(css.button, className, { [css.buttonSquare]: iconType === 'square' })}
     type='button'
     onClick={handleClick}
     style={{ backgroundImage: background }}
   >
-    <IconPlay className={css.icon} />
+    <IconPlay className={classnames(css.icon, { [css.iconSquare]: iconType === 'square' })} />
     {label &&
       <span className={css.label}>
         { label }

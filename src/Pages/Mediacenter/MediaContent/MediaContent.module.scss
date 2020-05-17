@@ -1,0 +1,31 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.list {
+  @include resetList;
+
+  display: flex;
+  margin-top: 3.8rem;
+  margin-bottom: 6.8rem;
+}
+
+.item {
+  &:not(:first-child) {
+    margin-left: 1rem;
+  }
+}
+
+.tab {
+  @include resetButton;
+  @include regular(var(--color-font-main));
+
+  padding: 2rem 4rem 1.4rem 4rem;
+  border: 1px solid var(--color-highlight-darker);
+  transition-duration: $transitionDuration;
+}
+
+.tabActive {
+  color: $colorMainBg;
+  background-color: var(--color-highlight-mosaic);
+  border-color: var(--color-highlight-mosaic);
+}

@@ -1,0 +1,38 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 90rem;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+  background-color: var(--color-highlight-lightest);
+
+  .date {
+    margin: 1rem 0 0 0;
+  }
+}
+
+.list {
+  @include resetList;
+
+  padding-top: 1rem;
+}
+
+.item {
+  &:not(:first-child) {
+    margin-top: 3rem;
+  }
+}
+
+.link {
+  &:hover {
+    .descriptor {
+      color: var(--color-highlight-buttons);
+    }
+  }
+}
+
+.image {
+  width: 100%;
+}

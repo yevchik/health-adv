@@ -1,0 +1,21 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 8.7rem;
+  min-height: 27.4rem;
+}
+
+.title {
+  @include h1($colorMainBg);
+
+  margin: 0;
+}
+
+.descriptor {
+  @include h5($colorMainBg);
+
+  margin: 1.4rem 0 0 5.3rem;
+}

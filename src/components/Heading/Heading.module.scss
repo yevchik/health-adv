@@ -6,3 +6,9 @@
 
   margin: 0;
 }
+
+.titleStandard {
+  @include h2(var(--color-font-main));
+
+  margin: 0;
+}

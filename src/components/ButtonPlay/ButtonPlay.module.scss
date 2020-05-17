@@ -9,7 +9,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   transition-duration: 0.3s;
+  background-size: cover;
   cursor: pointer;
 
   &:hover {
@@ -53,5 +55,39 @@
 
   .label {
     margin-top: 0.9rem;
+  }
+}
+
+.button.buttonSquare {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 4rem;
+    height: 4rem;
+    background-color: $colorMainBg;
+    transition-duration: 0.3s;
+  }
+
+  .iconSquare {
+    position: absolute;
+    bottom: calc(4rem - 5.7rem + 1.4rem / 2);
+    right: calc(4rem - 5.7rem + 1.4rem / 2);
+
+    :global {
+      .circle__outer,
+      .circle__inner {
+        display: none;
+      }
+    }
+  }
+
+  &:hover {
+    &::before {
+      background-color: var(--color-highlight-buttons);
+    }
   }
 }

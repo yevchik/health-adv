@@ -1,0 +1,33 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.list {
+  @include resetList;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.item {
+  @include small(var(--color-font-main));
+
+  &:not(:last-child) {
+    position: relative;
+    margin-right: 2.6rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 0.8rem / 2);
+      right: calc(-0.4rem - 1.1rem);
+      width: 0.4rem;
+      height: 0.8rem;
+      background-image: url("../../assets/icons/breadcrumbs__separator.svg");
+      background-size: cover;
+    }
+  }
+
+  &:last-child {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,9 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.date {
+  @include regular(var(--color-font-main));
+
+  margin: 0;
+  opacity: 0.5;
+}

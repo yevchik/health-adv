@@ -1,0 +1,27 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.link {
+  display: flex;
+  flex-direction: column;
+  padding: 3.4rem 9rem 3rem 4rem;
+  width: 43.7rem;
+  border: 1px solid var(--color-highlight-darker);
+  transition-duration: $transitionDuration;
+
+  &:hover {
+    border-color: var(--color-highlight-buttons);
+
+    .descriptor {
+      color: var(--color-highlight-buttons);
+    }
+  }
+
+  .date {
+    margin: 1rem 0 0 0;
+  }
+}
+
+.icon {
+  margin-top: 5rem;
+}

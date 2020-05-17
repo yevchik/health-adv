@@ -9,10 +9,12 @@ import * as serviceWorker from './serviceWorker';
 import elasticAdaptive from 'store/reducers/elasticAdaptive'
 import ViewSwitcher from 'ViewSwitcher/ViewSwitcher'
 import videoBannerReducer from 'store/reducers/videoBanner'
+import uiReducer from 'store/reducers/ui'
 
 const rootReducer = combineReducers({
   elastic: elasticAdaptive,
-  videoBanner: videoBannerReducer
+  videoBanner: videoBannerReducer,
+  ui: uiReducer
 })
 
 const store = createStore(rootReducer)
