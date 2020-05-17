@@ -1,0 +1,34 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  background-size: cover;
+}
+
+.container {
+  padding-top: calc(7.3rem + 2.8rem);
+  padding-bottom: calc(4rem + 3.2rem);
+}
+
+.title {
+  @include h1($colorMainBg);
+
+  margin: 0;
+}
+
+.descriptor {
+  @include h5($colorMainBg);
+
+  margin: 1.7rem 0 0 0;
+}
+
+@media (min-width: $widthTabletMin) {
+  .container {
+    padding-top: calc(7.3rem + 2.5rem);
+    padding-bottom: calc(4rem + 3.9rem);
+  }
+
+  .descriptor {
+    padding-right: 5%;
+  }
+}

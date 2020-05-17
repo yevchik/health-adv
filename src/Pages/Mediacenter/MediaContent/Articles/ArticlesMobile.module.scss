@@ -1,0 +1,53 @@
+@import "styles/mixins";
+
+.wrapper {
+  margin-top: 4.7rem;
+  padding-bottom: 6rem;
+}
+
+.listWrapper {
+  padding: 0 1.5rem;
+  overflow: scroll;
+}
+
+.list {
+  @include resetList;
+
+  display: flex;
+  margin-top: 2.3rem;
+}
+
+.item {
+  &:not(:first-child) {
+    margin-left: 1rem;
+  }
+
+  &:last-child {
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    margin-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .listWrapper {
+    padding: 0 2.5rem;
+  }
+
+  .list {
+    margin-top: 2.5rem;
+  }
+
+  .item {
+    &:not(:first-child) {
+      margin-left: 2rem;
+    }
+
+    &:last-child {
+      padding-right: 2.5rem;
+    }
+  }
+}
