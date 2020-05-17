@@ -1,0 +1,65 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.title {
+  @include h2(var(--color-font-main));
+
+  margin: 0;
+}
+
+.list {
+  @include resetList;
+
+  display: grid;
+  grid-template-columns: 78.7rem 1fr;
+  grid-template-rows: repeat(3, minmax(16.4rem, auto)) auto;
+  grid-gap: 3rem;
+  margin-top: 4.5rem;
+}
+
+.item {
+  grid-column: 2 / 3;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+
+  &:hover {
+    .descriptor {
+      color: var(--color-highlight-buttons);
+    }
+  }
+
+  .trigger {
+    width: 19.8rem;
+    height: 16.4rem;
+    pointer-events: none;
+  }
+
+  .date {
+    margin: 1rem 0 0 0;
+  }
+}
+
+.itemLarge {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  flex-direction: column;
+
+  .text {
+    padding-top: 2rem;
+  }
+
+  .trigger {
+    width: 100%;
+    height: 47.8rem;
+  }
+}
+
+.item:not(.itemLarge) {
+  justify-content: space-between;
+
+  .text {
+    padding: 1.5rem 0;
+    width: 32.5rem;
+  }
+}

@@ -332,7 +332,7 @@ const HomePage = () => {
   }
 
   return (
-    <main>
+    <>
       <h1 className='visuallyHidden'>
         { homeData.siteMainCaption }
       </h1>
@@ -347,7 +347,7 @@ const HomePage = () => {
       <Advantages {...homeData.advantages} />
       <License {...homeData.license} />
       <TestBanner {...homeData.testBanner} type='simple' />
-    </main>
+    </>
   )
 }
 

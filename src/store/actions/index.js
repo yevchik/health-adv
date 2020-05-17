@@ -6,3 +6,8 @@ export {
 export {
   setVideoBannerType
 } from './videoBanner'
+
+export {
+  openVideoModal,
+  closeVideoModal
+} from './ui'

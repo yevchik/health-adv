@@ -70,7 +70,6 @@ const VideoBannerType1 = ({ top, bottom }) => {
           <source src={videos('./' + top.modalVideo)} />
         </video>
       </Modal>
-
     </>
   )
 }
