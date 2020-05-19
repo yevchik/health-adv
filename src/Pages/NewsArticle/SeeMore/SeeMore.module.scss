@@ -1,0 +1,21 @@
+.slider {
+  margin-top: 4.5rem;
+
+  :global {
+    .swiper-pagination {
+      display: none;
+    }
+  }
+}
+
+.slideWrapper {
+  display: flex;
+  align-items: flex-start;
+
+  .item {
+    &:not(:first-child) {
+      margin-left: 2.9rem;
+    }
+  }
+}
+

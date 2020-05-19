@@ -15,7 +15,7 @@ const InfoCard = ({
   const TagName = tag
 
   return (
-    <TagName classNaem={className}>
+    <TagName className={className}>
       <Link className={css.link} to={url}>
         <Descriptor className={css.descriptor} label={label} />
         <Date className={css.date} label={date} />
