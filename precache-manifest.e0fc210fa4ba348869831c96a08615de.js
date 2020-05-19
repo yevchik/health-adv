@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "58b1d0f2afccabb835e2c7bd492888ea",
+    "revision": "e18300cb2e08a8d82f1a83e0ef8987a0",
     "url": "/health-adv/index.html"
   },
   {
-    "revision": "28353ccc510a133d7fd0",
+    "revision": "69b8d0c19203ccdaec6d",
     "url": "/health-adv/static/css/2.2b3104b0.chunk.css"
   },
   {
-    "revision": "bdb9086bfd9d28319291",
-    "url": "/health-adv/static/css/main.a5ba3268.chunk.css"
+    "revision": "f44738b29d8258dc55db",
+    "url": "/health-adv/static/css/main.1a2d8f61.chunk.css"
   },
   {
-    "revision": "28353ccc510a133d7fd0",
-    "url": "/health-adv/static/js/2.fd885a20.chunk.js"
+    "revision": "69b8d0c19203ccdaec6d",
+    "url": "/health-adv/static/js/2.d2ea3e36.chunk.js"
   },
   {
     "revision": "1ea7ed3c18374186320177ec0b1190bf",
-    "url": "/health-adv/static/js/2.fd885a20.chunk.js.LICENSE.txt"
+    "url": "/health-adv/static/js/2.d2ea3e36.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bdb9086bfd9d28319291",
-    "url": "/health-adv/static/js/main.05fb6c51.chunk.js"
+    "revision": "f44738b29d8258dc55db",
+    "url": "/health-adv/static/js/main.7751b974.chunk.js"
   },
   {
     "revision": "f0fa69cd6c19926e7858",
@@ -60,6 +60,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/health-adv/static/media/Montserrat-Regular.23488bf2.woff2"
   },
   {
+    "revision": "35f951dc210dd82d15842db95809c9b2",
+    "url": "/health-adv/static/media/article__image-large@desktop.35f951dc.jpg"
+  },
+  {
+    "revision": "40b556404ea061db2f30a5a723d49740",
+    "url": "/health-adv/static/media/article__image-small@desktop.40b55640.jpg"
+  },
+  {
     "revision": "376d7d0c17ce86130461fd1a6d440385",
     "url": "/health-adv/static/media/bg__video-banner@mobile.376d7d0c.jpg"
   },
@@ -68,8 +76,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/health-adv/static/media/bg__video-banner@tablet.f9e76d20.jpg"
   },
   {
-    "revision": "a083b58b2aabe992051afd5cb14d8a23",
-    "url": "/health-adv/static/media/breadcrumbs__separator.a083b58b.svg"
+    "revision": "64a0c232ac50e5243367aa884a590528",
+    "url": "/health-adv/static/media/breadcrumbs__separator.64a0c232.svg"
   },
   {
     "revision": "51a9314d6fd496d48127045a5b7bec64",
@@ -78,6 +86,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0b24130c8a03f97de427d78620e3d40e",
     "url": "/health-adv/static/media/demo_video_1920_2.0b24130c.mp4"
+  },
+  {
+    "revision": "aff075cfdba50d0693a8da38aa1f1375",
+    "url": "/health-adv/static/media/icon_quotes.aff075cf.svg"
   },
   {
     "revision": "c4e74843f4c74bb53b544321eabc5667",
