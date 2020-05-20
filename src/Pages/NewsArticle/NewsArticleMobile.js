@@ -6,10 +6,10 @@ import imageSmallMobile from './_assets/article__image-small@mobile.jpg'
 import imageLargeMobile from './_assets/article__image-large@mobile.jpg'
 import imageSmallTablet from './_assets/article__image-small@tablet.jpg'
 import imageLargeTablet from './_assets/article__image-large@tablet.jpg'
-import SeeMore from 'Pages/NewsArticle/SeeMore/SeeMore'
 import ContainerMobile from 'components/Grid/ContainerMobile'
 import BreadcrumbsMobile from 'components/Breadcrumbs/BreadcrumbsMobile'
 import { useSelector } from 'react-redux'
+import SeeMoreMobile from 'Pages/NewsArticle/SeeMore/SeeMoreMobile'
 
 const NewsArticleMobile = () => {
   const deviceType = useSelector(state => state.elastic.deviceType)
@@ -135,7 +135,7 @@ const NewsArticleMobile = () => {
         {articleData.contentAfterBanner &&
           <div className={css.wyziwig} dangerouslySetInnerHTML={{ __html: articleData.contentAfterBanner }}  />
         }
-        <SeeMore
+        <SeeMoreMobile
           className={css.seeMore}
           title={articleData.seeAlso.title}
           list={articleData.seeAlso.list}
