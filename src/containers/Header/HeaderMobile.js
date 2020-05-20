@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import css from './HeaderMobile.module.scss'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { HOME_PAGE } from 'Pages/Routes'
 import IconLogo from 'containers/Header/_assets/IconLogo'
 import IconSearch from 'containers/Header/_assets/IconSearch'
@@ -9,8 +9,9 @@ import IconBurger from 'containers/Header/_assets/IconBurger'
 import AdaptiveMenu from './components/AdaptiveMenu/AdaptiveMenu'
 import ContainerMobile from 'components/Grid/ContainerMobile'
 
-const HeaderMobile = () => {
+const HeaderMobile = (props) => {
   const [isAdaptiveMenuVisible, setAdaptiveMenuStatus] = useState(false)
+  const location = props.location.pathname
 
   const headerData = {
     withSearch: true,
@@ -89,8 +90,10 @@ const HeaderMobile = () => {
 
   const { withSearch } = headerData
 
+  console.log(location === HOME_PAGE)
+
   return (
-    <header className={css.header}>
+    <header className={classnames(css.header, { [css.headerTabletTransparent]: location === HOME_PAGE })}>
       <ContainerMobile>
         <div className={css.wrapper}>
           <Link to={HOME_PAGE} className={css.logo}>
@@ -120,4 +123,4 @@ const HeaderMobile = () => {
   )
 }
 
-export default HeaderMobile
+export default withRouter(HeaderMobile)

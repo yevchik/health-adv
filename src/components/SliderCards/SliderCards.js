@@ -20,8 +20,6 @@ const SliderCards = ({
   const [totalSlides, setTotalSlides] = useState(0)
   const [swiper, setSwiper] = useState(null)
 
-  console.log(controlsType)
-
   const goNext = () => {
     if (swiper) {
       swiper.slideNext()

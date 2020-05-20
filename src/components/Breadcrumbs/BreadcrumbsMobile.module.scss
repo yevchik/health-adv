@@ -1,11 +1,19 @@
 @import "styles/variables";
 @import "styles/mixins";
 
+.wrapper {
+  margin-left: -1.5rem;
+  padding-left: 1.5rem;
+  width: calc(100% + 1.5rem * 2);
+  overflow: scroll;
+}
+
 .list {
   @include resetList;
 
   display: flex;
   align-items: flex-start;
+  width: max-content;
 }
 
 .item {
@@ -29,5 +37,29 @@
 
   &:last-child {
     opacity: 0.5;
+    padding-right: 1.5rem;
+  }
+
+  .link {
+    color: inherit;
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .list {
+    width: 100%;
+  }
+
+  .item {
+    &:last-child {
+      padding-right: 0;
+    }
   }
 }
