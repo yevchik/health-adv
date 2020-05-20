@@ -27,9 +27,11 @@ const BreadcrumbsMobile = ({
   })
   return (
     <ContainerMobile>
-      <ul className={classnames(css.list, className)}>
-        {breadcrumbItems}
-      </ul>
+      <div className={css.wrapper}>
+        <ul className={classnames(css.list, className)}>
+          {breadcrumbItems}
+        </ul>
+      </div>
     </ContainerMobile>
   )
 }
