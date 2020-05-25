@@ -9,5 +9,7 @@ export {
 
 export {
   openVideoModal,
-  closeVideoModal
+  closeVideoModal,
+  openImageModal,
+  closeImageModal
 } from './ui'

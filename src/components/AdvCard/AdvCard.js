@@ -11,10 +11,12 @@ const AdvCard = ({
   url,
   duration,
   title,
-  price
+  price,
+  style
 }) => (
   <Link
     className={classnames(css.link, {
+      [css.thin]: style === 'thin',
       [css.linkTeeth]: type === 'teeth',
       [css.linkImplant]: type === 'implant-single',
       [css.linkJaw]: type === 'implants-jaw',

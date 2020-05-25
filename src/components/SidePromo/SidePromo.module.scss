@@ -1,0 +1,81 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  padding-top: 4.7rem;
+}
+
+.title {
+  @include h4(var(--color-font-main));
+
+  margin: 0;
+}
+
+.materials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.card {
+  width: 100%;
+  cursor: pointer;
+
+  &:not(:first-child) {
+    margin-top: 3.6rem;
+  }
+
+  &:hover {
+    .preview {
+      &::before {
+        background-color: var(--color-highlight-buttons);
+      }
+
+      path {
+        fill: white;
+      }
+    }
+
+    .description {
+      color: var(--color-highlight-buttons);
+    }
+  }
+}
+
+.link {
+  display: block;
+}
+
+.preview {
+  width: 100%;
+  height: 16.4rem;
+}
+
+.description {
+  @include h8(var(--color-font-main));
+
+  margin: 1.7rem 0 0 0;
+  transition-duration: $transitionDuration;
+}
+
+.date {
+  @include regular(var(--color-font-main));
+
+  margin: 1rem 0 0 0;
+  opacity: 0.5;
+}
+
+.promo {
+  margin-top: 4rem;
+
+  :global {
+    div.swiper-pagination {
+      width: 18rem;
+    }
+
+    .swiper-controls {
+      margin-top: 0.7rem;
+    }
+  }
+}

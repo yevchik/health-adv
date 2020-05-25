@@ -15,14 +15,12 @@ export const DOCTORS = '/doctors'
 class Routes extends PureComponent {
   render () {
     return (
-      <main>
-        <Switch>
-          <Route exact path={HOME_PAGE} component={HomePage} />
-          <Route exact path={MEDIA_CENTER} component={Mediacenter} />
-          <Route exact path={MEDIA_ARTICLE} component={NewsArticle} />
-          <Route exact path={`${DOCTORS}/:id`} component={DoctorDetails} />
-        </Switch>
-      </main>
+      <Switch>
+        <Route exact path={HOME_PAGE} component={HomePage} />
+        <Route exact path={MEDIA_CENTER} component={Mediacenter} />
+        <Route exact path={MEDIA_ARTICLE} component={NewsArticle} />
+        <Route exact path={`${DOCTORS}/:id`} component={DoctorDetails} />
+      </Switch>
     )
   }
 }

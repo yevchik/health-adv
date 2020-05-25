@@ -77,7 +77,7 @@ const SliderCards = ({
             </div>
           }
           {controlsType !== 'styled' && controlsType !== 'styledNoFractions' &&
-            <div className={css.buttons}>
+            <div className={classnames(css.buttons, 'swiper-controls')}>
               <button className={classnames(css.btn, css.btnBefore, { [css.btnDisabled]: activeIndex === 0 })} onClick={goPrev}>
                 Предыдущий слайд
                 <IconArrow className={css.icon} />
@@ -91,7 +91,7 @@ const SliderCards = ({
         </div>
       }
       {(controlsType === 'styled' || controlsType === 'styledNoFractions') &&
-        <div className={css.buttonsStyled}>
+        <div className={classnames(css.buttonsStyled, 'swiper-controls')}>
           <ButtonSlider type='prev' className={css.btnStyled} handleClick={goPrev} isDisabled={swiper && swiper.isBeginning} />
           <ButtonSlider  className={css.btnStyled} handleClick={goNext} isDisabled={swiper && swiper.isEnd} />
         </div>

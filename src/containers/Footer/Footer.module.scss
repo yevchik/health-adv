@@ -4,6 +4,7 @@
 .footer {
   position: relative;
   background-color: var(--color-font-main);
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -222,4 +223,4 @@
   fill: $colorMainBg;
   opacity: 0.5;
   transition-duration: 0.3s;
-} 
+}
