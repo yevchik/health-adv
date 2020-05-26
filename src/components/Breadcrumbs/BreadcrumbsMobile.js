@@ -6,6 +6,7 @@ import ContainerMobile from 'components/Grid/ContainerMobile'
 
 const BreadcrumbsMobile = ({
   className,
+  classContainer,
   dataArray
 }) => {
   const breadcrumbItems = dataArray.map((item, index) => {
@@ -26,7 +27,7 @@ const BreadcrumbsMobile = ({
     )
   })
   return (
-    <ContainerMobile>
+    <ContainerMobile className={classContainer}>
       <div className={css.wrapper}>
         <ul className={classnames(css.list, className)}>
           {breadcrumbItems}

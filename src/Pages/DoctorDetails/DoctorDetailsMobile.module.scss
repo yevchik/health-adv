@@ -1,0 +1,16 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.section {
+  padding-top: 8.5rem;
+}
+
+.content {
+  padding-bottom: 10rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .section {
+    padding-top: 7.3rem;
+  }
+}
