@@ -90,8 +90,6 @@ const HeaderMobile = (props) => {
 
   const { withSearch } = headerData
 
-  console.log(location === HOME_PAGE)
-
   return (
     <header className={classnames(css.header, { [css.headerTabletTransparent]: location === HOME_PAGE })}>
       <ContainerMobile>

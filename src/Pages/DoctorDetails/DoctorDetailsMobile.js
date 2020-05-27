@@ -1,12 +1,13 @@
 import React from 'react'
 import css from './DoctorDetailsMobile.module.scss'
 import { HOME_PAGE } from 'Pages/Routes'
-import ContentWithSidebar from 'components/ContentWithSidebar/ContentWithSidebar'
-import withModal from 'hoc/withModal'
-import DoctorAdvice from 'Pages/DoctorDetails/DoctorAdvice/DoctorAdvice'
 import ContainerMobile from 'components/Grid/ContainerMobile'
 import TestBannerMobile from 'Pages/HomePage/TestBanner/TestBannerMobile'
 import DoctorBannerMobile from './DoctorBanner/DoctorBannerMobile'
+import DoctorTopicsMobile from './DoctorTopics/DoctorTopicsMobile'
+import withModalMobile from 'hoc/withModalMobile'
+import DoctorAdviceMobile from './DoctorAdvice/DoctorAdviceMobile'
+import PromoListMobile from 'components/PromoList/PromoListMobile'
 
 const DoctorDetailsMobile = () => {
   const doctorData = {
@@ -277,20 +278,21 @@ const DoctorDetailsMobile = () => {
         data={doctorData.banner}
         reviewsQuantity={reviews.data.list.length}
       />
-      {/*<ContainerMobile>*/}
-      {/*  <ContentWithSidebar*/}
-      {/*    className={css.content}*/}
-      {/*    data={doctorData}*/}
-      {/*    sideData={doctorData.promo}*/}
-      {/*    page='doctor'*/}
-      {/*  />*/}
-      {/*  {doctorData.advised && doctorData.advised.length > 0 &&*/}
-      {/*    <DoctorAdvice list={doctorData.advised} />*/}
-      {/*  }*/}
-      {/*</ContainerMobile>*/}
+      <ContainerMobile className={css.content}>
+        <DoctorTopicsMobile
+          data={doctorData.content}
+        />
+        <DoctorAdviceMobile list={doctorData.advised} />
+        <div className={css.promoWrapper}>
+          <h3 className={css.title}>
+            Акции
+          </h3>
+          <PromoListMobile data={doctorData.promo.ads} className={css.promo} />
+        </div>
+      </ContainerMobile>
       <TestBannerMobile type='simple' />
     </section>
   )
 }
 
-export default withModal(DoctorDetailsMobile)
+export default withModalMobile(DoctorDetailsMobile)
