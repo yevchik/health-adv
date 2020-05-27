@@ -160,6 +160,16 @@
   color: $color;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+
+  @media (max-width: $widthTabletMin) {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+
+  @media (max-width: $widthDesktopMin) {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
 }
 
 @mixin h8($color) {

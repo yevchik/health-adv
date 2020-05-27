@@ -69,6 +69,12 @@
   position: relative;
   font-size: 0;
   box-shadow: 0 4rem 5rem rgba(0, 0, 0, 0.35);
+
+  video,
+  img {
+    margin: 0 auto;
+    max-width: 100%;
+  }
 }
 
 .wrapperVisible {

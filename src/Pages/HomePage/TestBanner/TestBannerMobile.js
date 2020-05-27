@@ -7,7 +7,11 @@ import PropTypes from 'prop-types'
 import ContainerMobile from 'components/Grid/ContainerMobile'
 import ButtonMobile from 'components/Button/ButtonMobile'
 
-const TestBannerMobile = ({ title, descriptor, type }) => (
+const TestBannerMobile = ({
+  title = 'Не знаете, какая услуга нужна?',
+  descriptor = 'Пройдите тест, ответив на несколько вопросов',
+  type
+}) => (
   <section className={classnames(css.section, { [css.sectionSimple]: type === 'simple' })}>
     <ContainerMobile className={css.container}>
       <div className={css.wrapper}>

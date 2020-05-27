@@ -7,7 +7,11 @@ import Container from 'components/Grid/Container'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-const TestBanner = ({ title, descriptor, type }) => (
+const TestBanner = ({
+  title = 'Не&nbsp;знаете, какая услуга нужна?',
+  descriptor = 'Пройдите тест, ответив на&nbsp;несколько вопросов',
+  type
+}) => (
   <section className={classnames(css.section, { [css.sectionSimple]: type === 'simple' })}>
     <Container className={css.container}>
       <div className={css.wrapper}>

@@ -26,8 +26,8 @@ const Breadcrumbs = ({
     )
   })
   return (
-    <Container>
-      <ul className={classnames(css.list, className)}>
+    <Container className={className}>
+      <ul className={css.list}>
         {breadcrumbItems}
       </ul>
     </Container>

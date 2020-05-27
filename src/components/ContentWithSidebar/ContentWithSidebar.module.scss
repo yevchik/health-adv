@@ -1,0 +1,21 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 102rem 32rem;
+  grid-column-gap: 3rem;
+  padding-top: 7.4rem;
+}
+
+.stickyContainer {
+  position: relative;
+  grid-column: 2 / 3;
+  padding-top: 0.8rem;
+}
+
+.sticky {
+  position: sticky;
+  top: 8.2rem;
+  width: 100%;
+}

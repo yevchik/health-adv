@@ -23,7 +23,7 @@ const AdvantagesMobile = ({ title = 'Преймущества', list }) => {
       <>
         <Collapse
           isOpened={isCollapseOpened}
-          initialStyle={{ height: '50px', overflow: 'hidden'}}
+          initialStyle={{ height: '30px', overflow: 'hidden'}}
           theme={{ collapse: isCollapseOpened ? classnames('ReactCollapse--collapse', css.collapseOpened) : 'ReactCollapse--collapse' }}
         >
           <ul className={css.list}>
