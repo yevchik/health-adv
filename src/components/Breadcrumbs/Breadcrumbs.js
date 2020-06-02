@@ -2,7 +2,6 @@ import React from 'react'
 import css from './Breadcrumbs.module.scss'
 import { Link } from 'react-router-dom'
 import Container from 'components/Grid/Container'
-import classnames from 'classnames'
 
 const Breadcrumbs = ({
   className,

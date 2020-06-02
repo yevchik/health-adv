@@ -9,13 +9,12 @@ import SliderCards from 'components/SliderCards/SliderCards'
 import AdvCard from 'components/AdvCard/AdvCard'
 
 const SidePromo = ({
-  className,
   materials,
   ads
 }) => {
   const dispatch = useDispatch()
 
-  const materialsItems = materials.map((item, index) => {
+  const materialsItems = materials.map(item => {
     return (
       <div className={css.card} onClick={() => dispatch(openVideoModal(item.file))}>
         {item.type === 'video' &&
@@ -60,7 +59,7 @@ const SidePromo = ({
             <div className={css.slide} key={index}>
               <AdvCard
                 {...item}
-                style='thin'
+                styles='thin'
               />
             </div>
           ))}

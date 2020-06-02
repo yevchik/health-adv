@@ -1,7 +1,6 @@
 import React from 'react'
 import css from './DoctorBannerMobile.module.scss'
 import classnames from 'classnames'
-import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs'
 import { images } from 'index'
 import Heading from 'components/Heading/Heading'
 import ContainerMobile from 'components/Grid/ContainerMobile'

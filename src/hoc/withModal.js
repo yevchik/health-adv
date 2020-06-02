@@ -16,14 +16,14 @@ const withModal = (WrappedComponent) => {
       if (modal.isModalOpen && modal.videoFile) {
         videoRef.current.load()
       }
-    }, [modal.isModalOpen])
+    }, [modal.isModalOpen, modal.videoFile])
 
     return (
       <>
       <WrappedComponent {...props} />
       <Modal isVisible={modal.isModalOpen} handleCloseModal={() => dispatch(closeVideoModal())}>
         <>
-          {modal.imageFile && <img className={css.image} src={images('./' + modal.imageFile)} />}
+          {modal.imageFile && <img className={css.image} src={images('./' + modal.imageFile)} alt='Изображения в модальном окне'/>}
           {modal.videoFile && <video className={css.video} controls autoPlay ref={videoRef}>
             <source src={videos('./' + modal.videoFile)} />
           </video>}
