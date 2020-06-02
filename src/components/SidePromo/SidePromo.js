@@ -14,9 +14,9 @@ const SidePromo = ({
 }) => {
   const dispatch = useDispatch()
 
-  const materialsItems = materials.map(item => {
+  const materialsItems = materials.map((item, index) => {
     return (
-      <div className={css.card} onClick={() => dispatch(openVideoModal(item.file))}>
+      <div className={css.card} onClick={() => dispatch(openVideoModal(item.file))} key={`Materials item #${index}`}>
         {item.type === 'video' &&
           <>
             <ButtonPlay
