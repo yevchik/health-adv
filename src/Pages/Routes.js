@@ -4,6 +4,7 @@ import HomePage from 'Pages/HomePage/HomePage'
 import Mediacenter from 'Pages/Mediacenter/Mediacenter'
 import NewsArticle from 'Pages/NewsArticle/NewsArticle'
 import DoctorDetails from 'Pages/DoctorDetails/DoctorDetails'
+import Doctors from 'Pages/Doctors/Doctors'
 
 export const HOME_PAGE = '/'
 export const MEDIA_CENTER = '/media'
@@ -20,6 +21,7 @@ class Routes extends PureComponent {
         <Route exact path={MEDIA_CENTER} component={Mediacenter} />
         <Route exact path={MEDIA_ARTICLE} component={NewsArticle} />
         <Route exact path={`${DOCTORS}/:id`} component={DoctorDetails} />
+        <Route exact path={DOCTORS} component={Doctors} />
       </Switch>
     )
   }

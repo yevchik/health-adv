@@ -1,0 +1,19 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.breadcrumbs {
+  margin-top: 3.8rem;
+}
+
+.wrapper {
+  margin-top: -4rem;
+  background-color: $colorMainBg;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .breadcrumbs {
+    margin-top: 2.9rem;
+  }
+}

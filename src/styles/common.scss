@@ -38,3 +38,14 @@ a {
   overflow: hidden;
   font-size: 0;
 }
+
+.simplebar-track.simplebar-vertical {
+  width: 0.7rem !important;
+
+  .simplebar-scrollbar {
+    &::before {
+      background-color: var(--color-font-main);
+      border-radius: 0;
+    }
+  }
+}

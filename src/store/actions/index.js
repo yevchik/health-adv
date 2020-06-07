@@ -13,3 +13,8 @@ export {
   openImageModal,
   closeImageModal
 } from './ui'
+
+export {
+  setDoctorsFilter,
+  updateDoctorsFilter
+} from './data'
