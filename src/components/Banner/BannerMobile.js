@@ -14,7 +14,7 @@ const BannerMobile = ({
   const image = deviceType === 'mobile' ? bgImageMobile : bgImageTablet
 
   return (
-    <div className={css.wrapper} style={{ backgroundImage: `url("${ images('./' + image) }")` }}>
+    <div className={css.wrapper} style={{ backgroundImage: image ? `url("${ images('./' + image) }")` : 'none' }}>
       <ContainerMobile className={css.container}>
         <h1 className={css.title} dangerouslySetInnerHTML={{ __html: title }}  />
         <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: descriptor }}  />
