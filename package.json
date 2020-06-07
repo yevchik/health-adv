@@ -47,6 +47,9 @@
   "devDependencies": {
     "body-scroll-lock": "3.0.2",
     "prop-types": "^15.7.2",
-    "react-waypoint": "^9.0.2"
+    "react-select": "^3.0.4",
+    "react-waypoint": "^9.0.2",
+    "redux-thunk": "^2.3.0",
+    "simplebar-react": "^2.2.0"
   }
 }

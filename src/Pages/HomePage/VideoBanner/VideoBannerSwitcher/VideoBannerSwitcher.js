@@ -8,7 +8,7 @@ const VideoBannerSwitcher = () => {
   const dispatch = useDispatch()
 
   const list = (new Array(4).fill('').map((_, index) => (
-    <fieldset>
+    <fieldset key={`Vido banner option #${index}`}>
       <input
         type='radio'
         id={`banner-type-${index + 1}`}

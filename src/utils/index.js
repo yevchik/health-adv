@@ -17,3 +17,5 @@ export const decodeHTMLCharacters = string => {
   el.innerHTML = string
   return el.value
 }
+
+export const updateObject = (object, ...properties) => Object.assign({}, object, ...properties)
