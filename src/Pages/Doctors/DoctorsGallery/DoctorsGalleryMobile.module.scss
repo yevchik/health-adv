@@ -1,4 +1,5 @@
 @import "styles/mixins";
+@import "styles/variables";
 
 .section {
   padding-top: 3.6rem;
@@ -22,4 +23,20 @@
   @include regular(var(--color-font-main));
   text-align: center;
   opacity: 0.5;
+}
+
+@media (min-width: $widthTabletMin) {
+  .section {
+    padding-top: 4rem;
+  }
+
+  .list {
+    grid-template-columns: repeat(2, 50%);
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+  }
+
+  .buttonMore {
+    margin-top: 3rem;
+  }
 }

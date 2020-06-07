@@ -49,8 +49,8 @@ const SelectMobile = ({
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: '0 2rem',
-      height: '5rem'
+      padding: '1rem 2rem',
+      minHeight: '5rem'
     }),
   };
 

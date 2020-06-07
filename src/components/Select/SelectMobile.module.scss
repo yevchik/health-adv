@@ -13,17 +13,13 @@
         cursor: pointer;
         border-color: var(--color-highlight-darker);
 
-        &:hover {
-          border-color: rgba(71, 76, 87, 0.25);
-        }
-
         &--is-focused {
           border-color: var(--color-highlight-darker);
         }
       }
 
       &__value-container {
-        padding: 0 2rem;
+        padding: 0 2.5rem;
         height: 100%;
       }
 
@@ -65,10 +61,9 @@
           border-top: 1px solid var(--color-highlight-darker);
         }
 
-        &:hover,
         &--is-focused {
           background-color: white;
-          color: var(--color-highlight-buttons);
+          color: var(--color-font-main);
         }
 
         &--is-selected {
