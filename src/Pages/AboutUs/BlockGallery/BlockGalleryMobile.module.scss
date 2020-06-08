@@ -1,0 +1,43 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.section {
+  .slider {
+    margin-top: 2.3rem;
+
+    :global {
+      div.swiper-pagination.swiper-pagination-progressbar {
+        width: 100%;
+      }
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: 17.6rem;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .section {
+    :global {
+      .swiper-slide {
+        width: 66.5rem;
+        height: 35.8rem;
+
+        &:not(:last-of-type) {
+          margin-right: var(--padding-tablet);
+        }
+      }
+
+      div.swiper-pagination.swiper-pagination-progressbar {
+        width: calc(100% - 2 * var(--padding-tablet)) !important;
+      }
+    }
+
+    .image {
+      height: 100%;
+    }
+  }
+}

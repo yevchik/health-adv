@@ -11,6 +11,8 @@ const SelectMobile = ({
   options,
   defaultValue,
   isDisabled,
+  placeholder,
+  isValueReuired = true
 }) => {
   // You need react-select@3.0.4 to make it "see" simplebar. Does not work on newer versions of
   // react-select
@@ -64,11 +66,12 @@ const SelectMobile = ({
         classNamePrefix="select"
         components={{ MenuList: renderScrollbar }}
         styles={colourStyles}
-        placeholder='Выбрать'
+        placeholder={placeholder || 'Выбрать'}
         onChange={onChange}
         value={value}
         isDisabled={isDisabled}
         autoFocusFirstOption={false}
+        controlShouldRenderValue={isValueReuired}
       />
     </div>
   )

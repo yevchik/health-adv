@@ -21,8 +21,8 @@ const DoctorBannerMobile = ({
 
   return (
     <>
-      <BreadcrumbsMobile dataArray={breadcrumbs} classContainer={css.breadcrumbs} />
       <ContainerMobile className={css.container}>
+        <BreadcrumbsMobile dataArray={breadcrumbs} classContainer={css.breadcrumbs} />
         <div className={css.text}>
           <Heading content={name} className={css.title}  />
           <p className={css.speciality}>

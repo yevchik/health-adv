@@ -8,6 +8,7 @@ import Modal from 'components/Modal/Modal'
 import { videos } from 'index'
 import { useDispatch, useSelector } from 'react-redux'
 import { closeVideoModal } from 'store/actions'
+import Container from 'components/Grid/Container'
 
 const Mediacenter = () => {
   const mediaData = {
@@ -136,7 +137,9 @@ const Mediacenter = () => {
   return (
     <>
       <Banner {...mediaData.banner} />
-      <Breadcrumbs dataArray={breadcrumbs} className={css.breadcrumbs} />
+      <Container>
+        <Breadcrumbs dataArray={breadcrumbs} className={css.breadcrumbs} />
+      </Container>
       <MediaContent
         specialists={mediaData.interviewsSpecialists}
         articles={mediaData.articles}

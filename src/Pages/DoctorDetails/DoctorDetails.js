@@ -3,7 +3,7 @@ import css from './DoctorDetails.module.scss'
 import DoctorBanner from './DoctorBanner/DoctorBanner'
 import { HOME_PAGE } from 'Pages/Routes'
 import Container from 'components/Grid/Container'
-import ContentWithSidebar from 'components/ContentWithSidebar/ContentWithSidebar'
+import ContentWithSidebar from 'Pages/DoctorDetails/ContentWithSidebar/ContentWithSidebar'
 import withModal from 'hoc/withModal'
 import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
 import DoctorAdvice from 'Pages/DoctorDetails/DoctorAdvice/DoctorAdvice'
@@ -150,58 +150,6 @@ const DoctorDetails = () => {
         }
       }
     ],
-    promo: {
-      materials: [
-        {
-          type: 'video',
-          preview: 'doctor__promo-video-preview@desktop.jpg',
-          file: 'demo_video_1920_2.mp4',
-          description: 'Какую зубную щетку использовать электронную или обычную?',
-          date: '10 января 2020'
-        },
-        {
-          type: 'article',
-          preview: 'doctor__promo-article-preview@desktop.jpg',
-          url: '/',
-          description: 'Зачем использовать ирригатор?',
-          date: '10 января 2020'
-        },
-      ],
-      ads: [
-        {
-          type: 'teeth',
-          url: '/',
-          color: '#f4785d',
-          duration: 'Акция до 24 января',
-          title: 'Керамические виниры',
-          price: 'от <span>20 000</span> рублей'
-        },
-        {
-          type: 'implant-single',
-          url: '/',
-          color: '#c58ddf',
-          duration: 'Акция до 24 января',
-          title: 'Имплант с&nbsp;установкой',
-          price: 'от <span>95 000</span> рублей'
-        },
-        {
-          type: 'implants-jaw',
-          url: '/',
-          color: '#c58ddf',
-          duration: 'Акция до 24 января',
-          title: 'Все зубы сразу «под ключ»',
-          price: 'от <span>120 000</span> рублей'
-        },
-        {
-          type: 'implant-single',
-          url: '/',
-          color: '#7486e6',
-          duration: 'Акция до 24 января',
-          title: 'Имплант с&nbsp;установкой',
-          price: 'от <span>95 000</span> рублей'
-        },
-      ]
-    },
     advised: [
       {
         photo: 'doctor__about-advice1@desktop.png',
@@ -281,7 +229,6 @@ const DoctorDetails = () => {
         <ContentWithSidebar
           className={css.content}
           data={doctorData}
-          sideData={doctorData.promo}
           page='doctor'
         />
         {doctorData.advised && doctorData.advised.length > 0 &&

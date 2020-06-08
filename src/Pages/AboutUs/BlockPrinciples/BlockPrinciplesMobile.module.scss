@@ -1,0 +1,124 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.section {
+  :global {
+    .ReactCollapse--collapse {
+      position: relative;
+      min-height: 85rem;
+      transition-duration: 1s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10rem;
+        background-image: linear-gradient(to top, white 15%, transparent 100%);
+        z-index: 1;
+        transition-duration: $transitionDuration;
+      }
+    }
+  }
+
+  .collapseOpened {
+    &::before {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+}
+
+.descriptor {
+  @include h5-italic(var(--color-font-main));
+
+  margin: 1.6rem 0 0 0;
+}
+
+.list {
+  @include resetList;
+
+  display: flex;
+  flex-direction: column;
+  counter-reset: principles;
+}
+
+.item {
+  position: relative;
+  margin-top: 6.8rem;
+
+  &::before {
+    counter-increment: principles;
+    content: counter(principles, decimal-leading-zero);
+    position: absolute;
+    top: -5.5rem;
+    left: 0;
+    @include h0(var(--color-highlight-lightest));
+    z-index: 0;
+  }
+}
+
+.subtitle {
+  @include h7(var(--color-font-main));
+
+  margin: 0;
+}
+
+.principle {
+  margin-top: 0.7rem;
+
+  p {
+    @include regular(var(--color-font-main));
+
+    margin: 0;
+
+    &:not(:first-of-type) {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.buttonCollapse {
+  @include resetButton;
+  @include h7(var(--color-highlight-buttons));
+
+  display: flex;
+  align-items: center;
+
+  .iconArrow {
+    margin-left: 0.7rem;
+    width: 0.8rem;
+    fill: var(--color-highlight-buttons);
+    transform: rotate(180deg);
+  }
+}
+
+.buttonCollapseOpened {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (min-width: $widthTabletMin) {
+  .descriptor {
+    margin: 2.3rem 0 0 0;
+  }
+
+  .item {
+    margin-top: 7.4rem;
+
+    &::before {
+      top: -6rem;
+    }
+  }
+
+  .principle {
+    margin-top: 1.3rem;
+
+    p {
+      &:not(:first-of-type) {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

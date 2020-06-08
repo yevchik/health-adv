@@ -1,0 +1,14 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.key {
+  @include counter(var(--color-highlight-mosaic));
+  margin: 0;
+
+  display: flex;
+}
+
+.value {
+  @include regular(var(--color-font-main));
+  margin: 0;
+}
