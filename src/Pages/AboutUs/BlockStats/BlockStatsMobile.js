@@ -1,9 +1,9 @@
 import React from 'react'
-import css from './BlockStats.module.scss'
+import css from './BlockStatsMobile.module.scss'
 import Heading from 'components/Heading/Heading'
-import StatsCounter from 'Pages/AboutUs/StatsCounter/StatsCounter'
+import StatsCounterMobile from 'Pages/AboutUs/StatsCounter/StatsCounterMobile'
 
-const BlockStats = ({
+const BlockStatsMobile = ({
   className,
   data,
 }) => {
@@ -12,7 +12,7 @@ const BlockStats = ({
   const items = blockData.list.map((item, index) => {
     return (
       <li className={css.item} key={`About stats item#${index}`}>
-        <StatsCounter counterData={blockData.list[index]} />
+        <StatsCounterMobile counterData={blockData.list[index]} />
       </li>
     )
   })
@@ -28,4 +28,4 @@ const BlockStats = ({
   )
 }
 
-export default BlockStats
+export default BlockStatsMobile

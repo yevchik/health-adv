@@ -3,18 +3,18 @@
 
 .section {
   .slider {
-    margin-top: 4.5rem;
+    margin-top: 2.3rem;
 
     :global {
       div.swiper-pagination.swiper-pagination-progressbar {
-        width: 87.6rem;
+        width: 100%;
       }
     }
   }
 
   .image {
     width: 100%;
-    height: 55rem;
+    height: 17.6rem;
     object-fit: cover;
   }
 }

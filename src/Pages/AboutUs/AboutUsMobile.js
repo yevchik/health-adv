@@ -1,19 +1,19 @@
 import React from 'react'
-import css from './AboutUs.module.scss'
-import Container from 'components/Grid/Container'
-import Banner from 'components/Banner/Banner'
+import css from './AboutUsMobile.module.scss'
 import { images } from 'index'
-import SidePromo from 'components/SidePromo/SidePromo'
-import AboutContent from 'Pages/AboutUs/AboutContent/AboutContent'
 import { HOME_PAGE } from 'Pages/Routes'
-import LinksBattery from 'components/LinksBattery/LinksBattery'
-import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
-import withModal from 'hoc/withModal'
+import ContainerMobile from 'components/Grid/ContainerMobile'
+import TestBannerMobile from 'Pages/HomePage/TestBanner/TestBannerMobile'
+import BannerMobile from 'components/Banner/BannerMobile'
+import AboutContentMobile from './AboutContent/AboutContentMobile'
+import PromoBlockMobile from 'components/PromoBlock/PromoBlockMobile'
 
-const AboutUs = () => {
+const AboutUsMobile = () => {
   const aboutData = {
     banner: {
       bgImage: 'about__banner@desktop.jpg',
+      bgImageMobile: 'about__banner@mobile.jpg',
+      bgImageTablet: 'about__banner@tablet.jpg',
       title: 'О нас',
       descriptor: 'Концепция стоматологической клиники&nbsp;&mdash; профессиональное лечение' +
         ' и&nbsp;персональный подход к&nbsp;каждому пациенту, который основан на&nbsp;заботе и&nbsp;сервисе.',
@@ -132,7 +132,7 @@ const AboutUs = () => {
     fullScreenPhoto: {
       url: 'about__fullscreen@desktop.jpg',
       description: 'Фотография коллектива клиники'
-    }
+    },
   }
 
   const breadcrumbs = [
@@ -147,20 +147,14 @@ const AboutUs = () => {
 
   return (
     <>
-      <Banner {...aboutData.banner} />
-      <Container className={css.container}>
-        <AboutContent
+      <BannerMobile {...aboutData.banner} />
+      <ContainerMobile className={css.container}>
+        <AboutContentMobile
           breadcrumbs={breadcrumbs}
           className={css.content}
           data={aboutData.content}
         />
-        <aside className={css.side}>
-          <div className={css.sticky}>
-            <LinksBattery />
-            <SidePromo />
-          </div>
-        </aside>
-      </Container>
+      </ContainerMobile>
       {aboutData.fullScreenPhoto &&
         <img
           className={css.fullscreen}
@@ -168,9 +162,12 @@ const AboutUs = () => {
           alt={aboutData.fullScreenPhoto.description}
         />
       }
-      <TestBanner type='simple' />
+      <ContainerMobile>
+        <PromoBlockMobile className={css.promo} />
+      </ContainerMobile>
+      <TestBannerMobile type='simple' />
     </>
   )
 }
 
-export default withModal(AboutUs)
+export default AboutUsMobile
