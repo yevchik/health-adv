@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import css from './ContentWithSidebar.module.scss'
+import css from 'Pages/DoctorDetails/ContentWithSidebar/ContentWithSidebar.module.scss'
 import classnames from 'classnames'
 import DoctorTopics from 'Pages/DoctorDetails/DoctorTopics/DoctorTopics'
 import ScrollTriggers from 'components/ScrollTriggers/ScrollTriggers'
@@ -11,7 +11,6 @@ const SCROLL_TO_ELEMENT_OFFSET = 50
 const ContentWithSidebar = ({
   className,
   data,
-  sideData,
   page
 }) => {
   const fontSize = useSelector(state => state.elastic.curFontSize)
@@ -41,10 +40,13 @@ const ContentWithSidebar = ({
     })
   }
 
+  const handleWheelScroll = () => {
+    setWaypointStatus(false)
+  }
+
   useEffect(() => {
-    document.addEventListener('wheel', () => {
-      setWaypointStatus(false)
-    })
+    document.addEventListener('wheel', handleWheelScroll)
+    return document.removeEventListener('wheel', handleWheelScroll)
   }, [])
 
   let content
@@ -80,11 +82,7 @@ const ContentWithSidebar = ({
             list={scrollTriggers}
             onClick={(type) => handleClickTrigger(type)}
           />
-          <SidePromo
-            className={css.promo}
-            materials={sideData.materials}
-            ads={sideData.ads}
-          />
+          <SidePromo className={css.promo} />
         </div>
       </div>
     </div>

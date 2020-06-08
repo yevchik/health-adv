@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './Breadcrumbs.module.scss'
 import { Link } from 'react-router-dom'
-import Container from 'components/Grid/Container'
+import classnames from 'classnames'
 
 const Breadcrumbs = ({
   className,
@@ -25,11 +25,9 @@ const Breadcrumbs = ({
     )
   })
   return (
-    <Container className={className}>
-      <ul className={css.list}>
-        {breadcrumbItems}
-      </ul>
-    </Container>
+    <ul className={classnames(css.list, className)}>
+      {breadcrumbItems}
+    </ul>
   )
 }
 

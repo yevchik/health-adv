@@ -94,8 +94,8 @@ const Doctors = () => {
   return (
     <>
       <Banner {...doctorsListData.banner} />
-      <Breadcrumbs dataArray={breadcrumbs} className={css.breadcrumbs} />
       <Container>
+        <Breadcrumbs dataArray={breadcrumbs} className={css.breadcrumbs} />
         <DoctorsFilter />
         <DoctorsGallery data={doctorsListData.list} className={css.gallery} />
       </Container>
