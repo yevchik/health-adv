@@ -82,3 +82,43 @@
   margin: 0.1rem 0 0 0;
   opacity: 0.5;
 }
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 34.4rem;
+    grid-column-gap: 2.3rem;
+  }
+
+  .title {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .description {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+
+  .quote {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    margin: 6.4rem 0 0 0;
+    padding-left: 5.5rem;
+    line-height: 3.2rem;
+
+    &::before {
+      top: -1rem;
+    }
+  }
+
+  .card {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+    margin: 0;
+  }
+
+  .label {
+    padding: 1.6rem 3.3rem 1.8rem 3.3rem;
+  }
+}

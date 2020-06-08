@@ -1,3 +1,5 @@
+@import "styles/variables";
+
 .select {
   margin-top: 2rem;
 }
@@ -16,4 +18,26 @@
 
 .stats {
   margin-top: 4.4rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .select {
+    margin-top: 2.5rem;
+  }
+
+  .content {
+    margin-top: 3.3rem;
+  }
+
+  .gallery {
+    margin-top: 6rem;
+  }
+
+  .principles {
+    margin-top: 6rem;
+  }
+
+  .stats {
+    margin-top: 6rem;
+  }
 }

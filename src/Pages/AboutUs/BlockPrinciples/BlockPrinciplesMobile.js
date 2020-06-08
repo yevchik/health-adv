@@ -4,13 +4,14 @@ import Heading from 'components/Heading/Heading'
 import { Collapse } from 'react-collapse'
 import classnames from 'classnames'
 import IconArrow from 'assets/icons/IconArrow'
+import { isTablet } from 'react-device-detect'
 
 const BlockPrinciplesMobile = ({
   className,
   data
 }) => {
   const { title, descriptor, data: blockData } = data
-  const [isCollapseOpened, updateCollapseStatus] = useState(false)
+  const [isCollapseOpened, updateCollapseStatus] = useState(isTablet || false)
 
   const items = blockData.list.map((item, index) => (
     <li className={css.item} key={`About principles item#${index}`}>

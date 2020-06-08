@@ -18,3 +18,26 @@
     object-fit: cover;
   }
 }
+
+@media (min-width: $widthTabletMin) {
+  .section {
+    :global {
+      .swiper-slide {
+        width: 66.5rem;
+        height: 35.8rem;
+
+        &:not(:last-of-type) {
+          margin-right: var(--padding-tablet);
+        }
+      }
+
+      div.swiper-pagination.swiper-pagination-progressbar {
+        width: calc(100% - 2 * var(--padding-tablet)) !important;
+      }
+    }
+
+    .image {
+      height: 100%;
+    }
+  }
+}

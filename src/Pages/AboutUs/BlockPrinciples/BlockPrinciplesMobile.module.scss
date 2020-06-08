@@ -98,3 +98,27 @@
   opacity: 0;
   pointer-events: none;
 }
+
+@media (min-width: $widthTabletMin) {
+  .descriptor {
+    margin: 2.3rem 0 0 0;
+  }
+
+  .item {
+    margin-top: 7.4rem;
+
+    &::before {
+      top: -6rem;
+    }
+  }
+
+  .principle {
+    margin-top: 1.3rem;
+
+    p {
+      &:not(:first-of-type) {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

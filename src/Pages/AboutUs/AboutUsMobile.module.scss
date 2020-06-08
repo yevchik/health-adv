@@ -22,3 +22,17 @@
   margin-top: 4.8rem;
   padding-bottom: 6rem;
 }
+
+@media (min-width: $widthTabletMin) {
+  .content {
+    padding: 3.5rem 0 3.6rem 0;
+  }
+
+  .fullscreen {
+    height: 37.7rem;
+  }
+
+  .promo {
+    margin-top: 6rem;
+  }
+}

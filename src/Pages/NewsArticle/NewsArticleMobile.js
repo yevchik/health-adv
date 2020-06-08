@@ -10,6 +10,7 @@ import ContainerMobile from 'components/Grid/ContainerMobile'
 import BreadcrumbsMobile from 'components/Breadcrumbs/BreadcrumbsMobile'
 import { useSelector } from 'react-redux'
 import SeeMoreMobile from 'Pages/NewsArticle/SeeMore/SeeMoreMobile'
+import TestBannerMobile from 'Pages/HomePage/TestBanner/TestBannerMobile'
 
 const NewsArticleMobile = () => {
   const deviceType = useSelector(state => state.elastic.deviceType)
@@ -126,9 +127,9 @@ const NewsArticleMobile = () => {
   ]
 
   return (
-    <section className={css.section}>
-      <BreadcrumbsMobile dataArray={breadcrumbs} className={css.breadcrumbs} />
-      <ContainerMobile>
+    <section>
+      <ContainerMobile className={css.wrapper}>
+        <BreadcrumbsMobile dataArray={breadcrumbs} className={css.breadcrumbs} />
         <Heading content={articleData.title} className={css.title} />
         <div className={css.wyziwig} dangerouslySetInnerHTML={{ __html: articleData.contentBeforeBanner }}  />
         <img className={css.banner} src={deviceType === 'mobile' ? imageLargeMobile : imageLargeTablet} alt='Чистка зубов электрической щеткой' />
@@ -141,6 +142,7 @@ const NewsArticleMobile = () => {
           list={articleData.seeAlso.list}
         />
       </ContainerMobile>
+      <TestBannerMobile type='simple' />
     </section>
   )
 }

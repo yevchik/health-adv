@@ -6,6 +6,7 @@ import BreadcrumbsMobile from 'components/Breadcrumbs/BreadcrumbsMobile'
 import ArticlesMobile from './Articles/ArticlesMobile'
 import NewsMobile from './News/NewsMobile'
 import InterviewPatientsMobile from './InterviewPatients/InterviewPatientsMobile'
+import ContainerMobile from 'components/Grid/ContainerMobile'
 
 const MediaContentMobile = ({
   specialists,
@@ -51,7 +52,9 @@ const MediaContentMobile = ({
 
   return (
     <div className={css.wrapper}>
-    <BreadcrumbsMobile dataArray={breadcrumbs} />
+      <ContainerMobile>
+        <BreadcrumbsMobile dataArray={breadcrumbs} />
+      </ContainerMobile>
       <div className={css.tabsWrapper}>
         <ul className={css.list}>
           { tabsList }

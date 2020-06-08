@@ -2,7 +2,6 @@ import React from 'react'
 import css from './BreadcrumbsMobile.module.scss'
 import { Link } from 'react-router-dom'
 import classnames from 'classnames'
-import ContainerMobile from 'components/Grid/ContainerMobile'
 
 const BreadcrumbsMobile = ({
   className,
@@ -27,13 +26,11 @@ const BreadcrumbsMobile = ({
     )
   })
   return (
-    <ContainerMobile className={classContainer}>
-      <div className={css.wrapper}>
-        <ul className={classnames(css.list, className)}>
-          {breadcrumbItems}
-        </ul>
-      </div>
-    </ContainerMobile>
+    <div className={classnames(css.wrapper, classContainer)}>
+      <ul className={classnames(css.list, className)}>
+        {breadcrumbItems}
+      </ul>
+    </div>
   )
 }
 

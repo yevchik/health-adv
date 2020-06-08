@@ -97,8 +97,8 @@ const DoctorsMobile = () => {
     <>
       <BannerMobile {...doctorsListData.banner} />
       <div className={css.wrapper}>
-        <BreadcrumbsMobile dataArray={breadcrumbs} className={css.breadcrumbs} />
         <ContainerMobile className={css.container}>
+          <BreadcrumbsMobile dataArray={breadcrumbs} className={css.breadcrumbs} />
           <DoctorsFilterMobile />
           <DoctorsGalleryMobile data={doctorsListData.list} className={css.gallery} />
         </ContainerMobile>
