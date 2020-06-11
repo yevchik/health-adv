@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f17fa4a5f01e772d87b9499059471506",
+    "revision": "200fc37def046566560d70ed7f1d3c6b",
     "url": "/health-adv/index.html"
   },
   {
-    "revision": "308552362febec0b91c7",
+    "revision": "c1494db3477aa4105eda",
     "url": "/health-adv/static/css/2.b5c39ad2.chunk.css"
   },
   {
-    "revision": "73f7f541dc11a1429f29",
-    "url": "/health-adv/static/css/main.43544884.chunk.css"
+    "revision": "9287cc80d897eedd1066",
+    "url": "/health-adv/static/css/main.7c486d80.chunk.css"
   },
   {
-    "revision": "308552362febec0b91c7",
-    "url": "/health-adv/static/js/2.04842879.chunk.js"
+    "revision": "c1494db3477aa4105eda",
+    "url": "/health-adv/static/js/2.b3bfbc3f.chunk.js"
   },
   {
     "revision": "2409169cc9d488610c63e21c6ccf8ee2",
-    "url": "/health-adv/static/js/2.04842879.chunk.js.LICENSE.txt"
+    "url": "/health-adv/static/js/2.b3bfbc3f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "73f7f541dc11a1429f29",
-    "url": "/health-adv/static/js/main.b6367cfc.chunk.js"
+    "revision": "9287cc80d897eedd1066",
+    "url": "/health-adv/static/js/main.4b2e63fb.chunk.js"
   },
   {
     "revision": "f0fa69cd6c19926e7858",
@@ -74,6 +74,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7ac5550ce0c6ae239365fcd41ace465e",
     "url": "/health-adv/static/media/about__photo@desktop.7ac5550c.png"
+  },
+  {
+    "revision": "0822d0f54995d7435c054abf7b52a02a",
+    "url": "/health-adv/static/media/article__banner@desktop.0822d0f5.jpg"
   },
   {
     "revision": "35f951dc210dd82d15842db95809c9b2",
@@ -152,8 +156,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/health-adv/static/media/doctor__banner-photo@desktop.7c166412.png"
   },
   {
-    "revision": "3972dafb17de076944b6a73a0c8d6f91",
-    "url": "/health-adv/static/media/doctor__photo-bg--color.3972dafb.svg"
+    "revision": "0c7c4ae0a52ef56ed7bc32b73838ec78",
+    "url": "/health-adv/static/media/doctor__photo-bg--color.0c7c4ae0.svg"
   },
   {
     "revision": "6e9b006b3987aec2c08d71f029d72235",
