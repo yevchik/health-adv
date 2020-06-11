@@ -171,3 +171,55 @@
     margin-left: 3.8rem;
   }
 }
+
+.text {
+  display: grid;
+  grid-template-columns: 46.5rem 48.8rem;
+  grid-column-gap: 2.9rem;
+  margin-top: 4.2rem;
+
+  div > p {
+    @include regular(var(--color-font-main));
+
+    margin: 0;
+
+    &:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.portfolioList {
+  @include resetList;
+
+  display: grid;
+  grid-template-columns: repeat(3, 32rem);
+  grid-gap: 3rem;
+}
+
+.accordeons {
+  @include resetList;
+
+  margin-top: 4.5rem;
+
+  .accordeon {
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.table {
+  margin-top: 4.8rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.advisedList {
+  @include resetList;
+
+  display: grid;
+  grid-template-columns: repeat(3, 32rem);
+  grid-gap: 3rem;
+  margin-top: 4.5rem;
+}

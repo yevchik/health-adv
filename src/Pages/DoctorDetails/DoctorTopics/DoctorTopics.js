@@ -15,7 +15,7 @@ const DoctorTopics = ({
 }) => {
   const items = data.map((topic, index) => {
     return (
-      <li className={css.item} key={`Topic section #${index}`}>
+      <div className={css.item} key={`Topic section #${index}`}>
         <Waypoint
           onEnter={() => onEnterHandler(topic.type)}
           topOffset={WaypointOffsets.TOP}
@@ -25,14 +25,14 @@ const DoctorTopics = ({
             <DoctorTopic data={topic} />
           </div>
         </Waypoint>
-      </li>
+      </div>
     )
   })
 
   return (
-    <ul className={css.list}>
+    <>
       { items }
-    </ul>
+    </>
 
   )
 }

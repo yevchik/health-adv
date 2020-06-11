@@ -229,7 +229,6 @@ const DoctorDetails = () => {
         <ContentWithSidebar
           className={css.content}
           data={doctorData}
-          page='doctor'
         />
         {doctorData.advised && doctorData.advised.length > 0 &&
           <DoctorAdvice list={doctorData.advised} />

@@ -15,7 +15,7 @@ const BlockWithPhoto = ({
     <section className={classnames(css.wrapper, className)}>
       <Heading className={css.title} content={title} type='standard' />
       <div className={css.description} dangerouslySetInnerHTML={{ __html: description }} />
-      <blockquote className={css.quote} dangerouslySetInnerHTML={{ __html: quote }} />
+      {quote && <blockquote className={css.quote} dangerouslySetInnerHTML={{__html: quote}} />}
       <figure className={css.card}>
         <img src={images('./' + doctor.photo)} alt="" className={css.photo} />
         <figcaption className={css.label}>

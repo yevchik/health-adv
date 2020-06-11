@@ -3,7 +3,7 @@ import Container from 'components/Grid/Container'
 import css from './Intro.module.scss'
 import classnames from 'classnames'
 import IconPhone from 'containers/Header/_assets/IconPhone'
-import IconClock from 'containers/Header/_assets/IconClock'
+import IconClock from 'assets/icons/IconClock'
 import IconSearch from 'containers/Header/_assets/IconSearch'
 import IconEye from 'containers/Header/_assets/IconEye'
 
