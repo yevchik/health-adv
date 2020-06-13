@@ -9,6 +9,7 @@ import BannerMobile from 'components/Banner/BannerMobile'
 import DoctorTopicsMobile from 'Pages/DoctorDetails/DoctorTopics/DoctorTopicsMobile'
 import PromoBlockMobile from 'components/PromoBlock/PromoBlockMobile'
 import TestBannerMobile from 'Pages/HomePage/TestBanner/TestBannerMobile'
+import { isMobileOnly } from 'react-device-detect'
 
 const ArticleMobile = () => {
   const articleData = {
@@ -211,10 +212,12 @@ const ArticleMobile = () => {
     }
   ]
 
+  const comment = isMobileOnly ? articleData.banner.comment : articleData.banner.comment.split('<br/>').join(' ')
+
   const bannerCommentMobile = (
     <div className={css.bannerWrapper}>
       <IconClock className={css.bannerIcon} />
-      <p className={css.bannerComment} dangerouslySetInnerHTML={{ __html: articleData.banner.comment }} />
+      <p className={css.bannerComment} dangerouslySetInnerHTML={{ __html: comment }} />
     </div>
   )
 

@@ -18,3 +18,10 @@
   text-align: right;
   vertical-align: top;
 }
+
+@media (min-width: $widthTabletMin) {
+  .key,
+  .value {
+    padding: 1.2rem 3.1rem 1.6rem 3.3rem;
+  }
+}

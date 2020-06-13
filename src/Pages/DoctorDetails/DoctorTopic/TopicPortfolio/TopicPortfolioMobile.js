@@ -3,6 +3,7 @@ import css from './TopicPortfolioMobile.module.scss'
 import SliderCardsMobile from 'components/SliderCards/SliderCardsMobile'
 import classnames from 'classnames'
 import PortfolioCardMobile from 'components/PortfolioCard/PortfolioCardMobile'
+import { isMobileOnly } from 'react-device-detect'
 
 const TopicPortfolioMobile = ({
   title,
@@ -17,6 +18,20 @@ const TopicPortfolioMobile = ({
     </div>
   ))
 
+  const content = isMobileOnly
+    ? (
+      <SliderCardsMobile
+        className={classnames(css.slider, css.sliderReviews)}
+      >
+        { slides }
+      </SliderCardsMobile>
+    )
+    : (
+      <div className={css.list}>
+        { slides }
+      </div>
+    )
+
   return (
     <div>
       {title &&
@@ -24,11 +39,7 @@ const TopicPortfolioMobile = ({
           {title}
         </h3>
       }
-      <SliderCardsMobile
-        className={classnames(css.slider, css.sliderReviews)}
-      >
-        { slides }
-      </SliderCardsMobile>
+      { content }
     </div>
   )
 }

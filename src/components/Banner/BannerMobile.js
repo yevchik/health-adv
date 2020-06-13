@@ -13,11 +13,12 @@ const BannerMobile = ({
 }) => {
   const deviceType = useSelector(state => state.elastic.deviceType)
   const image = deviceType === 'mobile' ? bgImageMobile : bgImageTablet
+  const titleProcessed = deviceType === 'mobile' ? title : title.split('<br/>').join(' ')
 
   return (
     <div className={css.wrapper} style={{ backgroundImage: image ? `url("${ images('./' + image) }")` : 'none' }}>
       <ContainerMobile className={css.container}>
-        <h1 className={css.title} dangerouslySetInnerHTML={{ __html: title }}  />
+        <h1 className={css.title} dangerouslySetInnerHTML={{ __html: titleProcessed }}  />
         { comment }
         <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: descriptor }}  />
       </ContainerMobile>
