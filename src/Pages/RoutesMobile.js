@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import HomePageMobile from 'Pages/HomePage/HomePageMoble'
-import { ABOUT_US, DOCTORS, MEDIA_ARTICLE, MEDIA_CENTER } from 'Pages/Routes'
+import { ABOUT_US, ARTICLE, DOCTORS, MEDIA_ARTICLE, MEDIA_CENTER } from 'Pages/Routes'
 import MediacenterMobile from 'Pages/Mediacenter/MediacenterMobile'
 import NewsArticleMobile from 'Pages/NewsArticle/NewsArticleMobile'
 import DoctorDetailsMobile from 'Pages/DoctorDetails/DoctorDetailsMobile'
 import DoctorsMobile from 'Pages/Doctors/DoctorsMobile'
 import AboutUsMobile from 'Pages/AboutUs/AboutUsMobile'
+import ArticleMobile from 'Pages/Article/ArticleMobile'
 
 export const HOME_PAGE = '/'
 
@@ -22,6 +23,7 @@ class RoutesMobile extends PureComponent {
         <Route exact path={DOCTORS} component={DoctorsMobile} />
         <Route exact path={`${DOCTORS}/:id`} component={DoctorDetailsMobile} />
         <Route exact path={ABOUT_US} component={AboutUsMobile} />
+        <Route exact path={ARTICLE} component={ArticleMobile} />
       </Switch>
     )
   }

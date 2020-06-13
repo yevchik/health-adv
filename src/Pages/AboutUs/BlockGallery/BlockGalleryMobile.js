@@ -19,7 +19,7 @@ const BlockGalleryMobile = ({
 
   return (
     <section className={classnames(css.section, className)}>
-      <Heading content={title} type='standard' />
+      <Heading content={title} type='standard' tag='h3' />
       <SliderCardsMobile className={css.slider}>
         { items }
       </SliderCardsMobile>

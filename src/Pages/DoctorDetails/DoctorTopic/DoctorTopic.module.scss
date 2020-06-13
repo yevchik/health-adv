@@ -197,18 +197,6 @@
   grid-gap: 3rem;
 }
 
-.accordeons {
-  @include resetList;
-
-  margin-top: 4.5rem;
-
-  .accordeon {
-    &:not(:first-of-type) {
-      margin-top: 1rem;
-    }
-  }
-}
-
 .table {
   margin-top: 4.8rem;
   width: 100%;

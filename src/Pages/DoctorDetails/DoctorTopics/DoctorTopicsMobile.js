@@ -1,8 +1,10 @@
 import React from 'react'
 import css from './DoctorTopicsMobile.module.scss'
 import DoctorTopicMobile from 'Pages/DoctorDetails/DoctorTopic/DoctorTopicMobile'
+import classnames from 'classnames'
 
 const DoctorTopicsMobile = ({
+  className,
   data
 }) => {
   const items = data.map((topic, index) => {
@@ -14,7 +16,7 @@ const DoctorTopicsMobile = ({
   })
 
   return (
-    <ul className={css.list}>
+    <ul className={classnames(css.list, className)}>
       { items }
     </ul>
 

@@ -1,0 +1,6 @@
+.table {
+  margin-top: 2.3rem;
+  margin-left: calc(-1 * var(--padding-mobile));
+  width: calc(100% + 2 * var(--padding-mobile));
+  border-collapse: collapse;
+}
