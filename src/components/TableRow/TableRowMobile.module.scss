@@ -1,0 +1,27 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.rowDark {
+  background-color: var(--color-highlight-lightest);
+}
+
+
+.key,
+.value {
+  @include h5(var(--color-font-main));
+
+  padding: 1.4rem 1.5rem;
+  width: 50%;
+}
+
+.value {
+  text-align: right;
+  vertical-align: top;
+}
+
+@media (min-width: $widthTabletMin) {
+  .key,
+  .value {
+    padding: 1.2rem 3.1rem 1.6rem 3.3rem;
+  }
+}

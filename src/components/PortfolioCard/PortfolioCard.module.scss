@@ -1,0 +1,19 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.card {
+  margin: 0;
+  padding: 0;
+}
+
+.image {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+.label {
+  @include regular(var(--color-font-main));
+
+  margin-top: 2rem;
+}

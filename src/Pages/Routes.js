@@ -6,12 +6,14 @@ import NewsArticle from 'Pages/NewsArticle/NewsArticle'
 import DoctorDetails from 'Pages/DoctorDetails/DoctorDetails'
 import Doctors from 'Pages/Doctors/Doctors'
 import AboutUs from 'Pages/AboutUs/AboutUs'
+import Article from 'Pages/Article/Article'
 
 export const HOME_PAGE = '/'
 export const MEDIA_CENTER = '/media'
 export const MEDIA_ARTICLE = '/media/article'
 export const DOCTORS = '/doctors'
 export const ABOUT_US = '/about'
+export const ARTICLE = '/article'
 
 // TODO apply async import of page components to split the initial chunk
 
@@ -25,6 +27,7 @@ class Routes extends PureComponent {
         <Route exact path={`${DOCTORS}/:id`} component={DoctorDetails} />
         <Route exact path={DOCTORS} component={Doctors} />
         <Route exact path={ABOUT_US} component={AboutUs} />
+        <Route exact path={ARTICLE} component={Article} />
       </Switch>
     )
   }

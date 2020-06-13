@@ -6,6 +6,12 @@ import { useDispatch } from 'react-redux'
 import { images } from 'index'
 import SliderCards from 'components/SliderCards/SliderCards'
 import { createSubArrays } from 'utils'
+import PortfolioCard from 'components/PortfolioCard/PortfolioCard'
+import BlockWithPhoto from 'Pages/AboutUs/BlockWithPhoto/BlockWithPhoto'
+import Accordeon from 'components/Accordeon/Accordeon'
+import TableRow from 'components/TableRow/TableRow'
+import BlockGallery from 'Pages/AboutUs/BlockGallery/BlockGallery'
+import AdviseCard from 'components/AdviseCard/AdviseCard'
 
 const DoctorTopic = ({
   data
@@ -124,6 +130,95 @@ const DoctorTopic = ({
           >
             { slides }
           </SliderCards>
+        </>
+      )
+    case 'text':
+      return (
+        <>
+          <h3 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
+          <div className={css.text} dangerouslySetInnerHTML={{ __html: topicData }} />
+        </>
+      )
+    case 'portfolio':
+      return (
+        <>
+          <ul className={css.portfolioList}>
+            {topicData.map(({ image, label }, index) => (
+              <li className={css.portfolioItem} key={`Portfolio item#${index}`}>
+                <PortfolioCard
+                  img={image}
+                  label={label}
+                />
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    case 'interview':
+      return (
+        <BlockWithPhoto
+          className={css.interview}
+          data={data}
+        />
+      )
+    case 'faq':
+      const observer = []
+
+      return (
+        <>
+          <h3 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
+          <ul className={css.accordeons}>
+            { topicData.map((item, index) => (
+              <li className={css.accordeon} key={`Accordeon item#${index}`}>
+                <Accordeon
+                  observer={observer}
+                  question={item.key}
+                  answer={item.value}
+                />
+              </li>
+            )) }
+          </ul>
+        </>
+      )
+    case 'pricelist':
+      return (
+        <>
+          <h3 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
+          <table className={css.table}>
+            <tbody>
+              {topicData.map((row, index) => (
+                <TableRow
+                  cellKey={row.key}
+                  cellValue={row.value}
+                  index={index}
+                  key={`Pricelist table row#${index}`}
+                />
+              ))}
+            </tbody>
+          </table>
+        </>
+      )
+    case 'gallery':
+      return (
+        <BlockGallery
+          className={css.gallery}
+          data={data}
+        />
+      )
+    case 'advise':
+      return (
+        <>
+          <h3 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
+          <ul className={css.advisedList}>
+            {topicData.map((card, index) => (
+              <li className={css.advisedItem} key={`Advised item#${index}`}>
+                <AdviseCard
+                  label={card.label}
+                  url={card.url}
+                />
+              </li>
+            ))}
+          </ul>
         </>
       )
     default:

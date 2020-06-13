@@ -12,10 +12,10 @@ const BlockWithPhotoMobile = ({
   const { description, quote, doctor } = blockData
 
   return (
-    <section className={classnames(css.wrapper, className)}>
+    <section className={classnames(css.wrapper, className, { [css.wrapperNoQuote]: !quote })}>
       <Heading className={css.title} content={title} type='standard' />
       <div className={css.description} dangerouslySetInnerHTML={{ __html: description }} />
-      <blockquote className={css.quote} dangerouslySetInnerHTML={{ __html: quote }} />
+      {quote && <blockquote className={css.quote} dangerouslySetInnerHTML={{__html: quote}} />}
       <figure className={css.card}>
         <div className={css.frame}>
           <img src={images('./' + doctor.photo)} alt="" className={css.photo} />

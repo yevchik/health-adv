@@ -1,22 +1,27 @@
 @import "styles/variables";
 @import "styles/mixins";
 
+.wrapper {
+  background-size: cover;
+}
+
 .container {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: 6rem;
+  flex-wrap: wrap;
   padding-top: 8.7rem;
-  min-height: 27.4rem;
+  padding-bottom: 6.6rem;
 }
 
 .title {
   @include h1($colorMainBg);
 
   margin: 0;
-  width: 40rem;
 }
 
 .descriptor {
   @include h5($colorMainBg);
 
-  margin: 1.4rem 0 0 10rem;
+  margin: 1rem 0 0 0;
 }

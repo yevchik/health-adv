@@ -11,7 +11,6 @@ const SCROLL_TO_ELEMENT_OFFSET = 50
 const ContentWithSidebar = ({
   className,
   data,
-  page
 }) => {
   const fontSize = useSelector(state => state.elastic.curFontSize)
   const [areWaypointsDisabled, setWaypointStatus] = useState(false)
@@ -19,7 +18,7 @@ const ContentWithSidebar = ({
 
   const scrollTriggers = data && data.content
     ? data.content.map(section => ({
-      label: section.title,
+      label: section.tab || section.title,
       type: section.type
     }))
     : []
@@ -49,26 +48,17 @@ const ContentWithSidebar = ({
     return document.removeEventListener('wheel', handleWheelScroll)
   }, [])
 
-  let content
+  const content = (
+    <DoctorTopics
+      data={data.content}
+      onEnterHandler={(type) => {
+        if (areWaypointsDisabled) return null
 
-  switch (page) {
-    case 'doctor':
-      content = (
-        <DoctorTopics
-          data={data.content}
-          onEnterHandler={(type) => {
-            if (areWaypointsDisabled) return
-
-            setActiveTab(type)
-          }}
-          createRef={createRef}
-        />
-      )
-      break;
-    default:
-      content = null
-      break
-  }
+        setActiveTab(type)
+      }}
+      createRef={createRef}
+    />
+  )
 
   return (
     <div className={classnames(css.wrapper, className)}>

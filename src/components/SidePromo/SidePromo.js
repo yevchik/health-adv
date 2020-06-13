@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import css from './SidePromo.module.scss'
 import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
 import { images } from 'index'
 import { useDispatch } from 'react-redux'
-import { openVideoModal } from 'store/actions'
+import { closeVideoModal, openVideoModal } from 'store/actions'
 import { Link } from 'react-router-dom'
 import SliderCards from 'components/SliderCards/SliderCards'
 import AdvCard from 'components/AdvCard/AdvCard'
@@ -64,6 +64,10 @@ const SidePromo = () => {
 
   const dispatch = useDispatch()
   const { ads, materials } = promoData
+
+  useEffect(() => {
+    dispatch(closeVideoModal())
+  }, [dispatch])
 
   const materialsItems = materials.map((item, index) => {
     return (

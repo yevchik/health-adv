@@ -1,0 +1,18 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.rowDark {
+  background-color: var(--color-highlight-lightest);
+}
+
+
+.key,
+.value {
+  @include h5(var(--color-font-main));
+
+  padding: 2.8rem 4rem;
+}
+
+.value {
+  text-align: right;
+}

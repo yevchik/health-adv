@@ -7,6 +7,14 @@ import { images } from 'index'
 import { Collapse } from 'react-collapse'
 import classnames from 'classnames'
 import SliderCardsMobile from 'components/SliderCards/SliderCardsMobile'
+import TopicPortfolioMobile
+  from 'Pages/DoctorDetails/DoctorTopic/TopicPortfolio/TopicPortfolioMobile'
+import BlockWithPhotoMobile from 'Pages/AboutUs/BlockWithPhoto/BlockWithPhotoMobile'
+import TopicFAQMobile from 'Pages/DoctorDetails/DoctorTopic/TopicFAQ/TopicFAQMobile'
+import TopicPricelistMobile
+  from 'Pages/DoctorDetails/DoctorTopic/TopicPricelist/TopicPricelistMobile'
+import BlockGalleryMobile from 'Pages/AboutUs/BlockGallery/BlockGalleryMobile'
+import TopicAdviseMobile from 'Pages/DoctorDetails/DoctorTopic/TopicAdvise/TopicAdviseMobile'
 
 const DoctorTopicMobile = ({
   data
@@ -161,6 +169,55 @@ const DoctorTopicMobile = ({
             { slides }
           </SliderCardsMobile>
         </div>
+      )
+    case 'text':
+      return (
+        <>
+          <h3 className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
+          <div className={css.text} dangerouslySetInnerHTML={{ __html: topicData }} />
+        </>
+      )
+    case 'portfolio':
+      return (
+        <TopicPortfolioMobile
+          title={title}
+          list={topicData}
+        />
+      )
+    case 'interview':
+      return (
+        <BlockWithPhotoMobile
+          className={css.interview}
+          data={data}
+        />
+      )
+    case 'faq':
+      return (
+        <TopicFAQMobile
+          title={title}
+          topicData={topicData}
+        />
+      )
+    case 'pricelist':
+      return (
+        <TopicPricelistMobile
+          title={title}
+          topicData={topicData}
+        />
+      )
+    case 'gallery':
+      return (
+        <BlockGalleryMobile
+          className={css.gallery}
+          data={data}
+        />
+      )
+    case 'advise':
+      return (
+        <TopicAdviseMobile
+          title={title}
+          topicData={topicData}
+        />
       )
     default:
       return null
