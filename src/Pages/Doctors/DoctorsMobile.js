@@ -8,7 +8,7 @@ import BreadcrumbsMobile from 'components/Breadcrumbs/BreadcrumbsMobile'
 import ContainerMobile from 'components/Grid/ContainerMobile'
 import DoctorsFilterMobile from 'Pages/Doctors/DoctorsFilter/DoctorsFilterMobile'
 import DoctorsGalleryMobile from 'Pages/Doctors/DoctorsGallery/DoctorsGalleryMobile'
-import TestBannerMobile from 'Pages/HomePage/TestBanner/TestBannerMobile'
+import TestBannerMobile from 'components/TestBanner/TestBannerMobile'
 
 const DoctorsMobile = () => {
   const breadcrumbs = [

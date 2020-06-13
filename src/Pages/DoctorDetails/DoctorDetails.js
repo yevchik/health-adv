@@ -5,7 +5,7 @@ import { HOME_PAGE } from 'Pages/Routes'
 import Container from 'components/Grid/Container'
 import ContentWithSidebar from 'Pages/DoctorDetails/ContentWithSidebar/ContentWithSidebar'
 import withModal from 'hoc/withModal'
-import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
+import TestBanner from 'components/TestBanner/TestBanner'
 import DoctorAdvice from 'Pages/DoctorDetails/DoctorAdvice/DoctorAdvice'
 
 const DoctorDetails = () => {

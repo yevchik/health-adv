@@ -215,7 +215,7 @@ const Article = () => {
   )
 
   return (
-    <div>
+    <>
       <Banner {...articleData.banner} comment={bannerComment} />
       <Container className={css.container}>
         <Breadcrumbs dataArray={breadcrumbs} />
@@ -224,7 +224,7 @@ const Article = () => {
           data={articleData}
         />
       </Container>
-    </div>
+    </>
   )
 }
 

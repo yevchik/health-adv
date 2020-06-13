@@ -1,5 +1,5 @@
-@import "styles/variables";
-@import "styles/mixins";
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 .section:not(.sectionSimple) {
   margin-top: 5rem;
@@ -55,7 +55,7 @@
     left: -9.4rem;
     width: 42rem;
     height: 35.6rem;
-    background-image: url("../../../assets/images/test-banner__img.png");
+    background-image: url("../../assets/images/test-banner__img.png");
     background-size: cover;
   }
 }
@@ -106,7 +106,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../../../assets/images/dots-bg-large.png");
+    background-image: url("../../assets/images/dots-bg-large.png");
     background-size: cover;
   }
 

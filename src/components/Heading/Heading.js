@@ -2,7 +2,12 @@ import React from 'react'
 import css from './Heading.module.scss'
 import classNames from 'classnames'
 
-const Heading = ({ className, content, type = 'large', tag = 'h2' }) => {
+const Heading = ({
+  className,
+  content,
+  type = 'large',
+  tag = 'h2'
+}) => {
   const TagName = tag
   return (
     <TagName

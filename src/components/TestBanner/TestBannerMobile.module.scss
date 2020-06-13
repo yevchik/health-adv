@@ -1,5 +1,5 @@
-@import "styles/variables";
-@import "styles/mixins";
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 .section {
   margin-top: calc(6rem - 4.7rem);
@@ -21,7 +21,7 @@
     left: 1.5rem;
     width: 30.5rem;
     height: 25.9rem;
-    background-image: url("../../../assets/images/test-banner__img.png");
+    background-image: url("../../assets/images/test-banner__img.png");
     background-size: cover;
   }
 }
