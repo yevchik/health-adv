@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/health-adv/static/css/main.9b2f4461.chunk.css",
-    "main.js": "/health-adv/static/js/main.ebe236e8.chunk.js",
-    "main.js.map": "/health-adv/static/js/main.ebe236e8.chunk.js.map",
+    "main.css": "/health-adv/static/css/main.c560aac6.chunk.css",
+    "main.js": "/health-adv/static/js/main.6b3fed22.chunk.js",
+    "main.js.map": "/health-adv/static/js/main.6b3fed22.chunk.js.map",
     "runtime-main.js": "/health-adv/static/js/runtime-main.ae50190e.js",
     "runtime-main.js.map": "/health-adv/static/js/runtime-main.ae50190e.js.map",
-    "static/css/2.f448413e.chunk.css": "/health-adv/static/css/2.f448413e.chunk.css",
-    "static/js/2.96f5db4f.chunk.js": "/health-adv/static/js/2.96f5db4f.chunk.js",
-    "static/js/2.96f5db4f.chunk.js.map": "/health-adv/static/js/2.96f5db4f.chunk.js.map",
+    "static/css/2.b5c39ad2.chunk.css": "/health-adv/static/css/2.b5c39ad2.chunk.css",
+    "static/js/2.c141ddd9.chunk.js": "/health-adv/static/js/2.c141ddd9.chunk.js",
+    "static/js/2.c141ddd9.chunk.js.map": "/health-adv/static/js/2.c141ddd9.chunk.js.map",
     "index.html": "/health-adv/index.html",
-    "precache-manifest.fa2cec4190eb72e832bd5bb1694002b2.js": "/health-adv/precache-manifest.fa2cec4190eb72e832bd5bb1694002b2.js",
+    "precache-manifest.d262bd987013d24de692a4587d07b23b.js": "/health-adv/precache-manifest.d262bd987013d24de692a4587d07b23b.js",
     "service-worker.js": "/health-adv/service-worker.js",
-    "static/css/2.f448413e.chunk.css.map": "/health-adv/static/css/2.f448413e.chunk.css.map",
-    "static/css/main.9b2f4461.chunk.css.map": "/health-adv/static/css/main.9b2f4461.chunk.css.map",
-    "static/js/2.96f5db4f.chunk.js.LICENSE.txt": "/health-adv/static/js/2.96f5db4f.chunk.js.LICENSE.txt",
+    "static/css/2.b5c39ad2.chunk.css.map": "/health-adv/static/css/2.b5c39ad2.chunk.css.map",
+    "static/css/main.c560aac6.chunk.css.map": "/health-adv/static/css/main.c560aac6.chunk.css.map",
+    "static/js/2.c141ddd9.chunk.js.LICENSE.txt": "/health-adv/static/js/2.c141ddd9.chunk.js.LICENSE.txt",
     "static/media/common.scss": "/health-adv/static/media/Montserrat-Regular.23488bf2.woff2",
     "static/media/about__banner@desktop.jpg": "/health-adv/static/media/about__banner@desktop.9d99a21a.jpg",
     "static/media/about__fullscreen@desktop.jpg": "/health-adv/static/media/about__fullscreen@desktop.4b7a3444.jpg",
@@ -48,6 +48,7 @@
     "static/media/doctors__photo--1@desktop.png": "/health-adv/static/media/doctors__photo--1@desktop.55f23697.png",
     "static/media/doctors__photo--2@desktop.png": "/health-adv/static/media/doctors__photo--2@desktop.3fd1c43b.png",
     "static/media/doctors__photo--3@desktop.png": "/health-adv/static/media/doctors__photo--3@desktop.b10757fc.png",
+    "static/media/faq__banner@desktop.jpg": "/health-adv/static/media/faq__banner@desktop.a83e840b.jpg",
     "static/media/icon__doctor-banner-bg.svg": "/health-adv/static/media/icon__doctor-banner-bg.560ce9f5.svg",
     "static/media/icon__doctor.svg": "/health-adv/static/media/icon__doctor.5019d4db.svg",
     "static/media/icon__location.svg": "/health-adv/static/media/icon__location.e6471feb.svg",
@@ -79,9 +80,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ae50190e.js",
-    "static/css/2.f448413e.chunk.css",
-    "static/js/2.96f5db4f.chunk.js",
-    "static/css/main.9b2f4461.chunk.css",
-    "static/js/main.ebe236e8.chunk.js"
+    "static/css/2.b5c39ad2.chunk.css",
+    "static/js/2.c141ddd9.chunk.js",
+    "static/css/main.c560aac6.chunk.css",
+    "static/js/main.6b3fed22.chunk.js"
   ]
 }
