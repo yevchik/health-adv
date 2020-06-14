@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import ButtonMobile from 'components/Button/ButtonMobile'
 import InputMobile from 'components/Input/InputMobile'
 
-const SignupFormMobile = ({ infoBlock }) => {
+const SignupFormMobile = ({ infoBlock, buttonLabel }) => {
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = data => console.log(data)
 
@@ -32,7 +32,7 @@ const SignupFormMobile = ({ infoBlock }) => {
         <ButtonMobile
           className={css.button}
           iconClassname={css.icon}
-          label='Отправить'
+          label={buttonLabel}
           btnStyle='filledDecorated'
           type='submit'
         />

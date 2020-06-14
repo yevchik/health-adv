@@ -16,6 +16,12 @@
   margin: 0;
 }
 
+.special {
+  @include h5($colorMainBg);
+
+  margin: 1.7rem 0 0;
+}
+
 .descriptor {
   @include h5($colorMainBg);
 
