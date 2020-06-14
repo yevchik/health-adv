@@ -1,5 +1,5 @@
 import React from 'react'
-import css from 'containers/PromoBlock/PromoBlockMobile.module.scss'
+import css from './PromoBlockMobile.module.scss'
 import PromoListMobile from 'components/PromoList/PromoListMobile'
 import Heading from 'components/Heading/Heading'
 

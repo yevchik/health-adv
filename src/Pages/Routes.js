@@ -9,12 +9,14 @@ import AboutUs from 'Pages/AboutUs/AboutUs'
 import Article from 'Pages/Article/Article'
 import Specials from 'Pages/Specials/Specials'
 import Special from 'Pages/Special/Special'
+import AboutUsFAQ from 'Pages/AboutUsFAQ/AboutUsFAQ'
 
 export const HOME_PAGE = '/'
 export const MEDIA_CENTER = '/media'
 export const MEDIA_ARTICLE = '/media/article'
 export const DOCTORS = '/doctors'
 export const ABOUT_US = '/about'
+export const ABOUT_FAQ = `${ABOUT_US}/faq`
 export const ARTICLE = '/article'
 export const SPECIALS = '/specials'
 
@@ -30,6 +32,7 @@ class Routes extends PureComponent {
         <Route exact path={`${DOCTORS}/:id`} component={DoctorDetails} />
         <Route exact path={DOCTORS} component={Doctors} />
         <Route exact path={ABOUT_US} component={AboutUs} />
+        <Route exact path={ABOUT_FAQ} component={AboutUsFAQ} />
         <Route exact path={ARTICLE} component={Article} />
         <Route exact path={SPECIALS} component={Specials} />
         <Route exact path={`${SPECIALS}/:id`} component={Special} />

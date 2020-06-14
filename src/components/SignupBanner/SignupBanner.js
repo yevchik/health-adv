@@ -5,6 +5,7 @@ import Heading from 'components/Heading/Heading'
 import { Link } from 'react-router-dom'
 import IconLock from 'assets/icons/IconLock'
 import SignupForm from 'components/SignupBanner/SignupForm/SignupForm'
+import IconDotsBg from 'assets/icons/IconDotsBg'
 
 const SignupBanner = ({
   title = 'Хотите узнавать первым о&nbsp;наших акциях?',
@@ -14,6 +15,7 @@ const SignupBanner = ({
   return (
     <div className={css.wrapper}>
       <Container>
+        <IconDotsBg className={css.dots} />
         <Heading content={title} className={css.title} />
         <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: descriptor }} />
         <div className={css.form}>

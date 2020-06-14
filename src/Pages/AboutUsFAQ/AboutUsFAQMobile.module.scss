@@ -1,0 +1,48 @@
+@import "styles/variables";
+
+.banner {
+  padding-top: 10rem;
+  padding-bottom: 12rem;
+}
+
+.container {
+  margin-top: -4rem;
+  padding-top: 3.8rem;
+  padding-bottom: 6rem;
+  background-color: $colorMainBg;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+
+  .select {
+    margin-top: 2rem;
+  }
+
+  .list {
+    margin-top: 2rem;
+  }
+
+  .promo {
+    margin-top: 4.8rem;
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .banner {
+    padding-top: 7rem;
+    padding-bottom: 13rem;
+  }
+
+  .container {
+    .select {
+      margin-top: 2.5rem;
+    }
+
+    .list {
+      margin-top: 3.5rem;
+    }
+
+    .promo {
+      margin-top: 6rem;
+    }
+  }
+}
