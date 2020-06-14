@@ -1,0 +1,14 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 102rem 32rem;
+  justify-content: space-between;
+}
+
+.aside {
+  height: 100%;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}

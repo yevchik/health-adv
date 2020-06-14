@@ -2,9 +2,18 @@
 @import "styles/mixins";
 
 .wrapper {
+  position: relative;
   padding-top: 8rem;
   padding-bottom: 19rem;
   background-color: var(--color-font-main);
+}
+
+.dots {
+  position: absolute;
+  bottom: -15rem;
+  right: -2rem;
+  width: 40rem;
+  transform: rotate(90deg);
 }
 
 .title {
