@@ -1,10 +1,10 @@
 import React from 'react'
-import css from './SignupForm.module.scss'
+import css from './SignupFormMobile.module.scss'
 import { useForm } from "react-hook-form"
-import Button from 'components/Button/Button'
-import Input from 'components/Input/Input'
+import ButtonMobile from 'components/Button/ButtonMobile'
+import InputMobile from 'components/Input/InputMobile'
 
-const SignupForm = () => {
+const SignupFormMobile = () => {
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = data => console.log(data)
 
@@ -12,7 +12,7 @@ const SignupForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={css.wrapper}>
         <fieldset className={css.fieldset}>
-          <Input
+          <InputMobile
             type='text'
             name='subscribeName'
             placeholder='Имя*'
@@ -21,7 +21,7 @@ const SignupForm = () => {
           />
         </fieldset>
         <fieldset className={css.fieldset}>
-          <Input
+          <InputMobile
             type='email'
             name='subscribeMail'
             placeholder='E-mail*'
@@ -29,7 +29,7 @@ const SignupForm = () => {
             isError={errors.subscribeMail}
           />
         </fieldset>
-        <Button
+        <ButtonMobile
           className={css.button}
           iconClassname={css.icon}
           label='Отправить'
@@ -41,4 +41,4 @@ const SignupForm = () => {
   )
 }
 
-export default SignupForm
+export default SignupFormMobile

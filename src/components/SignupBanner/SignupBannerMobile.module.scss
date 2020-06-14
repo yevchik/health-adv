@@ -1,0 +1,48 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  padding-top: 3.5rem;
+  padding-bottom: 3.9rem;
+  background-color: var(--color-font-main);
+}
+
+.title {
+  color: $colorMainBg;
+}
+
+.descriptor {
+  @include h5($colorMainBg);
+
+  margin: 1.4rem 0 0 0;
+}
+
+.warning {
+  @include regular($colorMainBg);
+
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1.4rem;
+  opacity: 0.7;
+
+  span {
+    width: calc(100% - 1.6rem - 1.6rem);
+  }
+}
+
+.form {
+  margin-top: 4.8rem;
+}
+
+.iconLock {
+  margin-right: 1.6rem;
+  width: 1.6rem;
+  fill: $colorMainBg;
+}
+
+.link {
+  @include regular($colorMainBg);
+
+  margin: 0 0.5rem;
+  text-decoration: underline;
+}

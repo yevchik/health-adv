@@ -1,0 +1,17 @@
+@import "styles/mixins";
+
+.list {
+  @include resetList;
+
+  margin-top: 1.9rem;
+}
+
+.item {
+  &:not(:first-of-type) {
+    margin-top: 1rem;
+  }
+}
+
+.buttonMore {
+  margin-top: 2rem;
+}
