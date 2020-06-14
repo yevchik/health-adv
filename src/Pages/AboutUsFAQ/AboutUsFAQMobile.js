@@ -1,18 +1,20 @@
 import React from 'react'
-import css from './AboutUsFAQ.module.scss'
-import Container from 'components/Grid/Container'
-import TwoColumns from 'components/TwoColumns/TwoColumns'
-import AboutAside from 'components/AboutAside/AboutAside'
-import Banner from 'components/Banner/Banner'
+import css from './AboutUsFAQMobile.module.scss'
 import { ABOUT_US, HOME_PAGE } from 'Pages/Routes'
-import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs'
-import FaqList from 'Pages/AboutUsFAQ/FaqList/FaqList'
-import SignupBanner from 'components/SignupBanner/SignupBanner'
+import SignupBannerMobile from 'components/SignupBanner/SignupBannerMobile'
+import BannerMobile from 'components/Banner/BannerMobile'
+import ContainerMobile from 'components/Grid/ContainerMobile'
+import BreadcrumbsMobile from 'components/Breadcrumbs/BreadcrumbsMobile'
+import LocationSelector from 'components/LocationSelector/LocationSelector'
+import FaqListMobile from 'Pages/AboutUsFAQ/FaqList/FaqListMobile'
+import PromoBlockMobile from 'containers/PromoBlock/PromoBlockMobile'
 
-const AboutUsFAQ = () => {
+const AboutUsFAQMobile = () => {
   const faqData = {
     banner: {
       bgImage: 'faq__banner@desktop.jpg',
+      bgImageMobile: 'faq__banner@mobile.jpg',
+      bgImageTablet: 'faq__banner@tablet.jpg',
       title: 'Частые вопросы и ответы',
     },
     faqList: [
@@ -92,19 +94,16 @@ const AboutUsFAQ = () => {
 
   return (
     <>
-      <Banner {...faqData.banner} className={css.banner} />
-      <Container className={css.container}>
-        <Breadcrumbs dataArray={breadcrumbs} />
-        <TwoColumns
-          classWrapper={css.content}
-          main={<FaqList list={faqData.faqList} />}
-          aside={<AboutAside />}
-          classAside={css.aside}
-        />
-      </Container>
-      <SignupBanner {...faqData.signup} />
+      <BannerMobile {...faqData.banner} className={css.banner} />
+      <ContainerMobile className={css.container}>
+        <BreadcrumbsMobile dataArray={breadcrumbs} />
+        <LocationSelector className={css.select} />
+        <FaqListMobile className={css.list} list={faqData.faqList} />
+        <PromoBlockMobile className={css.promo} />
+      </ContainerMobile>
+      <SignupBannerMobile {...faqData.signup} />
     </>
   )
 }
 
-export default AboutUsFAQ
+export default AboutUsFAQMobile

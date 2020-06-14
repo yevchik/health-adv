@@ -15,7 +15,9 @@ const TwoColumns = ({
         { main }
       </div>
       <aside className={classnames(css.aside, classAside)}>
-        { aside }
+        <div className={css.sticky}>
+          { aside }
+        </div>
       </aside>
     </div>
   )
