@@ -33,3 +33,24 @@
     }
   }
 }
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .fieldset {
+      width: 35rem;
+
+      &:not(:first-of-type) {
+        margin-top: 0;
+        margin-left: auto;
+      }
+    }
+
+    .button {
+      margin-top: 3rem;
+      width: 28.1rem;
+    }
+  }
+}

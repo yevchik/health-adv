@@ -10,20 +10,23 @@ const SignupBannerMobile = ({
   title = 'Хотите узнавать первым о&nbsp;наших акциях?',
   descriptor = 'Подпишитесь на&nbsp;рассылку и&nbsp;будьте в&nbsp;курсе наших акций'
 }) => {
+  const warning = (
+    <p className={css.warning}>
+      <IconLock className={css.iconLock} />
+      <span>
+        Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с <Link className={css.link} to='/'>политикой</Link> ознакомлен
+      </span>
+    </p>
+  )
+
   return (
     <div className={css.wrapper}>
-      <ContainerMobile>
+      <ContainerMobile className={css.container}>
         <Heading content={title} className={css.title} />
         <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: descriptor }} />
         <div className={css.form}>
-          <SignupFormMobile />
+          <SignupFormMobile infoBlock={warning} />
         </div>
-        <p className={css.warning}>
-          <IconLock className={css.iconLock} />
-          <span>
-            Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с <Link className={css.link} to='/'>политикой</Link> ознакомлен
-          </span>
-        </p>
       </ContainerMobile>
     </div>
   )

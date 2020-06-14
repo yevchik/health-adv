@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import ButtonMobile from 'components/Button/ButtonMobile'
 import InputMobile from 'components/Input/InputMobile'
 
-const SignupFormMobile = () => {
+const SignupFormMobile = ({ infoBlock }) => {
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = data => console.log(data)
 
@@ -36,6 +36,7 @@ const SignupFormMobile = () => {
           btnStyle='filledDecorated'
           type='submit'
         />
+        { infoBlock }
       </div>
     </form>
   )
