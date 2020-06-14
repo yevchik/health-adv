@@ -8,7 +8,8 @@ import SignupForm from 'components/SignupBanner/SignupForm/SignupForm'
 
 const SignupBanner = ({
   title = 'Хотите узнавать первым о&nbsp;наших акциях?',
-  descriptor = 'Подпишитесь на&nbsp;рассылку и&nbsp;будьте в&nbsp;курсе наших акций'
+  descriptor = 'Подпишитесь на&nbsp;рассылку и&nbsp;будьте в&nbsp;курсе наших акций',
+  buttonLabel = 'Отправить'
 }) => {
   return (
     <div className={css.wrapper}>
@@ -16,7 +17,7 @@ const SignupBanner = ({
         <Heading content={title} className={css.title} />
         <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: descriptor }} />
         <div className={css.form}>
-          <SignupForm />
+          <SignupForm buttonLabel={buttonLabel} />
         </div>
         <p className={css.warning}>
           <IconLock className={css.iconLock} />

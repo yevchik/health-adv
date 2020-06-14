@@ -8,6 +8,7 @@ import Doctors from 'Pages/Doctors/Doctors'
 import AboutUs from 'Pages/AboutUs/AboutUs'
 import Article from 'Pages/Article/Article'
 import Specials from 'Pages/Specials/Specials'
+import Special from 'Pages/Special/Special'
 
 export const HOME_PAGE = '/'
 export const MEDIA_CENTER = '/media'
@@ -31,6 +32,7 @@ class Routes extends PureComponent {
         <Route exact path={ABOUT_US} component={AboutUs} />
         <Route exact path={ARTICLE} component={Article} />
         <Route exact path={SPECIALS} component={Specials} />
+        <Route exact path={`${SPECIALS}/:id`} component={Special} />
       </Switch>
     )
   }

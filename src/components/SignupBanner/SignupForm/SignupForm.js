@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import Button from 'components/Button/Button'
 import Input from 'components/Input/Input'
 
-const SignupForm = () => {
+const SignupForm = ({ buttonLabel }) => {
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = data => console.log(data)
 
@@ -32,7 +32,7 @@ const SignupForm = () => {
         <Button
           className={css.button}
           iconClassname={css.icon}
-          label='Отправить'
+          label={buttonLabel}
           btnStyle='filledDecorated'
           type='submit'
         />

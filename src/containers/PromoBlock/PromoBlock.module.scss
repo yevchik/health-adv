@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.title {
+  @include h2(var(--color-font-main));
+
+  margin: 0;
+}
+
+.promo {
+  margin-top: 4.5rem;
+}
