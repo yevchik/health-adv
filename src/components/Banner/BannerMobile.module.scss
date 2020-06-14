@@ -34,6 +34,18 @@
     padding-bottom: calc(4rem + 3.9rem);
   }
 
+  .special {
+    font-size: 2rem;
+    line-height: 4rem;
+
+    margin: 0.8rem 0 0;
+
+    & + .descriptor {
+      margin: 0;
+    }
+
+  }
+
   .descriptor {
     padding-right: 5%;
   }
