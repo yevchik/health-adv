@@ -10,3 +10,9 @@
 .promo {
   margin-top: 2.3rem;
 }
+
+@media (min-width: $widthTabletMin) {
+  .promo {
+    margin-top: 1.5rem;
+  }
+}
