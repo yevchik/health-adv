@@ -1,0 +1,56 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    &:not(:first-of-type) {
+      margin-top: 1rem
+    }
+  }
+
+  .button {
+    @include resetButton;
+    @include capitals-bold-small($colorMainBg);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding: 0 3.7rem 0 4.4rem;
+    height: 6rem;
+    background-color: var(--color-highlight-buttons);
+
+    .icon {
+      width: 1.5rem;
+      stroke: $colorMainBg;
+    }
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .fieldset {
+      width: 35rem;
+
+      &:not(:first-of-type) {
+        margin-top: 0;
+        margin-left: auto;
+      }
+    }
+
+    .button {
+      margin-top: 3rem;
+      width: 28.1rem;
+    }
+  }
+}

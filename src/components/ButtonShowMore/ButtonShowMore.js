@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 const ButtonShowMore = ({
   className,
-  clickHandler,
+  clickHandler = () => {},
 }) => {
   return (
     <button

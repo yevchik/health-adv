@@ -7,7 +7,7 @@ import SidePromo from 'components/SidePromo/SidePromo'
 import AboutContent from 'Pages/AboutUs/AboutContent/AboutContent'
 import { HOME_PAGE } from 'Pages/Routes'
 import LinksBattery from 'components/LinksBattery/LinksBattery'
-import TestBanner from 'Pages/HomePage/TestBanner/TestBanner'
+import TestBanner from 'components/TestBanner/TestBanner'
 import withModal from 'hoc/withModal'
 
 const AboutUs = () => {

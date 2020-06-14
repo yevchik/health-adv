@@ -66,6 +66,15 @@
   &.buttonFilledDecorated {
     color: $colorMainBg;
     background-color: var(--color-highlight-buttons);
+    transition-duration: $transitionDuration;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      background-color: var(--color-highlight-buttons-dark);
+    }
 
     .icon {
       stroke: $colorMainBg;

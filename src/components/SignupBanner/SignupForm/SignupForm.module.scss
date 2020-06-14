@@ -1,0 +1,31 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 43.7rem);
+  justify-content: space-between;
+
+  .fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .button {
+    @include resetButton;
+    @include capitals-bold-small($colorMainBg);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3.7rem 0 4.4rem;
+    height: 6rem;
+    background-color: var(--color-highlight-buttons);
+
+    .icon {
+      width: 1.5rem;
+      stroke: $colorMainBg;
+    }
+  }
+}

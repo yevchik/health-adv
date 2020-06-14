@@ -10,7 +10,7 @@ import ContainerMobile from 'components/Grid/ContainerMobile'
 import BreadcrumbsMobile from 'components/Breadcrumbs/BreadcrumbsMobile'
 import { useSelector } from 'react-redux'
 import SeeMoreMobile from 'Pages/NewsArticle/SeeMore/SeeMoreMobile'
-import TestBannerMobile from 'Pages/HomePage/TestBanner/TestBannerMobile'
+import TestBannerMobile from 'components/TestBanner/TestBannerMobile'
 
 const NewsArticleMobile = () => {
   const deviceType = useSelector(state => state.elastic.deviceType)

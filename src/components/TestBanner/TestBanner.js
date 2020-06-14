@@ -1,26 +1,26 @@
 import React from 'react'
-import css from './TestBannerMobile.module.scss'
+import css from 'components/TestBanner/TestBanner.module.scss'
 import Heading from 'components/Heading/Heading'
+import Button from 'components/Button/Button'
 import IconDotsBg from 'assets/icons/IconDotsBg'
+import Container from 'components/Grid/Container'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import ContainerMobile from 'components/Grid/ContainerMobile'
-import ButtonMobile from 'components/Button/ButtonMobile'
 
-const TestBannerMobile = ({
-  title = 'Не знаете, какая услуга нужна?',
-  descriptor = 'Пройдите тест, ответив на несколько вопросов',
+const TestBanner = ({
+  title = 'Не&nbsp;знаете, какая услуга нужна?',
+  descriptor = 'Пройдите тест, ответив на&nbsp;несколько вопросов',
   type
 }) => (
   <section className={classnames(css.section, { [css.sectionSimple]: type === 'simple' })}>
-    <ContainerMobile className={css.container}>
+    <Container className={css.container}>
       <div className={css.wrapper}>
         <div className={css.content}>
           <IconDotsBg className={css.icon} />
           <Heading content={title} className={css.title} />
           <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: descriptor }} />
         </div>
-        <ButtonMobile
+        <Button
           url='/test'
           className={css.btn}
           iconClassname={css.arrow}
@@ -29,11 +29,11 @@ const TestBannerMobile = ({
           handleClick={() => {}}
         />
       </div>
-    </ContainerMobile>
+    </Container>
   </section>
 )
 
-TestBannerMobile.propTypes = {
+TestBanner.propTypes = {
   // section heading
   title: PropTypes.string,
   // descriptor layout
@@ -42,4 +42,4 @@ TestBannerMobile.propTypes = {
   type: PropTypes.oneOf(['simple', undefined])
 }
 
-export default React.memo(TestBannerMobile)
+export default React.memo(TestBanner)

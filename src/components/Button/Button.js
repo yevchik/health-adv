@@ -11,7 +11,8 @@ const Button = ({
   url,
   btnStyle = 'filled',
   label = '',
-  handleClick
+  handleClick,
+  type = 'button'
 }) => {
   const ComponentName = url ? Link : 'button'
 
@@ -23,7 +24,7 @@ const Button = ({
         [css.buttonGradient]: btnStyle === 'gradient',
         [css.buttonFilledDecorated]: btnStyle === 'filledDecorated'
       })}
-      type={url ? '' : 'button'}
+      type={url ? '' : type}
       to={url}
       onClick={url ? () => {} : handleClick}
     >
@@ -47,7 +48,7 @@ Button.propTypes = {
   // text label
   label: PropTypes.string.isRequired,
   // click handler
-  handleClick: PropTypes.func.isRequired
+  handleClick: PropTypes.func
 }
 
 export default React.memo(Button)

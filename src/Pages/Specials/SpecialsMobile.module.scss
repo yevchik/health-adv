@@ -1,0 +1,10 @@
+@import "styles/variables";
+
+.container {
+  margin-top: -4rem;
+  padding-top: 3.8rem;
+  padding-bottom: 6rem;
+  background-color: $colorMainBg;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+}

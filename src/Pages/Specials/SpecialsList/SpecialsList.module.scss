@@ -1,0 +1,14 @@
+@import "styles/mixins";
+
+.list {
+  @include resetList;
+
+  display: grid;
+  grid-template-columns: repeat(3, 43.7rem);
+  grid-gap: 3rem;
+  margin-top: 5rem;
+}
+
+.buttonMore {
+  margin-top: 3rem;
+}
