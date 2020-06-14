@@ -9,6 +9,7 @@ import DoctorsMobile from 'Pages/Doctors/DoctorsMobile'
 import AboutUsMobile from 'Pages/AboutUs/AboutUsMobile'
 import ArticleMobile from 'Pages/Article/ArticleMobile'
 import SpecialsMobile from 'Pages/Specials/SpecialsMobile'
+import SpecialMobile from 'Pages/Special/SpecialMobile'
 
 export const HOME_PAGE = '/'
 
@@ -26,6 +27,7 @@ class RoutesMobile extends PureComponent {
         <Route exact path={ABOUT_US} component={AboutUsMobile} />
         <Route exact path={ARTICLE} component={ArticleMobile} />
         <Route exact path={SPECIALS} component={SpecialsMobile} />
+        <Route exact path={`${SPECIALS}/:id`} component={SpecialMobile} />
       </Switch>
     )
   }

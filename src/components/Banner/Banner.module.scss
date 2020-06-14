@@ -14,10 +14,28 @@
   padding-bottom: 6.6rem;
 }
 
+.containerSpecial {
+  grid-template-columns: 1fr 68.2rem;
+  grid-column-gap: 27rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
 .title {
   @include h1($colorMainBg);
 
   margin: 0;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+
+  .special {
+    @include h4($colorMainBg);
+
+    margin: 0;
+  }
 }
 
 .descriptor {

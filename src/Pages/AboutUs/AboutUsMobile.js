@@ -6,7 +6,7 @@ import ContainerMobile from 'components/Grid/ContainerMobile'
 import TestBannerMobile from 'components/TestBanner/TestBannerMobile'
 import BannerMobile from 'components/Banner/BannerMobile'
 import AboutContentMobile from './AboutContent/AboutContentMobile'
-import PromoBlockMobile from 'components/PromoBlock/PromoBlockMobile'
+import PromoBlockMobile from 'containers/PromoBlock/PromoBlockMobile'
 
 const AboutUsMobile = () => {
   const aboutData = {

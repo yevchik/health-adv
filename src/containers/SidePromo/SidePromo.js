@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import css from './SidePromo.module.scss'
+import css from 'containers/SidePromo/SidePromo.module.scss'
 import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
 import { images } from 'index'
 import { useDispatch } from 'react-redux'

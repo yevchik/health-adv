@@ -7,7 +7,7 @@ import ContainerMobile from 'components/Grid/ContainerMobile'
 import BreadcrumbsMobile from 'components/Breadcrumbs/BreadcrumbsMobile'
 import BannerMobile from 'components/Banner/BannerMobile'
 import DoctorTopicsMobile from 'Pages/DoctorDetails/DoctorTopics/DoctorTopicsMobile'
-import PromoBlockMobile from 'components/PromoBlock/PromoBlockMobile'
+import PromoBlockMobile from 'containers/PromoBlock/PromoBlockMobile'
 import TestBannerMobile from 'components/TestBanner/TestBannerMobile'
 import { isMobileOnly } from 'react-device-detect'
 

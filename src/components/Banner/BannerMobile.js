@@ -8,6 +8,7 @@ const BannerMobile = ({
   bgImageMobile,
   bgImageTablet,
   comment,
+  special,
   descriptor,
   title,
 }) => {
@@ -20,7 +21,13 @@ const BannerMobile = ({
       <ContainerMobile className={css.container}>
         <h1 className={css.title} dangerouslySetInnerHTML={{ __html: titleProcessed }}  />
         { comment }
-        <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: descriptor }}  />
+        { descriptor && !special && <p className={css.descriptor} dangerouslySetInnerHTML={{__html: descriptor}} /> }
+        { descriptor && special &&
+        <div className={css.textWrapper}>
+          <p className={css.special} dangerouslySetInnerHTML={{ __html: special }} />
+          <p className={css.descriptor} dangerouslySetInnerHTML={{__html: descriptor}} />
+        </div>
+        }
       </ContainerMobile>
     </div>
   )

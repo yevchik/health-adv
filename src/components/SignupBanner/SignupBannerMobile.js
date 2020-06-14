@@ -8,7 +8,8 @@ import SignupFormMobile from 'components/SignupBanner/SignupForm/SignupFormMobil
 
 const SignupBannerMobile = ({
   title = 'Хотите узнавать первым о&nbsp;наших акциях?',
-  descriptor = 'Подпишитесь на&nbsp;рассылку и&nbsp;будьте в&nbsp;курсе наших акций'
+  descriptor = 'Подпишитесь на&nbsp;рассылку и&nbsp;будьте в&nbsp;курсе наших акций',
+  buttonLabel = 'Отправить'
 }) => {
   const warning = (
     <p className={css.warning}>
@@ -25,7 +26,7 @@ const SignupBannerMobile = ({
         <Heading content={title} className={css.title} />
         <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: descriptor }} />
         <div className={css.form}>
-          <SignupFormMobile infoBlock={warning} />
+          <SignupFormMobile infoBlock={warning} buttonLabel={buttonLabel} />
         </div>
       </ContainerMobile>
     </div>

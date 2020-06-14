@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import DoctorTopics from 'Pages/DoctorDetails/DoctorTopics/DoctorTopics'
 import ScrollTriggers from 'components/ScrollTriggers/ScrollTriggers'
 import { useSelector } from 'react-redux'
-import SidePromo from 'components/SidePromo/SidePromo'
+import SidePromo from 'containers/SidePromo/SidePromo'
 
 const SCROLL_TO_ELEMENT_OFFSET = 50
 

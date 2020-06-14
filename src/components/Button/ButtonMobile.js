@@ -11,7 +11,7 @@ const ButtonMobile = ({
   url,
   btnStyle = 'filled',
   label = '',
-  handleClick
+  handleClick = () => {}
 }) => {
   const ComponentName = url ? Link : 'button'
 
@@ -47,7 +47,7 @@ ButtonMobile.propTypes = {
   // text label
   label: PropTypes.string.isRequired,
   // click handler
-  handleClick: PropTypes.func.isRequired
+  handleClick: PropTypes.func
 }
 
 export default React.memo(ButtonMobile)

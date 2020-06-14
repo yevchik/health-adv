@@ -1,8 +1,9 @@
 import React from 'react'
-import css from './PromoBlockMobile.module.scss'
-import PromoListMobile from 'components/PromoList/PromoListMobile'
+import css from './PromoBlock.module.scss'
+import Heading from 'components/Heading/Heading'
+import PromoList from 'components/PromoList/PromoList'
 
-const PromoBlockMobile = ({ className }) => {
+const PromoBlock = ({ className, title = 'Акции' }) => {
   const promoData = [
     {
       type: 'teeth',
@@ -41,12 +42,13 @@ const PromoBlockMobile = ({ className }) => {
 
   return (
     <div className={className}>
-      <h3 className={css.title}>
-        Акции
-      </h3>
-      <PromoListMobile data={promoData} className={css.promo} />
+      <Heading content={title} type='standard' />
+      <PromoList
+        data={promoData}
+        className={css.promo}
+      />
     </div>
   )
 }
 
-export default PromoBlockMobile
+export default PromoBlock
