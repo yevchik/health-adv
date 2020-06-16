@@ -13,3 +13,16 @@
     margin-top: 3.6rem;
   }
 }
+
+@media (min-width: $widthTabletMin) {
+  .list {
+    grid-template-columns: repeat(3, 22rem);
+    grid-row-gap: 3rem;
+    justify-content: space-between;
+    padding: 0;
+
+    & + .buttonMore {
+      margin-top: 4rem;
+    }
+  }
+}
