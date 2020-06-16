@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "82f7f03a0a5e658803409440cc62b6ec",
+    "revision": "dd80b2dac63997e871f3131e13b208b6",
     "url": "/health-adv/index.html"
   },
   {
-    "revision": "595fbd4c2658c9644db1",
+    "revision": "d61150a60173cfa8f143",
     "url": "/health-adv/static/css/2.b5c39ad2.chunk.css"
   },
   {
-    "revision": "521bd82fa381a5e7dc52",
-    "url": "/health-adv/static/css/main.30452d6e.chunk.css"
+    "revision": "c9d392e176be7d6ab822",
+    "url": "/health-adv/static/css/main.55a302a5.chunk.css"
   },
   {
-    "revision": "595fbd4c2658c9644db1",
-    "url": "/health-adv/static/js/2.180d84cc.chunk.js"
+    "revision": "d61150a60173cfa8f143",
+    "url": "/health-adv/static/js/2.5229ac3e.chunk.js"
   },
   {
     "revision": "bfd0f9ef773c39bd68987561c36447e9",
-    "url": "/health-adv/static/js/2.180d84cc.chunk.js.LICENSE.txt"
+    "url": "/health-adv/static/js/2.5229ac3e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "521bd82fa381a5e7dc52",
-    "url": "/health-adv/static/js/main.f1dbee24.chunk.js"
+    "revision": "c9d392e176be7d6ab822",
+    "url": "/health-adv/static/js/main.14441c2a.chunk.js"
   },
   {
     "revision": "f0fa69cd6c19926e7858",
@@ -102,6 +102,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "64a0c232ac50e5243367aa884a590528",
     "url": "/health-adv/static/media/breadcrumbs__separator.64a0c232.svg"
+  },
+  {
+    "revision": "ab99ce6d353d23459370a318f9bed3db",
+    "url": "/health-adv/static/media/certificates__banner@desktop.ab99ce6d.jpg"
+  },
+  {
+    "revision": "ffb3f76af4acd882cfbc0b4f3c058088",
+    "url": "/health-adv/static/media/certificates__banner@mobile.ffb3f76a.jpg"
+  },
+  {
+    "revision": "4a07396420cfd53e3d24169a23acbe39",
+    "url": "/health-adv/static/media/certificates__banner@tablet.4a073964.jpg"
   },
   {
     "revision": "51a9314d6fd496d48127045a5b7bec64",
