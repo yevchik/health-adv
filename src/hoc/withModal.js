@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Modal from 'components/Modal/Modal'
 import { closeVideoModal } from 'store/actions'
-import css from 'Pages/Mediacenter/Mediacenter.module.scss'
+import css from './withModal.module.scss'
 import { images, videos } from 'index'
 
 const withModal = (WrappedComponent) => {

@@ -99,7 +99,6 @@ const AboutUsFAQ = () => {
           classWrapper={css.content}
           main={<FaqList list={faqData.faqList} />}
           aside={<AboutAside />}
-          classAside={css.aside}
         />
       </Container>
       <SignupBanner {...faqData.signup} />

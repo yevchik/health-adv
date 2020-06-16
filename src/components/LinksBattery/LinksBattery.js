@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './LinksBattery.module.scss'
 import { Link, withRouter } from 'react-router-dom'
-import { ABOUT_FAQ, ABOUT_US } from 'Pages/Routes'
+import { ABOUT_CERTIFICATES, ABOUT_FAQ, ABOUT_US } from 'Pages/Routes'
 import classnames from 'classnames'
 
 const LinksBattery = (props) => {
@@ -16,7 +16,7 @@ const LinksBattery = (props) => {
     },
     {
       label: 'Лицензии и сертификаты',
-      url: '/'
+      url: ABOUT_CERTIFICATES
     },
     {
       label: 'Правовые документы',
@@ -29,7 +29,10 @@ const LinksBattery = (props) => {
   ]
 
   const items = listData.map((item, index) => (
-    <li className={classnames(css.item, { [css.itemActive]: item.url === props.location.pathname })} key={`Link battery item#${index}`}>
+    <li
+      className={classnames(css.item, { [css.itemActive]: item.url === props.location.pathname || item.url === `${props.location.pathname}/` })}
+      key={`Link battery item#${index}`}
+    >
       <Link className={css.link} to={item.url}>
         { item.label }
       </Link>
