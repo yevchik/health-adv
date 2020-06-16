@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 const TestBanner = ({
   title = 'Не&nbsp;знаете, какая услуга нужна?',
   descriptor = 'Пройдите тест, ответив на&nbsp;несколько вопросов',
-  type
+  type = 'simple'
 }) => (
   <section className={classnames(css.section, { [css.sectionSimple]: type === 'simple' })}>
     <Container className={css.container}>

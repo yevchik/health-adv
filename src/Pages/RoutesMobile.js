@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import HomePageMobile from 'Pages/HomePage/HomePageMoble'
 import {
+  ABOUT_CERTIFICATES,
   ABOUT_FAQ,
   ABOUT_US,
   ARTICLE,
@@ -19,6 +20,7 @@ import ArticleMobile from 'Pages/Article/ArticleMobile'
 import SpecialsMobile from 'Pages/Specials/SpecialsMobile'
 import SpecialMobile from 'Pages/Special/SpecialMobile'
 import AboutUsFAQMobile from 'Pages/AboutUsFAQ/AboutUsFAQMobile'
+import AboutUsCertificatesMobile from 'Pages/AboutUsCertificates/AboutUsCertificatesMobile'
 
 export const HOME_PAGE = '/'
 
@@ -35,6 +37,7 @@ class RoutesMobile extends PureComponent {
         <Route exact path={`${DOCTORS}/:id`} component={DoctorDetailsMobile} />
         <Route exact path={ABOUT_US} component={AboutUsMobile} />
         <Route exact path={ABOUT_FAQ} component={AboutUsFAQMobile} />
+        <Route exact path={ABOUT_CERTIFICATES} component={AboutUsCertificatesMobile} />
         <Route exact path={ARTICLE} component={ArticleMobile} />
         <Route exact path={SPECIALS} component={SpecialsMobile} />
         <Route exact path={`${SPECIALS}/:id`} component={SpecialMobile} />
