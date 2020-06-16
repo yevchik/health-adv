@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dd80b2dac63997e871f3131e13b208b6",
+    "revision": "b2c9f8243a8c8548e96633fb5ecc2db8",
     "url": "/health-adv/index.html"
   },
   {
-    "revision": "d61150a60173cfa8f143",
+    "revision": "ba7a53538af5240cef2e",
     "url": "/health-adv/static/css/2.b5c39ad2.chunk.css"
   },
   {
-    "revision": "c9d392e176be7d6ab822",
-    "url": "/health-adv/static/css/main.55a302a5.chunk.css"
+    "revision": "996177ee4b1bc2bf2df2",
+    "url": "/health-adv/static/css/main.68e2524e.chunk.css"
   },
   {
-    "revision": "d61150a60173cfa8f143",
-    "url": "/health-adv/static/js/2.5229ac3e.chunk.js"
+    "revision": "ba7a53538af5240cef2e",
+    "url": "/health-adv/static/js/2.ce49e8f0.chunk.js"
   },
   {
     "revision": "bfd0f9ef773c39bd68987561c36447e9",
-    "url": "/health-adv/static/js/2.5229ac3e.chunk.js.LICENSE.txt"
+    "url": "/health-adv/static/js/2.ce49e8f0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c9d392e176be7d6ab822",
-    "url": "/health-adv/static/js/main.14441c2a.chunk.js"
+    "revision": "996177ee4b1bc2bf2df2",
+    "url": "/health-adv/static/js/main.08a615ca.chunk.js"
   },
   {
     "revision": "f0fa69cd6c19926e7858",
@@ -104,16 +104,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/health-adv/static/media/breadcrumbs__separator.64a0c232.svg"
   },
   {
-    "revision": "ab99ce6d353d23459370a318f9bed3db",
-    "url": "/health-adv/static/media/certificates__banner@desktop.ab99ce6d.jpg"
-  },
-  {
-    "revision": "ffb3f76af4acd882cfbc0b4f3c058088",
-    "url": "/health-adv/static/media/certificates__banner@mobile.ffb3f76a.jpg"
-  },
-  {
-    "revision": "4a07396420cfd53e3d24169a23acbe39",
-    "url": "/health-adv/static/media/certificates__banner@tablet.4a073964.jpg"
+    "revision": "dbd1662458dc8fe0af17f65f1bc20806",
+    "url": "/health-adv/static/media/certificates__banner@desktop.dbd16624.jpg"
   },
   {
     "revision": "51a9314d6fd496d48127045a5b7bec64",
