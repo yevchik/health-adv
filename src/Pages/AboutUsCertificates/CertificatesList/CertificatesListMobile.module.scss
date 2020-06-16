@@ -1,0 +1,15 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.list {
+  @include resetList;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-row-gap: 3.6rem;
+  padding: 0 1.9rem;
+
+  & + .buttonMore {
+    margin-top: 3.6rem;
+  }
+}
