@@ -6,23 +6,16 @@
 
   display: grid;
   grid-template-columns: 100%;
-  grid-row-gap: 3.6rem;
-  padding: 0 1.9rem;
+  grid-row-gap: 1rem;
 
   & + .buttonMore {
-    margin-top: 3.6rem;
+    margin-top: 3rem;
   }
 }
 
 @media (min-width: $widthTabletMin) {
   .list {
-    grid-template-columns: repeat(3, 22rem);
-    grid-row-gap: 3rem;
+    grid-template-columns: repeat(2, 34.5rem);
     justify-content: space-between;
-    padding: 0;
-
-    & + .buttonMore {
-      margin-top: 4rem;
-    }
   }
 }

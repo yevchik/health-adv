@@ -1,20 +1,22 @@
 import React from 'react'
-import css from './AboutUsDocuments.module.scss'
+import css from 'Pages/AboutUsDocuments/AboutUsDocumentsMobile.module.scss'
 import { ABOUT_US, HOME_PAGE } from 'Pages/Routes'
-import withModal from 'hoc/withModal'
-import Banner from 'components/Banner/Banner'
-import Container from 'components/Grid/Container'
-import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs'
-import TwoColumns from 'components/TwoColumns/TwoColumns'
-import AboutAside from 'components/AboutAside/AboutAside'
-import TestBanner from 'components/TestBanner/TestBanner'
-import DocumentsList from 'Pages/AboutUsDocuments/DocumentsList/DocumentsList'
+import BannerMobile from 'components/Banner/BannerMobile'
+import ContainerMobile from 'components/Grid/ContainerMobile'
+import BreadcrumbsMobile from 'components/Breadcrumbs/BreadcrumbsMobile'
+import PromoBlockMobile from 'containers/PromoBlock/PromoBlockMobile'
+import LocationSelector from 'components/LocationSelector/LocationSelector'
+import withModalMobile from 'hoc/withModalMobile'
+import TestBannerMobile from 'components/TestBanner/TestBannerMobile'
+import DocumentsListMobile from 'Pages/AboutUsDocuments/DocumentsList/DocumentsListMobile'
 
-const AboutUsDocuments = () => {
+const AboutUsDocumentsMobile = () => {
   const documentsData = {
     banner: {
       bgImage: 'documents__banner@desktop.jpg',
-      title: 'Правовые документы',
+      bgImageMobile: 'documents__banner@mobile.jpg',
+      bgImageTablet: 'documents__banner@tablet.jpg',
+      title: 'Правовые<br/>документы',
     },
     list: [
       {
@@ -156,18 +158,16 @@ const AboutUsDocuments = () => {
 
   return (
     <>
-      <Banner {...documentsData.banner} />
-      <Container className={css.container}>
-        <Breadcrumbs dataArray={breadcrumbs} />
-        <TwoColumns
-          classWrapper={css.content}
-          main={<DocumentsList list={documentsData.list} />}
-          aside={<AboutAside />}
-        />
-      </Container>
-     <TestBanner />
+      <BannerMobile {...documentsData.banner} />
+      <ContainerMobile className={css.container}>
+        <BreadcrumbsMobile dataArray={breadcrumbs} />
+        <LocationSelector className={css.select} />
+        <DocumentsListMobile className={css.list} list={documentsData.list} />
+        <PromoBlockMobile className={css.promo} />
+      </ContainerMobile>
+     <TestBannerMobile type='simple' />
     </>
   )
 }
 
-export default withModal(AboutUsDocuments)
+export default withModalMobile(AboutUsDocumentsMobile)
