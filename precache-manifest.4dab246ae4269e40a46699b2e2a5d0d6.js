@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b2c9f8243a8c8548e96633fb5ecc2db8",
+    "revision": "910b19d5a3b5f1058bcc389f1e341c8a",
     "url": "/health-adv/index.html"
   },
   {
-    "revision": "ba7a53538af5240cef2e",
-    "url": "/health-adv/static/css/2.b5c39ad2.chunk.css"
+    "revision": "231e7f2d988a3cb8f41c",
+    "url": "/health-adv/static/css/2.f448413e.chunk.css"
   },
   {
-    "revision": "996177ee4b1bc2bf2df2",
-    "url": "/health-adv/static/css/main.68e2524e.chunk.css"
+    "revision": "9f1dee9362915f9d3b33",
+    "url": "/health-adv/static/css/main.d4837e7d.chunk.css"
   },
   {
-    "revision": "ba7a53538af5240cef2e",
-    "url": "/health-adv/static/js/2.ce49e8f0.chunk.js"
+    "revision": "231e7f2d988a3cb8f41c",
+    "url": "/health-adv/static/js/2.acb99073.chunk.js"
   },
   {
     "revision": "bfd0f9ef773c39bd68987561c36447e9",
-    "url": "/health-adv/static/js/2.ce49e8f0.chunk.js.LICENSE.txt"
+    "url": "/health-adv/static/js/2.acb99073.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "996177ee4b1bc2bf2df2",
-    "url": "/health-adv/static/js/main.08a615ca.chunk.js"
+    "revision": "9f1dee9362915f9d3b33",
+    "url": "/health-adv/static/js/main.8a0a7a58.chunk.js"
   },
   {
     "revision": "f0fa69cd6c19926e7858",
@@ -196,6 +196,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/health-adv/static/media/doctors__photo--3@desktop.b10757fc.png"
   },
   {
+    "revision": "0d8775d88bd875e5c5578ad5cf1da81a",
+    "url": "/health-adv/static/media/documents__banner@desktop.0d8775d8.jpg"
+  },
+  {
+    "revision": "6ad310988492e8787ebbbdea860b05ad",
+    "url": "/health-adv/static/media/documents__banner@mobile.6ad31098.jpg"
+  },
+  {
+    "revision": "937c5a033b71811831d766b896ac0175",
+    "url": "/health-adv/static/media/documents__banner@tablet.937c5a03.jpg"
+  },
+  {
+    "revision": "2942bfabb3d05332b66eb128e0842cff",
+    "url": "/health-adv/static/media/dummy.2942bfab.pdf"
+  },
+  {
     "revision": "a83e840b793452c297958f5404c4d152",
     "url": "/health-adv/static/media/faq__banner@desktop.a83e840b.jpg"
   },
@@ -206,6 +222,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "5019d4db477941117fc9eba099b1ca47",
     "url": "/health-adv/static/media/icon__doctor.5019d4db.svg"
+  },
+  {
+    "revision": "6498c014a49defadbc40e2f7d2cf19a1",
+    "url": "/health-adv/static/media/icon__download.6498c014.svg"
   },
   {
     "revision": "e6471feb9423df5ab1ab711db371047a",
