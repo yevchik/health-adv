@@ -30,6 +30,10 @@
 
 @media (min-width: $widthTabletMin) {
   .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 30rem;
     padding-top: calc(7.3rem + 2.5rem);
     padding-bottom: calc(4rem + 3.9rem);
   }

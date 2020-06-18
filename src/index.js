@@ -26,6 +26,7 @@ const store = createStore(rootReducer, applyMiddleware(thunk))
 export const images = require.context('assets/images', true)
 export const videos = require.context('assets/videos', true)
 export const icons = require.context('assets/icons', true)
+export const files = require.context('assets/files', true)
 
 const Content = (
   <Provider store={store}>
