@@ -16,7 +16,6 @@ const Accordeon = ({
 }) => {
   const [isOpened, updateAccordeonStatus] = useState(false)
   const QuestionTagName = questionTag
-  console.log(background)
 
   useEffect(() => {
     if (observer) {

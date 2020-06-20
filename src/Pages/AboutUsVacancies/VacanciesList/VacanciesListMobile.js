@@ -1,11 +1,11 @@
 import React from 'react'
-import css from './VacanciesList.module.scss'
+import css from './VacanciesListMobile.module.scss'
 import classnames from 'classnames'
-import Accordeon from 'components/Accordeon/Accordeon'
-import SimpleList from 'components/SimpleList/SimpleList'
-import ButtonShowMore from 'components/ButtonShowMore/ButtonShowMore'
+import AccordeonMobile from 'components/Accordeon/AccordeonMobile'
+import ButtonShowMoreMobile from 'components/ButtonShowMore/ButtonShowMoreMobile'
+import SimpleListMobile from 'components/SimpleList/SimpleListMobile'
 
-const VacanciesList = ({
+const VacanciesListMobile = ({
   className,
   list
 }) => {
@@ -17,7 +17,7 @@ const VacanciesList = ({
         <h4 className={css.title}>
           { section.subtitle }
         </h4>
-        <SimpleList
+        <SimpleListMobile
           className={css.sublist}
           list={section.sublist}
         />
@@ -26,15 +26,16 @@ const VacanciesList = ({
 
     return (
       <li className={css.item} key={`Vacancy item#${index}`}>
-        <Accordeon
+        <AccordeonMobile
           answerClassName={css.vacancyWrapper}
-          background={vacancy.background}
+          backgroundMobile={vacancy.backgroundMobile}
+          backgroundTablet={vacancy.backgroundTablet}
           questionTag='h3'
           question={vacancy.title}
           observer={observer}
         >
           { content }
-        </Accordeon>
+        </AccordeonMobile>
       </li>
     )
   })
@@ -44,9 +45,9 @@ const VacanciesList = ({
       <ul className={classnames(css.list, className)}>
         { items }
       </ul>
-      <ButtonShowMore className={css.buttonMore} />
+      <ButtonShowMoreMobile className={css.buttonMore} />
     </>
   )
 }
 
-export default VacanciesList
+export default VacanciesListMobile
