@@ -5,6 +5,7 @@
   position: relative;
   border: 1px solid var(--color-highlight-darker);
   cursor: pointer;
+  transition-duration: $transitionDuration;
 
   &::before {
     content: "";
@@ -27,6 +28,19 @@
     transform: rotate(90deg);
     transform-origin: center;
     transition-duration: $transitionDuration;
+  }
+
+  &:not(.wrapperOpened):hover {
+    border-color: var(--color-highlight-buttons);
+
+    &::before,
+    &::after {
+      background-color: var(--color-highlight-buttons);
+    }
+
+    .key {
+      color: var(--color-highlight-buttons);
+    }
   }
 }
 
