@@ -17,6 +17,13 @@
   &:not(:first-of-type) {
     border-top: 1px solid var(--color-highlight-darkest);
   }
+
+  &:not(.itemActive) {
+    .link:hover {
+      color: var(--color-highlight-buttons);
+      opacity: 1;
+    }
+  }
 }
 
 .link {
@@ -26,6 +33,7 @@
   padding: 2rem 3rem;
   width: 100%;
   opacity: 0.5;
+  transition-duration: $transitionDuration;
 }
 
 .itemActive {

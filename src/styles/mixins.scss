@@ -200,11 +200,11 @@
   }
 }
 
-@mixin h9($color) {
+@mixin h9($color, $fontWeight: 500) {
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
   font-style: normal;
-  font-weight: 500;
+  font-weight: $fontWeight;
   line-height: 1.7rem;
   color: $color;
 }

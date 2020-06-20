@@ -4,7 +4,7 @@ import HomePageMobile from 'Pages/HomePage/HomePageMoble'
 import {
   ABOUT_CERTIFICATES, ABOUT_DOCUMENTS,
   ABOUT_FAQ,
-  ABOUT_US,
+  ABOUT_US, ABOUT_VACANCIES,
   ARTICLE,
   DOCTORS,
   MEDIA_ARTICLE,
@@ -22,6 +22,7 @@ import SpecialMobile from 'Pages/Special/SpecialMobile'
 import AboutUsFAQMobile from 'Pages/AboutUsFAQ/AboutUsFAQMobile'
 import AboutUsCertificatesMobile from 'Pages/AboutUsCertificates/AboutUsCertificatesMobile'
 import AboutUsDocumentsMobile from 'Pages/AboutUsDocuments/AboutUsDocumentsMobile'
+import AboutUsVacanciesMobile from 'Pages/AboutUsVacancies/AboutUsVacanciesMobile'
 
 export const HOME_PAGE = '/'
 
@@ -40,6 +41,7 @@ class RoutesMobile extends PureComponent {
         <Route exact path={ABOUT_FAQ} component={AboutUsFAQMobile} />
         <Route exact path={ABOUT_CERTIFICATES} component={AboutUsCertificatesMobile} />
         <Route exact path={ABOUT_DOCUMENTS} component={AboutUsDocumentsMobile} />
+        <Route exact path={ABOUT_VACANCIES} component={AboutUsVacanciesMobile} />
         <Route exact path={ARTICLE} component={ArticleMobile} />
         <Route exact path={SPECIALS} component={SpecialsMobile} />
         <Route exact path={`${SPECIALS}/:id`} component={SpecialMobile} />

@@ -1,0 +1,51 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.list {
+  @include resetList;
+
+  display: flex;
+  flex-direction: column;
+
+  .item {
+    &:not(:first-of-type) {
+      margin-top: 1.8rem;
+    }
+  }
+
+  .vacancyWrapper {
+    padding-top: 1.8rem;
+    padding-bottom: 2.7rem;
+  }
+
+  .title {
+    @include h9(var(--color-font-main), 600);
+
+    margin: 0;
+
+    &:not(:first-of-type) {
+      padding-top: 2.5rem;
+    }
+  }
+
+  .sublist {
+    margin-top: 1rem;
+  }
+}
+
+.buttonMore {
+  margin-top: 3rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .list {
+    .vacancyWrapper {
+      padding-top: 3rem;
+      padding-bottom: 3.7rem;
+    }
+  }
+
+  .buttonMore {
+    margin-top: 4rem;
+  }
+}

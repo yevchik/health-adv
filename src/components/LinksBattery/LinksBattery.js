@@ -1,7 +1,13 @@
 import React from 'react'
 import css from './LinksBattery.module.scss'
 import { Link, withRouter } from 'react-router-dom'
-import { ABOUT_CERTIFICATES, ABOUT_DOCUMENTS, ABOUT_FAQ, ABOUT_US } from 'Pages/Routes'
+import {
+  ABOUT_CERTIFICATES,
+  ABOUT_DOCUMENTS,
+  ABOUT_FAQ,
+  ABOUT_US,
+  ABOUT_VACANCIES
+} from 'Pages/Routes'
 import classnames from 'classnames'
 
 const LinksBattery = (props) => {
@@ -24,7 +30,7 @@ const LinksBattery = (props) => {
     },
     {
       label: 'Вакансии',
-      url: '/'
+      url: ABOUT_VACANCIES
     },
   ]
 
