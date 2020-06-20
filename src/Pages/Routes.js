@@ -12,6 +12,7 @@ import Special from 'Pages/Special/Special'
 import AboutUsFAQ from 'Pages/AboutUsFAQ/AboutUsFAQ'
 import AboutUsCertificates from 'Pages/AboutUsCertificates/AboutUsCertificates'
 import AboutUsDocuments from 'Pages/AboutUsDocuments/AboutUsDocuments'
+import AboutUsVacancies from 'Pages/AboutUsVacancies/AboutUsVacancies'
 
 export const HOME_PAGE = '/'
 export const MEDIA_CENTER = '/media'
@@ -21,6 +22,7 @@ export const ABOUT_US = '/about'
 export const ABOUT_FAQ = `${ABOUT_US}/faq`
 export const ABOUT_CERTIFICATES = `${ABOUT_US}/certificates`
 export const ABOUT_DOCUMENTS = `${ABOUT_US}/documents`
+export const ABOUT_VACANCIES = `${ABOUT_US}/vacancies`
 export const ARTICLE = '/article'
 export const SPECIALS = '/specials'
 
@@ -39,6 +41,7 @@ class Routes extends PureComponent {
         <Route exact path={ABOUT_FAQ} component={AboutUsFAQ} />
         <Route exact path={ABOUT_CERTIFICATES} component={AboutUsCertificates} />
         <Route exact path={ABOUT_DOCUMENTS} component={AboutUsDocuments} />
+        <Route exact path={ABOUT_VACANCIES} component={AboutUsVacancies} />
         <Route exact path={ARTICLE} component={Article} />
         <Route exact path={SPECIALS} component={Specials} />
         <Route exact path={`${SPECIALS}/:id`} component={Special} />

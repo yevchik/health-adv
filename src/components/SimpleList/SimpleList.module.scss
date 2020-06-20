@@ -1,0 +1,31 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.list {
+  @include resetList;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  @include regular(var(--color-font-main));
+
+  position: relative;
+  padding-left: 1.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--color-highlight-buttons);
+    border-radius: 50%;
+  }
+
+  &:not(:first-of-type) {
+    margin-top: 0.7rem;
+  }
+}
