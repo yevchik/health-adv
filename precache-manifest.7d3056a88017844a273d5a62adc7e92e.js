@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "75bf946025075c46ca039f23430acd17",
+    "revision": "0ead9828c67becaf76e5de009b0cb461",
     "url": "/health-adv/index.html"
   },
   {
-    "revision": "b7691c716e183cc52039",
+    "revision": "980a5456e115d07402fe",
     "url": "/health-adv/static/css/2.b5c39ad2.chunk.css"
   },
   {
-    "revision": "770ee52fc1d7a9a4ccba",
-    "url": "/health-adv/static/css/main.73c27e8f.chunk.css"
+    "revision": "40e06458ac74801e135c",
+    "url": "/health-adv/static/css/main.d8ae92b9.chunk.css"
   },
   {
-    "revision": "b7691c716e183cc52039",
-    "url": "/health-adv/static/js/2.2f1fc760.chunk.js"
+    "revision": "980a5456e115d07402fe",
+    "url": "/health-adv/static/js/2.207c3adf.chunk.js"
   },
   {
     "revision": "bfd0f9ef773c39bd68987561c36447e9",
-    "url": "/health-adv/static/js/2.2f1fc760.chunk.js.LICENSE.txt"
+    "url": "/health-adv/static/js/2.207c3adf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "770ee52fc1d7a9a4ccba",
-    "url": "/health-adv/static/js/main.e824ff72.chunk.js"
+    "revision": "40e06458ac74801e135c",
+    "url": "/health-adv/static/js/main.21fa8be9.chunk.js"
   },
   {
     "revision": "f0fa69cd6c19926e7858",
@@ -224,8 +224,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/health-adv/static/media/icon__doctor.5019d4db.svg"
   },
   {
-    "revision": "6498c014a49defadbc40e2f7d2cf19a1",
-    "url": "/health-adv/static/media/icon__download.6498c014.svg"
+    "revision": "098c0d230db038eead798851cea38a74",
+    "url": "/health-adv/static/media/icon__download.098c0d23.svg"
   },
   {
     "revision": "e6471feb9423df5ab1ab711db371047a",
@@ -330,5 +330,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "5364c03e0c323a1aff906821fa12dce5",
     "url": "/health-adv/static/media/test-banner__img.5364c03e.png"
+  },
+  {
+    "revision": "6e1da3bad504021af69722c845b7ed1f",
+    "url": "/health-adv/static/media/vacancies__banner@desktop.6e1da3ba.jpg"
   }
 ]);

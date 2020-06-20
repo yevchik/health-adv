@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/health-adv/static/css/main.73c27e8f.chunk.css",
-    "main.js": "/health-adv/static/js/main.e824ff72.chunk.js",
-    "main.js.map": "/health-adv/static/js/main.e824ff72.chunk.js.map",
+    "main.css": "/health-adv/static/css/main.d8ae92b9.chunk.css",
+    "main.js": "/health-adv/static/js/main.21fa8be9.chunk.js",
+    "main.js.map": "/health-adv/static/js/main.21fa8be9.chunk.js.map",
     "runtime-main.js": "/health-adv/static/js/runtime-main.ae50190e.js",
     "runtime-main.js.map": "/health-adv/static/js/runtime-main.ae50190e.js.map",
     "static/css/2.b5c39ad2.chunk.css": "/health-adv/static/css/2.b5c39ad2.chunk.css",
-    "static/js/2.2f1fc760.chunk.js": "/health-adv/static/js/2.2f1fc760.chunk.js",
-    "static/js/2.2f1fc760.chunk.js.map": "/health-adv/static/js/2.2f1fc760.chunk.js.map",
+    "static/js/2.207c3adf.chunk.js": "/health-adv/static/js/2.207c3adf.chunk.js",
+    "static/js/2.207c3adf.chunk.js.map": "/health-adv/static/js/2.207c3adf.chunk.js.map",
     "index.html": "/health-adv/index.html",
-    "precache-manifest.9a223ee4466b9d733676000609f792fc.js": "/health-adv/precache-manifest.9a223ee4466b9d733676000609f792fc.js",
+    "precache-manifest.7d3056a88017844a273d5a62adc7e92e.js": "/health-adv/precache-manifest.7d3056a88017844a273d5a62adc7e92e.js",
     "service-worker.js": "/health-adv/service-worker.js",
     "static/css/2.b5c39ad2.chunk.css.map": "/health-adv/static/css/2.b5c39ad2.chunk.css.map",
-    "static/css/main.73c27e8f.chunk.css.map": "/health-adv/static/css/main.73c27e8f.chunk.css.map",
-    "static/js/2.2f1fc760.chunk.js.LICENSE.txt": "/health-adv/static/js/2.2f1fc760.chunk.js.LICENSE.txt",
+    "static/css/main.d8ae92b9.chunk.css.map": "/health-adv/static/css/main.d8ae92b9.chunk.css.map",
+    "static/js/2.207c3adf.chunk.js.LICENSE.txt": "/health-adv/static/js/2.207c3adf.chunk.js.LICENSE.txt",
     "static/media/common.scss": "/health-adv/static/media/Montserrat-Regular.23488bf2.woff2",
     "static/media/about__banner@desktop.jpg": "/health-adv/static/media/about__banner@desktop.9d99a21a.jpg",
     "static/media/about__fullscreen@desktop.jpg": "/health-adv/static/media/about__fullscreen@desktop.4b7a3444.jpg",
@@ -56,7 +56,7 @@
     "static/media/faq__banner@desktop.jpg": "/health-adv/static/media/faq__banner@desktop.a83e840b.jpg",
     "static/media/icon__doctor-banner-bg.svg": "/health-adv/static/media/icon__doctor-banner-bg.560ce9f5.svg",
     "static/media/icon__doctor.svg": "/health-adv/static/media/icon__doctor.5019d4db.svg",
-    "static/media/icon__download.svg": "/health-adv/static/media/icon__download.6498c014.svg",
+    "static/media/icon__download.svg": "/health-adv/static/media/icon__download.098c0d23.svg",
     "static/media/icon__location.svg": "/health-adv/static/media/icon__location.e6471feb.svg",
     "static/media/icon__speech.svg": "/health-adv/static/media/icon__speech.4a05f4e8.svg",
     "static/media/icon_quotes--darker.svg": "/health-adv/static/media/icon_quotes--darker.740a511c.svg",
@@ -82,13 +82,14 @@
     "static/media/special__image@desktop.jpg": "/health-adv/static/media/special__image@desktop.56520b01.jpg",
     "static/media/special__image@tablet.jpg": "/health-adv/static/media/special__image@tablet.87d08a44.jpg",
     "static/media/specials__banner@desktop.jpg": "/health-adv/static/media/specials__banner@desktop.aa03a353.jpg",
-    "static/media/test-banner__img.png": "/health-adv/static/media/test-banner__img.5364c03e.png"
+    "static/media/test-banner__img.png": "/health-adv/static/media/test-banner__img.5364c03e.png",
+    "static/media/vacancies__banner@desktop.jpg": "/health-adv/static/media/vacancies__banner@desktop.6e1da3ba.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ae50190e.js",
     "static/css/2.b5c39ad2.chunk.css",
-    "static/js/2.2f1fc760.chunk.js",
-    "static/css/main.73c27e8f.chunk.css",
-    "static/js/main.e824ff72.chunk.js"
+    "static/js/2.207c3adf.chunk.js",
+    "static/css/main.d8ae92b9.chunk.css",
+    "static/js/main.21fa8be9.chunk.js"
   ]
 }
