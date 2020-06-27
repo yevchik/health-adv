@@ -44,3 +44,31 @@
 .cardModal {
   width: 100%;
 }
+
+@media (min-width: $widthTabletMin) {
+  .card {
+    padding: 2.9rem 2.1rem 2.9rem 3.3rem;
+
+    &:not(.cardModal) {
+      width: 33.2rem;
+    }
+  }
+
+  .text {
+    margin: 0.6rem 0 0 0;
+  }
+
+  .buttonMore {
+    margin-top: 2.5rem;
+  }
+
+  .legend {
+    margin-top: 2.1rem;
+
+    .info {
+      &:not(:first-of-type) {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

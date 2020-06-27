@@ -55,15 +55,17 @@ const ReviewsContent = ({ list }) => {
         )
       case 'cards':
         const items = item.list.map((item, index) => (
-          <li className={css.item} key={index}>
+          <div className={css.item} key={index}>
             <ReviewCardMobile {...item} />
-          </li>
+          </div>
         ))
 
         return (
-          <ul className={css.list} key={`Review item #${index}`}>
-            { items }
-          </ul>
+          <div className={css.list} key={`Review item #${index}`}>
+            <div className={css.listWrapper}>
+              { items }
+            </div>
+          </div>
         )
       default: return null
     }

@@ -56,6 +56,7 @@
     width: 100%;
     transform: rotate(0deg);
   }
+
   .photo {
     position: absolute;
     top: -3.4rem;
@@ -101,15 +102,112 @@
 }
 
 .list {
-  @include resetList;
+  margin-top: 2rem;
+}
 
+.listWrapper {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
 }
 
 .item {
   &:not(:first-child) {
     margin-top: 1.4rem;
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+    grid-row-gap: 6rem;
+    margin-top: 3.5rem;
+  }
+
+  .card {
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+
+  .bannerWrapper {
+    grid-column: 1 / -1;
+    margin-left: 0;
+    width: 100%;
+    border-bottom: 0.6rem solid var(--color-highlight-mosaic);
+  }
+
+  .banner {
+    margin-top: 5.6rem;
+    padding: 5.2rem 3rem 3.8rem 30rem;
+
+    .dotsTop {
+      position: absolute;
+      top: 0;
+      left: -3rem;
+      width: 30rem;
+      transform: rotate(180deg);
+    }
+
+    .photo {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 28.8rem;
+      height: 29.1rem;
+    }
+
+    .text {
+      position: relative;
+      padding: 0;
+      background-color: transparent;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .quote {
+      @include h4(var(--color-font-main));
+
+      &::before {
+        top: -0.3rem;
+        right: auto;
+        left: calc(-1.8rem - 3.1rem);
+        width: 3.1rem;
+        height: 2.8rem;
+        background-image: url("../../../assets/icons/icon_quotes--darker.svg");
+      }
+    }
+
+    .quoteName {
+      @include regular(var(--color-font-main));
+
+      margin: 4.8rem 0 0 0;
+    }
+  }
+
+  .list {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    margin-left: calc(-1 * var(--padding-tablet));
+    padding: 0 var(--padding-tablet);
+    width: calc(100% + 2 * var(--padding-tablet));
+    overflow: scroll;
+  }
+
+  .listWrapper {
+    flex-direction: row;
+    width: max-content;
+  }
+
+  .item {
+    &:not(:first-child) {
+      margin-top: 0;
+      margin-left: 2rem;
+    }
+
+    &:last-child {
+      margin-right: var(--padding-tablet);
+    }
   }
 }

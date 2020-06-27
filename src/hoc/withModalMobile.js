@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { closeVideoModal } from 'store/actions'
+import { closeModal } from 'store/actions'
 import { images, videos } from 'index'
 import ModalMobile from 'components/Modal/ModalMobile'
 
@@ -20,7 +20,7 @@ const withModalMobile = (WrappedComponent) => {
     return (
       <>
       <WrappedComponent {...props} />
-      <ModalMobile isVisible={modal.isModalOpen} handleCloseModal={() => dispatch(closeVideoModal())}>
+      <ModalMobile isVisible={modal.isModalOpen} handleCloseModal={() => dispatch(closeModal())}>
         <>
           {modal.imageFile && <img src={images('./' + modal.imageFile)} alt='Иллюстрация'/>}
           {modal.videoFile && <video controls autoPlay ref={videoRef}>
