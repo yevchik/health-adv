@@ -11,6 +11,7 @@ const Banner = ({
   special,
   descriptor,
   comment,
+  extraBlock
 }) => {
   return (
     <div className={css.wrapper} style={{ backgroundImage: `url("${ images('./' + bgImage) }")` }}>
@@ -24,6 +25,7 @@ const Banner = ({
           </div>
         }
         { comment }
+        { extraBlock }
       </Container>
     </div>
   )

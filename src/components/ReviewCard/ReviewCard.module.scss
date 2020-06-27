@@ -1,0 +1,46 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.card {
+  padding: 4rem;
+  background-color: $colorMainBg;
+  border: 1px solid var(--color-highlight-darker);
+}
+
+.name {
+  @include regular(var(--color-font-main), 600);
+
+  margin: 0;
+}
+
+.text {
+  @include regular(var(--color-font-main));
+
+  margin: 1.1rem 0 0 0;
+}
+
+.buttonMore {
+  @include resetButton;
+  @include capitals-bold(var(--color-highlight-buttons));
+
+  margin-top: 1.4rem;
+}
+
+.legend {
+  margin-top: 3.7rem;
+
+  .info {
+    @include capitals-bold(var(--color-font-main));
+
+    margin: 0;
+    opacity: 0.5;
+
+    &:not(:first-of-type) {
+      margin-top: 1.1rem;
+    }
+  }
+}
+
+.cardModal {
+  width: 100rem;
+}

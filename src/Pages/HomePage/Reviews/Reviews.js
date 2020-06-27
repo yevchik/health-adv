@@ -8,6 +8,7 @@ import classnames from 'classnames'
 import { decodeHTMLCharacters } from 'utils'
 import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
 import { images, videos } from 'index'
+import { MAX_COMMENT_PREVIEW_LENGTH } from 'utils/const'
 
 const Reviews = ({ title, list }) => {
   const [modal, setModalStatus] = useState({
@@ -73,8 +74,10 @@ const Reviews = ({ title, list }) => {
       let isButtonRequired = false
       if (!modal) {
         pureText = decodeHTMLCharacters(slide.text)
-        isButtonRequired = pureText.length > 130
-        pureText = pureText.length > 130 ? pureText.slice(0, 130) + '&hellip;' : slide.text
+        isButtonRequired = pureText.length > MAX_COMMENT_PREVIEW_LENGTH
+        pureText = pureText.length > MAX_COMMENT_PREVIEW_LENGTH
+          ? pureText.slice(0, MAX_COMMENT_PREVIEW_LENGTH) + '&hellip;'
+          : slide.text
       }
       return (
         <div className={classnames(css.slide, { [css.slideModal]: modal })} key={index}>
@@ -87,7 +90,11 @@ const Reviews = ({ title, list }) => {
                 {slide.date}
               </span>
             </div>
-            <p className={css.text} dangerouslySetInnerHTML={{__html: modal ? slide.text : pureText}} ref={reviewTextRef} />
+            <p
+              className={css.text}
+              dangerouslySetInnerHTML={{__html: modal ? slide.text : pureText}}
+              ref={reviewTextRef}
+            />
             {isButtonRequired &&
               <button
                 className={css.btn}
