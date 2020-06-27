@@ -13,6 +13,7 @@ import AboutUsFAQ from 'Pages/AboutUsFAQ/AboutUsFAQ'
 import AboutUsCertificates from 'Pages/AboutUsCertificates/AboutUsCertificates'
 import AboutUsDocuments from 'Pages/AboutUsDocuments/AboutUsDocuments'
 import AboutUsVacancies from 'Pages/AboutUsVacancies/AboutUsVacancies'
+import ReviewsPage from 'Pages/ReviewsPage/ReviewsPage'
 
 export const HOME_PAGE = '/'
 export const MEDIA_CENTER = '/media'
@@ -25,6 +26,7 @@ export const ABOUT_DOCUMENTS = `${ABOUT_US}/documents`
 export const ABOUT_VACANCIES = `${ABOUT_US}/vacancies`
 export const ARTICLE = '/article'
 export const SPECIALS = '/specials'
+export const REVIEWS = '/reviews'
 
 // TODO apply async import of page components to split the initial chunk
 
@@ -45,6 +47,7 @@ class Routes extends PureComponent {
         <Route exact path={ARTICLE} component={Article} />
         <Route exact path={SPECIALS} component={Specials} />
         <Route exact path={`${SPECIALS}/:id`} component={Special} />
+        <Route exact path={REVIEWS} component={ReviewsPage} />
       </Switch>
     )
   }

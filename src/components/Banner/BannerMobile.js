@@ -8,8 +8,9 @@ const BannerMobile = ({
   bgImageMobile,
   bgImageTablet,
   comment,
-  special,
   descriptor,
+  extraBlock,
+  special,
   title,
 }) => {
   const deviceType = useSelector(state => state.elastic.deviceType)
@@ -28,6 +29,7 @@ const BannerMobile = ({
           <p className={css.descriptor} dangerouslySetInnerHTML={{__html: descriptor}} />
         </div>
         }
+        { extraBlock }
       </ContainerMobile>
     </div>
   )

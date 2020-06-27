@@ -11,7 +11,8 @@ export {
   openVideoModal,
   closeVideoModal,
   openImageModal,
-  closeImageModal
+  closeImageModal,
+  closeModal
 } from './ui'
 
 export {

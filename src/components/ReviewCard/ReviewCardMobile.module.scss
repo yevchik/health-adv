@@ -1,0 +1,74 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.card {
+  padding: 1.7rem 1.9rem 2rem 1.6rem;
+  background-color: $colorMainBg;
+  border: 1px solid var(--color-highlight-darker);
+}
+
+.name {
+  @include regular(var(--color-font-main), 600);
+
+  margin: 0;
+}
+
+.text {
+  @include regular(var(--color-font-main));
+
+  margin: 1.1rem 0 0 0;
+}
+
+.buttonMore {
+  @include resetButton;
+  @include capitals-bold(var(--color-highlight-buttons));
+
+  margin-top: 1.2rem;
+}
+
+.legend {
+  margin-top: 1.6rem;
+
+  .info {
+    @include capitals-bold(var(--color-font-main));
+
+    margin: 0;
+    opacity: 0.5;
+
+    &:not(:first-of-type) {
+      margin-top: 0.9rem;
+    }
+  }
+}
+
+.cardModal {
+  width: 100%;
+}
+
+@media (min-width: $widthTabletMin) {
+  .card {
+    padding: 2.9rem 2.1rem 2.9rem 3.3rem;
+
+    &:not(.cardModal) {
+      width: 33.2rem;
+    }
+  }
+
+  .text {
+    margin: 0.6rem 0 0 0;
+  }
+
+  .buttonMore {
+    margin-top: 2.5rem;
+  }
+
+  .legend {
+    margin-top: 2.1rem;
+
+    .info {
+      &:not(:first-of-type) {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
