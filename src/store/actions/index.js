@@ -16,6 +16,7 @@ export {
 } from './ui'
 
 export {
+  saveData,
   setDoctorsFilter,
   updateDoctorsFilter
 } from './data'

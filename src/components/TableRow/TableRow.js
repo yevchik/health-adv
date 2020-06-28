@@ -5,16 +5,14 @@ import classnames from 'classnames'
 const TableRow = ({
   cellKey,
   cellValue,
-  index
+  index,
 }) => {
   return (
     <tr className={classnames(css.row, { [css.rowDark]: index % 2 === 0 })}>
       <td className={css.key}>
         { cellKey }
       </td>
-      <td className={css.value}>
-        { cellValue }
-      </td>
+      <td className={css.value} dangerouslySetInnerHTML={{ __html: cellValue }} />
     </tr>
   )
 }

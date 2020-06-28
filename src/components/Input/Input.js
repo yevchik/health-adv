@@ -8,17 +8,33 @@ const Input = ({
   name,
   placeholder = 'Введите значение',
   registration,
-  isError
+  isError,
+  value,
+  onChange,
+  inputPalette
 }) => {
-  return (
-    <input
-      className={classnames(css.input, className, { [css.inputError]: isError })}
-      type={type}
-      name={name}
-      placeholder={placeholder}
-      ref={registration}
-    />
-  )
+  return !value && !onChange
+    ? (
+      <input
+        className={classnames(css.input, className,
+          { [css.inputError]: isError },
+        )}
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        ref={registration}
+      />
+    )
+    : (
+      <input
+        className={classnames(css.input, className, { [css.inputLight]: inputPalette === 'light' })}
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      />
+    )
 }
 
 export default Input

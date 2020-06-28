@@ -1,8 +1,15 @@
-import { SET_DOCTORS_FILTER, UPDATE_DOCTORS_FILTER } from 'store/actions/actionTypes'
+import { SAVE_DATA, SET_DOCTORS_FILTER, UPDATE_DOCTORS_FILTER } from 'store/actions/actionTypes'
 
 export const ShowAll = {
   value: 'show all',
   label: 'Все '
+}
+
+export const saveData = data => {
+  return {
+    type: SAVE_DATA,
+    payload: data
+  }
 }
 
 export const setDoctorsFilter = data => {

@@ -145,3 +145,51 @@
     margin-top: 1rem;
   }
 }
+
+.compact {
+  padding: 2.8rem 2.5rem 5.7rem 2.5rem;
+  min-height: 26rem;
+
+  &.linkTeeth {
+    &::before {
+      bottom: 0.5rem;
+      right: 0;
+      width: 16.4rem;
+      height: 13.9rem;
+    }
+  }
+
+  &.linkImplant {
+    &::before {
+      bottom: 0.4rem;
+      right: -7.9rem;
+      width: 23.7rem;
+      height: 14.6rem;
+    }
+  }
+
+  &.linkJaw {
+    &::before {
+      bottom: -3.1rem;
+      right: -3rem;
+      width: 15.6rem;
+      height: 17.5rem;
+    }
+  }
+
+  .title {
+    @include h3($colorMainBg);
+
+    margin: 2.9rem 0 0 0;
+  }
+
+  .price {
+    margin-top: 1rem;
+  }
+
+  .bg {
+    top: 1rem;
+    left: 0.4rem;
+    width: 100%;
+  }
+}

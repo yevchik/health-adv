@@ -27,3 +27,16 @@
   color: var(--color-highlight-buttons);
   border: 1px solid var(--color-highlight-mosaic);
 }
+
+.inputLight {
+  color: var(--color-font-main);
+  border: 1px solid var(--color-highlight-darker);
+
+  &::placeholder {
+    color: var(--color-font-main);
+  }
+
+  &:hover {
+    border-color: rgba(70, 75, 86, 0.25)
+  }
+}

@@ -3,7 +3,7 @@ import css from './PromoBlock.module.scss'
 import Heading from 'components/Heading/Heading'
 import PromoList from 'components/PromoList/PromoList'
 
-const PromoBlock = ({ className, title = 'Акции' }) => {
+const PromoBlock = ({ className, title = 'Акции', isCompact }) => {
   const promoData = [
     {
       type: 'teeth',
@@ -46,6 +46,7 @@ const PromoBlock = ({ className, title = 'Акции' }) => {
       <PromoList
         data={promoData}
         className={css.promo}
+        isCompact={isCompact}
       />
     </div>
   )

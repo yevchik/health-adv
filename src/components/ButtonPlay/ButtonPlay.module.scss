@@ -91,3 +91,22 @@
     }
   }
 }
+
+.buttonMinified {
+  width: 2.9rem;
+
+  .icon {
+    width: 100%;
+
+    :global {
+      .circle__outer {
+        display: none;
+      }
+
+      .circle__inner {
+        stroke: var(--color-highlight-buttons);
+        transition-duration: 0.3s;
+      }
+    }
+  }
+}
