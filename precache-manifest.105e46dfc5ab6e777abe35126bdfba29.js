@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b8bc8dae830ba41cb4269d51e2ef35d7",
+    "revision": "39b90f76832317c538c4bf47328ec9c3",
     "url": "/health-adv/index.html"
   },
   {
-    "revision": "77e430906121bd31bf14",
+    "revision": "d7bcb980d0f52fcebae0",
     "url": "/health-adv/static/css/2.f448413e.chunk.css"
   },
   {
-    "revision": "af8576ec39a3a09c6bcb",
-    "url": "/health-adv/static/css/main.1d3a7d83.chunk.css"
+    "revision": "6b7f79e70416cd1edd79",
+    "url": "/health-adv/static/css/main.5f47b135.chunk.css"
   },
   {
-    "revision": "77e430906121bd31bf14",
-    "url": "/health-adv/static/js/2.3e520463.chunk.js"
+    "revision": "d7bcb980d0f52fcebae0",
+    "url": "/health-adv/static/js/2.66cc9126.chunk.js"
   },
   {
     "revision": "bfd0f9ef773c39bd68987561c36447e9",
-    "url": "/health-adv/static/js/2.3e520463.chunk.js.LICENSE.txt"
+    "url": "/health-adv/static/js/2.66cc9126.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "af8576ec39a3a09c6bcb",
-    "url": "/health-adv/static/js/main.ff7e0fb4.chunk.js"
+    "revision": "6b7f79e70416cd1edd79",
+    "url": "/health-adv/static/js/main.75f139a8.chunk.js"
   },
   {
     "revision": "f0fa69cd6c19926e7858",
@@ -292,6 +292,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/health-adv/static/media/media__specialists-preview--1@desktop.1c90816d.jpg"
   },
   {
+    "revision": "90d10a82286e2f7729706c34a4502a8b",
+    "url": "/health-adv/static/media/prices__banner@desktop.90d10a82.jpg"
+  },
+  {
+    "revision": "d01edcbabf592abc2575da9b6c16b284",
+    "url": "/health-adv/static/media/prices__banner@tablet.d01edcba.jpg"
+  },
+  {
     "revision": "c069e4002e9f6fee5e3d8a5b137eb340",
     "url": "/health-adv/static/media/review-banner__bg@desktop.c069e400.jpg"
   },
@@ -308,12 +316,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/health-adv/static/media/review-slider__preview.fa587f2e.jpg"
   },
   {
-    "revision": "1699f25aec42fdf59c003c030a1277ac",
-    "url": "/health-adv/static/media/review__banner--bottom.1699f25a.svg"
+    "revision": "7b5d91985cc4e53d43e24d5667fd97dc",
+    "url": "/health-adv/static/media/review__banner--bottom.7b5d9198.svg"
   },
   {
-    "revision": "2c08edb43fd0efd383dbdeebf9330679",
-    "url": "/health-adv/static/media/review__banner--top.2c08edb4.svg"
+    "revision": "7a3fe92c0b9b2e70f8a91a164c66daee",
+    "url": "/health-adv/static/media/review__banner--top.7a3fe92c.svg"
   },
   {
     "revision": "20114aef1f97182cd875c898643d88b2",
