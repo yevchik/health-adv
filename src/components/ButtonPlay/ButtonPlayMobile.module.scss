@@ -58,3 +58,9 @@
     }
   }
 }
+
+@media (min-width: $widthTabletMin) {
+  .buttonMinified {
+    width: 2.3rem;
+  }
+}

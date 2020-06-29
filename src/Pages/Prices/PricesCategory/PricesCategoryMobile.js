@@ -20,6 +20,8 @@ const PricesCategoryMobile = ({
   const items = shownItems.map(({ subcategory, services }, index) => {
     const serviceItems = services.map(({ label, video, price }, rowIndex) => (
       <TableRowMobile
+        keyClassName={css.rowKey}
+        valueClassName={css.rowValue}
         cellKey={(
           <div className={css.key}>
             <span className={css.label}>
