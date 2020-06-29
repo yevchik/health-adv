@@ -20,3 +20,19 @@
     margin-top: 4.8rem;
   }
 }
+
+@media (min-width: $widthTabletMin) {
+  .filters {
+    margin-top: 2.5rem;
+  }
+
+  .promo {
+    margin-top: 3.5rem;
+  }
+
+  .pricelist {
+    .content {
+      margin-top: 6rem;
+    }
+  }
+}

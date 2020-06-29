@@ -4,16 +4,18 @@ import classnames from 'classnames'
 
 const TableRowMobile = ({
   className,
+  keyClassName,
+  valueClassName,
   cellKey,
   cellValue,
   index
 }) => {
   return (
     <tr className={classnames(css.row, className, { [css.rowDark]: index % 2 === 0 })}>
-      <td className={css.key}>
+      <td className={classnames(css.key, keyClassName)}>
         { cellKey }
       </td>
-      <td className={css.value} dangerouslySetInnerHTML={{ __html: cellValue }} />
+      <td className={classnames(css.value, valueClassName)} dangerouslySetInnerHTML={{ __html: cellValue }} />
     </tr>
   )
 }
