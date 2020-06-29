@@ -13,9 +13,7 @@ const TableRowMobile = ({
       <td className={css.key}>
         { cellKey }
       </td>
-      <td className={css.value}>
-        { cellValue }
-      </td>
+      <td className={css.value} dangerouslySetInnerHTML={{ __html: cellValue }} />
     </tr>
   )
 }

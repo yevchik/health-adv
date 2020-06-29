@@ -3,7 +3,7 @@ import css from './PromoBlockMobile.module.scss'
 import PromoListMobile from 'components/PromoList/PromoListMobile'
 import Heading from 'components/Heading/Heading'
 
-const PromoBlockMobile = ({ className, title = 'Акции' }) => {
+const PromoBlockMobile = ({ className, title = 'Акции', isCompact }) => {
   const promoData = [
     {
       type: 'teeth',
@@ -43,7 +43,7 @@ const PromoBlockMobile = ({ className, title = 'Акции' }) => {
   return (
     <div className={className}>
       <Heading content={title} type='standard' />
-      <PromoListMobile data={promoData} className={css.promo} />
+      <PromoListMobile data={promoData} className={css.promo} isCompact={isCompact} />
     </div>
   )
 }

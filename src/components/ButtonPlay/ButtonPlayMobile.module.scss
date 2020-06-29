@@ -39,3 +39,22 @@
     margin-top: 0.9rem;
   }
 }
+
+.buttonMinified {
+  width: 1.8rem;
+
+  .icon {
+    width: 100%;
+
+    :global {
+      .circle__outer {
+        display: none;
+      }
+
+      .circle__inner {
+        stroke: var(--color-highlight-buttons);
+        transition-duration: 0.3s;
+      }
+    }
+  }
+}

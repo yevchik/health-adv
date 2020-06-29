@@ -4,7 +4,7 @@ import css from './Intro.module.scss'
 import classnames from 'classnames'
 import IconPhone from 'containers/Header/_assets/IconPhone'
 import IconClock from 'assets/icons/IconClock'
-import IconSearch from 'containers/Header/_assets/IconSearch'
+import IconSearch from 'assets/icons/IconSearch'
 import IconEye from 'containers/Header/_assets/IconEye'
 
 const Intro = ({ className, data }) => (

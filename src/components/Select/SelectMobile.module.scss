@@ -19,7 +19,7 @@
       }
 
       &__value-container {
-        padding: 0 2.5rem;
+        padding: 0 1.6rem;
         height: 100%;
       }
 
@@ -41,8 +41,8 @@
       }
 
       &__dropdown-indicator {
-        padding-right: 2rem;
-        padding-left: 2rem;
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
 
         svg {
           fill: var(--color-font-main);
@@ -51,6 +51,7 @@
 
       &__menu {
         border-color: var(--color-highlight-darker);
+        z-index: 2;
       }
 
       &__option {

@@ -12,7 +12,8 @@ const AdvCard = ({
   duration,
   title,
   price,
-  styles
+  styles,
+  isCompact
 }) => (
   <Link
     className={classnames(css.link, {
@@ -20,6 +21,7 @@ const AdvCard = ({
       [css.linkTeeth]: type === 'teeth',
       [css.linkImplant]: type === 'implant-single',
       [css.linkJaw]: type === 'implants-jaw',
+      [css.compact]: isCompact
     })}
     to={url}
     style={{ backgroundColor: color }}
@@ -29,11 +31,15 @@ const AdvCard = ({
     </span>
     <p className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
     <span className={css.price} dangerouslySetInnerHTML={{ __html: price }} />
-    <span className={css.label}>
-      Подробнее
-      <IconArrowRight className={css.icon} />
-    </span>
     <IconDotsBg className={css.bg} />
+    {!isCompact &&
+      <>
+        <span className={css.label}>
+          Подробнее
+          <IconArrowRight className={css.icon} />
+        </span>
+      </>
+    }
   </Link>
 )
 

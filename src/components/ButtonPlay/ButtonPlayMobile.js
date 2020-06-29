@@ -8,10 +8,13 @@ const ButtonPlayMobile = ({
   className,
   label = '',
   handleClick,
-  background = 'none'
+  background = 'none',
+  isMinified
 }) => (
   <button
-    className={classnames(css.button, className)}
+    className={classnames(css.button, className,
+      { [css.buttonMinified]: isMinified }
+    )}
     type='button'
     onClick={handleClick}
     style={{ backgroundImage: background }}

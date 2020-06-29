@@ -9,10 +9,14 @@ const ButtonPlay = ({
   label = '',
   handleClick,
   background = 'none',
-  iconType = 'circle'
+  iconType = 'circle',
+  isMinified
 }) => (
   <button
-    className={classnames(css.button, className, { [css.buttonSquare]: iconType === 'square' })}
+    className={classnames(css.button, className,
+      { [css.buttonSquare]: iconType === 'square' },
+      { [css.buttonMinified]: isMinified }
+    )}
     type='button'
     onClick={handleClick}
     style={{ backgroundImage: background }}

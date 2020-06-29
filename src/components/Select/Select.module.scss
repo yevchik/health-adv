@@ -2,6 +2,8 @@
 @import "styles/mixins";
 
 .select {
+  position:relative;
+
   :global {
     .simplebar-placeholder {
       display: block;
@@ -55,6 +57,7 @@
 
       &__menu {
         border-color: var(--color-highlight-darker);
+        z-index: 2;
       }
 
       &__option {

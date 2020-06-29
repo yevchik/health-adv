@@ -100,3 +100,49 @@
   left: 0.4rem;
   width: 30.3rem;
 }
+
+.compact {
+  padding: 1.3rem 2.7rem 3rem 2rem;
+  min-height: 14.1rem;
+
+  &.linkTeeth {
+    &::before {
+      bottom: 0.5rem;
+      right: 0;
+      width: calc(0.7 * 16.4rem);
+      height: calc(0.7 * 13.9rem);
+    }
+  }
+
+  &.linkImplant {
+    &::before {
+      bottom: 0.4rem;
+      right: -4rem;
+      width: calc(0.7 * 23.7rem);
+      height: calc(0.7 * 14.6rem);
+    }
+  }
+
+  &.linkJaw {
+    &::before {
+      bottom: -3.1rem;
+      right: -3rem;
+      width: calc(0.7 * 15.6rem);
+      height: calc(0.7 * 17.5rem);
+    }
+  }
+
+  .title {
+    margin: 1.1rem 0 0 0;
+  }
+
+  .price {
+    margin-top: 1rem;
+  }
+
+  .bg {
+    top: 1rem;
+    left: 0.4rem;
+    width: 100%;
+  }
+}
