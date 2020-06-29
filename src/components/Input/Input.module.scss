@@ -1,6 +1,10 @@
 @import "styles/variables";
 @import "styles/mixins";
 
+.wrapper {
+  position: relative;
+}
+
 .input {
   @include regular($colorMainBg);
 
@@ -39,4 +43,17 @@
   &:hover {
     border-color: rgba(70, 75, 86, 0.25)
   }
+}
+
+.inputSearch {
+  padding-left: 6.1rem;
+}
+
+.iconSearch {
+  position: absolute;
+  top: 2rem;
+  left: 2.8rem;
+  width: 1.9rem;
+  fill: var(--color-font-main);
+  opacity: 0.5;
 }

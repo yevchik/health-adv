@@ -1,6 +1,7 @@
 import React from 'react'
 import css from './Input.module.scss'
 import classnames from 'classnames'
+import IconSearch from 'assets/icons/IconSearch'
 
 const Input = ({
   className,
@@ -9,11 +10,12 @@ const Input = ({
   placeholder = 'Введите значение',
   registration,
   isError,
+  isSearch,
   value,
   onChange,
   inputPalette
 }) => {
-  return !value && !onChange
+  const input = !value && !onChange
     ? (
       <input
         className={classnames(css.input, className,
@@ -27,7 +29,10 @@ const Input = ({
     )
     : (
       <input
-        className={classnames(css.input, className, { [css.inputLight]: inputPalette === 'light' })}
+        className={classnames(css.input, className,
+          { [css.inputLight]: inputPalette === 'light' },
+          { [css.inputSearch]: isSearch },
+        )}
         type={type}
         name={name}
         placeholder={placeholder}
@@ -35,6 +40,15 @@ const Input = ({
         onChange={onChange}
       />
     )
+
+  return (
+    <div className={css.wrapper}>
+      {isSearch &&
+      <IconSearch className={css.iconSearch} />
+      }
+      { input }
+    </div>
+  )
 }
 
 export default Input

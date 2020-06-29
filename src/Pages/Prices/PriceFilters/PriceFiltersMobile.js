@@ -1,11 +1,11 @@
 import React from 'react'
-import css from './PriceFilters.module.scss'
+import css from './PriceFiltersMobile.module.scss'
 import classnames from 'classnames'
 import { useSelector } from 'react-redux'
-import Select from 'components/Select/Select'
-import Input from 'components/Input/Input'
+import InputMobile from 'components/Input/InputMobile'
+import SelectMobile from 'components/Select/SelectMobile'
 
-const PriceFilters = ({
+const PriceFiltersMobile = ({
   className,
 }) => {
   const list = useSelector(state => state.data.fetchedData)
@@ -24,14 +24,14 @@ const PriceFilters = ({
 
   return (
     <div className={classnames(css.wrapper, className)}>
-      <Input
+      <InputMobile
         placeholder='Поиск'
         value=''
         onChange={() => {}}
         inputPalette='light'
         isSearch={true}
       />
-      <Select
+      <SelectMobile
         onChange={() => {}}
         options={expertiseOptions}
         value={expertiseOptions.find(item => item.value === 'all')}
@@ -40,4 +40,4 @@ const PriceFilters = ({
   )
 }
 
-export default PriceFilters
+export default PriceFiltersMobile
