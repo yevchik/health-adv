@@ -10,7 +10,9 @@ import IconDotsBg from 'assets/icons/IconDotsBg'
 const SignupBanner = ({
   title = 'Хотите узнавать первым о&nbsp;наших акциях?',
   descriptor = 'Подпишитесь на&nbsp;рассылку и&nbsp;будьте в&nbsp;курсе наших акций',
-  buttonLabel = 'Отправить'
+  buttonLabel = 'Отправить',
+  specialFormComponent,
+  noWarning = false
 }) => {
   return (
     <div className={css.wrapper}>
@@ -19,12 +21,14 @@ const SignupBanner = ({
         <Heading content={title} className={css.title} />
         <p className={css.descriptor} dangerouslySetInnerHTML={{ __html: descriptor }} />
         <div className={css.form}>
-          <SignupForm buttonLabel={buttonLabel} />
+          {specialFormComponent || <SignupForm buttonLabel={buttonLabel} />}
         </div>
-        <p className={css.warning}>
-          <IconLock className={css.iconLock} />
-          Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с <Link className={css.link} to='/'>политикой</Link> ознакомлен
-        </p>
+        {!noWarning &&
+          <p className={css.warning}>
+            <IconLock className={css.iconLock} />
+            Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с <Link className={css.link} to='/'>политикой</Link> ознакомлен
+          </p>
+        }
       </Container>
     </div>
   )

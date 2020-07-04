@@ -1,0 +1,64 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 25rem 22rem 1fr;
+  grid-auto-rows: 6rem;
+  grid-gap: 3rem;
+
+  .fieldset {
+    grid-column: 1 / 3;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .text {
+    @include regular($colorMainBg);
+
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    padding: 1.65rem 2.5rem 1.4rem 2.5rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    outline: none;
+    transition-duration: $transitionDuration;
+    transition-property: background-color, outline, color;
+    zoom: 0;
+    resize: none;
+
+    &::placeholder {
+      color: $colorMainBg;
+      opacity: 0.5;
+    }
+
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  .button {
+    @include resetButton;
+    @include capitals-bold-small($colorMainBg);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3.7rem 0 4.4rem;
+    height: 6rem;
+    background-color: var(--color-highlight-buttons);
+
+    .icon {
+      width: 1.5rem;
+      stroke: $colorMainBg;
+    }
+  }
+
+  .warning {
+    grid-column: 2 / -1;
+    display: flex;
+    align-items: center;
+  }
+}
