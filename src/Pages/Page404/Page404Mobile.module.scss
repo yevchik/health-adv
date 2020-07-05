@@ -114,3 +114,57 @@
   stroke: var(--color-highlight-buttons);
   transition-duration: $transitionDuration;
 }
+
+@media (min-width: $widthTabletMin) {
+  .container {
+    padding-top: 16rem;
+    padding-bottom: 14rem;
+
+    .code {
+      &::before {
+        top: 4rem;
+        left: calc(50% - 22.7rem / 2);
+        width: 22.7rem;
+        height: 22.7rem;
+      }
+
+      &::after {
+        top: 0;
+        left: calc(50% - 28.4rem / 2);
+        width: 28.4rem;
+        height: 30rem;
+      }
+    }
+
+    .number {
+      font-size: 20rem;
+      line-height: 30rem;
+
+      &:not(:first-child) {
+        margin-left: 22.5rem;
+      }
+    }
+
+    .descriptor {
+      margin: 3.7rem 0 0 0;
+      font-size: 2.6rem;
+      line-height: 4rem;
+    }
+
+    .details {
+      margin: 0.7rem 0 0 0;
+    }
+
+    .list {
+      display: flex;
+      justify-content: center;
+      margin-top: 3.5rem;
+    }
+
+    .item {
+      &:not(:first-child) {
+        margin-left: 5.2rem;
+      }
+    }
+  }
+}
