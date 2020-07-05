@@ -26,6 +26,7 @@ import AboutUsVacanciesMobile from 'Pages/AboutUsVacancies/AboutUsVacanciesMobil
 import ReviewsPageMobile from 'Pages/ReviewsPage/ReviewsPageMobile'
 import PricesMobile from 'Pages/Prices/PricesMobile'
 import ContactsMobile from 'Pages/Contacts/ContactsMobile'
+import Page404Mobile from 'Pages/Page404/Page404Mobile'
 
 export const HOME_PAGE = '/'
 
@@ -51,6 +52,7 @@ class RoutesMobile extends PureComponent {
         <Route exact path={REVIEWS} component={ReviewsPageMobile} />
         <Route exact path={PRICES} component={PricesMobile} />
         <Route exact path={CONTACTS} component={ContactsMobile} />
+        <Route component={Page404Mobile} />
       </Switch>
     )
   }

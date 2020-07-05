@@ -16,6 +16,7 @@ import AboutUsVacancies from 'Pages/AboutUsVacancies/AboutUsVacancies'
 import ReviewsPage from 'Pages/ReviewsPage/ReviewsPage'
 import Prices from 'Pages/Prices/Prices'
 import Contacts from 'Pages/Contacts/Contacts'
+import Page404 from 'Pages/Page404/Page404'
 
 export const HOME_PAGE = '/'
 export const MEDIA_CENTER = '/media'
@@ -54,6 +55,7 @@ class Routes extends PureComponent {
         <Route exact path={REVIEWS} component={ReviewsPage} />
         <Route exact path={PRICES} component={Prices} />
         <Route exact path={CONTACTS} component={Contacts} />
+        <Route component={Page404} />
       </Switch>
     )
   }
