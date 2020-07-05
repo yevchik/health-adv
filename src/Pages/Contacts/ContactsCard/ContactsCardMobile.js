@@ -55,13 +55,15 @@ const ContactsCardMobile = ({
                 { phone }
               </li>
             }
+            {mail &&
+              <li>
+                <a className={classnames(css.item, css.itemEmail)} href={`mailto:${mail}`}>
+                  <IconMail className={css.icon} />
+                  { mail }
+                </a>
+              </li>
+            }
           </ul>
-          {mail &&
-            <a className={classnames(css.item, css.itemEmail)} href={`mailto:${mail}`}>
-              <IconMail className={css.icon} />
-              { mail }
-            </a>
-          }
         </div>
       </div>
       <SliderCardsMobile className={css.slider}>

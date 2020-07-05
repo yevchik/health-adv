@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import css from './ContactsTabsMobile.module.scss'
 import TabCityMobile from 'components/TabCity/TabCityMobile'
 import TabLocationMobile from 'components/TabLocation/TabLocationMobile'
@@ -10,6 +10,10 @@ const ContactsTabsMobile = ({
   updateSelectedCity
 }) => {
   const [selectedLocation, updateSelectedLocation] = useState(0)
+
+  useEffect(() => {
+    updateSelectedLocation(0)
+  }, [selectedCity])
 
   if (!data) return null
 

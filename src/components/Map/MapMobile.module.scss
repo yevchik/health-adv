@@ -1,3 +1,5 @@
+@import "styles/variables";
+
 .map {
   width: 100%;
   height: 46.2rem;
@@ -6,5 +8,11 @@
     [class*="ymaps-2"][class*="-ground-pane"] {
       filter: grayscale(1);
     }
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .map {
+    height: 45.6rem;
   }
 }

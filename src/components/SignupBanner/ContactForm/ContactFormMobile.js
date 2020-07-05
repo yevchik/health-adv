@@ -3,6 +3,7 @@ import css from './ContactFormMobile.module.scss'
 import { useForm } from "react-hook-form"
 import Button from 'components/Button/Button'
 import Input from 'components/Input/Input'
+import classnames from 'classnames'
 
 const ContactFormMobile = ({ buttonLabel = 'Отправить', warning }) => {
   const { register, handleSubmit, errors } = useForm()
@@ -11,7 +12,7 @@ const ContactFormMobile = ({ buttonLabel = 'Отправить', warning }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={css.wrapper}>
-        <fieldset className={css.fieldset}>
+        <fieldset className={classnames(css.fieldset, css.fieldsetName)}>
           <Input
             className={css.input}
             type='text'
@@ -21,7 +22,7 @@ const ContactFormMobile = ({ buttonLabel = 'Отправить', warning }) => {
             isError={errors.subscribeName}
           />
         </fieldset>
-        <fieldset className={css.fieldset}>
+        <fieldset className={classnames(css.fieldset, css.fieldsetEmail)}>
           <Input
             className={css.input}
             type='email'

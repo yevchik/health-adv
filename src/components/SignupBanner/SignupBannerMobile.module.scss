@@ -64,12 +64,22 @@
     padding-bottom: 4rem;
   }
 
+  .dots {
+    position: absolute;
+    bottom: -57%;
+    right: -20%;
+    width: 50%;
+    z-index: 0;
+  }
+
   .container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
   }
 
   .descriptor {
+    padding-right: 30%;
     width: 100%;
   }
 
