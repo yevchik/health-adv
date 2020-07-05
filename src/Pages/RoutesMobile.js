@@ -5,7 +5,7 @@ import {
   ABOUT_CERTIFICATES, ABOUT_DOCUMENTS,
   ABOUT_FAQ,
   ABOUT_US, ABOUT_VACANCIES,
-  ARTICLE,
+  ARTICLE, CONTACTS,
   DOCTORS,
   MEDIA_ARTICLE,
   MEDIA_CENTER, PRICES, REVIEWS,
@@ -25,6 +25,7 @@ import AboutUsDocumentsMobile from 'Pages/AboutUsDocuments/AboutUsDocumentsMobil
 import AboutUsVacanciesMobile from 'Pages/AboutUsVacancies/AboutUsVacanciesMobile'
 import ReviewsPageMobile from 'Pages/ReviewsPage/ReviewsPageMobile'
 import PricesMobile from 'Pages/Prices/PricesMobile'
+import ContactsMobile from 'Pages/Contacts/ContactsMobile'
 
 export const HOME_PAGE = '/'
 
@@ -49,6 +50,7 @@ class RoutesMobile extends PureComponent {
         <Route exact path={`${SPECIALS}/:id`} component={SpecialMobile} />
         <Route exact path={REVIEWS} component={ReviewsPageMobile} />
         <Route exact path={PRICES} component={PricesMobile} />
+        <Route exact path={CONTACTS} component={ContactsMobile} />
       </Switch>
     )
   }

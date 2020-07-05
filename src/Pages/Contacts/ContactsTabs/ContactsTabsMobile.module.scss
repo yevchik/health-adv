@@ -1,0 +1,100 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.cities {
+  margin-top: 2.1rem;
+  margin-left: calc(-1 * var(--padding-mobile));
+  padding-left: var(--padding-mobile);
+  width: calc(100% + 2 * var(--padding-mobile));
+  overflow: scroll;
+
+  .citiesWrapper {
+    display: flex;
+    align-items: flex-start;
+    width: max-content;
+  }
+
+  .city {
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
+
+    &:last-child {
+      margin-right: var(--padding-mobile);
+    }
+  }
+}
+
+.locations {
+  position: relative;
+  margin-top: 1.2rem;
+  margin-left: calc(-1 * var(--padding-mobile));
+  padding-left: var(--padding-mobile);
+  width: calc(100% + 2 * var(--padding-mobile));
+  overflow: scroll;
+}
+
+.locationsWrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  padding-right: var(--padding-mobile);
+  width: max-content;
+
+  .location {
+    height: 100%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - var(--padding-mobile));
+    height: 0.1rem;
+    background-color: var(--color-highlight-darkest);
+  }
+}
+
+.button {
+  @include resetButton;
+
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 3rem;
+  height: 100%;
+  z-index: 2;
+
+  &:hover {
+    .icon {
+      stroke: var(--color-highlight-buttons);
+    }
+  }
+
+  .icon {
+    width: 1rem;
+    stroke: var(--color-font-main);
+    transition-duration: $transitionDuration;
+  }
+}
+
+.buttonPrev {
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.buttonNext {
+  right: 0;
+}
+
+.buttonDisabled {
+  display: none;
+}
+
+.content {
+  margin-top: 3rem;
+  padding-bottom: 5rem;
+}

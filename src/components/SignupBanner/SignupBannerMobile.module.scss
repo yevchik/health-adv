@@ -2,17 +2,28 @@
 @import "styles/mixins";
 
 .wrapper {
+  position: relative;
   padding-top: 3.5rem;
   padding-bottom: 3.9rem;
   background-color: var(--color-font-main);
+  overflow: hidden;
+}
+
+.dots {
+  position: absolute;
+  bottom: -30%;
+  right: -47%;
+  width: 100%;
 }
 
 .title {
+  font-size: 2.8rem;
+  line-height: 3.2rem;
   color: $colorMainBg;
 }
 
 .descriptor {
-  @include h5($colorMainBg);
+  @include regular($colorMainBg);
 
   margin: 1.4rem 0 0 0;
 }
@@ -31,7 +42,7 @@
 }
 
 .form {
-  margin-top: 4.8rem;
+  margin-top: 3rem;
 }
 
 .iconLock {

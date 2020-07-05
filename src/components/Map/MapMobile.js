@@ -1,11 +1,11 @@
 import React from 'react'
-import css from './Map.module.scss'
+import css from './MapMobile.module.scss'
 import { Map, Placemark, YMaps } from 'react-yandex-maps'
 import { useSelector } from 'react-redux'
 import mapPin from 'assets/images/map-pin.svg'
 import classnames from 'classnames'
 
-const MapComponent = ({
+const MapComponentMobile = ({
   className,
   marks = [],
   center,
@@ -56,4 +56,4 @@ const MapComponent = ({
   )
 }
 
-export default MapComponent
+export default MapComponentMobile

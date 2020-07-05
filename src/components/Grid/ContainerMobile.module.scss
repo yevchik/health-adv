@@ -4,6 +4,13 @@
   padding: 0 1.5rem;
 }
 
+.wrapperDecorated {
+  margin-top: -4rem;
+  background-color: $colorMainBg;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+}
+
 @media (min-width: $widthTabletMin) {
   .wrapper {
     padding: 0 2.5rem;

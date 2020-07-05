@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import css from './Contacts.module.scss'
-import Container from 'components/Grid/Container'
+import css from './ContactsMobile.module.scss'
 import { HOME_PAGE } from 'Pages/Routes'
-import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs'
 import Heading from 'components/Heading/Heading'
-import ContactsTabs from 'Pages/Contacts/ContactsTabs/ContactsTabs'
-import Banner from 'components/Banner/Banner'
-import MapComponent from 'components/Map/Map'
-import SignupBanner from 'components/SignupBanner/SignupBanner'
-import ContactForm from 'components/SignupBanner/ContactForm/ContactForm'
 import IconLock from 'assets/icons/IconLock'
 import { Link } from 'react-router-dom'
+import BannerMobile from 'components/Banner/BannerMobile'
+import ContainerMobile from 'components/Grid/ContainerMobile'
+import BreadcrumbsMobile from 'components/Breadcrumbs/BreadcrumbsMobile'
+import SignupBannerMobile from 'components/SignupBanner/SignupBannerMobile'
+import ContactsTabsMobile from 'Pages/Contacts/ContactsTabs/ContactsTabsMobile'
+import MapComponentMobile from 'components/Map/MapMobile'
+import ContactFormMobile from 'components/SignupBanner/ContactForm/ContactFormMobile'
 
-const Contacts = () => {
+const ContactsMobile = () => {
   const contactsData = {
     banner: {
       bgImage: 'contacts__banner@desktop.jpg',
+      bgImageMobile: 'contacts__banner@mobile.jpg',
+      bgImageTablet: 'contacts__banner@tablet.jpg',
       title: 'Контакты',
       descriptor: 'Выбирайте подходящую клинику рядом с&nbsp;домом или работой, и&nbsp;записывайтесь на&nbsp;приём.',
     },
@@ -24,7 +26,7 @@ const Contacts = () => {
       {
         name: 'Клиника Patterson Dental 1',
         city: 'Москва',
-        address: '1 - 105062, Москва, 1-й Бабьегородский пер., д. 28',
+        address: '1 - 105062, Москва, 1-й Бабьегородский пер., д. 28, подъезд 3, офис 732',
         coords: [55.799769, 37.677028],
         schedule: 'Ежедневно с 10.00 до 21.00',
         phone: '+7 (495) 453 95 93',
@@ -212,7 +214,7 @@ const Contacts = () => {
       },
     ],
     mapSettings: {
-      zoom: 8,
+      zoom: 7,
       center: [55.126557, 38.750870]
     }
   }
@@ -246,32 +248,37 @@ const Contacts = () => {
   }, [data, contactsData])
 
   const pins = contactsData.list.map(item => item.coords)
-  console.log(pins)
 
   return (
     <>
-      <Banner {...contactsData.banner} />
-      <Container className={css.container}>
-        <Breadcrumbs dataArray={breadcrumbs} />
+      <BannerMobile {...contactsData.banner} />
+      <ContainerMobile className={css.container} isDecorated>
+        <BreadcrumbsMobile dataArray={breadcrumbs} />
         <Heading
           className={css.title}
           content={contactsData.title}
           type='standard'
         />
-        <ContactsTabs data={data} selectedCity={selectedCity} updateSelectedCity={updateSelectedCity} />
-      </Container>
-      <MapComponent
+        <ContactsTabsMobile
+          data={data}
+          selectedCity={selectedCity}
+          updateSelectedCity={updateSelectedCity}
+        />
+      </ContainerMobile>
+      <MapComponentMobile
         {...contactsData.mapSettings}
         marks={pins}
       />
-      <SignupBanner
+      <SignupBannerMobile
         title='Остались вопросы?'
         descriptor='Мы ответим на все интересующие вопросы и поможем в любых даже сложных случаях'
         noWarning={true}
-        specialFormComponent={<ContactForm
+        specialFormComponent={<ContactFormMobile
           warning={<p className={css.warning}>
             <IconLock className={css.iconLock} />
-            Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с <Link className={css.link} to='/'>политикой</Link> ознакомлен
+            <span>
+              Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с <Link className={css.link} to='/'>политикой</Link> ознакомлен
+            </span>
           </p>}
         />}
       />
@@ -279,4 +286,4 @@ const Contacts = () => {
   )
 }
 
-export default Contacts
+export default ContactsMobile
