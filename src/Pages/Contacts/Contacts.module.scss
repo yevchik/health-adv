@@ -1,0 +1,37 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.container {
+  padding-top: 3.8rem;
+}
+
+.title {
+  margin-top: 3.4rem;
+}
+
+.content {
+  margin-top: 4rem;
+  padding-bottom: 11rem;
+}
+
+.warning {
+  @include regular($colorMainBg);
+
+  display: flex;
+  align-items: center;
+  margin: 0;
+  opacity: 0.7;
+}
+
+.iconLock {
+  margin-right: 1.6rem;
+  width: 1.6rem;
+  fill: $colorMainBg;
+}
+
+.link {
+  @include regular($colorMainBg);
+
+  margin: 0 0.5rem;
+  text-decoration: underline;
+}

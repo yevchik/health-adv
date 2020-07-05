@@ -1,0 +1,95 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.info {
+  margin-top: 2rem;
+}
+
+.list {
+  @include resetList;
+}
+
+.item {
+  @include regular(var(--color-font-main));
+
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  grid-column-gap: 1.2rem;
+  align-items: flex-start;
+  opacity: 0.7;
+
+  &:not(:first-child),
+  &Email {
+    margin-top: 0.7rem;
+  }
+
+  &Email {
+    transition-duration: $transitionDuration;
+
+    .icon {
+      transition-duration: $transitionDuration;
+    }
+  }
+}
+
+.icon {
+  width: 2.4rem;
+  fill: var(--color-font-main);
+  opacity: 0.5;
+}
+
+.iconSchedule,
+.iconPhone {
+  opacity: 1;
+}
+
+.slider {
+  margin-top: 3rem;
+}
+
+.slide {
+  width: 100%;
+  height: 17.6rem;
+  object-fit: cover;
+}
+
+@media (min-width: $widthTabletMin) {
+  .info {
+    margin-top: 2.5rem;
+    padding: 3.5rem;
+    border: 1px solid var(--color-highlight-darker);
+  }
+
+  .list {
+    @include resetList;
+
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-column-gap: 3rem;
+    grid-row-gap: 1rem;
+  }
+
+  .item {
+    &:not(:first-child),
+    &Email {
+      margin-top: 0;
+    }
+  }
+
+  .slider {
+    :global {
+      .swiper-slide {
+        width: 66.5rem;
+      }
+    }
+  }
+
+  .slide {
+    height: 35.8rem;
+    object-fit: cover;
+
+    &:not(:first-of-type) {
+      margin-left: 2rem;
+    }
+  }
+}

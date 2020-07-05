@@ -1,0 +1,32 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.button {
+  @include resetButton;
+  @include regular(var(--color-font-main));
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 3rem 1.2rem 3rem;
+  border: 1px solid var(--color-highlight-darker);
+  transition-duration: $transitionDuration;
+
+  .icon {
+    width: 2.4rem;
+    fill: var(--color-font-main);
+    opacity: 0.5;
+    transition-duration: $transitionDuration;
+  }
+}
+
+.buttonActive {
+  color: $colorMainBg;
+  background-color: var(--color-highlight-mosaic);
+  border-color: var(--color-highlight-mosaic);
+  pointer-events: none;
+
+  .icon {
+    fill: $colorMainBg;
+  }
+}

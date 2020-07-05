@@ -1,0 +1,10 @@
+.map {
+  width: 100%;
+  height: 77rem;
+
+  :global {
+    [class*="ymaps-2"][class*="-ground-pane"] {
+      filter: grayscale(1);
+    }
+  }
+}
