@@ -7,6 +7,10 @@ import IconLogo from 'containers/Header/_assets/IconLogo'
 import DesktopMenu from './components/DesktopMenu/DesktopMenu'
 import Button from 'components/Button/Button'
 import Intro from 'containers/Header/components/Intro/Intro'
+import { useDispatch } from 'react-redux'
+import { openContentModal } from 'store/actions/ui'
+// import ModalAppointment from 'components/ModalAppointment/ModalAppointment'
+import ModalReview from 'components/ModalReview/ModalReview'
 
 const Header = () => {
   const headerData = {
@@ -76,6 +80,8 @@ const Header = () => {
     ]
   }
 
+  const dispatch = useDispatch()
+
   return (
     <header className={css.header}>
       <Intro className={css.top} data={headerData} />
@@ -90,7 +96,9 @@ const Header = () => {
           <Button
             label='Записаться'
             btnStyle='decorated'
-            handleClick={() => {}}
+            handleClick={() => {
+              dispatch(openContentModal(<ModalReview />))}
+            }
           />
         </div>
       </Container>

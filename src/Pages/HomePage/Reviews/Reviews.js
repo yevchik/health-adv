@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import css from './Reviews.module.scss'
 import Container from 'components/Grid/Container'
 import Heading from 'components/Heading/Heading'
@@ -17,31 +17,6 @@ const Reviews = ({ title, list }) => {
   })
 
   const reviewTextRef = useRef(null)
-
-  const handleReviewScroll = element => {
-    if (element.target.scrollTop !== 0) {
-      element.target.classList.remove(`${[css.textCut]}`)
-    } else {
-      element.target.classList.add(`${[css.textCut]}`)
-    }
-  }
-
-  useEffect(() => {
-    if (modal.isVisible && reviewTextRef.current) {
-      const reviewElement = reviewTextRef.current
-      const reviewBoundingHeight = reviewElement.getBoundingClientRect().height
-      const reviewTotalHeight = reviewElement.scrollHeight
-
-      if (reviewTotalHeight > reviewBoundingHeight) {
-        reviewElement.classList.add(`${[css.textCut]}`)
-        reviewElement.addEventListener('scroll', handleReviewScroll)
-      }
-    }
-
-    if (!modal.isVisible && reviewTextRef.current) {
-      reviewTextRef.current.removeEventListener('scroll', handleReviewScroll)
-    }
-  })
 
   const handleOpenModal = index => {
     setModalStatus({

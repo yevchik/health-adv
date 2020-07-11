@@ -20,6 +20,7 @@ const InputMobile = ({
       <input
         className={classnames(css.input, className,
           { [css.inputError]: isError },
+          { [css.inputLight]: inputPalette === 'light' },
         )}
         type={type}
         name={name}

@@ -26,7 +26,7 @@ const withModalMobile = (WrappedComponent) => {
           {modal.videoFile && <video controls autoPlay ref={videoRef}>
             <source src={videos('./' + modal.videoFile)} />
           </video>}
-          { modal.content && modal.content }
+          { modal.content }
         </>
       </ModalMobile>
       </>

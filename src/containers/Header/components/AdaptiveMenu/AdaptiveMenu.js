@@ -9,11 +9,19 @@ import { Link } from 'react-router-dom'
 import { Collapse } from 'react-collapse/lib/Collapse'
 import IconArrow from 'containers/Header/_assets/IconArrow'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { openContentModal } from 'store/actions/ui'
+import ModalAppointmentMobile from 'components/ModalAppointment/ModalAppointmentMobile'
+import { useDispatch } from 'react-redux'
 
-const AdaptiveMenu = ({ data, isOpened, handleClose = () => {} }) => {
+const AdaptiveMenu = ({
+  data,
+  isOpened,
+  handleClose = () => {}
+}) => {
   const wrapperRef = useRef(null)
   const menuRef = useRef(null)
   const [isCollapseOpen, setCollapseOpenStatus] = useState(false)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (wrapperRef.current) {
@@ -24,6 +32,10 @@ const AdaptiveMenu = ({ data, isOpened, handleClose = () => {} }) => {
       })
     }
   })
+
+  const openAppointmentModal = () => {
+    dispatch(openContentModal(<ModalAppointmentMobile />))
+  }
 
   useEffect(() => {
     if (isOpened) {
@@ -111,8 +123,7 @@ const AdaptiveMenu = ({ data, isOpened, handleClose = () => {} }) => {
           <Button
             className={css.btn}
             label='Записаться'
-            // TODO create button click handler and modal functionality
-            handleClick={() => {}}
+            handleClick={() => openAppointmentModal()}
           />
           <button
             className={css.switchColorsBtn}

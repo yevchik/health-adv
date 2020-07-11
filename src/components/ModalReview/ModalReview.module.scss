@@ -1,0 +1,73 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  width: 90rem;
+  background-color: $colorMainBg;
+}
+
+.wrapperIllustrated {
+  display: grid;
+  grid-template-columns: 47rem 90rem;
+  width: 137rem;
+
+  .image {
+    width: 100%;
+    height: 70rem;
+    object-fit: cover;
+  }
+}
+
+.content {
+  padding: 4.2rem 6rem;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 6rem) 22rem;
+  grid-gap: 2rem;
+  margin-top: 3.6rem;
+}
+
+.descriptor {
+  @include regular(var(--color-font-main));
+
+  margin: 1.8rem 0 0 0;
+}
+
+.fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.fieldsetFull {
+  grid-column: 1 / -1;
+}
+
+.button,
+.acceptance {
+  margin: 2rem 0 0 0;
+}
+
+.acceptance {
+  @include small(var(--color-font-main));
+
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  grid-column-gap: 2rem;
+  padding-left: 2rem;
+  opacity: 0.5;
+
+  .icon {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+.error {
+  @include small(red);
+
+  margin: 1rem 0 0 0;
+}
