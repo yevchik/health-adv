@@ -13,13 +13,17 @@ const Input = ({
   isSearch,
   value,
   onChange,
-  inputPalette
+  inputPalette,
+  fieldType = 'input'
 }) => {
+  const TagName = fieldType
   const input = !value && !onChange
     ? (
-      <input
+      <TagName
         className={classnames(css.input, className,
           { [css.inputError]: isError },
+          { [css.inputLight]: inputPalette === 'light' },
+          { [css.inputSearch]: isSearch },
         )}
         type={type}
         name={name}
@@ -28,9 +32,10 @@ const Input = ({
       />
     )
     : (
-      <input
+      <TagName
         className={classnames(css.input, className,
           { [css.inputLight]: inputPalette === 'light' },
+          { [css.inputDark]: inputPalette === 'dark' },
           { [css.inputSearch]: isSearch },
         )}
         type={type}

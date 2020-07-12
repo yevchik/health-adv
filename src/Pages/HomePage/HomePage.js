@@ -9,6 +9,7 @@ import Reviews from 'Pages/HomePage/Reviews/Reviews'
 import Advantages from 'Pages/HomePage/Advantages/Advantages'
 import License from 'Pages/HomePage/License/License'
 import VideoBannerSwitcher from 'Pages/HomePage/VideoBanner/VideoBannerSwitcher/VideoBannerSwitcher'
+import withModal from 'hoc/withModal'
 
 const HomePage = () => {
   const homeData = {
@@ -351,4 +352,4 @@ const HomePage = () => {
   )
 }
 
-export default React.memo(HomePage)
+export default React.memo(withModal(HomePage))

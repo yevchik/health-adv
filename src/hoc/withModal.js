@@ -27,7 +27,7 @@ const withModal = (WrappedComponent) => {
           {modal.videoFile && <video className={css.video} controls autoPlay ref={videoRef}>
             <source src={videos('./' + modal.videoFile)} />
           </video>}
-          { modal.content && modal.content }
+          { modal.content }
         </>
       </Modal>
       </>

@@ -1,14 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import Banner from 'components/Banner/Banner'
 import { HOME_PAGE } from 'Pages/Routes'
 import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs'
 import css from './Mediacenter.module.scss'
 import MediaContent from 'Pages/Mediacenter/MediaContent/MediaContent'
-import Modal from 'components/Modal/Modal'
-import { videos } from 'index'
-import { useDispatch, useSelector } from 'react-redux'
-import { closeVideoModal } from 'store/actions'
 import Container from 'components/Grid/Container'
+import withModal from 'hoc/withModal'
 
 const Mediacenter = () => {
   const mediaData = {
@@ -123,17 +120,6 @@ const Mediacenter = () => {
     }
   ]
 
-  const modal = useSelector(state => state.ui)
-  const dispatch = useDispatch();
-  const videoRef = useRef(null)
-
-  useEffect(() => {
-    // reset video playtime in modal when it opens
-    if (modal.isModalOpen) {
-      videoRef.current.load()
-    }
-  }, [modal.isModalOpen])
-
   return (
     <>
       <Banner {...mediaData.banner} />
@@ -146,13 +132,13 @@ const Mediacenter = () => {
         news={mediaData.news}
         patients={mediaData.interviewsPatients}
       />
-      <Modal isVisible={modal.isModalOpen} handleCloseModal={() => dispatch(closeVideoModal())}>
-        <video className={css.video} controls autoPlay ref={videoRef}>
-          {modal.videoFile && <source src={videos('./' + modal.videoFile)} />}
-        </video>
-      </Modal>
+      {/*<Modal isVisible={modal.isModalOpen} handleCloseModal={() => dispatch(closeVideoModal())}>*/}
+      {/*  <video className={css.video} controls autoPlay ref={videoRef}>*/}
+      {/*    {modal.videoFile && <source src={videos('./' + modal.videoFile)} />}*/}
+      {/*  </video>*/}
+      {/*</Modal>*/}
     </>
   )
 }
 
-export default Mediacenter
+export default withModal(Mediacenter)
