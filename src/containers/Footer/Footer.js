@@ -8,7 +8,7 @@ import IconTwitter from 'assets/icons/IconTwitter'
 import IconInstagram from 'assets/icons/IconInstagram'
 import IconLogoCreator from 'assets/icons/IconLogoCreator'
 // import { YMInitializer } from 'react-yandex-metrika'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const Footer = ({ className }) => {
   const footerData = {
@@ -134,8 +134,10 @@ const Footer = ({ className }) => {
           <ul className={css.navSublist} key={index}>
             {arr.map((item, index) => (
               <li className={css.subItem} key={index}>
-                <Link className={css.subLink} to={item.url}>
-                  { item.label }
+                <Link href={item.url}>
+                  <a className={css.subLink} >
+                    { item.label }
+                  </a>
                 </Link>
               </li>
             ))}
@@ -145,8 +147,10 @@ const Footer = ({ className }) => {
         <ul className={css.navSingles}>
           {item.list.map((item, index) => (
             <li className={css.navSingle} key={index}>
-              <Link className={classnames(css.highlight, css.navSingleLink)} to={item.url}>
-                { item.label }
+              <Link href={item.url}>
+                <a className={classnames(css.highlight, css.navSingleLink)}>
+                  { item.label }
+                </a>
               </Link>
             </li>
           ))}
@@ -193,8 +197,10 @@ const Footer = ({ className }) => {
 
   const siteInfoLinks = footerData.siteInfo.links.map((item, index) => (
     <li className={css.auxItem} key={index}>
-      <Link className={css.auxLink} to={item.url}>
-        { item.text }
+      <Link href={item.url}>
+        <a className={css.auxLink}>
+          { item.text }
+        </a>
       </Link>
     </li>
   ))

@@ -1,7 +1,7 @@
 import React from 'react'
 import SelectMobile from 'components/Select/SelectMobile'
-import { ABOUT_US, HOME_PAGE } from 'Pages/Routes'
-import { withRouter } from 'react-router-dom'
+import { ABOUT_US, HOME_PAGE } from 'utils/Routes'
+import { withRouter } from 'next/router'
 
 const LocationSelector = ({ className, history, location }) => {
   const options = [

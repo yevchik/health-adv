@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import css from './AdvCard.module.scss'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import IconArrowRight from 'assets/icons/IconArrowRight'
 import IconDotsBg from 'assets/icons/IconDotsBg'
 
@@ -23,7 +23,7 @@ const AdvCard = ({
       [css.linkJaw]: type === 'implants-jaw',
       [css.compact]: isCompact
     })}
-    to={url}
+    href={url}
     style={{ backgroundColor: color }}
   >
     <span className={css.duration}>

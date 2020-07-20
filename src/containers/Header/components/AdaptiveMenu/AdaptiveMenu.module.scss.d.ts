@@ -1,0 +1,35 @@
+declare const styles: {
+  readonly "auxItem": string;
+  readonly "auxLink": string;
+  readonly "auxList": string;
+  readonly "bottom": string;
+  readonly "btn": string;
+  readonly "close": string;
+  readonly "collapseBtn": string;
+  readonly "collapseBtnOpened": string;
+  readonly "content": string;
+  readonly "contentVisible": string;
+  readonly "iconArrow": string;
+  readonly "iconArrowOpened": string;
+  readonly "iconClock": string;
+  readonly "iconClose": string;
+  readonly "iconEye": string;
+  readonly "item": string;
+  readonly "link": string;
+  readonly "list": string;
+  readonly "phoneItem": string;
+  readonly "phoneLink": string;
+  readonly "phoneList": string;
+  readonly "schedule": string;
+  readonly "scheduleLabel": string;
+  readonly "subitem": string;
+  readonly "sublink": string;
+  readonly "sublist": string;
+  readonly "switchColorsBtn": string;
+  readonly "timeline": string;
+  readonly "top": string;
+  readonly "wrapper": string;
+  readonly "wrapperVisible": string;
+};
+export = styles;
+

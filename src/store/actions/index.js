@@ -18,5 +18,6 @@ export {
 export {
   saveData,
   setDoctorsFilter,
-  updateDoctorsFilter
+  updateDoctorsFilter,
+  getContacts,
 } from './data'

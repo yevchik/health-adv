@@ -2,7 +2,7 @@ import React from 'react'
 import css from './SignupBanner.module.scss'
 import Container from 'components/Grid/Container'
 import Heading from 'components/Heading/Heading'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import IconLock from 'assets/icons/IconLock'
 import SignupForm from 'components/SignupBanner/SignupForm/SignupForm'
 import IconDotsBg from 'assets/icons/IconDotsBg'
@@ -26,7 +26,10 @@ const SignupBanner = ({
         {!noWarning &&
           <p className={css.warning}>
             <IconLock className={css.iconLock} />
-            Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с <Link className={css.link} to='/'>политикой</Link> ознакомлен
+            Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с 
+              <Link href='/'> 
+                <a lassName={css.link}> политикой </a>
+              </Link> ознакомлен
           </p>
         }
       </Container>

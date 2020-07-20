@@ -1,7 +1,7 @@
 import React from 'react'
 import css from 'containers/Header/components/DesktopMenu/DesktopMenu.module.scss'
 import classnames from 'classnames'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import IconArrow from 'containers/Header/_assets/IconArrow'
 
 const DesktopMenu = ({ data }) => {
@@ -19,8 +19,10 @@ const DesktopMenu = ({ data }) => {
                 <ul className={css.sublist}>
                   {item.sublist.map((subitem, index) => (
                     <li className={css.subitem} key={index}>
-                      <Link to={subitem.url} className={css.sublink}>
-                        { subitem.text }
+                      <Link href={subitem.url}>
+                        <a  className={css.sublink}>
+                          { subitem.text }
+                        </a>
                       </Link>
                     </li>
                   ))}
@@ -34,8 +36,10 @@ const DesktopMenu = ({ data }) => {
 
     return (
       <li className={css.item} key={index}>
-        <Link to={item.url} className={css.link}>
-          { item.text }
+        <Link href={item.url}>
+          <a className={css.link}>
+            { item.text }
+          </a>
         </Link>
       </li>
     )

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import css from './ModalReview.module.scss'
 import classnames from 'classnames'
-import { images } from 'index'
+import { images } from 'assets/index'
 import { useForm, Controller } from 'react-hook-form'
 import Heading from 'components/Heading/Heading'
 import IconLock from 'assets/icons/IconLock'

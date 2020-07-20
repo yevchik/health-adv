@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import css from './SliderCardsMobile.module.scss'
 import classnames from 'classnames'
 import Swiper from 'react-id-swiper'
-import 'swiper/css/swiper.min.css'
 import PropTypes from 'prop-types'
 
 const SliderCardsMobile = ({

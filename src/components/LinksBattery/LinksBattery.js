@@ -1,13 +1,15 @@
 import React from 'react'
 import css from './LinksBattery.module.scss'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'next'
+import { withRouter } from 'next/router'
+
 import {
   ABOUT_CERTIFICATES,
   ABOUT_DOCUMENTS,
   ABOUT_FAQ,
   ABOUT_US,
   ABOUT_VACANCIES
-} from 'Pages/Routes'
+} from 'utils/Routes'
 import classnames from 'classnames'
 
 const LinksBattery = (props) => {
@@ -39,8 +41,10 @@ const LinksBattery = (props) => {
       className={classnames(css.item, { [css.itemActive]: item.url === props.location.pathname || item.url === `${props.location.pathname}/` })}
       key={`Link battery item#${index}`}
     >
-      <Link className={css.link} to={item.url}>
-        { item.label }
+      <Link href={item.url}>
+        <a lassName={css.link}>
+          { item.label }
+        </a>
       </Link>
     </li>
   ))

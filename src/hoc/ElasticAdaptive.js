@@ -1,8 +1,7 @@
-import { PureComponent } from 'react'
+import { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'next/router'
 import { setDeviceType, setFontSize } from 'store/actions'
-import { isMobileOnly, isBrowser, isTablet } from 'react-device-detect'
 
 function mapStateToProps (state) {
   return {
@@ -17,44 +16,27 @@ function mapDispatchToProps (dispatch) {
   }
 }
 
-class ElasticAdaptive extends PureComponent {
-  componentDidMount () {
-    this.changeSize()
-    window.addEventListener('resize', this.changeSize)
-    window.addEventListener('orientationchange', this.changeSize)
-  }
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.changeSize)
-    window.removeEventListener('orientationchange', this.changeSize)
-  }
+function ElasticAdaptive ({...props}) {
+  useEffect(() => {
+    changeSize()
+    window.addEventListener('resize', changeSize)
+    window.addEventListener('orientationchange', changeSize)
+    return () => {
+      window.removeEventListener('resize', changeSize)
+      window.removeEventListener('orientationchange', changeSize)
+    };
+  }, []);
 
-  componentDidUpdate (prevProps) {
-    if (prevProps.type !== this.props.type) {
-      this.changeSize()
-    }
-  }
+  useEffect(() => {
+    changeSize()
+  }, [props.type]);
 
-  getDeviceType = () => {
-    if (isBrowser) {
-      this.props.setDeviceType('desktop')
-    }
-
-    if (isTablet) {
-      this.props.setDeviceType('tablet')
-    }
-
-    if (isMobileOnly) {
-      this.props.setDeviceType('mobile')
-    }
-  }
-
-  changeSize = () => {
+  function changeSize () {
     let width = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth
-    this.getDeviceType()
-    const { type } = this.props
+    const { type } = props
     const html = document.documentElement
-    const { widthLimit, baseWidth } = this.props.state[type]
-    let { baseSize } = this.props.state[type]
+    const { widthLimit, baseWidth } = props.state[type]
+    let { baseSize } = props.state[type]
     let actualWidth = width
 
     if (widthLimit) {
@@ -62,30 +44,12 @@ class ElasticAdaptive extends PureComponent {
     }
 
     const currentSize = actualWidth / baseWidth * baseSize
-    this.props.setFontSize(currentSize)
+    props.setFontSize(currentSize)
     html.style.fontSize = currentSize + 'px'
   }
 
-  debounce = func => {
-    let lastTimeout = null
+  return props.children
 
-    return function () {
-      const context = this
-      const args = arguments
-
-      if (lastTimeout) {
-        clearTimeout(lastTimeout)
-      }
-
-      lastTimeout = setTimeout(function () {
-        func.apply(context, args)
-      }, 250)
-    }
-  }
-
-  render () {
-    return this.props.children
-  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ElasticAdaptive))

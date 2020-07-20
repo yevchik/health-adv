@@ -5,7 +5,7 @@ import IconClose from 'containers/Header/_assets/IconClose'
 import IconClock from 'assets/icons/IconClock'
 import Button from 'components/Button/Button'
 import IconEye from 'containers/Header/_assets/IconEye'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { Collapse } from 'react-collapse/lib/Collapse'
 import IconArrow from 'containers/Header/_assets/IconArrow'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
@@ -76,8 +76,10 @@ const AdaptiveMenu = ({
               {
                 item.sublist.map((subitem, index) => (
                   <li className={css.subitem} key={index}>
-                    <Link to={subitem.url} className={css.sublink}>
-                      { subitem.text }
+                    <Link href={subitem.url}>
+                      <a className={css.sublink}>
+                        { subitem.text }
+                      </a>
                     </Link>
                   </li>
                 ))
@@ -90,8 +92,10 @@ const AdaptiveMenu = ({
 
     return (
       <li className={css.item} key={index}>
-        <Link to={item.url} className={css.link}>
-          { item.text }
+        <Link href={item.url}>
+          <a className={css.link}>
+            { item.text }
+          </a>
         </Link>
       </li>
     )
@@ -144,8 +148,10 @@ const AdaptiveMenu = ({
           <ul className={css.auxList}>
             {data.auxList.map((item, index) => (
               <li className={css.auxItem} key={index}>
-                <Link className={css.auxLink} to={item.url}>
-                  { item.text }
+                <Link href={item.url}>
+                  <a className={css.auxLink}>
+                    { item.text }
+                  </a>
                 </Link>
               </li>
             ))}

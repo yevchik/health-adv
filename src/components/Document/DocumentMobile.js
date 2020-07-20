@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './DocumentMobile.module.scss'
-import { images } from 'index'
+import { images } from 'assets/index'
 import { useDispatch } from 'react-redux'
 import { openImageModal } from 'store/actions'
 

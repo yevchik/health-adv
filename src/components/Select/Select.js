@@ -2,7 +2,6 @@ import React from 'react'
 import css from './Select.module.scss'
 import SelectItem from 'react-select'
 import SimpleBar from 'simplebar-react'
-import 'simplebar/dist/simplebar.min.css'
 
 const Select = ({
   className,

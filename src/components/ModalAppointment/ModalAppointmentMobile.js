@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './ModalAppointmentMobile.module.scss'
 import classnames from 'classnames'
-import { images } from 'index'
+import { images } from 'assets/index'
 import { useForm } from 'react-hook-form'
 import Heading from 'components/Heading/Heading'
 import IconLock from 'assets/icons/IconLock'

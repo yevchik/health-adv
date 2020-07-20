@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './BannerMobile.module.scss'
-import { images } from 'index'
+import { images } from 'assets/index'
 import ContainerMobile from 'components/Grid/ContainerMobile'
 import { useSelector } from 'react-redux'
 

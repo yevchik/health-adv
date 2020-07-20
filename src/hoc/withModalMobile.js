@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { closeModal } from 'store/actions'
-import { images, videos } from 'index'
+import { images, videos } from 'assets/index'
 import ModalMobile from 'components/Modal/ModalMobile'
 
 const withModalMobile = (WrappedComponent) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './PortfolioCard.module.scss'
-import { images } from 'index'
+import { images } from 'assets/index'
 
 const PortfolioCard = ({
   img,

@@ -2,15 +2,16 @@ import React from 'react'
 import classnames from 'classnames'
 import css from './App.module.scss'
 import Header from 'containers/Header/Header'
-import Routes from 'Pages/Routes'
+// import Routes from 'utils/Routes'
 import Footer from 'containers/Footer/Footer'
 
-const DesktopApp = () => {
+const DesktopApp = ({children}) => {
   return (
-    <div className={classnames(css.wrapper, 'color-pattern-1')}>
+    <div className={classnames(css.wrapper, css['color-pattern-1'])}>
       <Header />
       <main>
-        <Routes />
+        {/* <Routes /> */}
+        {children}
       </main>
       <Footer className={css.footer} />
     </div>

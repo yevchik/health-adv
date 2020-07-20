@@ -11,6 +11,7 @@ export const setFontSize = data => {
 }
 
 export const setDeviceType = type => {
+  console.log(type)
   return {
     type: SET_USER_DEVICE_TYPE,
     payload: type

@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import css from './HeaderMobile.module.scss'
-import { Link, withRouter } from 'react-router-dom'
-import { HOME_PAGE } from 'Pages/Routes'
+import { Link } from 'next'
+import { withRouter } from 'next/router'
+import { HOME_PAGE } from 'utils/Routes'
 import IconLogo from 'containers/Header/_assets/IconLogo'
 import IconSearch from 'assets/icons/IconSearch'
 import IconBurger from 'containers/Header/_assets/IconBurger'
@@ -94,8 +95,10 @@ const HeaderMobile = (props) => {
     <header className={classnames(css.header, { [css.headerTabletTransparent]: location === HOME_PAGE })}>
       <ContainerMobile>
         <div className={css.wrapper}>
-          <Link to={HOME_PAGE} className={css.logo}>
-            <IconLogo className={css.iconLogo} />
+          <Link href={HOME_PAGE}>
+            <a className={css.logo}>
+              <IconLogo className={css.iconLogo} />
+            </a>
           </Link>
           {withSearch &&
             <button className={css.search} type='button'>

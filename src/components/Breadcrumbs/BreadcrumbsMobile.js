@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './BreadcrumbsMobile.module.scss'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import classnames from 'classnames'
 
 const BreadcrumbsMobile = ({
@@ -12,8 +12,10 @@ const BreadcrumbsMobile = ({
     if (item.url) {
       return (
         <li className={css.item} key={`Breadcrumb item #${index}`}>
-          <Link className={css.link} to={item.url}>
-            {item.label}
+          <Link href={item.url}>
+            <a lassName={css.link}>
+              {item.label}
+            </a>
           </Link>
         </li>
       )

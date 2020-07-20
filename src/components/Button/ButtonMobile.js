@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 import css from './ButtonMobile.module.scss'
 import IconArrowRight from 'assets/icons/IconArrowRight'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import PropTypes from 'prop-types'
 
 const ButtonMobile = ({
@@ -24,7 +24,7 @@ const ButtonMobile = ({
         [css.buttonFilledDecorated]: btnStyle === 'filledDecorated'
       })}
       type={url ? '' : 'button'}
-      to={url}
+      href={url}
       onClick={url ? () => {} : handleClick}
     >
       { label }

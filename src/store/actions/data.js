@@ -1,4 +1,12 @@
 import { SAVE_DATA, SET_DOCTORS_FILTER, UPDATE_DOCTORS_FILTER } from 'store/actions/actionTypes'
+import instance from 'api/axios';
+
+export const getContacts = () => async dispatch =>{
+  return instance.get('contacts').then(res=>{
+    // console.log(res.data)
+    return res.data
+  });
+}
 
 export const ShowAll = {
   value: 'show all',

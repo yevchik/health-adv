@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import css from 'containers/SidePromo/SidePromo.module.scss'
 import ButtonPlay from 'components/ButtonPlay/ButtonPlay'
-import { images } from 'index'
+import { images } from 'assets/index'
 import { useDispatch } from 'react-redux'
 import { closeVideoModal, openVideoModal } from 'store/actions'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import SliderCards from 'components/SliderCards/SliderCards'
 import AdvCard from 'components/AdvCard/AdvCard'
 
@@ -86,10 +86,12 @@ const SidePromo = () => {
         }
         {item.type === 'article' &&
           <>
-            <Link className={css.link} to={item.url}>
-              <img src={images('./' + item.preview)} className={css.preview} alt={`Фото к статье ${item.description}`} />
-              <p className={css.description} dangerouslySetInnerHTML={{ __html: item.description }} />
-              <p className={css.date} dangerouslySetInnerHTML={{ __html: item.date }} />
+            <Link href={item.url}>
+              <a className={css.link} >
+                <img src={images('./' + item.preview)} className={css.preview} alt={`Фото к статье ${item.description}`} />
+                <p className={css.description} dangerouslySetInnerHTML={{ __html: item.description }} />
+                <p className={css.date} dangerouslySetInnerHTML={{ __html: item.date }} />
+              </a>
             </Link>
           </>
         }

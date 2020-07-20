@@ -1,8 +1,8 @@
 import React from 'react'
 import css from './Header.module.scss'
 import Container from 'components/Grid/Container'
-import { Link } from 'react-router-dom'
-import { HOME_PAGE } from 'Pages/Routes'
+import Link from 'next/link'
+import { HOME_PAGE } from 'utils/Routes'
 import IconLogo from 'containers/Header/_assets/IconLogo'
 import DesktopMenu from './components/DesktopMenu/DesktopMenu'
 import Button from 'components/Button/Button'
@@ -86,8 +86,10 @@ const Header = () => {
     <header className={css.header}>
       <Intro className={css.top} data={headerData} />
       <Container className={css.desktopWrapper}>
-        <Link to={HOME_PAGE} className={css.logo}>
-          <IconLogo className={css.iconLogo} />
+        <Link href={HOME_PAGE}>
+          <a className={css.logo}>
+            <IconLogo className={css.iconLogo} />
+          </a>
         </Link>
         <DesktopMenu
           data={headerData}

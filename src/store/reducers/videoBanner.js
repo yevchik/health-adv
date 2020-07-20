@@ -7,7 +7,6 @@ const initialState = {
 export default function videoBannerReducer (state = initialState, action) {
   switch (action.type) {
     case SET_VIDEO_BANNER_TYPE:
-      console.log(action.payload)
       return {
         videoBannerType: action.payload
       }

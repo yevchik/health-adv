@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import css from './AccordeonMobile.module.scss'
 import { Collapse } from 'react-collapse/lib/Collapse'
 import classnames from 'classnames'
-import { images } from 'index'
+import { images } from 'assets/index'
 import { isMobileOnly } from 'react-device-detect'
 
 const AccordeonMobile = ({

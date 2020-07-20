@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Modal from 'components/Modal/Modal'
 import { closeModal } from 'store/actions'
 import css from './withModal.module.scss'
-import { images, videos } from 'index'
+import { images, videos } from 'assets/index'
 
 const withModal = (WrappedComponent) => {
   return (props) => {

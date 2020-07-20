@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 import css from './Button.module.scss'
 import IconArrowRight from 'assets/icons/IconArrowRight'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import PropTypes from 'prop-types'
 
 const Button = ({
@@ -25,13 +25,15 @@ const Button = ({
         [css.buttonFilledDecorated]: btnStyle === 'filledDecorated'
       })}
       type={url ? '' : type}
-      to={url}
+      href={url}
       onClick={url ? () => {} : handleClick}
     >
+      <>
       { label }
       {btnStyle !== 'filled' &&
         <IconArrowRight className={classnames(css.icon, iconClassname)} />
       }
+      </>
     </ComponentName>
   )
 }

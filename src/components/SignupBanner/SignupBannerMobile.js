@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './SignupBannerMobile.module.scss'
 import Heading from 'components/Heading/Heading'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import IconLock from 'assets/icons/IconLock'
 import ContainerMobile from 'components/Grid/ContainerMobile'
 import SignupFormMobile from 'components/SignupBanner/SignupForm/SignupFormMobile'
@@ -27,7 +27,10 @@ const SignupBannerMobile = ({
           <p className={css.warning}>
             <IconLock className={css.iconLock} />
             <span>
-              Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с <Link className={css.link} to='/'>политикой</Link> ознакомлен
+              Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с 
+              <Link href='/'> 
+                <a lassName={css.link}>политикой</a>
+              </Link> ознакомлен
             </span>
           </p>
         }

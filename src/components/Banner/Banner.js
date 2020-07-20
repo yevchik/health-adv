@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './Banner.module.scss'
-import { images } from 'index'
+import { images } from 'assets/index'
 import Container from 'components/Grid/Container'
 import classnames from 'classnames'
 

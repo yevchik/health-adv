@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './File.module.scss'
-import { files } from 'index'
+import { files } from 'assets/index'
 
 const File = ({
   file,

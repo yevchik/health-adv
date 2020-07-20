@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './PortfolioCardMobile.module.scss'
-import { images } from 'index'
+import { images } from 'assets/index'
 
 const PortfolioCardMobile = ({
   img,
