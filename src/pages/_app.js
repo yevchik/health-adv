@@ -2,7 +2,6 @@ import React from 'react';
 import 'normalize.css'
 import 'simplebar/dist/simplebar.min.css'
 import 'swiper/css/swiper.min.css'
-import '../styles/style.css'
 // import ElasticAdaptive from 'hoc/ElasticAdaptive'
 import { setDeviceType } from 'store/actions'
 import ViewSwitcher from 'layouts/ViewSwitcher'
