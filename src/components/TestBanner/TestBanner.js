@@ -42,4 +42,4 @@ TestBanner.propTypes = {
   type: PropTypes.oneOf(['simple', undefined])
 }
 
-export default React.memo(TestBanner)
+export default TestBanner

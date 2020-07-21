@@ -3,27 +3,27 @@
 :root {
   --padding-mobile: 1.5rem;
   --padding-tablet: 2.5rem;
-}
-
-.color-pattern-1 {
-  --color-highlight-buttons: #ff5530;
-  --color-highlight-buttons-dark: #e64d2b;
-  --color-highlight-mosaic: #20d4de;
-  --color-font-main: #464b56;
-  --color-highlight-lightest: #f7f8fB;
-  --color-highlight-darker: #ebedf2;
-  --color-highlight-darkest: #dcdfe6;
-  --color-highlight-gradient: linear-gradient(97.35deg, #10C8D2 -4.47%, #66A1FF 96.77%);
-}
-
-.color-pattern-special {
-  --color-highlight-buttons: black;
-  --color-highlight-mosaic: black;
-  --color-font-main: black;
-  --color-highlight-lightest: white;
-  --color-highlight-darker: white;
-  --color-highlight-darkest: white;
-  --color-highlight-gradient: white;
+  
+  .color-pattern-1 {
+    --color-highlight-buttons: #ff5530;
+    --color-highlight-buttons-dark: #e64d2b;
+    --color-highlight-mosaic: #20d4de;
+    --color-font-main: #464b56;
+    --color-highlight-lightest: #f7f8fB;
+    --color-highlight-darker: #ebedf2;
+    --color-highlight-darkest: #dcdfe6;
+    --color-highlight-gradient: linear-gradient(97.35deg, #10C8D2 -4.47%, #66A1FF 96.77%);
+  }
+  
+  .color-pattern-special {
+    --color-highlight-buttons: black;
+    --color-highlight-mosaic: black;
+    --color-font-main: black;
+    --color-highlight-lightest: white;
+    --color-highlight-darker: white;
+    --color-highlight-darkest: white;
+    --color-highlight-gradient: white;
+  }
 }
   
   // common colors

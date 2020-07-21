@@ -14,7 +14,7 @@ const Button = ({
   handleClick,
   type = 'button'
 }) => {
-  const ComponentName = url ? Link : 'button'
+  const ComponentName = 'button'
 
   return (
     <ComponentName

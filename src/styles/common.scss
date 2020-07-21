@@ -12,6 +12,28 @@ body {
   color: var(--color-font-main);
 }
 
+.Container_wrapper{
+  padding: 0 27.5rem;
+}
+
+.swiper-container {
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+  width: 100%;
+  overflow: visible;
+}
+
+.swiper-slide {
+  width: 100%;
+  margin-right: 0;
+}
+
+.swiper-slide-next {
+  opacity: 0;
+  display: none;
+}
+
 *,
 *::before,
 *::after {

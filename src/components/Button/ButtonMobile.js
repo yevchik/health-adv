@@ -13,7 +13,7 @@ const ButtonMobile = ({
   label = '',
   handleClick = () => {}
 }) => {
-  const ComponentName = url ? Link : 'button'
+  const ComponentName = 'button'
 
   return (
     <ComponentName

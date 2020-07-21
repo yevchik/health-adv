@@ -3,21 +3,6 @@
 
 .section {
   padding: 5rem 0 4rem 0;
-
-  :global {
-    .swiper-container {
-      margin-left: 0;
-      padding-right: 0;
-      padding-left: 0;
-      width: 100%;
-      overflow: visible;
-    }
-
-    .swiper-slide {
-      width: 100%;
-      margin-right: 0;
-    }
-  }
 }
 
 .slider {
@@ -37,6 +22,8 @@
   display: flex;
   justify-content: space-between;
   background-color: $colorMainBg;
+  transform: none !important;
+  opacity: inherit !important;
 }
 
 .tabContent {

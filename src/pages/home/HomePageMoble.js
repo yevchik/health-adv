@@ -9,6 +9,7 @@ import ReviewsMobile from 'pages/home/Reviews/ReviewsMobile'
 import AdvantagesMobile from 'pages/home/Advantages/AdvantagesMobile'
 import LicenseMobile from 'pages/home/License/LicenseMobile'
 import withModalMobile from 'hoc/withModalMobile'
+import css from 'styles/common.scss'
 
 const HomePageMobile  = ({isServer}) => {
   const homeData = {
@@ -317,7 +318,7 @@ const HomePageMobile  = ({isServer}) => {
 
   return (
     <main>
-      <h1 className='visuallyHidden'>
+      <h1 className={css.visuallyHidden}>
         { homeData.siteMainCaption }
       </h1>
       <VideoBannerMobile {...homeData.videoBanner} />

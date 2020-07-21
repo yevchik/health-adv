@@ -10,6 +10,7 @@ import Advantages from 'pages/home/Advantages/Advantages'
 import License from 'pages/home/License/License'
 import VideoBannerSwitcher from 'pages/home/VideoBanner/VideoBannerSwitcher/VideoBannerSwitcher'
 import withModal from 'hoc/withModal'
+import css from 'styles/common.scss'
 
 const HomePage = ({isServer, ...props}) => {
 
@@ -336,7 +337,7 @@ const HomePage = ({isServer, ...props}) => {
 
   return (
     <>
-      <h1 className='visuallyHidden'>
+      <h1 className={css.visuallyHidden}>
         { homeData.siteMainCaption }
       </h1>
       <VideoBannerSwitcher />

@@ -81,6 +81,40 @@
     }
   }
 
+  &.buttonFilledDecoratedBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-left: auto;
+    width: 27.5rem;
+    color: var(--color-highlight-buttons);
+    background-color: $colorMainBg;
+    border-top-color: var(--color-highlight-darker);
+    border-right-color: var(--color-highlight-darker);
+    border-left: none;
+
+    &::before {
+      transform: translateX(0) translateY(100%);
+    }
+
+    &:hover {
+      color: $colorMainBg;
+
+      &::before {
+        transform: translateX(0) translateY(0);
+      }
+
+      .arrow {
+        stroke: $colorMainBg;
+      }
+    }
+
+    .arrow {
+      stroke: var(--color-highlight-buttons);
+    }
+  }
+
   &.buttonGradient {
     @include capitals-bold($colorMainBg);
 

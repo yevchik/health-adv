@@ -1,0 +1,11 @@
+a {
+  text-decoration: none;
+}
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
+.Container_wrapper{
+  padding: 0 27.5rem;
+}

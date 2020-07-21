@@ -17,7 +17,7 @@ const SliderDoctors = ({ title, list }) => {
   const [swiper, setSwiper] = useState(null)
   const [isBeginning, setSliderToBeginning] = useState(true)
   const [isEnd, setSliderToEnd] = useState(false)
-
+  // console.log(activeTab, swiper, isBeginning, isEnd)
 
   useEffect(() => {
     if (swiper) {
@@ -52,6 +52,7 @@ const SliderDoctors = ({ title, list }) => {
     speed: 1000,
     effect: 'fade',
     simulateTouch: false,
+    noSwiping: true,
     fadeEffect: {
       crossFade: true
     },
@@ -95,7 +96,9 @@ const SliderDoctors = ({ title, list }) => {
   const sliderContent = createSubArrays(list, 4).map((slide, index) => {
     const tabs = []
     return (
-      <div className={css.slide} key={index}>
+      <div 
+        className={css.slide} 
+        key={index}>
         {slide.map((item, index) => {
           const tab = (
             <li className={css.tab} key={index}>
@@ -127,7 +130,7 @@ const SliderDoctors = ({ title, list }) => {
         <ul className={css.tabs}>
           {tabs.map((item) => item)}
         </ul>
-      </div>
+      </div> 
     )
   })
 
@@ -145,6 +148,25 @@ const SliderDoctors = ({ title, list }) => {
             </div>
           </div>
       </Container>
+      <style global jsx>{`
+        .swiper-container {
+          margin-left: 0;
+          padding-right: 0;
+          padding-left: 0;
+          width: 100%;
+          overflow: visible;
+        }
+
+        .swiper-slide {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        .swiper-slide-next {
+          opacity: 0 !important;
+          display: none !important;
+        }
+      `}</style>
     </section>
   )
 }
