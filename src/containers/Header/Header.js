@@ -1,22 +1,22 @@
 import React from 'react'
 import css from './Header.module.scss'
 import Container from 'components/Grid/Container'
+import {connect} from 'react-redux'
 import Link from 'next/link'
 import { HOME_PAGE } from 'utils/Routes'
 import IconLogo from 'containers/Header/_assets/IconLogo'
 import DesktopMenu from './components/DesktopMenu/DesktopMenu'
 import Button from 'components/Button/Button'
 import Intro from 'containers/Header/components/Intro/Intro'
-import { useDispatch } from 'react-redux'
 import { openContentModal } from 'store/actions/ui'
 // import ModalAppointment from 'components/ModalAppointment/ModalAppointment'
 import ModalReview from 'components/ModalReview/ModalReview'
 
-const Header = () => {
+const Header = ({contacts, dispatch}) => {
   const headerData = {
     withSearch: true,
-    schedule: 'Ежедневно&nbsp;10.00&nbsp;&mdash; 21.00',
-    phones: ['+7 495 453 95 93', '+7 495 453 95 93'],
+    schedule: contacts.schedule,
+    phones: [contacts.phone],
     list: [
       {
         text: 'Услуги и цены',
@@ -80,8 +80,6 @@ const Header = () => {
     ]
   }
 
-  const dispatch = useDispatch()
-
   return (
     <header className={css.header}>
       <Intro className={css.top} data={headerData} />
@@ -108,4 +106,8 @@ const Header = () => {
   )
 }
 
-export default React.memo(Header)
+const mapStateToProps = ({data}) => ({
+  contacts: data.contacts[0],
+})
+
+export default connect(mapStateToProps)(Header)

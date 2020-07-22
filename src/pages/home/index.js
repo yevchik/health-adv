@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import HomePageMoble from './HomePageMoble'
 import HomePage from './HomePage'
-import {getContacts} from 'store/actions'
+// import {getContacts, getDocuments} from 'store/actions'
 
 
 const Index = ({elastic, dispatch, ...props}) => {
@@ -10,6 +10,7 @@ const Index = ({elastic, dispatch, ...props}) => {
   // console.log(props)
   useEffect(() => {
     // dispatch(getContacts())
+    // dispatch(getDocuments())
     setIsServer(false)
   }, []);
 
@@ -28,6 +29,7 @@ const Index = ({elastic, dispatch, ...props}) => {
 Index.getInitialProps = async (props) => {
   const {dispatch} = props.store
   // dispatch(getContacts())
+  // dispatch(getDocuments())
   return {
     someText: 'someText'
   }

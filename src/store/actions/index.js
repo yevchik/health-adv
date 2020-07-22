@@ -20,4 +20,5 @@ export {
   setDoctorsFilter,
   updateDoctorsFilter,
   getContacts,
+  getDocuments,
 } from './data'

@@ -7,6 +7,7 @@ import { setDeviceType } from 'store/actions'
 import ViewSwitcher from 'layouts/ViewSwitcher'
 import { wrapper} from '../store';
 import App from 'next/app'
+import {getContacts, getDocuments} from 'store/actions'
 
 function MyApp({ Component, ...pageProps }) {
   return (
@@ -31,7 +32,9 @@ MyApp.getInitialProps = async (appContext) => {
   } else if (false) {
     dispatch(setDeviceType('tablet'))
   }
-    
+
+  await dispatch(getContacts())
+
   return {
     ...appProps,
     ...appContext.ctx.store.getState()

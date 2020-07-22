@@ -1,11 +1,31 @@
-import { SAVE_DATA, SET_DOCTORS_FILTER, UPDATE_DOCTORS_FILTER } from 'store/actions/actionTypes'
+import { 
+  SAVE_DATA,
+  SET_DOCTORS_FILTER,
+  UPDATE_DOCTORS_FILTER,
+  SAVE_DATA_BY_KEY,
+   } from 'store/actions/actionTypes'
 import instance from 'api/axios';
 
 export const getContacts = () => async dispatch =>{
   return instance.get('contacts').then(res=>{
-    // console.log(res.data)
+    dispatch(saveDataByKey('contacts', res.data.data))
     return res.data
   });
+}
+
+export const getDocuments  = () => async dispatch =>{
+  return instance.get('documents').then(res=>{
+    console.log(res.data)
+    return res.data
+  });
+}
+
+export const saveDataByKey = (key, data) => {
+  return {
+    type: SAVE_DATA_BY_KEY,
+    payload: data,
+    key,
+  }
 }
 
 export const ShowAll = {

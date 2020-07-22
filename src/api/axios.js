@@ -5,7 +5,7 @@ import { API_PATH } from 'utils/const'
 const instance = axios.create({
   baseURL: `${API_PATH}/` ,
   headers: {
-    'Authorization': 'Bearer 1|36zzLzt86Njsinb0UB4OmxUENiIv1ItGQIC55q235e4kBppqpid1Lfm80uymR6JhCHcrAS5jgENeJ05x',
+    'Authorization': 'Bearer 1|p9cPMCm36aAYmFS6NW7cYVt4glDU2dbO41RhwOD7A4x4HO0P49zQm2HlEEXO3PLsVwlb9T5qaVPCgDFb',
     'Content-Type': 'application/json',
     "Access-Control-Allow-Origin": "http://localhost:3000"
   }
