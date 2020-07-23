@@ -1,0 +1,13 @@
+@import "styles/mixins";
+
+.accordeons {
+  @include resetList;
+
+  margin-top: 2.3rem;
+
+  .accordeon {
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+    }
+  }
+}

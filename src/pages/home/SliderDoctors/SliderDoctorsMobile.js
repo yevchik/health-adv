@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import css from './SliderDoctorsMobile.module.scss'
 import Heading from 'components/Heading/Heading'
 import Swiper from 'react-id-swiper'
-// import { images } from './node_modules/index'
+import { images } from 'assets'
 import IconQuotes from 'assets/icons/IconQuotes'
 import IconDotsBgDark from 'assets/icons/IconDotsBgDark'
 import PropTypes from 'prop-types'
@@ -63,8 +63,8 @@ const SliderDoctorsMobile = ({ title, list }) => {
           <IconDotsBgDark className={css.iconDots} />
           <img
             className={css.photo}
-            // src={images('./' + item.photo)}
-            src={'/images/' + item.photo}
+            src={images('./' + item.photo)}
+            // src={'/images/' + item.photo}
             alt={item.name}
           />
         </div>

@@ -1,0 +1,97 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.container {
+  padding-top: 4.8rem;
+  padding-bottom: 6rem;
+
+  .listWrapper {
+    margin-left: -1.5rem;
+    padding-left: 1.5rem;
+    width: calc(100% + 3rem);
+    overflow: scroll;
+  }
+
+  .list {
+    @include resetList;
+
+    display: flex;
+    margin-top: 2.3rem;
+  }
+
+  .item {
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
+
+    &:last-child {
+      padding-right: 1.5rem;
+    }
+
+    .trigger {
+      width: 27rem;
+      height: 17.6rem;
+      pointer-events: none;
+    }
+  }
+
+  .text {
+    padding-top: 1.5rem;
+  }
+
+  .date {
+    margin-top: 0.6rem;
+  }
+
+  .btnShowMore {
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .container {
+    padding-top: 5rem;
+    padding-bottom: 6.2rem;
+
+    .list {
+      @include resetList;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 2rem;
+      grid-row-gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .itemLarge {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+
+      .trigger {
+        width: 100%;
+        height: 34.1rem;
+      }
+    }
+
+    .item:not(.itemLarge) {
+      .trigger {
+        width: 100%;
+        height: 17.7rem;
+      }
+    }
+
+    .text {
+      padding-top: 1.7rem;
+    }
+
+    .date {
+      margin-top: 0.5rem;
+    }
+
+    .btnShowMore {
+      margin-top: 2.8rem;
+    }
+  }
+}

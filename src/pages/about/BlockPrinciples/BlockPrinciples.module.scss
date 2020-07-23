@@ -1,0 +1,53 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.descriptor {
+  @include h5-italic(var(--color-font-main));
+
+  margin: 3rem 0 0 0;
+}
+
+.list {
+  @include resetList;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 3rem;
+  grid-row-gap: 10.5rem;
+  margin-top: 9.8rem;
+  counter-reset: principles;
+}
+
+.item {
+  position: relative;
+
+  &::before {
+    counter-increment: principles;
+    content: counter(principles, decimal-leading-zero);
+    position: absolute;
+    top: -7rem;
+    left: 0;
+    @include h0(var(--color-highlight-lightest));
+    z-index: -1;
+  }
+}
+
+.subtitle {
+  @include h7(var(--color-font-main));
+
+  margin: 0;
+}
+
+.principle {
+  margin-top: 1.5rem;
+
+  p {
+    @include regular(var(--color-font-main));
+
+    margin: 0;
+
+    &:not(:first-of-type) {
+      margin-top: 2.5rem;
+    }
+  }
+}

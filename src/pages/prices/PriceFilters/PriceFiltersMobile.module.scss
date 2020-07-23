@@ -1,0 +1,16 @@
+@import "styles/variables";
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 5rem;
+  grid-row-gap: 1rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 40.8rem 1fr;
+    grid-template-rows: auto;
+    grid-gap: 3rem;
+  }
+}

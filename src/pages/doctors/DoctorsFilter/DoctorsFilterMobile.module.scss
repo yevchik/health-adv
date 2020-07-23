@@ -1,0 +1,25 @@
+@import "styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.select {
+  &:not(:first-of-type) {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    margin-top: 2.5rem;
+  }
+
+  .select {
+    &:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+  }
+}

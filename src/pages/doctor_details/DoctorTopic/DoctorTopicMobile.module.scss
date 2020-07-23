@@ -1,0 +1,386 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.title {
+  @include h2(var(--color-font-main));
+
+  margin: 0;
+}
+
+.expertiseList {
+  @include resetList;
+
+  margin-top: 1.1rem;
+}
+
+.expertiseItem {
+  @include regularTabletScaling(var(--color-font-main));
+
+  position: relative;
+  padding-left: 1.7rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 0.5rem / 2);
+    left: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--color-highlight-buttons);
+    border-radius: 50%;
+  }
+
+  &:not(:first-of-type) {
+    margin-top: 0.7rem;
+  }
+}
+
+.wrapper,
+.wrapperExperience {
+  position: relative;
+
+  :global {
+    .ReactCollapse--collapse {
+      position: relative;
+      min-height: 21rem;
+      transition: height 0.6s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 8rem;
+        background-image: linear-gradient(0deg, #FFFFFF 46.04%, rgba(255, 255, 255, 0) 100%);
+        background-size: cover;
+        opacity: 1;
+        pointer-events: all;
+        transition-duration: 0.6s;
+        z-index: 1;
+      }
+    }
+  }
+
+  .collapseOpened {
+    &::before {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.quote {
+  @include h5-italic(var(--color-font-main));
+
+  position: relative;
+  margin: 0;
+  padding: 5.2rem 0 0 0;
+  opacity: 0.7;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    width: 2.4rem;
+    height: 2.1rem;
+    background-image: url("../../../assets/icons/icon_quotes--darker.svg");
+    background-size: cover;
+  }
+}
+
+.btnCollapseAbout,
+.btnCollapseExperience {
+  @include resetButton;
+  @include capitals-bold(var(--color-font-main));
+}
+
+.btnAboutOpened,
+.btnExperienceOpened {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.playWrapper {
+  position: relative;
+  margin-top: 4.6rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.6rem;
+    background-color: var(--color-highlight-mosaic);
+    z-index: 1;
+  }
+}
+
+.play {
+  width: 100%;
+  height: 19rem;
+}
+
+.listDef {
+  margin: 0;
+  padding-top: 2.3rem;
+  padding-right: 0;
+  padding-bottom: 1rem;
+}
+
+.key,
+.value {
+  margin: 0;
+  padding: 0;
+}
+
+.key {
+  @include h6(var(--color-font-main));
+
+  &:not(:first-of-type) {
+    margin-top: 2.5rem;
+  }
+}
+
+.value {
+  @include regular(var(--color-font-main));
+
+  margin-top: 0.8rem;
+}
+
+.wrapperExperience {
+  :global {
+    .ReactCollapse--collapse {
+      min-height: 30rem;
+    }
+  }
+}
+
+.slider {
+  margin-top: 2.3rem;
+  margin-left: calc(-1 * var(--padding-mobile));
+  width: calc(100% + 2 * var(--padding-mobile));
+
+  :global {
+    .swiper-container {
+      padding-left: var(--padding-mobile);
+    }
+
+    .swiper-pagination {
+      left: var(--padding-mobile);
+      width: calc(100% - 2 * var(--padding-mobile));
+    }
+  }
+
+  .slide {
+    display: flex;
+    width: max-content;
+
+    .image {
+      &:not(:first-child) {
+        margin-left: 1.4rem;
+      }
+    }
+  }
+}
+
+.review {
+  padding: 1.7rem 1.8rem 2rem 1.5rem;
+  background-color: var(--color-highlight-lightest);
+
+  &Intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .name,
+  .date {
+    @include h6(var(--color-font-main));
+
+    margin: 0;
+  }
+
+  &Content {
+    @include regular(var(--color-font-main));
+
+    margin: 0.7rem 0 0 0;
+  }
+
+  &Info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1.6rem;
+  }
+
+  &Expertise,
+  &Specialist {
+    @include h7(var(--color-font-main));
+
+    margin: 0;
+    opacity: 0.5;
+  }
+
+  &Specialist {
+    margin-top: 0.9rem;
+  }
+}
+
+.text {
+  margin-top: 2rem;
+
+  div > p {
+    @include regular(var(--color-font-main));
+
+    margin: 0;
+
+    &:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media (min-width: $widthTabletMin) {
+  .title {
+    font-size: 2.6rem;
+    line-height: 3rem;
+  }
+
+  .expertiseItem {
+    &:not(:first-of-type) {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .wrapper:not(.wrapperExperience) {
+    position: relative;
+
+    :global {
+      .ReactCollapse--collapse {
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    .btnCollapseAbout {
+      display: none;
+    }
+  }
+
+  .playWrapper {
+    margin-top: 4rem;
+  }
+
+  .play {
+    height: 34rem;
+  }
+
+  .slider:not(.sliderReviews) {
+    margin-top: 3.1rem;
+    margin-left: 0;
+    width: calc(100% + 2 * var(--padding-tablet));
+
+    :global {
+      .swiper-container {
+        height: 29.4rem;
+        padding-left: var(--padding-tablet);
+      }
+
+      .swiper-slide {
+        &:last-child {
+          padding-right: var(--padding-tablet);
+          margin-right: var(--padding-tablet);
+        }
+      }
+
+      .swiper-pagination {
+        display: none;
+      }
+    }
+
+    .slide {
+      display: flex;
+      width: max-content;
+
+      .image {
+        height: 100%;
+
+        &:not(:first-child) {
+          margin-left: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .wrapperExperience {
+    :global {
+      .ReactCollapse--collapse {
+        min-height: 30rem;
+
+        &::before {
+          background-image: linear-gradient(0deg, #FFFFFF 30%, rgba(255, 255, 255, 0) 100%);
+        }
+      }
+    }
+  }
+
+  .sliderReviews {
+    margin-top: 2.5rem;
+    margin-left: 0;
+
+    :global {
+      .swiper-container {
+        padding-left: var(--padding-tablet);
+        padding-right: var(--padding-tablet);
+      }
+
+      .swiper-slide {
+        width: 66.5rem;
+
+        &:last-child {
+          padding-right: var(--padding-tablet);
+          margin-right: var(--padding-tablet);
+        }
+      }
+
+      div.swiper-pagination {
+        margin-left: 0;
+        margin-right: 0;
+        left: var(--padding-tablet);
+        width: calc(100% - 3 * var(--padding-tablet));
+      }
+    }
+  }
+
+  .review {
+    padding: 2.9rem 3.4rem 3.7rem 3.3rem;
+
+    &Intro {
+      flex-direction: row;
+    }
+
+    .date {
+      margin-left: 1rem;
+    }
+
+    &Content {
+      margin: 0.9rem 0 0 0;
+    }
+
+    &Info {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 1.6rem;
+    }
+
+    &Specialist {
+      margin-top: 0;
+      margin-left: 2.7rem;
+    }
+  }
+}

@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import css from './Services.module.scss'
 import Container from 'components/Grid/Container'
 import Heading from 'components/Heading/Heading'
-import Slider from 'components/SliderCards/SliderCards'
+import SliderCards from 'components/SliderCards/SliderCards'
 import AdvCard from 'components/AdvCard/AdvCard'
 import { useSelector } from 'react-redux'
 
@@ -67,7 +67,6 @@ const Services = ({
   return (
     <section className={className}>
       <Container className={css.container}>
-        <>
           <Heading content={title} />
           <div className={css.tabs}>
             { tabs }
@@ -77,7 +76,7 @@ const Services = ({
               { tabBlocks }
             </div>
             <div className={css.promo}>
-              <Slider>
+              <SliderCards>
                 <>
                   {ads.map((item, index) => (
                     <div className={css.slide} key={index}>
@@ -85,10 +84,9 @@ const Services = ({
                     </div>
                   ))}
                 </>
-              </Slider>
+              </SliderCards>
             </div>
           </div>
-        </>
       </Container>
     </section>
   )

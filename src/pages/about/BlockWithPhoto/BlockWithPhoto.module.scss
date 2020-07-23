@@ -1,0 +1,94 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 43.7rem;
+  grid-column-gap: 2.5rem;
+}
+
+.title,
+.description,
+.quote {
+  grid-column: 1 / 2;
+}
+
+.description {
+  margin-top: 4.6rem;
+
+  p {
+    @include regular(var(--color-font-main));
+    margin: 0;
+
+    &:not(:first-of-type) {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.quote {
+  @include h5-italic(var(--color-font-main));
+
+  position: relative;
+  margin: 3.6rem 0 0 0;
+  padding: 0;
+  opacity: 0.7;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    left: calc(-3.2rem - 2.1rem);
+    width: 3.2rem;
+    height: 2.8rem;
+    background-image: url("../../../assets/icons/icon_quotes--darker.svg");
+    background-size: cover;
+  }
+}
+
+.card {
+  position: relative;
+  grid-column: 2 / 3;
+  grid-row: 1 / 5;
+  margin: 0;
+  padding: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 16rem;
+    left: 0;
+    width: 43rem;
+    height: 35.1rem;
+    background-image: url("../../../assets/icons/doctor__photo-bg--color.svg");
+    background-size: cover;
+  }
+}
+
+.photo {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 36.4rem;
+  height: 53.8rem;
+  object-fit: cover;
+}
+
+.label {
+  padding: 2.3rem 3rem 2.4rem 3rem;
+  border-bottom: 0.3rem solid var(--color-highlight-mosaic);
+  box-shadow: 0 0.4rem 1.5rem rgba(59, 78, 101, 0.08);
+}
+
+.name {
+  @include h5(var(--color-font-main));
+
+  margin: 0;
+}
+
+.rank {
+  @include regular(var(--color-font-main));
+
+  margin: 0;
+  opacity: 0.5;
+}

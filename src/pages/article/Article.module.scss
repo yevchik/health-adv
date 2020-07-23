@@ -1,0 +1,30 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.bannerWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.bannerIcon {
+  width: 2rem;
+  fill: $colorMainBg;
+  opacity: 0.5;
+}
+
+.bannerComment {
+  @include regular($colorMainBg);
+
+  margin: 0 0 0 1.2rem;
+  opacity: 0.5;
+}
+
+.container {
+  padding-top: 4rem;
+}
+
+.content {
+  padding-top: 3.4rem;
+  padding-bottom: 11rem;
+}

@@ -1,0 +1,135 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.collapseButton {
+  @include resetButton;
+  @include h2(var(--color-font-main));
+
+  position: relative;
+  padding-right: 7.2rem;
+  text-align: left;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1.3rem;
+    right: 0;
+    width: 1.4rem;
+    height: 0.1rem;
+    background-color: var(--color-font-main);
+    transform: rotate(0);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 1.3rem;
+    right: 0;
+    width: 1.4rem;
+    height: 0.1rem;
+    background-color: var(--color-font-main);
+    transform-origin: 50%;
+    transform: rotate(90deg);
+    transition-duration: $transitionDuration;
+  }
+}
+
+.collapseButtonOpened {
+  &::after {
+    transform: rotate(0);
+  }
+}
+
+.list {
+  @include resetList;
+
+  padding-top: 2.2rem;
+}
+
+.item {
+  &:not(:first-of-type) {
+    margin-top: 2.6rem;
+  }
+}
+
+.subheading {
+  @include h4(var(--color-font-main));
+
+  margin: 0;
+}
+
+.table {
+  margin-top: 1.4rem;
+  margin-left: calc(-1 * var(--padding-mobile));
+  width: calc(100% + 2 * var(--padding-mobile));
+  border-collapse: collapse;
+}
+
+.row {
+  & > * {
+    @include regular(var(--color-font-main));
+  }
+}
+
+.key {
+  display: flex;
+  align-items: flex-start;
+
+  .label {
+    width: 14rem;
+  }
+}
+
+.buttonPlay {
+  margin-left: 1rem;
+}
+
+.buttonShowMore {
+  margin-top: 2rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .collapseButton {
+    padding-right: 3.4rem;
+  }
+
+  .list {
+    @include resetList;
+
+    padding-top: 3rem;
+  }
+
+  .item {
+    &:not(:first-of-type) {
+      margin-top: 3rem;
+    }
+  }
+
+  .table {
+    margin-top: 2rem;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .rowKey {
+    width: 70%;
+  }
+
+  .rowValue {
+    width: 30%;
+  }
+
+  .key {
+    .label {
+      width: auto;
+    }
+  }
+
+  .buttonPlay {
+    margin-left: 1rem;
+  }
+
+  .buttonShowMore {
+    margin-top: 3rem;
+  }
+}

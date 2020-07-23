@@ -1,0 +1,144 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.description {
+  margin-top: 2rem;
+
+  p {
+    @include regular(var(--color-font-main));
+    margin: 0;
+
+    &:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.quote {
+  @include h5-italic(var(--color-font-main));
+
+  position: relative;
+  margin: 7.4rem 0 0 0;
+  padding: 0;
+  opacity: 0.7;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(-2.8rem - 1.6rem);
+    left: 0;
+    width: 3.2rem;
+    height: 2.8rem;
+    background-image: url("../../../assets/icons/icon_quotes--darker.svg");
+    background-size: cover;
+  }
+}
+
+.card {
+  margin: 2rem 0 0 0;
+  padding: 0;
+}
+
+.frame {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    left: -7.6rem;
+    width: 35.1rem;
+    height: 28rem;
+    background-image: url("../../../assets/icons/doctor__photo-bg--color.svg");
+    background-size: cover;
+  }
+}
+
+.photo {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 24rem;
+  height: 30rem;
+  object-fit: cover;
+}
+
+.label {
+  padding: 1.7rem 1.6rem 1.5rem 1.6rem;
+  border-bottom: 0.3rem solid var(--color-highlight-mosaic);
+  box-shadow: 0 0.4rem 1.5rem rgba(59, 78, 101, 0.08);
+}
+
+.name {
+  @include h5(var(--color-font-main));
+
+  margin: 0;
+}
+
+.rank {
+  @include regular(var(--color-font-main));
+
+  margin: 0.1rem 0 0 0;
+  opacity: 0.5;
+}
+
+@media (min-width: $widthTabletMin) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 34.4rem;
+    grid-column-gap: 2.3rem;
+  }
+
+  .title {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .description {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+
+  .quote {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    margin: 6.4rem 0 0 0;
+    padding-left: 5.5rem;
+    line-height: 3.2rem;
+
+    &::before {
+      top: -1rem;
+    }
+  }
+
+  .card {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+    margin: 0;
+  }
+
+  .label {
+    padding: 1.6rem 3.3rem 1.8rem 3.3rem;
+  }
+
+  .wrapperNoQuote {
+    display: grid;
+    grid-template-columns: auto 34.4rem;
+    grid-column-gap: 1rem;
+
+    .title {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .description {
+      grid-column: 1 / 2
+    }
+
+    .card {
+      grid-column: 2 / 3;
+      grid-row: 1 / 4;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "styles/variables";
+
+.slider {
+  margin-top: 2.3rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .slider {
+    margin-top: 3rem;
+  }
+}

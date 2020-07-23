@@ -1,0 +1,42 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.section {
+  padding-top: 3.6rem;
+  padding-bottom: 6rem;
+}
+
+.list {
+  @include resetList;
+
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  grid-auto-rows: auto;
+  grid-row-gap: 3.3rem;
+}
+
+.buttonMore {
+  margin-top: 4.4rem;
+}
+
+.empty {
+  @include regular(var(--color-font-main));
+  text-align: center;
+  opacity: 0.5;
+}
+
+@media (min-width: $widthTabletMin) {
+  .section {
+    padding-top: 4rem;
+  }
+
+  .list {
+    grid-template-columns: repeat(2, 50%);
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+  }
+
+  .buttonMore {
+    margin-top: 3rem;
+  }
+}

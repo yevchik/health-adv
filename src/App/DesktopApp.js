@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 import css from './App.module.scss'
 import Header from 'containers/Header/Header'
-// import Routes from 'utils/Routes'
+// import Routes from 
 import Footer from 'containers/Footer/Footer'
 
 const DesktopApp = ({children}) => {

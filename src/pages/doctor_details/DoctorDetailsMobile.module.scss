@@ -1,0 +1,48 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.section {
+  padding-top: 8.5rem;
+}
+
+.content {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.promoWrapper {
+  margin-top: 4.6rem;
+}
+
+.title {
+  @include h2(var(--color-font-main));
+
+  margin: 0;
+}
+
+.promo {
+  margin-top: 2.3rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .section {
+    padding-top: 7.3rem;
+  }
+
+  .content {
+    padding-top: 5rem;
+  }
+
+  .promoWrapper {
+    margin-top: 6.1rem;
+  }
+
+  .title {
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+  }
+
+  .promo {
+    margin-top: 1.5rem;
+  }
+}

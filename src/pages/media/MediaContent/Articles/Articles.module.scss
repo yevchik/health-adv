@@ -1,0 +1,14 @@
+@import "styles/mixins";
+
+.wrapper {
+  margin-top: 6rem;
+  padding-bottom: 3rem;
+}
+
+.list {
+  @include resetList;
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4.5rem;
+}

@@ -1,0 +1,25 @@
+.slider {
+  margin-top: 2.6rem;
+
+  :global {
+    .swiper-pagination {
+      display: none;
+    }
+
+    .swiper-slide {
+      width: 33.2rem;
+    }
+  }
+}
+
+.slideWrapper {
+  display: flex;
+  align-items: flex-start;
+
+  .item {
+    &:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+}
+

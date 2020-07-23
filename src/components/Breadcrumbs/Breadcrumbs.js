@@ -11,7 +11,7 @@ const Breadcrumbs = ({
     if (item.url) {
       return (
         <li className={css.item} key={`Breadcrumb item #${index}`}>
-          <Link chref={item.url}>
+          <Link href={item.url}>
             <a lassName={css.link}>
               {item.label}
             </a>

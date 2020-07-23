@@ -1,0 +1,72 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.collapseButton {
+  @include resetButton;
+  @include h2(var(--color-font-main));
+
+  position: relative;
+  padding-right: calc(2.6rem + 3rem);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2.6rem;
+    height: 0.1rem;
+    background-color: var(--color-font-main);
+    transform: rotate(0);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2.6rem;
+    height: 0.1rem;
+    background-color: var(--color-font-main);
+    transform-origin: 50%;
+    transform: rotate(90deg);
+    transition-duration: $transitionDuration;
+  }
+}
+
+.collapseButtonOpened {
+  &::after {
+    transform: rotate(0);
+  }
+}
+
+.list {
+  @include resetList;
+
+  padding-top: 4.5rem;
+}
+
+.item {
+  &:not(:first-of-type) {
+    margin-top: 5rem;
+  }
+}
+
+.subheading {
+  @include h4(var(--color-font-main));
+
+  margin: 0;
+}
+
+.table {
+  margin-top: 2.3rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.buttonPlay {
+  margin-left: 2.5rem;
+}
+
+.buttonShowMore {
+  margin-top: 3rem;
+}

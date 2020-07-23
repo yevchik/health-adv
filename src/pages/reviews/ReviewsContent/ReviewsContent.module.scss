@@ -1,0 +1,109 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 67rem);
+  grid-column-gap: 3rem;
+  grid-row-gap: 5rem;
+  margin-top: 7.2rem;
+}
+
+.preview {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+}
+
+.name {
+  @include regular(var(--color-font-main), 600);
+
+  margin: 2rem 0 0 0;
+}
+
+.doctorInfo {
+  @include capitals-bold(var(--color-font-main));
+
+  margin: 0;
+  padding: 0;
+  opacity: 0.5;
+
+  &:not(:first-child) {
+    margin-top: 0.8rem;
+  }
+}
+
+.bannerWrapper {
+  grid-column: 1 / -1;
+  overflow: hidden;
+}
+
+.banner {
+  position: relative;
+  margin-top: 9rem;
+  padding: 14.4rem 11.7rem 13rem 72.6rem;
+  background-color: var(--color-highlight-lightest);
+  border-bottom: 0.6rem solid var(--color-highlight-mosaic);
+
+  .dotsTop {
+    position: absolute;
+    top: 3rem;
+    left: -10rem;
+    width: 28.6rem;
+    transform: rotate(-90deg);
+  }
+
+  .dotsBottom {
+    position: absolute;
+    top: 71%;
+    right: -6rem;
+    width: 30rem;
+    transform: rotate(-90deg);
+    opacity: 0.7;
+  }
+
+  .photo {
+    position: absolute;
+    bottom: 0;
+    left: 9.4rem;
+    width: 54rem;
+    height: 54.4rem;
+    object-fit: cover;
+  }
+
+  .quote {
+    @include h4(var(--color-font-main));
+
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1rem;
+      left: calc(-3.7rem - 2.4rem);
+      width: 3.7rem;
+      height: 3.2rem;
+      background-image: url("../../../assets/icons/icon_quotes--darker.svg");
+      background-size: cover;
+    }
+  }
+
+  .quoteName {
+    @include regular(var(--color-font-main));
+
+    margin: 4.5rem 0 0 0;
+    opacity: 0.7;
+  }
+}
+
+.list {
+  @include resetList;
+
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem
+
+}

@@ -1,0 +1,98 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.cities {
+  margin-top: 2.1rem;
+  margin-left: calc(-1 * var(--padding-mobile));
+  padding-left: var(--padding-mobile);
+  width: calc(100% + 2 * var(--padding-mobile));
+  overflow: scroll;
+
+  .citiesWrapper {
+    display: flex;
+    align-items: flex-start;
+    width: max-content;
+  }
+
+  .city {
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
+
+    &:last-child {
+      margin-right: var(--padding-mobile);
+    }
+  }
+}
+
+.locations {
+  position: relative;
+  margin-top: 1.2rem;
+  margin-left: calc(-1 * var(--padding-mobile));
+  padding-left: var(--padding-mobile);
+  width: calc(100% + 2 * var(--padding-mobile));
+  overflow: scroll;
+}
+
+.locationsWrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  padding-right: var(--padding-mobile);
+  width: max-content;
+
+  .location {
+    height: 100%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: calc(100% - 2 * var(--padding-mobile));
+    width: calc(100vw - 2 * var(--padding-mobile));
+    height: 0.1rem;
+    background-color: var(--color-highlight-darkest);
+  }
+}
+
+.content {
+  margin-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: $widthTabletMin) {
+  .cities {
+    margin-top: 2.5rem;
+    margin-left: calc(-1 * var(--padding-tablet));
+    padding-left: var(--padding-tablet);
+    width: calc(100% + 2 * var(--padding-tablet));
+
+    .city {
+      &:last-child {
+        margin-right: var(--padding-tablet);
+      }
+    }
+  }
+
+  .locations {
+    margin-top: 1.5rem;
+    margin-left: calc(-1 * var(--padding-tablet));
+    padding-left: var(--padding-tablet);
+    width: calc(100% + 2 * var(--padding-tablet));
+  }
+
+  .locationsWrapper {
+    padding-right: var(--padding-tablet);
+
+    &::before {
+      width: calc(100vw - 2 * var(--padding-tablet));
+    }
+  }
+
+  .content {
+    margin-top: 3.5rem;
+    padding-bottom: 6rem;
+  }
+}

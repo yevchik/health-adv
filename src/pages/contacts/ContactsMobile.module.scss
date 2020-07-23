@@ -1,0 +1,51 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.container {
+  padding-top: 3.8rem;
+}
+
+.title {
+  margin-top: 1.6rem;
+}
+
+.warning {
+  @include regular($colorMainBg);
+
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  grid-column-gap: 1rem;
+  align-items: flex-start;
+  margin: 1.4rem 0 0 0;
+  opacity: 0.7;
+
+  .iconLock {
+    height: 2.4rem;
+  }
+}
+
+.iconLock {
+  margin-right: 1rem;
+  width: 2.4rem;
+  fill: $colorMainBg;
+}
+
+.link {
+  @include regular($colorMainBg);
+
+  margin: 0 0.5rem;
+  text-decoration: underline;
+}
+
+@media (min-width: $widthTabletMin) {
+  .title {
+    margin-top: 2.5rem;
+  }
+
+  .warning {
+    grid-column: 2 / -1;
+    grid-row: 3 / 4;
+    margin: 0;
+  }
+}
