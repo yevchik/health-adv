@@ -3,12 +3,10 @@ import 'normalize.css'
 import 'styles/common.scss'
 import 'styles/variables.scss'
 import 'simplebar/dist/simplebar.min.css'
-// import ElasticAdaptive from 'hoc/ElasticAdaptive'
 import { setDeviceType } from 'store/actions'
 import ViewSwitcher from 'layouts/ViewSwitcher'
 import { wrapper} from '../store';
 import App from 'next/app'
-import {getContacts, getDocuments} from 'store/actions'
 
 function MyApp({ Component, ...pageProps }) {
   return (

@@ -1,21 +1,17 @@
 import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import ContactsMobile from './ContactsMobile'
+import {getContacts} from 'store/actions'
 import Contacts from './Contacts'
 
 const Index = ({elastic, contacts, dispatch, ...props}) => {
-  const [isServer, setIsServer] = useState(true);
-
-  useEffect(() => {
-    setIsServer(false)
-  }, []);
 
   return (
     <>
       {
         elastic.deviceType !== 'desktop'
-        ? <ContactsMobile contacts={contacts} isServer={isServer}/>
-        : <Contacts contacts={contacts} isServer={isServer}/>
+        ? <ContactsMobile contacts={contacts}/>
+        : <Contacts contacts={contacts}/>
       }
     </>
   )
@@ -27,7 +23,7 @@ Index.getInitialProps = async (props) => {
   await dispatch(getContacts())
 
   return {
-    ...props,
+    someText: 'some text',
   }
 }
 
