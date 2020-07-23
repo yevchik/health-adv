@@ -1,7 +1,8 @@
 import React from 'react';
 import 'normalize.css'
+import 'styles/common.scss'
+import 'styles/variables.scss'
 import 'simplebar/dist/simplebar.min.css'
-import 'swiper/css/swiper.min.css'
 // import ElasticAdaptive from 'hoc/ElasticAdaptive'
 import { setDeviceType } from 'store/actions'
 import ViewSwitcher from 'layouts/ViewSwitcher'
@@ -12,7 +13,7 @@ import {getContacts, getDocuments} from 'store/actions'
 function MyApp({ Component, ...pageProps }) {
   return (
       <ViewSwitcher isMobileView={pageProps.isMobileView}>
-        <Component {...pageProps} />
+          <Component {...pageProps} />
       </ViewSwitcher>
   )
 }
@@ -32,8 +33,6 @@ MyApp.getInitialProps = async (appContext) => {
   } else if (false) {
     dispatch(setDeviceType('tablet'))
   }
-
-  await dispatch(getContacts())
 
   return {
     ...appProps,

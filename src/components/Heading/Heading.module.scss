@@ -1,5 +1,5 @@
-@import "styles/variables";
 @import "styles/mixins";
+@import "styles/variables";
 
 .title {
   @include h1(var(--color-font-main));

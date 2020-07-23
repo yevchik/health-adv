@@ -12,11 +12,11 @@ import { openContentModal } from 'store/actions/ui'
 // import ModalAppointment from 'components/ModalAppointment/ModalAppointment'
 import ModalReview from 'components/ModalReview/ModalReview'
 
-const Header = ({contacts, dispatch}) => {
+const Header = ({dispatch}) => {
   const headerData = {
     withSearch: true,
-    schedule: contacts.schedule,
-    phones: [contacts.phone],
+    schedule: 'Расписание работы',
+    phones: ['+38(231)3 132 132123', '+38(231)3 132 132123'],
     list: [
       {
         text: 'Услуги и цены',
@@ -107,7 +107,7 @@ const Header = ({contacts, dispatch}) => {
 }
 
 const mapStateToProps = ({data}) => ({
-  contacts: data.contacts[0],
+  data: data,
 })
 
 export default connect(mapStateToProps)(Header)

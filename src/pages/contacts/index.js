@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import ContactsMobile from './ContactsMobile'
 import Contacts from './Contacts'
 
-const Index = ({elastic, dispatch, ...props}) => {
+const Index = ({elastic, contacts, dispatch, ...props}) => {
   const [isServer, setIsServer] = useState(true);
 
   useEffect(() => {
@@ -14,8 +14,8 @@ const Index = ({elastic, dispatch, ...props}) => {
     <>
       {
         elastic.deviceType !== 'desktop'
-        ? <ContactsMobile isServer={isServer}/>
-        : <Contacts isServer={isServer}/>
+        ? <ContactsMobile contacts={contacts} isServer={isServer}/>
+        : <Contacts contacts={contacts} isServer={isServer}/>
       }
     </>
   )
@@ -24,11 +24,15 @@ const Index = ({elastic, dispatch, ...props}) => {
 
 Index.getInitialProps = async (props) => {
   const {dispatch} = props.store
+  await dispatch(getContacts())
 
   return {
-    someText: 'someText'
+    ...props,
   }
 }
 
+const mapStateToProps = ({data}) => ({
+  contacts: data.contacts,
+})
 
-export default connect(store=>store)(Index)
+export default connect(mapStateToProps)(Index)

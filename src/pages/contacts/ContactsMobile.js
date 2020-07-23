@@ -12,7 +12,7 @@ import ContactsTabsMobile from 'pages/contacts/ContactsTabs/ContactsTabsMobile'
 import MapComponentMobile from 'components/Map/MapMobile'
 import ContactFormMobile from 'components/SignupBanner/ContactForm/ContactFormMobile'
 
-const ContactsMobile = () => {
+const ContactsMobile = ({contacts}) => {
   const contactsData = {
     banner: {
       bgImage: 'contacts__banner@desktop.jpg',
@@ -22,200 +22,10 @@ const ContactsMobile = () => {
       descriptor: 'Выбирайте подходящую клинику рядом с&nbsp;домом или работой, и&nbsp;записывайтесь на&nbsp;приём.',
     },
     title: 'Филиалы клиники',
-    list: [
-      {
-        name: 'Клиника Patterson Dental 1',
-        city: 'Москва',
-        address: '1 - 105062, Москва, 1-й Бабьегородский пер., д. 28, подъезд 3, офис 732',
-        coords: [55.799769, 37.677028],
-        schedule: 'Ежедневно с 10.00 до 21.00',
-        phone: '+7 (495) 453 95 93',
-        mail: 'info@inzhsys.ru',
-        gallery: [
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-        ]
-      },
-      {
-        name: 'Клиника Patterson Dental 2',
-        city: 'Москва',
-        address: '2 - 105062, Москва, 1-й Бабьегородский пер., д. 28',
-        coords: [55.799769, 37.603661],
-        schedule: 'Ежедневно с 10.00 до 21.00',
-        phone: '+7 (495) 453 95 93',
-        mail: 'info@inzhsys.ru',
-        gallery: [
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-        ]
-      },
-      {
-        name: 'Клиника Patterson Dental 3',
-        city: 'Москва',
-        address: '3 - 105062, Москва, 1-й Бабьегородский пер., д. 28',
-        coords: [55.823210, 37.480692],
-        schedule: 'Ежедневно с 10.00 до 21.00',
-        phone: '+7 (495) 453 95 93',
-        mail: 'info@inzhsys.ru',
-        gallery: [
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-        ]
-      },
-      {
-        name: 'Клиника Patterson Dental 4',
-        city: 'Москва',
-        address: '4 - 105062, Москва, 1-й Бабьегородский пер., д. 28',
-        coords: [55.744388, 37.472079],
-        schedule: 'Ежедневно с 10.00 до 21.00',
-        phone: '+7 (495) 453 95 93',
-        mail: 'info@inzhsys.ru',
-        gallery: [
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-        ]
-      },
-      {
-        name: 'Клиника Patterson Dental 5',
-        city: 'Москва',
-        address: '5 - 105062, Москва, 1-й Бабьегородский пер., д. 28',
-        coords: [55.674860, 37.708786],
-        schedule: 'Ежедневно с 10.00 до 21.00',
-        phone: '+7 (495) 453 95 93',
-        mail: 'info@inzhsys.ru',
-        gallery: [
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-        ]
-      },
-      {
-        name: 'Клиника Patterson Dental в Рязани',
-        city: 'Рязань',
-        address: 'Рязань, Заводской проезд, дом 1',
-        coords: [54.630858, 39.725310],
-        schedule: 'Ежедневно с 10.00 до 21.00',
-        phone: '+7 (4912) 45 95 93',
-        mail: 'info@inzhsys.ru',
-        gallery: [
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-        ]
-      },
-      {
-        name: 'Клиника Patterson Dental в Вологде',
-        city: 'Вологда',
-        address: 'Вологда, ул. Мира, 42',
-        coords: [59.220496, 39.891523],
-        schedule: 'Ежедневно с 10.00 до 21.00',
-        phone: '+7 (8172) 66 66 93',
-        mail: 'info@inzhsys.ru',
-        gallery: [
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-          {
-            img: 'about__gallery-item@desktop.jpg',
-            label: 'Подпись к фотографии'
-          },
-        ]
-      },
-    ],
+    list: contacts,
     mapSettings: {
       zoom: 7,
-      center: [55.126557, 38.750870]
+      center: contacts.length ? [contacts[0].latitude, contacts[0].longitude] : [55.126557, 38.750870]
     }
   }
 
@@ -247,7 +57,7 @@ const ContactsMobile = () => {
     }
   }, [data, contactsData])
 
-  const pins = contactsData.list.map(item => item.coords)
+  const pins = contactsData.list.map(item => [item.latitude, item.longitude])
 
   return (
     <>
