@@ -14,7 +14,7 @@ const DoctorCardMobile = ({
 }) => {
   return (
     <Link href={url}>
-      <a lassName={css.link}>
+      <a className={css.link}>
         <figure className={css.content}>
           <div className={css.frame}>
           <img className={css.photo} src={images('./' + photo)} alt={`Фотография врача ${name}`} />

@@ -3,7 +3,7 @@ import css from './Page404.module.scss'
 import Container from 'components/Grid/Container'
 import TestBanner from 'components/TestBanner/TestBanner'
 import { DOCTORS, HOME_PAGE, PRICES } from 'utils/Routes'
-import { Link } from 'next'
+import Link from 'next/link'
 import IconArrowRight from 'assets/icons/IconArrowRight'
 
 const Page404 = () => {
@@ -39,9 +39,11 @@ const Page404 = () => {
         <ul className={css.list}>
           {links.map(({ url, label }, index) => (
             <li className={css.item} key={index}>
-              <Link className={css.link} href={url}>
-                { label }
-                <IconArrowRight className={css.icon} />
+              <Link href={url}>
+                <a  className={css.link}>
+                  { label }
+                  <IconArrowRight className={css.icon} />
+                </a>
               </Link>
             </li>
           ))}

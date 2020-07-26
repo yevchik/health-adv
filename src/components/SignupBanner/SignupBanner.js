@@ -28,7 +28,7 @@ const SignupBanner = ({
             <IconLock className={css.iconLock} />
             Нажимая на кнопку, я соглашаюсь на обработку персональных данных, с 
               <Link href='/'> 
-                <a lassName={css.link}> политикой </a>
+                <a className={css.link}> политикой </a>
               </Link> ознакомлен
           </p>
         }

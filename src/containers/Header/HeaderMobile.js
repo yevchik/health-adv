@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import css from './HeaderMobile.module.scss'
-import { Link } from 'next'
+import Link from 'next/link'
 import { withRouter } from 'next/router'
  import { HOME_PAGE } from 'utils/Routes'
 import IconLogo from 'containers/Header/_assets/IconLogo'
@@ -12,7 +12,7 @@ import ContainerMobile from 'components/Grid/ContainerMobile'
 
 const HeaderMobile = (props) => {
   const [isAdaptiveMenuVisible, setAdaptiveMenuStatus] = useState(false)
-  const location = props.location.pathname
+  const location = props.router.pathname
 
   const headerData = {
     withSearch: true,

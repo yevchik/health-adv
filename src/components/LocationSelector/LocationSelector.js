@@ -3,7 +3,7 @@ import SelectMobile from 'components/Select/SelectMobile'
 import { ABOUT_US, HOME_PAGE } from 'utils/Routes'
 import { withRouter } from 'next/router'
 
-const LocationSelector = ({ className, history, location }) => {
+const LocationSelector = ({ className, history, router }) => {
   const options = [
     {
       label: 'О нас',
@@ -35,7 +35,7 @@ const LocationSelector = ({ className, history, location }) => {
           history.push(evt.value)
         }}
         placeholder='Выбор категории'
-        value={options.find(item => item.value === location.pathname)}
+        value={options.find(item => item.value === router.pathname)}
         isValueReuired={false}
       />
     </div>

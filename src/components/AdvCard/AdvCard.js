@@ -15,31 +15,32 @@ const AdvCard = ({
   styles,
   isCompact
 }) => (
-  <Link
-    className={classnames(css.link, {
-      [css.thin]: styles === 'thin',
-      [css.linkTeeth]: type === 'teeth',
-      [css.linkImplant]: type === 'implant-single',
-      [css.linkJaw]: type === 'implants-jaw',
-      [css.compact]: isCompact
-    })}
-    href={url}
-    style={{ backgroundColor: color }}
-  >
-    <span className={css.duration}>
-      { duration }
-    </span>
-    <p className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
-    <span className={css.price} dangerouslySetInnerHTML={{ __html: price }} />
-    <IconDotsBg className={css.bg} />
-    {!isCompact &&
-      <>
-        <span className={css.label}>
-          Подробнее
-          <IconArrowRight className={css.icon} />
-        </span>
-      </>
-    }
+  <Link href={url}>
+    <a
+      className={classnames(css.link, {
+        [css.thin]: styles === 'thin',
+        [css.linkTeeth]: type === 'teeth',
+        [css.linkImplant]: type === 'implant-single',
+        [css.linkJaw]: type === 'implants-jaw',
+        [css.compact]: isCompact
+      })}
+      style={{ backgroundColor: color }}
+    >
+      <span className={css.duration}>
+        { duration }
+      </span>
+      <p className={css.title} dangerouslySetInnerHTML={{ __html: title }} />
+      <span className={css.price} dangerouslySetInnerHTML={{ __html: price }} />
+      <IconDotsBg className={css.bg} />
+      {!isCompact &&
+        <>
+          <span className={css.label}>
+            Подробнее
+            <IconArrowRight className={css.icon} />
+          </span>
+        </>
+      }
+    </a>
   </Link>
 )
 

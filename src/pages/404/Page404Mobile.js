@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './Page404Mobile.module.scss'
 import { DOCTORS, HOME_PAGE, PRICES } from 'utils/Routes'
-import { Link } from 'next'
+import Link from 'next/link'
 import IconArrowRight from 'assets/icons/IconArrowRight'
 import ContainerMobile from 'components/Grid/ContainerMobile'
 import TestBannerMobile from 'components/TestBanner/TestBannerMobile'
@@ -39,9 +39,11 @@ const Page404Mobile = () => {
         <ul className={css.list}>
           {links.map(({ url, label }, index) => (
             <li className={css.item} key={index}>
-              <Link className={css.link} href={url}>
-                { label }
-                <IconArrowRight className={css.icon} />
+              <Link href={url}>
+                <a className={css.link}>
+                  { label }
+                  <IconArrowRight className={css.icon} />
+                </a>
               </Link>
             </li>
           ))}

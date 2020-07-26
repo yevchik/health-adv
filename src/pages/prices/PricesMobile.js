@@ -150,13 +150,13 @@ const PricesMobile = () => {
     }
   ]
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
-  useEffect(() => {
-    if (pricesData.list && pricesData.list.length > 0) {
-      dispatch(saveData(pricesData.list))
-    }
-  }, [dispatch, pricesData.list])
+  // useEffect(() => {
+  //   if (pricesData.list && pricesData.list.length > 0) {
+  //     dispatch(saveData(pricesData.list))
+  //   }
+  // }, [dispatch, pricesData.list])
 
   return (
     <>

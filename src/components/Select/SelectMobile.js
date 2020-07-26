@@ -58,6 +58,7 @@ const SelectMobile = ({
   return (
     <div className={className}>
       <SelectItem
+        instanceId={'instanceId_select'}
         options={options}
         defaultValue={defaultValue || undefined}
         isSearchable={false}

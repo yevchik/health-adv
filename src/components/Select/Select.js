@@ -58,6 +58,7 @@ const Select = ({
     <div className={className}>
       <SelectItem
         options={options}
+        instanceId={'instanceId_select'}
         defaultValue={defaultValue || undefined}
         isSearchable={false}
         className={css.select}

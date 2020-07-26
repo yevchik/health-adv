@@ -17,7 +17,7 @@ const InfoCardMobile = ({
   return (
     <TagName className={className}>
       <Link href={url}>
-        <a lassName={css.link}>
+        <a className={css.link}>
           <Descriptor className={css.descriptor} label={label} />
           <Date className={css.date} label={date} />
           <DecorationArrow className={css.icon} />

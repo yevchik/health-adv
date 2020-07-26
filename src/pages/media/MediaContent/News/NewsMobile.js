@@ -18,9 +18,11 @@ const NewsMobile = ({ list, imageMobile, imageTablet }) => {
     if (index < mediaCenterNewsQuantity.adaptive) {
       return (
         <li className={css.item} key={`News item #${index}`}>
-          <Link className={css.link} href={item.url}>
-            <Descriptor className={css.descriptor} label={item.label} />
-            <Date className={css.date} label={item.date} />
+          <Link href={item.url}>
+            <a className={css.link}>
+              <Descriptor className={css.descriptor} label={item.label} />
+              <Date className={css.date} label={item.date} />
+            </a>
           </Link>
         </li>
       )

@@ -13,7 +13,7 @@ const BreadcrumbsMobile = ({
       return (
         <li className={css.item} key={`Breadcrumb item #${index}`}>
           <Link href={item.url}>
-            <a lassName={css.link}>
+            <a className={css.link}>
               {item.label}
             </a>
           </Link>

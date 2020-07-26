@@ -9,8 +9,11 @@ import { wrapper} from '../store';
 import App from 'next/app'
 
 function MyApp({ Component, ...pageProps }) {
+
+  console.log(13, pageProps.elastic.deviceType)
+
   return (
-      <ViewSwitcher isMobileView={pageProps.isMobileView}>
+      <ViewSwitcher deviceType={pageProps.elastic.deviceType}>
           <Component {...pageProps} />
       </ViewSwitcher>
   )
@@ -18,7 +21,6 @@ function MyApp({ Component, ...pageProps }) {
 
 MyApp.getInitialProps = async (appContext) => {
   const {dispatch} = appContext.ctx.store
-  const appProps = await App.getInitialProps(appContext);
   let isMobileView = (appContext.ctx.req
   ? appContext.ctx.req.headers['user-agent']
   : navigator.userAgent).match(
@@ -32,8 +34,10 @@ MyApp.getInitialProps = async (appContext) => {
     dispatch(setDeviceType('tablet'))
   }
 
+  console.log('render')
+
   return {
-    ...appProps,
+    isMobileView,
     ...appContext.ctx.store.getState()
   }
 }

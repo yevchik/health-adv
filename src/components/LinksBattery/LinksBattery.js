@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './LinksBattery.module.scss'
-import { Link } from 'next'
+import Link from 'next/link'
 import { withRouter } from 'next/router'
 
 import {
@@ -38,14 +38,13 @@ const LinksBattery = (props) => {
 
   const items = listData.map((item, index) => (
     <li
-      className={classnames(css.item, { [css.itemActive]: item.url === props.location.pathname || item.url === `${props.location.pathname}/` })}
-      key={`Link battery item#${index}`}
-    >
-      <Link href={item.url}>
-        <a lassName={css.link}>
-          { item.label }
+      className={classnames(css.item, { [css.itemActive]: item.url === props.router.pathname || item.url === `${props.router.pathname}/` })}
+      key={`Link battery item#${index}`}>
+        <a className={css.link}>
+          <Link href={item.url}>
+              { item.label }
+          </Link>
         </a>
-      </Link>
     </li>
   ))
 
