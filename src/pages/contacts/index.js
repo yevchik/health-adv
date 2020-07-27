@@ -8,7 +8,7 @@ const Index = ({elastic, contacts, dispatch, ...props}) => {
 
   return (
     <>
-      {
+      {contacts.length &&
         elastic.deviceType !== 'desktop'
         ? <ContactsMobile contacts={contacts}/>
         : <Contacts contacts={contacts}/>

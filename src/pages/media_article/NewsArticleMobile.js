@@ -14,7 +14,6 @@ import TestBannerMobile from 'components/TestBanner/TestBannerMobile'
 
 const NewsArticleMobile = () => {
   const deviceType = useSelector(state => state.elastic.deviceType)
-  console.log(deviceType)
 
   const articleData = {
     title: 'Какую зубную щетку использовать электрическую или обычную?',

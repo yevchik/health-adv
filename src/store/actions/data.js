@@ -8,6 +8,7 @@ import instance from 'api/axios';
 
 export const getContacts = () => async dispatch =>{
   return instance.get('contacts').then(res=>{
+    console.log(res.data)
     dispatch(saveDataByKey('contacts', res.data.data))
     return res.data
   });
@@ -15,7 +16,6 @@ export const getContacts = () => async dispatch =>{
 
 export const getDocuments  = () => async dispatch =>{
   return instance.get('documents').then(res=>{
-    console.log(res.data)
     return res.data
   });
 }

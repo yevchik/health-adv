@@ -16,7 +16,6 @@ const Index = (props) => {
 
 Index.getInitialProps = async  (props) => {
 
-  console.log('Index.getInitialProps')
 
     //Returning the isMobileView as a prop to the component for further use.
     return {

@@ -56,7 +56,6 @@ const Contacts = ({contacts}) => {
   }, [data, contactsData])
 
   const pins = contactsData.list.map(item => [item.latitude, item.longitude])
-  console.log(pins)
 
   return (
     <>
